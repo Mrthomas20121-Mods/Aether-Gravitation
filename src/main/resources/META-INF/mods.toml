@@ -21,10 +21,15 @@ Add more content to the Aether.
     versionRange = "[43.1.1,)"
     ordering = "NONE"
     side = "BOTH"
-
 [[dependencies.gravitation]]
     modId = "minecraft"
     mandatory = true
     versionRange = "[1.19.2,)"
+    ordering = "NONE"
+    side = "BOTH"
+[[dependencies.gravitation]]
+    modId = "aether"
+    mandatory = true
+    versionRange = "[1.0.0,)"
     ordering = "NONE"
     side = "BOTH"

@@ -24,7 +24,7 @@ archivesBaseName = 'Aether Gravitation 1.19.4'
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
-    mappings channel: 'official', version: '1.19.4'
+    mappings channel: 'official', version: mc_version
 
     runs {
         client {
@@ -115,8 +115,6 @@ repositories {
 dependencies {
     minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
 
-    implementation(fg.deobf("appeng:appliedenergistics2-forge:${ae2_version}"))
-
     // compile against the JEI API but do not include it at runtime
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
@@ -125,10 +123,8 @@ dependencies {
     runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-common:${jei_version}")
     runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
 
-    implementation fg.deobf("com.teamcofh:cofh_core:${mc_version}-${cofh_core_version}.+")
-    implementation fg.deobf("com.teamcofh:thermal_core:${mc_version}-${thermal_core_version}.+")
-    implementation fg.deobf("com.teamcofh:thermal_expansion:${mc_version}-${thermal_expansion_version}.+")
-    implementation fg.deobf("curse.maven:tools-complement-552642:4382367")
+    // aether
+    implementation fg.deobf("curse.maven:aether-${aether_id}:${aether_version}")
 }
 
 jar {
