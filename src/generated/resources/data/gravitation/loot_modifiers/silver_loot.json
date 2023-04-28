@@ -1,0 +1,53 @@
+{
+  "type": "gravitation:aether_dungeon_loot",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "aether:chests/dungeon/silver/silver_dungeon_reward"
+    }
+  ],
+  "items": [
+    {
+      "Count": 1,
+      "id": "gravitation:neptune_axe",
+      "tag": {
+        "Damage": 0
+      }
+    },
+    {
+      "Count": 1,
+      "id": "gravitation:neptune_battleaxe",
+      "tag": {
+        "Damage": 0
+      }
+    },
+    {
+      "Count": 1,
+      "id": "gravitation:neptune_cutlass",
+      "tag": {
+        "Damage": 0
+      }
+    },
+    {
+      "Count": 1,
+      "id": "gravitation:neptune_pickaxe",
+      "tag": {
+        "Damage": 0
+      }
+    },
+    {
+      "Count": 1,
+      "id": "gravitation:neptune_shovel",
+      "tag": {
+        "Damage": 0
+      }
+    },
+    {
+      "Count": 1,
+      "id": "gravitation:valkyrie_battleaxe",
+      "tag": {
+        "Damage": 0
+      }
+    }
+  ]
+}

@@ -20,6 +20,5 @@ public class NeptuneShovelItem extends ShovelItem implements NeptuneTool {
         if (flag.isCreative()) {
             components.add(AetherItems.SILVER_DUNGEON_TOOLTIP);
         }
-
     }
 }

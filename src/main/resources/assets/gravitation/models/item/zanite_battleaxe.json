@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "gravitation:item/zanite_battleaxe"
+  }
+}

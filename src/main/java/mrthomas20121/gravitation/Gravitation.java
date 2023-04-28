@@ -2,6 +2,7 @@ package mrthomas20121.gravitation;
 
 import mrthomas20121.gravitation.entity.GraviEntityTypes;
 import mrthomas20121.gravitation.item.GraviItems;
+import mrthomas20121.gravitation.loot.GlobalLootModifiers;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -18,5 +19,6 @@ public class Gravitation {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 		GraviEntityTypes.ENTITY_TYPES.register(bus);
 		GraviItems.ITEMS.register(bus);
+		GlobalLootModifiers.LOOT_MODIFIERS.register(bus);
 	}
 }

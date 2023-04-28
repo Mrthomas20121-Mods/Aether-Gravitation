@@ -12,6 +12,8 @@ public class GraviTags {
         public static TagKey<Item> NEPTUNE_REPAIRING = tag("neptune_repairing");
         public static TagKey<Item> NEPTUNE_ITEMS = tag("neptune_items");
 
+        public static TagKey<Item> VALKYRIE_ITEMS = tag("valkyrie_items");
+
         private static TagKey<Item> tag(String name) {
             return TagKey.create(Registries.ITEM, new ResourceLocation(Gravitation.MOD_ID, name));
         }

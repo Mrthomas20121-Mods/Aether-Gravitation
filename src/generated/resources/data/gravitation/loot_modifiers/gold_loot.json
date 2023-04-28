@@ -1,0 +1,19 @@
+{
+  "type": "gravitation:aether_dungeon_loot",
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "aether:chests/dungeon/gold/gold_dungeon_reward"
+    }
+  ],
+  "items": [
+    {
+      "Count": 1,
+      "id": "gravitation:phoenix_dart_shooter"
+    },
+    {
+      "Count": 15,
+      "id": "gravitation:phoenix_dart"
+    }
+  ]
+}

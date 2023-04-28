@@ -7,7 +7,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = Gravitation.MOD_ID)
-public class CommonEvents {
+public class ForgeEvents {
 
     @SubscribeEvent
     public static void breakSpeedEvent(PlayerEvent.BreakSpeed event) {
