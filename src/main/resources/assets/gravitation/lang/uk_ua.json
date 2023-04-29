@@ -1,0 +1,23 @@
+{
+  "itemGroup.gravitation.tools": "Інструменти Aether Gravitation",
+  "item.gravitation.neptune_axe": "Сокира Нептуна",
+  "item.gravitation.neptune_battleaxe": "Бойова сокира Нептуна",
+  "item.gravitation.neptune_cutlass": "Шабля Нептуна",
+  "item.gravitation.neptune_pickaxe": "Кайло Нептуна",
+  "item.gravitation.neptune_shovel": "Лопата Нептуна",
+  "item.gravitation.gravitite_battleaxe": "Гравітитова бойова сокира",
+  "item.gravitation.zanite_battleaxe": "Занітова бойова сокира",
+  "item.gravitation.valkyrie_battleaxe": "Бойова сокира валькірії",
+  "item.gravitation.phoenix_dart_shooter": "Духова трубка фенікса",
+  "item.gravitation.phoenix_dart": "Дротик фенікса",
+  "lore.item.gravitation.phoenix_dart": "Можна знайти у золотому підземеллі. Боєприпас для духової трубки фенікса. Ці дротики підпалюють ціль після влучання.",
+  "lore.item.gravitation.phoenix_dart_shooter": "Можна знайти у золотому підземеллі. Духова трубка, що стріляє дротиками фенікса.",
+  "lore.item.gravitation.neptune_axe": "Можна знайти в срібному підземеллі. Набір інструментів Нептуна очищає уповільнення видобування під водою.",
+  "lore.item.gravitation.neptune_battleaxe": "Можна знайти в срібному підземеллі. Набір інструментів Нептуна очищає уповільнення видобування під водою.",
+  "lore.item.gravitation.neptune_pickaxe": "Можна знайти в срібному підземеллі. Набір інструментів Нептуна очищає уповільнення видобування під водою.",
+  "lore.item.gravitation.neptune_shovel": "Можна знайти в срібному підземеллі. Набір інструментів Нептуна очищає уповільнення видобування під водою.",
+  "lore.item.gravitation.neptune_cutlass": "Можна знайти в срібному підземеллі. Шабля Нептуна - це трохи кращий меч, але без шкоди кільком цілям.",
+  "lore.item.gravitation.valkyrie_battleaxe": "Можна знайти в срібному підземеллі. Шкодить кільком цілям, замість однієї.",
+  "lore.item.gravitation.gravitite_battleaxe": "Шкодить кільком цілям, замість однієї.",
+  "lore.item.gravitation.zanite_battleaxe": "Шкодить кільком цілям, замість однієї."
+}
