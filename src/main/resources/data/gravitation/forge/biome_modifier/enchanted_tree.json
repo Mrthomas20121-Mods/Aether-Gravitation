@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#gravitation:enchanted_spawn_biomes",
+  "features": "gravitation:enchanted_tree",
+  "step": "surface_structures"
+}

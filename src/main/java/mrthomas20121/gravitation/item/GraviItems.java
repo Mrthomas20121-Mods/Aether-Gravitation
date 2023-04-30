@@ -2,6 +2,7 @@ package mrthomas20121.gravitation.item;
 
 import com.aetherteam.aether.item.combat.DartItem;
 import com.aetherteam.aether.item.combat.DartShooterItem;
+import com.aetherteam.aether.item.miscellaneous.SkyrootBoatItem;
 import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.entity.GraviEntityTypes;
 import mrthomas20121.gravitation.item.tools.*;
@@ -27,4 +28,7 @@ public class GraviItems {
     public static RegistryObject<Item> PHOENIX_DART = ITEMS.register("phoenix_dart", () -> new DartItem(GraviEntityTypes.PHOENIX_DART, new Item.Properties()));
 
     public static final RegistryObject<Item> PHOENIX_DART_SHOOTER = ITEMS.register("phoenix_dart_shooter", () -> new DartShooterItem(PHOENIX_DART, new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> ENCHANTED_BOAT = ITEMS.register("enchanted_boat", () -> new EnchantedBoatItem(false, new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> ENCHANTED_CHEST_BOAT = ITEMS.register("enchanted_chest_boat", () -> new EnchantedBoatItem(true, new Item.Properties().stacksTo(1)));
 }

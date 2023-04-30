@@ -8,4 +8,6 @@ import net.minecraft.world.item.ItemStack;
 
 public class GraviCreativeTabs {
     public static CreativeModeTab TOOLS;
+
+    public static CreativeModeTab BUILDING_BLOCKS;
 }

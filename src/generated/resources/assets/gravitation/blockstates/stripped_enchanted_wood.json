@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "gravitation:block/stripped_enchanted_wood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "gravitation:block/stripped_enchanted_wood"
+    },
+    "axis=z": {
+      "model": "gravitation:block/stripped_enchanted_wood_horizontal",
+      "x": 90
+    }
+  }
+}
