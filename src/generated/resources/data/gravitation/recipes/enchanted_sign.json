@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "sign",
+  "key": {
+    "#": {
+      "item": "gravitation:enchanted_planks"
+    },
+    "X": {
+      "item": "aether:skyroot_stick"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    " X "
+  ],
+  "result": {
+    "count": 3,
+    "item": "gravitation:enchanted_sign"
+  },
+  "show_notification": true
+}

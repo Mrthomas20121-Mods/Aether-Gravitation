@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "gravitation:enchanted_planks"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "aether:skyroot_stick"
+  }
+}

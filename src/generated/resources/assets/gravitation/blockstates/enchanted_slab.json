@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "gravitation:block/enchanted_slab"
+    },
+    "type=double": {
+      "model": "gravitation:block/enchanted_planks"
+    },
+    "type=top": {
+      "model": "gravitation:block/enchanted_slab_top"
+    }
+  }
+}

@@ -2,8 +2,20 @@
   "feature": "gravitation:enchanted_tree",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 1
+      "type": "minecraft:count",
+      "count": {
+        "type": "minecraft:weighted_list",
+        "distribution": [
+          {
+            "data": 1,
+            "weight": 9
+          },
+          {
+            "data": 2,
+            "weight": 1
+          }
+        ]
+      }
     },
     {
       "type": "minecraft:surface_water_depth_filter",
@@ -26,6 +38,18 @@
     },
     {
       "type": "aether:dungeon_blacklist_filter"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:would_survive",
+        "state": {
+          "Name": "gravitation:enchanted_sapling",
+          "Properties": {
+            "stage": "0"
+          }
+        }
+      }
     }
   ]
 }

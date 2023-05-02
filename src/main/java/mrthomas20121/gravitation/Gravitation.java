@@ -3,10 +3,7 @@ package mrthomas20121.gravitation;
 import mrthomas20121.gravitation.block.GraviBlocks;
 import mrthomas20121.gravitation.block.wood.GraviWoodType;
 import mrthomas20121.gravitation.block_entity.GraviBlockEntityTypes;
-import mrthomas20121.gravitation.data.GraviBlockTags;
-import mrthomas20121.gravitation.data.GraviBlockstateData;
-import mrthomas20121.gravitation.data.GraviItemData;
-import mrthomas20121.gravitation.data.GraviRegistrySets;
+import mrthomas20121.gravitation.data.*;
 import mrthomas20121.gravitation.entity.GraviEntityTypes;
 import mrthomas20121.gravitation.item.GraviItems;
 import mrthomas20121.gravitation.loot.GlobalLootModifiers;
@@ -48,10 +45,18 @@ public class Gravitation {
 		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 		CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-		event.getGenerator().addProvider(event.includeServer(), new LootDataProvider(packOutput));
+		// client
 		event.getGenerator().addProvider(event.includeClient(), new GraviBlockstateData(packOutput, existingFileHelper));
 		event.getGenerator().addProvider(event.includeClient(), new GraviItemData(packOutput, existingFileHelper));
+		event.getGenerator().addProvider(event.includeClient(), new GraviLanguageData(packOutput));
+
+		// server
+		event.getGenerator().addProvider(event.includeServer(), new LootDataProvider(packOutput));
 		event.getGenerator().addProvider(event.includeServer(), new GraviRegistrySets(packOutput, lookupProvider));
-		event.getGenerator().addProvider(event.includeServer(), new GraviBlockTags(packOutput, lookupProvider, existingFileHelper));
+		GraviBlockTags blockTags = new GraviBlockTags(packOutput, lookupProvider, existingFileHelper);
+		event.getGenerator().addProvider(event.includeServer(), blockTags);
+		event.getGenerator().addProvider(event.includeServer(), GraviLoot.create(packOutput));
+		event.getGenerator().addProvider(event.includeServer(), new GraviRecipes(packOutput));
+		event.getGenerator().addProvider(event.includeServer(), new GraviItemTags(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
 	}
 }

@@ -15,9 +15,9 @@ public class ModEvents {
 
     @SubscribeEvent
     public static void registerCreativeModeTabs(CreativeModeTabEvent.Register event) {
-        GraviCreativeTabs.TOOLS = event.registerCreativeModeTab(new ResourceLocation(Gravitation.MOD_ID, "tools"), (builder) -> builder
-                .icon(() -> new ItemStack(GraviItems.NEPTUNE_CUTLASS.get()))
-                .title(Component.translatable("itemGroup.gravitation.tools"))
+        GraviCreativeTabs.TOOLS = event.registerCreativeModeTab(new ResourceLocation(Gravitation.MOD_ID, "equipments"), (builder) -> builder
+                .icon(() -> new ItemStack(GraviItems.NEPTUNE_PICKAXE.get()))
+                .title(Component.translatable("itemGroup.gravitation.equipments"))
                 .displayItems((parameters, output) -> {
                     output.accept(GraviItems.NEPTUNE_AXE.get());
                     output.accept(GraviItems.NEPTUNE_BATTLEAXE.get());
@@ -33,15 +33,23 @@ public class ModEvents {
                 }));
 
         GraviCreativeTabs.BUILDING_BLOCKS = event.registerCreativeModeTab(new ResourceLocation(Gravitation.MOD_ID, "building_blocks"), (builder) -> builder
-                .icon(() -> new ItemStack(GraviItems.NEPTUNE_CUTLASS.get()))
+                .icon(() -> new ItemStack(GraviBlocks.STRIPPED_ENCHANTED_LOG.get()))
                 .title(Component.translatable("itemGroup.gravitation.building_blocks"))
                 .displayItems((parameters, output) -> {
                     output.accept(GraviBlocks.ENCHANTED_SIGN.get());
+                    output.accept(GraviBlocks.ENCHANTED_WALL_SIGN.get());
                     output.accept(GraviBlocks.ENCHANTED_LOG.get());
                     output.accept(GraviBlocks.STRIPPED_ENCHANTED_LOG.get());
                     output.accept(GraviBlocks.ENCHANTED_WOOD.get());
                     output.accept(GraviBlocks.STRIPPED_ENCHANTED_WOOD.get());
                     output.accept(GraviBlocks.ENCHANTED_PLANKS.get());
+                    output.accept(GraviBlocks.ENCHANTED_STAIRS.get());
+                    output.accept(GraviBlocks.ENCHANTED_SLAB.get());
+                    output.accept(GraviBlocks.ENCHANTED_DOOR.get());
+                    output.accept(GraviBlocks.ENCHANTED_TRAPDOOR.get());
+                    output.accept(GraviBlocks.ENCHANTED_FENCE.get());
+                    output.accept(GraviBlocks.ENCHANTED_FENCE_GATE.get());
+                    output.accept(GraviBlocks.ENCHANTED_BUTTON.get());
 
                 }));
     }

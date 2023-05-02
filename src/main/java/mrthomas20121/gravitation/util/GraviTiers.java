@@ -1,5 +1,6 @@
 package mrthomas20121.gravitation.util;
 
+import com.aetherteam.aether.AetherTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -10,7 +11,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.function.Supplier;
 
 public enum GraviTiers implements Tier {
-    NEPTUNE(3, 1561, 8.0f, 3.0f, 15, () -> Ingredient.EMPTY);
+    NEPTUNE(3, 1561, 8.0f, 3.0f, 15, () -> Ingredient.of(AetherTags.Items.NEPTUNE_REPAIRING));
 
     private final int level;
     private final int uses;
@@ -45,6 +46,7 @@ public enum GraviTiers implements Tier {
         return this.damage;
     }
 
+    @SuppressWarnings("deprecation")
     public int getLevel() {
         return this.level;
     }

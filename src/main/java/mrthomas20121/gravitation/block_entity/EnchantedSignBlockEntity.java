@@ -13,7 +13,7 @@ public class EnchantedSignBlockEntity extends SignBlockEntity {
         super(pos, state);
     }
 
-    public BlockEntityType<SkyrootSignBlockEntity> getType() {
-        return AetherBlockEntityTypes.SKYROOT_SIGN.get();
+    public BlockEntityType<EnchantedSignBlockEntity> getType() {
+        return GraviBlockEntityTypes.ENCHANTED_SIGN.get();
     }
 }
