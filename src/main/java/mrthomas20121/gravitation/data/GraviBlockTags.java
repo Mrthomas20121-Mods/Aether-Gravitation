@@ -8,6 +8,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -35,6 +36,8 @@ public class GraviBlockTags extends BlockTagsProvider {
         this.tag(BlockTags.FENCE_GATES).add(GraviBlocks.ENCHANTED_FENCE_GATE.get());
         this.tag(BlockTags.WOODEN_FENCES).add(GraviBlocks.ENCHANTED_FENCE.get());
 
+        this.tag(Tags.Blocks.BOOKSHELVES).add(GraviBlocks.ENCHANTED_BOOKSHELF.get());
+
         this.tag(BlockTags.MINEABLE_WITH_AXE).add(
                 GraviBlocks.ENCHANTED_LOG.get(),
                 GraviBlocks.ENCHANTED_WOOD.get(),
@@ -46,7 +49,8 @@ public class GraviBlockTags extends BlockTagsProvider {
                 GraviBlocks.ENCHANTED_SIGN.get(),
                 GraviBlocks.ENCHANTED_SLAB.get(),
                 GraviBlocks.ENCHANTED_FENCE_GATE.get(),
-                GraviBlocks.ENCHANTED_FENCE.get()
+                GraviBlocks.ENCHANTED_FENCE.get(),
+                GraviBlocks.ENCHANTED_BOOKSHELF.get()
         );
     }
 }

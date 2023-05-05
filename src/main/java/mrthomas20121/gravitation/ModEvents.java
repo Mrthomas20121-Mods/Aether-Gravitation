@@ -27,6 +27,12 @@ public class ModEvents {
                     output.accept(GraviItems.VALKYRIE_BATTLEAXE.get());
                     output.accept(GraviItems.GRAVITITE_BATTLEAXE.get());
                     output.accept(GraviItems.ZANITE_BATTLEAXE.get());
+                    output.accept(GraviItems.NETHERITE_BATTLEAXE.get());
+                    output.accept(GraviItems.DIAMOND_BATTLEAXE.get());
+                    output.accept(GraviItems.IRON_BATTLEAXE.get());
+                    output.accept(GraviItems.GOLD_BATTLEAXE.get());
+                    output.accept(GraviItems.ENCHANTED_BOAT.get());
+                    output.accept(GraviItems.ENCHANTED_CHEST_BOAT.get());
                     output.accept(GraviItems.PHOENIX_DART.get());
                     output.accept(GraviItems.PHOENIX_DART_SHOOTER.get());
                     output.accept(GraviBlocks.ENCHANTED_SAPLING.get());

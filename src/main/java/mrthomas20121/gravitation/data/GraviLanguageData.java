@@ -24,6 +24,10 @@ public class GraviLanguageData extends LanguageProvider {
         addItem(GraviItems.GRAVITITE_BATTLEAXE, "Gravitite Battleaxe");
         addItem(GraviItems.ZANITE_BATTLEAXE, "Zanite Battleaxe");
         addItem(GraviItems.VALKYRIE_BATTLEAXE, "Valkyrie Battleaxe");
+        addItem(GraviItems.NETHERITE_BATTLEAXE, "Netherite Battleaxe");
+        addItem(GraviItems.DIAMOND_BATTLEAXE, "Diamond Battleaxe");
+        addItem(GraviItems.IRON_BATTLEAXE, "Iron Battleaxe");
+        addItem(GraviItems.GOLD_BATTLEAXE, "Gold Battleaxe");
         addItem(GraviItems.ENCHANTED_CHEST_BOAT, "Enchanted Chest Boat");
         addItem(GraviItems.ENCHANTED_BOAT, "Enchanted Boat");
         addItem(GraviItems.PHOENIX_DART, "Phoenix Dart");
@@ -34,6 +38,7 @@ public class GraviLanguageData extends LanguageProvider {
         addBlock(GraviBlocks.ENCHANTED_PLANKS, "Enchanted Planks");
         addBlock(GraviBlocks.ENCHANTED_STAIRS, "Enchanted Stairs");
         addBlock(GraviBlocks.ENCHANTED_SLAB, "Enchanted Slab");
+        addBlock(GraviBlocks.ENCHANTED_BOOKSHELF, "Enchanted Bookshelf");
         addBlock(GraviBlocks.ENCHANTED_LOG, "Enchanted Log");
         addBlock(GraviBlocks.ENCHANTED_WOOD, "Enchanted Wood");
         addBlock(GraviBlocks.STRIPPED_ENCHANTED_LOG, "Stripped Enchanted Log");

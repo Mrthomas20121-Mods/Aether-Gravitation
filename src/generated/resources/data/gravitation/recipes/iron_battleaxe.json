@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "battleaxe",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_ingot"
+    },
+    "X": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    " X "
+  ],
+  "result": {
+    "item": "gravitation:iron_battleaxe"
+  },
+  "show_notification": true
+}

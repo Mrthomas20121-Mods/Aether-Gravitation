@@ -28,10 +28,7 @@ public class GraviTags {
 
         public static TagKey<Item> ENCHANTED_LOGS = tag("enchanted_logs");
 
-        public static TagKey<Item> NEPTUNE_REPAIRING = tag("neptune_repairing");
-        public static TagKey<Item> NEPTUNE_ITEMS = tag("neptune_items");
-
-        public static TagKey<Item> VALKYRIE_ITEMS = tag("valkyrie_items");
+        public static TagKey<Item> BATTLEAXES = forgeTag("battleaxes");
 
         private static TagKey<Item> tag(String name) {
             return TagKey.create(Registries.ITEM, new ResourceLocation(Gravitation.MOD_ID, name));

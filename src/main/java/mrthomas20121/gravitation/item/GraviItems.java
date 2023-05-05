@@ -24,6 +24,10 @@ public class GraviItems {
     public static RegistryObject<Item> ZANITE_BATTLEAXE = ITEMS.register("zanite_battleaxe", ZaniteBattleAxeItem::new);
     public static RegistryObject<Item> GRAVITITE_BATTLEAXE = ITEMS.register("gravitite_battleaxe", GravititeBattleAxeItem::new);
     public static RegistryObject<Item> VALKYRIE_BATTLEAXE = ITEMS.register("valkyrie_battleaxe", ValkyrieBattleAxeItem::new);
+    public static RegistryObject<Item> NETHERITE_BATTLEAXE = ITEMS.register("netherite_battleaxe", NetheriteBattleAxeItem::new);
+    public static RegistryObject<Item> DIAMOND_BATTLEAXE = ITEMS.register("diamond_battleaxe", DiamondBattleAxeItem::new);
+    public static RegistryObject<Item> IRON_BATTLEAXE = ITEMS.register("iron_battleaxe", IronBattleAxeItem::new);
+    public static RegistryObject<Item> GOLD_BATTLEAXE = ITEMS.register("gold_battleaxe", GoldBattleAxeItem::new);
 
     public static RegistryObject<Item> PHOENIX_DART = ITEMS.register("phoenix_dart", () -> new DartItem(GraviEntityTypes.PHOENIX_DART, new Item.Properties()));
 

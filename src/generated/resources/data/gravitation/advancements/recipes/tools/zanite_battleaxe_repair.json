@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "gravitation:zanite_battleaxe_repair"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_zanite_battleaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "gravitation:zanite_battleaxe"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_zanite_battleaxe",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "gravitation:zanite_battleaxe_repair"
+    ]
+  }
+}

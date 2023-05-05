@@ -12,9 +12,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashSet;
@@ -47,6 +49,8 @@ public class GraviLoot extends AetherBlockLootSubProvider {
         this.dropSelf(GraviBlocks.ENCHANTED_STAIRS.get());
         this.dropSelf(GraviBlocks.ENCHANTED_BUTTON.get());
         this.dropSelf(GraviBlocks.ENCHANTED_PREASURE_PLATE.get());
+        this.add(GraviBlocks.ENCHANTED_BOOKSHELF.get(),
+                (bookshelf) -> createSingleItemTableWithSilkTouch(bookshelf, Items.BOOK, ConstantValue.exactly(3)));
     }
 
     @Override

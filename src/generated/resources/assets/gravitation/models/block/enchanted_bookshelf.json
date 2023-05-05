@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "gravitation:block/construction/enchanted_planks",
+    "side": "gravitation:block/construction/enchanted_bookshelf"
+  }
+}

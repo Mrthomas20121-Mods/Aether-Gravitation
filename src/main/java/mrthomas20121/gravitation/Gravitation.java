@@ -1,5 +1,6 @@
 package mrthomas20121.gravitation;
 
+import com.aetherteam.aether.block.dispenser.DispenseDartBehavior;
 import mrthomas20121.gravitation.block.GraviBlocks;
 import mrthomas20121.gravitation.block.wood.GraviWoodType;
 import mrthomas20121.gravitation.block_entity.GraviBlockEntityTypes;
@@ -10,10 +11,12 @@ import mrthomas20121.gravitation.loot.GlobalLootModifiers;
 import mrthomas20121.gravitation.loot.LootDataProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.level.block.DispenserBlock;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,6 +33,7 @@ public class Gravitation {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		bus.addListener(this::datagen);
+		bus.addListener(this::setup);
 
 		GraviBlockEntityTypes.BLOCK_ENTITY_TYPES.register(bus);
 		GraviBlocks.BLOCKS.register(bus);
@@ -38,6 +42,19 @@ public class Gravitation {
 		GlobalLootModifiers.LOOT_MODIFIERS.register(bus);
 
 		GraviWoodType.registerWoodTypes();
+	}
+
+	public void setup(FMLCommonSetupEvent event) {
+		event.enqueueWork(() -> {
+			GraviBlocks.registerFlammability();
+			GraviBlocks.registerPots();
+
+			this.registerDispenserBehaviors();
+		});
+	}
+
+	private void registerDispenserBehaviors() {
+		DispenserBlock.registerBehavior(GraviItems.PHOENIX_DART.get(), new DispenseDartBehavior(GraviItems.PHOENIX_DART));
 	}
 
 	public void datagen(GatherDataEvent event) {

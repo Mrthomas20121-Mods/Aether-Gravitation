@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "battleaxe",
+  "key": {
+    "#": {
+      "item": "aether:zanite_gemstone"
+    },
+    "X": {
+      "item": "aether:skyroot_stick"
+    }
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    " X "
+  ],
+  "result": {
+    "item": "gravitation:zanite_battleaxe"
+  },
+  "show_notification": true
+}

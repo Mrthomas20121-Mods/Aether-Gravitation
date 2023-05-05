@@ -43,7 +43,12 @@ public class GraviItemData extends AetherItemModelProvider {
         this.item(GraviItems.GRAVITITE_BATTLEAXE.get(), "");
         this.item(GraviItems.ZANITE_BATTLEAXE.get(), "");
         this.item(GraviItems.VALKYRIE_BATTLEAXE.get(), "");
+        this.item(GraviItems.NETHERITE_BATTLEAXE.get(), "");
+        this.item(GraviItems.DIAMOND_BATTLEAXE.get(), "");
+        this.item(GraviItems.IRON_BATTLEAXE.get(), "");
+        this.item(GraviItems.GOLD_BATTLEAXE.get(), "");
         this.item(GraviItems.PHOENIX_DART_SHOOTER.get(), "");
         this.item(GraviItems.PHOENIX_DART.get(), "");
+        this.itemBlock(GraviBlocks.ENCHANTED_BOOKSHELF.get());
     }
 }

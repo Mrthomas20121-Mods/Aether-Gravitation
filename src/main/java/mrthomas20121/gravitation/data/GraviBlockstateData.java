@@ -35,5 +35,6 @@ public class GraviBlockstateData extends AetherBlockStateProvider {
         this.fenceGateBlock(GraviBlocks.ENCHANTED_FENCE_GATE.get(), GraviBlocks.ENCHANTED_PLANKS.get(), "natural/");
         this.buttonBlock(GraviBlocks.ENCHANTED_BUTTON.get(), new ResourceLocation("gravitation:block/natural/enchanted_planks"));
         this.pressurePlateBlock(GraviBlocks.ENCHANTED_PREASURE_PLATE.get(), new ResourceLocation("gravitation:block/natural/enchanted_planks"));
+        this.bookshelf(GraviBlocks.ENCHANTED_BOOKSHELF.get(), GraviBlocks.ENCHANTED_PLANKS.get());
     }
 }
