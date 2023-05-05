@@ -54,9 +54,9 @@ public class GraviLanguageData extends LanguageProvider {
         addEntityType(GraviEntityTypes.PHOENIX_DART, "Phoenix Dart");
 
         // lore
-        add("lore.gravitation.enchanted_sapling", "These blue saplings will grow into Enchanted Trees. They can be grown faster with Bone Meal.");
-        add("lore.gravitation.enchanted_log", "These spawn on Enchanted Tree. They can double dropped with Skyroot Axes. When put in the crafting table they will provide 4 Enchanted Planks");
-        add("lore.gravitation.phoenix_dart", "These Phoenix Darts are found in Gold Dungeon. Set the target on fire on hit.");
-        add("lore.gravitation.phoenix_dart_shooter", "The Phoenix Dart Shooter is found in Gold Dungeon. It can shoot Phoenix Darts");
+        add("lore.block.gravitation.enchanted_sapling", "These blue saplings will grow into Enchanted Trees. They can be grown faster with Bone Meal.");
+        add("lore.block.gravitation.enchanted_log", "These spawn on Enchanted Tree. They can double dropped with Skyroot Axes. When put in the crafting table they will provide 4 Enchanted Planks");
+        add("lore.item.gravitation.phoenix_dart", "These Phoenix Darts are found in Gold Dungeon. Set the target on fire on hit.");
+        add("lore.item.gravitation.phoenix_dart_shooter", "The Phoenix Dart Shooter is found in Gold Dungeon. It can shoot Phoenix Darts");
     }
 }
