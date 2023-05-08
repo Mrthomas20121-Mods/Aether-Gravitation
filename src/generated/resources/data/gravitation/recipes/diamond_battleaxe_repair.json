@@ -1,0 +1,7 @@
+{
+  "type": "aether:repairing",
+  "ingredient": {
+    "item": "gravitation:diamond_battleaxe"
+  },
+  "repairTime": 1500
+}

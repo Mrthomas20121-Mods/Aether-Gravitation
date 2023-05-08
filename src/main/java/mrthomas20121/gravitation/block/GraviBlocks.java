@@ -9,6 +9,7 @@ import mrthomas20121.gravitation.block.wood.EnchantedSignBlock;
 import mrthomas20121.gravitation.block.wood.EnchantedWallSignBlock;
 import mrthomas20121.gravitation.block.wood.GraviWoodType;
 import mrthomas20121.gravitation.item.GraviItems;
+import mrthomas20121.gravitation.util.ToolAction;
 import mrthomas20121.gravitation.world.EnchantedTree;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
@@ -65,8 +66,11 @@ public class GraviBlocks {
         fireBlockAccessor.callSetFlammable(GraviBlocks.STRIPPED_ENCHANTED_WOOD.get(), 5, 5);
         fireBlockAccessor.callSetFlammable(GraviBlocks.ENCHANTED_FENCE.get(), 5, 20);
         fireBlockAccessor.callSetFlammable(GraviBlocks.ENCHANTED_FENCE_GATE.get(), 5, 20);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.ENCHANTED_TRAPDOOR.get(), 5, 20);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.ENCHANTED_DOOR.get(), 30, 20);
+    }
+
+    public static void registerStripping() {
+        ToolAction.registerStripping(GraviBlocks.ENCHANTED_LOG.get(), GraviBlocks.STRIPPED_ENCHANTED_LOG.get());
+        ToolAction.registerStripping(GraviBlocks.ENCHANTED_WOOD.get(), GraviBlocks.STRIPPED_ENCHANTED_WOOD.get());
     }
 
 

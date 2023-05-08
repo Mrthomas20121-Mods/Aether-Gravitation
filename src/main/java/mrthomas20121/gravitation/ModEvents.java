@@ -44,6 +44,7 @@ public class ModEvents {
                 .displayItems((parameters, output) -> {
                     output.accept(GraviBlocks.ENCHANTED_SIGN.get());
                     output.accept(GraviBlocks.ENCHANTED_WALL_SIGN.get());
+                    output.accept(GraviBlocks.ENCHANTED_BOOKSHELF.get());
                     output.accept(GraviBlocks.ENCHANTED_LOG.get());
                     output.accept(GraviBlocks.STRIPPED_ENCHANTED_LOG.get());
                     output.accept(GraviBlocks.ENCHANTED_WOOD.get());

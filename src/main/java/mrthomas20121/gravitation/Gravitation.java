@@ -48,6 +48,7 @@ public class Gravitation {
 		event.enqueueWork(() -> {
 			GraviBlocks.registerFlammability();
 			GraviBlocks.registerPots();
+			GraviBlocks.registerStripping();
 
 			this.registerDispenserBehaviors();
 		});

@@ -9,7 +9,6 @@ import mrthomas20121.gravitation.item.GraviItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -53,6 +52,10 @@ public class GraviRecipes extends AetherRecipeProvider {
 
         repairingRecipe(RecipeCategory.TOOLS, GraviItems.GRAVITITE_BATTLEAXE.get(), 1500).save(consumer, new ResourceLocation("gravitation:gravitite_battleaxe_repair"));
         repairingRecipe(RecipeCategory.TOOLS, GraviItems.ZANITE_BATTLEAXE.get(), 750).save(consumer, new ResourceLocation("gravitation:zanite_battleaxe_repair"));
+        repairingRecipe(RecipeCategory.TOOLS, GraviItems.NETHERITE_BATTLEAXE.get(), 1500).save(consumer, new ResourceLocation("gravitation:netherite_battleaxe_repair"));
+        repairingRecipe(RecipeCategory.TOOLS, GraviItems.DIAMOND_BATTLEAXE.get(), 1500).save(consumer, new ResourceLocation("gravitation:diamond_battleaxe_repair"));
+        repairingRecipe(RecipeCategory.TOOLS, GraviItems.IRON_BATTLEAXE.get(), 750).save(consumer, new ResourceLocation("gravitation:iron_battleaxe_repair"));
+        repairingRecipe(RecipeCategory.TOOLS, GraviItems.GOLD_BATTLEAXE.get(), 500).save(consumer, new ResourceLocation("gravitation:gold_battleaxe_repair"));
 
         battleaxeRecipe(consumer, AetherBlocks.ENCHANTED_GRAVITITE.get(), AetherItems.SKYROOT_STICK.get(), GraviItems.GRAVITITE_BATTLEAXE.get());
         battleaxeRecipe(consumer, AetherItems.ZANITE_GEMSTONE.get(), AetherItems.SKYROOT_STICK.get(), GraviItems.ZANITE_BATTLEAXE.get());
