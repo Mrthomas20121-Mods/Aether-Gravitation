@@ -31,5 +31,5 @@ Add more content to the Aether.
     modId = "aether"
     mandatory = true
     versionRange = "[1.0.0,)"
-    ordering = "NONE"
+    ordering = "AFTER"
     side = "BOTH"

@@ -1,16 +1,15 @@
 package mrthomas20121.gravitation.data;
 
-import com.aetherteam.aether.block.AetherBlocks;
 import mrthomas20121.gravitation.GraviTags;
 import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.block.GraviBlocks;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -23,14 +22,14 @@ public class GraviBlockTags extends BlockTagsProvider {
 
     @Override
     @SuppressWarnings("unchecked")
-    protected void addTags(HolderLookup.Provider provider) {
+    protected void addTags(@NotNull HolderLookup.Provider provider) {
         this.tag(BlockTags.LOGS_THAT_BURN).add(GraviBlocks.ENCHANTED_LOG.get(), GraviBlocks.STRIPPED_ENCHANTED_LOG.get());
 
         this.tag(BlockTags.LEAVES).add(GraviBlocks.ENCHANTED_LEAVES.get());
 
-        this.tag(GraviTags.BlockTags.ENCHANTED_LOGS).add(GraviBlocks.ENCHANTED_LOG.get(), GraviBlocks.ENCHANTED_WOOD.get(), GraviBlocks.STRIPPED_ENCHANTED_LOG.get(), GraviBlocks.STRIPPED_ENCHANTED_WOOD.get());
+        this.tag(GraviTags.Blocks.ENCHANTED_LOGS).add(GraviBlocks.ENCHANTED_LOG.get(), GraviBlocks.ENCHANTED_WOOD.get(), GraviBlocks.STRIPPED_ENCHANTED_LOG.get(), GraviBlocks.STRIPPED_ENCHANTED_WOOD.get());
 
-        this.tag(BlockTags.LOGS).addTags(GraviTags.BlockTags.ENCHANTED_LOGS);
+        this.tag(BlockTags.LOGS).addTags(GraviTags.Blocks.ENCHANTED_LOGS);
 
         this.tag(BlockTags.FENCES).add(GraviBlocks.ENCHANTED_FENCE.get());
         this.tag(BlockTags.FENCE_GATES).add(GraviBlocks.ENCHANTED_FENCE_GATE.get());
@@ -52,5 +51,17 @@ public class GraviBlockTags extends BlockTagsProvider {
                 GraviBlocks.ENCHANTED_FENCE.get(),
                 GraviBlocks.ENCHANTED_BOOKSHELF.get()
         );
+
+        this.tag(Tags.Blocks.ORES).add(GraviBlocks.BRONZITE_ICESTONE_ORE.get());
+
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(GraviBlocks.BRONZITE_BLOCK.get(), GraviBlocks.BRONZITE_ICESTONE_ORE.get());
+
+        this.tag(BlockTags.NEEDS_IRON_TOOL).add(GraviBlocks.BRONZITE_BLOCK.get(), GraviBlocks.BRONZITE_ICESTONE_ORE.get());
+
+        this.tag(Tags.Blocks.STORAGE_BLOCKS).add(GraviBlocks.BRONZITE_BLOCK.get());
+
+        this.tag(GraviTags.Blocks.BRONZITE_STORAGE).add(GraviBlocks.BRONZITE_BLOCK.get());
+
+        this.tag(GraviTags.Blocks.BRONZITE_ORE).add(GraviBlocks.BRONZITE_ORE.get(), GraviBlocks.BRONZITE_ICESTONE_ORE.get());
     }
 }

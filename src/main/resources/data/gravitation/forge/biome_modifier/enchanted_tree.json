@@ -2,5 +2,5 @@
   "type": "forge:add_features",
   "biomes": "#gravitation:enchanted_spawn_biomes",
   "features": "gravitation:enchanted_tree",
-  "step": "vegetal_decoration"
+  "step": "top_layer_modification"
 }

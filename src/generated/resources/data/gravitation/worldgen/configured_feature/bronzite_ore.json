@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:ore",
+  "config": {
+    "discard_chance_on_air_exposure": 0.0,
+    "size": 8,
+    "targets": [
+      {
+        "state": {
+          "Name": "gravitation:bronzite_icestone_ore"
+        },
+        "target": {
+          "block_state": {
+            "Name": "aether:icestone"
+          },
+          "predicate_type": "minecraft:blockstate_match"
+        }
+      },
+      {
+        "state": {
+          "Name": "gravitation:bronzite_ore"
+        },
+        "target": {
+          "predicate_type": "minecraft:tag_match",
+          "tag": "aether:holystone"
+        }
+      }
+    ]
+  }
+}

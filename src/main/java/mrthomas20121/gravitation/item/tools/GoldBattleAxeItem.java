@@ -6,6 +6,6 @@ import net.minecraft.world.item.Tiers;
 public class GoldBattleAxeItem extends BattleAxeItem {
 
     public GoldBattleAxeItem() {
-        super(Tiers.IRON, 6.0F, -3.1F, new Properties());
+        super(Tiers.IRON, 6.5F, -2.9F, new Properties());
     }
 }

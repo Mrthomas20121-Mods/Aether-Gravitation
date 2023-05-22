@@ -1,5 +1,6 @@
 package mrthomas20121.gravitation.block;
 
+import com.aetherteam.aether.block.AetherBlocks;
 import com.aetherteam.aether.block.construction.BookshelfBlock;
 import com.aetherteam.aether.block.natural.AetherDoubleDropsLeaves;
 import com.aetherteam.aether.block.natural.AetherLogBlock;
@@ -50,6 +51,12 @@ public class GraviBlocks {
     public static final RegistryObject<StandingSignBlock> ENCHANTED_SIGN = registerEnchantedSign("enchanted_sign", () -> new EnchantedSignBlock(Block.Properties.of(Material.WOOD, MaterialColor.SAND).noCollission().strength(1.0F).sound(SoundType.WOOD), GraviWoodType.ENCHANTED));
     public static final RegistryObject<WallSignBlock> ENCHANTED_WALL_SIGN = BLOCKS.register("enchanted_wall_sign", () -> new EnchantedWallSignBlock(Block.Properties.of(Material.WOOD, MaterialColor.SAND).noCollission().strength(1.0F).sound(SoundType.WOOD).lootFrom(ENCHANTED_SIGN), GraviWoodType.ENCHANTED));
     public static final RegistryObject<SaplingBlock> ENCHANTED_SAPLING = register("enchanted_sapling", () -> new SaplingBlock(new EnchantedTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<Block> BRONZITE_BLOCK = register("bronzite_block", () -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK)), (b) -> () -> new BlockItem(b.get(), new Item.Properties().rarity(GraviItems.SALMON_ROSE)));
+
+    public static final RegistryObject<Block> BRONZITE_ORE = register("bronzite_ore", () -> new Block(Block.Properties.copy(AetherBlocks.ZANITE_ORE.get())), (b) -> () -> new BlockItem(b.get(), new Item.Properties().rarity(GraviItems.SALMON_ROSE)));
+
+    public static final RegistryObject<Block> BRONZITE_ICESTONE_ORE = register("bronzite_icestone_ore", () -> new Block(Block.Properties.copy(AetherBlocks.ZANITE_ORE.get())), (b) -> () -> new BlockItem(b.get(), new Item.Properties().rarity(GraviItems.SALMON_ROSE)));
 
     public static void registerPots() {
         FlowerPotBlock pot = (FlowerPotBlock) Blocks.FLOWER_POT;

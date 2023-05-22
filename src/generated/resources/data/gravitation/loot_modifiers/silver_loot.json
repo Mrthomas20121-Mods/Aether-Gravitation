@@ -44,6 +44,14 @@
     },
     {
       "Count": 1,
+      "id": "gravitation:neptune_ring"
+    },
+    {
+      "Count": 1,
+      "id": "gravitation:neptune_pendant"
+    },
+    {
+      "Count": 1,
       "id": "gravitation:valkyrie_battleaxe",
       "tag": {
         "Damage": 0

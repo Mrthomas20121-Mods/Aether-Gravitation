@@ -16,7 +16,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class GravititeBattleAxeItem extends BattleAxeItem implements GravititeTool {
     public GravititeBattleAxeItem() {
-        super(AetherItemTiers.GRAVITITE, 5.0F, -3.0F, new Item.Properties());
+        super(AetherItemTiers.GRAVITITE, 8.5F, -3.0F, new Item.Properties());
     }
 
     public InteractionResult useOn(UseOnContext context) {

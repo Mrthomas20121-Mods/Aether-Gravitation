@@ -4,6 +4,7 @@ import com.aetherteam.aether.block.AetherBlocks;
 import com.aetherteam.aether.data.providers.AetherBlockLootSubProvider;
 import com.aetherteam.aether.mixin.mixins.common.accessor.BlockLootAccessor;
 import mrthomas20121.gravitation.block.GraviBlocks;
+import mrthomas20121.gravitation.item.GraviItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.loot.LootTableProvider;
@@ -49,6 +50,9 @@ public class GraviLoot extends AetherBlockLootSubProvider {
         this.dropSelf(GraviBlocks.ENCHANTED_STAIRS.get());
         this.dropSelf(GraviBlocks.ENCHANTED_BUTTON.get());
         this.dropSelf(GraviBlocks.ENCHANTED_PREASURE_PLATE.get());
+        this.dropWithFortune(GraviBlocks.BRONZITE_ICESTONE_ORE.get(), GraviItems.BRONZITE_ROCK.get());
+        this.dropWithFortune(GraviBlocks.BRONZITE_ORE.get(), GraviItems.BRONZITE_ROCK.get());
+        this.dropSelf(GraviBlocks.BRONZITE_BLOCK.get());
         this.add(GraviBlocks.ENCHANTED_BOOKSHELF.get(),
                 (bookshelf) -> createSingleItemTableWithSilkTouch(bookshelf, Items.BOOK, ConstantValue.exactly(3)));
     }

@@ -9,6 +9,6 @@ import net.minecraft.world.item.Item;
 public class ZaniteBattleAxeItem extends BattleAxeItem implements ZaniteTool {
 
     public ZaniteBattleAxeItem() {
-        super(AetherItemTiers.ZANITE, 6.0F, -3.1F, new Item.Properties());
+        super(AetherItemTiers.ZANITE, 8.0F, -3.1F, new Item.Properties());
     }
 }

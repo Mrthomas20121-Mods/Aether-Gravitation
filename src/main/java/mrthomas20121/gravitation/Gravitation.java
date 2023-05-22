@@ -5,10 +5,11 @@ import mrthomas20121.gravitation.block.GraviBlocks;
 import mrthomas20121.gravitation.block.wood.GraviWoodType;
 import mrthomas20121.gravitation.block_entity.GraviBlockEntityTypes;
 import mrthomas20121.gravitation.data.*;
+import mrthomas20121.gravitation.enchanting.GravitationEnchantments;
 import mrthomas20121.gravitation.entity.GraviEntityTypes;
 import mrthomas20121.gravitation.item.GraviItems;
-import mrthomas20121.gravitation.loot.GlobalLootModifiers;
-import mrthomas20121.gravitation.loot.LootDataProvider;
+import mrthomas20121.gravitation.data.loot.GlobalLootModifiers;
+import mrthomas20121.gravitation.data.loot.LootDataProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.DispenserBlock;
@@ -40,6 +41,7 @@ public class Gravitation {
 		GraviItems.ITEMS.register(bus);
 		GraviEntityTypes.ENTITY_TYPES.register(bus);
 		GlobalLootModifiers.LOOT_MODIFIERS.register(bus);
+		GravitationEnchantments.ENCHANTING.register(bus);
 
 		GraviWoodType.registerWoodTypes();
 	}

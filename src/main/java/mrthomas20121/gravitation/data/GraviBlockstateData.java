@@ -15,6 +15,9 @@ public class GraviBlockstateData extends AetherBlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+        this.block(GraviBlocks.BRONZITE_ORE.get(), "natural/");
+        this.block(GraviBlocks.BRONZITE_ICESTONE_ORE.get(), "natural/");
+        this.block(GraviBlocks.BRONZITE_BLOCK.get(), "construction/");
         this.block(GraviBlocks.ENCHANTED_PLANKS.get(), "natural/");
         this.block(GraviBlocks.ENCHANTED_LEAVES.get(), "natural/");
         this.log(GraviBlocks.ENCHANTED_LOG.get());

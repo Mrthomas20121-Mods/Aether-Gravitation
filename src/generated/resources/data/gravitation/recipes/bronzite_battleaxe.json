@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "battleaxe",
+  "key": {
+    "#": {
+      "item": "gravitation:bronzite_ingot"
+    },
+    "X": {
+      "item": "aether:skyroot_stick"
+    }
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    " X "
+  ],
+  "result": {
+    "item": "gravitation:bronzite_battleaxe"
+  },
+  "show_notification": true
+}

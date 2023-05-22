@@ -3,6 +3,7 @@ package mrthomas20121.gravitation.data;
 import com.aetherteam.aether.AetherTags;
 import com.aetherteam.aether.block.AetherBlocks;
 import com.aetherteam.aether.data.resources.builders.AetherPlacedFeatureBuilders;
+import com.aetherteam.aether.data.resources.registries.AetherConfiguredFeatures;
 import com.aetherteam.aether.world.placementmodifier.DungeonBlacklistFilter;
 import com.aetherteam.aether.world.placementmodifier.ImprovedLayerPlacementModifier;
 import com.google.common.collect.ImmutableList;
@@ -31,6 +32,8 @@ import java.util.List;
 public class GraviPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> ENCHANTED_TREES_PLACEMENT = createKey("enchanted_tree");
+    public static final ResourceKey<PlacedFeature> SMALL_ENCHANTED_TREES_PLACEMENT = createKey("small_enchanted_tree");
+    public static final ResourceKey<PlacedFeature> BRONZITE_ORE_PLACEMENT = createKey("bronzite_ore");
 
     private static ResourceKey<PlacedFeature> createKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(Gravitation.MOD_ID, name));
@@ -41,7 +44,13 @@ public class GraviPlacedFeatures {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(GraviConfiguredFeatures.ENCHANTED_TREE_CONFIGURATION),
+                treePlacement(RarityFilter.onAverageOnceEvery(1)));
+
+        register(context, SMALL_ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(GraviConfiguredFeatures.SMALL_ENCHANTED_TREE_CONFIGURATION),
                 treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
+
+        register(context, BRONZITE_ORE_PLACEMENT, configuredFeatures.getOrThrow(GraviConfiguredFeatures.BRONZITE_ORE),
+                AetherPlacedFeatureBuilders.commonOrePlacement(12, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(75))));
     }
 
     public static List<PlacementModifier> treePlacement(PlacementModifier count) {

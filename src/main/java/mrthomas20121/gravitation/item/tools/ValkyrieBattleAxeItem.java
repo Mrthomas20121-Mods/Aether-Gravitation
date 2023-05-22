@@ -21,7 +21,7 @@ import java.util.List;
 public class ValkyrieBattleAxeItem extends BattleAxeItem implements ValkyrieTool {
 
     public ValkyrieBattleAxeItem() {
-        super(AetherItemTiers.VALKYRIE, 5.0F, -3.3F, (new Item.Properties()).rarity(AetherItems.AETHER_LOOT));
+        super(AetherItemTiers.VALKYRIE, 9.0F, -3.2F, (new Item.Properties()).rarity(AetherItems.AETHER_LOOT));
     }
 
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlot slot, ItemStack stack) {

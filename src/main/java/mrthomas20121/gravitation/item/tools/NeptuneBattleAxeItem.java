@@ -2,7 +2,7 @@ package mrthomas20121.gravitation.item.tools;
 
 import com.aetherteam.aether.item.AetherItems;
 import mrthomas20121.gravitation.item.BattleAxeItem;
-import mrthomas20121.gravitation.util.GraviTiers;
+import mrthomas20121.gravitation.util.GravitationItemTiers;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -15,7 +15,7 @@ import java.util.List;
 public class NeptuneBattleAxeItem extends BattleAxeItem implements NeptuneTool {
 
     public NeptuneBattleAxeItem() {
-        super(GraviTiers.NEPTUNE, 5.0f, -3.0f, new Item.Properties().rarity(AetherItems.AETHER_LOOT));
+        super(GravitationItemTiers.NEPTUNE, 9f, -3f, new Item.Properties().rarity(AetherItems.AETHER_LOOT));
     }
 
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
