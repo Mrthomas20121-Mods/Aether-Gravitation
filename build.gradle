@@ -12,10 +12,12 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath group: 'io.github.0ffz', name: 'gpr-for-gradle', version: '1.+', changing: true
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
+apply plugin: 'io.github.0ffz.github-packages'
 
 version = mod_version
 group = 'mrthomas20121.gravitation'
@@ -86,6 +88,7 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    maven githubPackage.invoke("The-Aether-Team/The-Aether")
     maven { url = 'https://maven.minecraftforge.net/' }
     maven {
         name 'Thermal Maven'
@@ -124,7 +127,12 @@ dependencies {
     runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
 
     // aether
-    implementation fg.deobf("curse.maven:aether-${aether_id}:${aether_version}")
+    compileOnly "com.aetherteam.aether:aether:${mc_version}-${aether_version}"
+    runtimeOnly fg.deobf("com.aetherteam.aether:aether:${mc_version}-${aether_version}")
+
+    // curio
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.19.4-5.1.5.3")
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.19.4-5.1.5.3:api")
 }
 
 jar {
