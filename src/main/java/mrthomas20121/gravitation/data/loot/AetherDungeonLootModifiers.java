@@ -38,7 +38,7 @@ public class AetherDungeonLootModifiers extends LootModifier {
         int sizeDiff = 27-size;
 
         for(ItemStack stack: generatedLoot) {
-            // check if the chest is full, if it is replace the item by one of my item
+            // check if the chest is full, if it is, replace the item by one of my item
             if(isFull) {
                 if(context.getRandom().nextFloat() > 0.8f) {
                     WeightedRandom.getRandomItem(context.getRandom(), this.items, 100).ifPresent(e -> list.add(e.getData()));
