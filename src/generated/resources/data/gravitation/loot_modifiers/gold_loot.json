@@ -1,5 +1,6 @@
 {
   "type": "gravitation:aether_dungeon_loot",
+  "chanceToSpawn": 0.8,
   "conditions": [
     {
       "condition": "forge:loot_table_id",
@@ -28,5 +29,6 @@
       },
       "weight": 10
     }
-  ]
+  ],
+  "totalWeight": 100
 }

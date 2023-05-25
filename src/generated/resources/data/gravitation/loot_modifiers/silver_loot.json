@@ -1,5 +1,6 @@
 {
   "type": "gravitation:aether_dungeon_loot",
+  "chanceToSpawn": 0.7,
   "conditions": [
     {
       "condition": "forge:loot_table_id",
@@ -15,7 +16,7 @@
           "Damage": 0
         }
       },
-      "weight": 10
+      "weight": 30
     },
     {
       "data": {
@@ -25,7 +26,7 @@
           "Damage": 0
         }
       },
-      "weight": 10
+      "weight": 30
     },
     {
       "data": {
@@ -35,7 +36,7 @@
           "Damage": 0
         }
       },
-      "weight": 10
+      "weight": 30
     },
     {
       "data": {
@@ -45,7 +46,7 @@
           "Damage": 0
         }
       },
-      "weight": 10
+      "weight": 30
     },
     {
       "data": {
@@ -55,21 +56,21 @@
           "Damage": 0
         }
       },
-      "weight": 10
+      "weight": 30
     },
     {
       "data": {
         "Count": 1,
         "id": "gravitation:neptune_ring"
       },
-      "weight": 5
+      "weight": 10
     },
     {
       "data": {
         "Count": 1,
         "id": "gravitation:neptune_pendant"
       },
-      "weight": 5
+      "weight": 10
     },
     {
       "data": {
@@ -79,28 +80,29 @@
           "Damage": 0
         }
       },
-      "weight": 10
+      "weight": 50
     },
     {
       "data": {
         "Count": 1,
         "id": "gravitation:greater_healing_stone"
       },
-      "weight": 10
+      "weight": 40
     },
     {
       "data": {
         "Count": 2,
         "id": "gravitation:dense_stone"
       },
-      "weight": 10
+      "weight": 40
     },
     {
       "data": {
         "Count": 1,
         "id": "gravitation:dense_stone"
       },
-      "weight": 10
+      "weight": 40
     }
-  ]
+  ],
+  "totalWeight": 340
 }

@@ -27,24 +27,28 @@ public class LootDataProvider extends GlobalLootModifierProvider {
                 List.of(
                         WeightedEntry.wrap(new ItemStack(GraviItems.DIG_STONE.get(), 2), 30),
                         WeightedEntry.wrap(new ItemStack(GraviItems.DIG_STONE.get()), 70)
-                )
+                ),
+                100,
+                0.6f
         ));
 
         add("silver_loot", new AetherDungeonLootModifiers(
                 new LootItemCondition[] { LootTableIdCondition.builder(new ResourceLocation("aether:chests/dungeon/silver/silver_dungeon_reward")).build() },
                 List.of(
-                        WeightedEntry.wrap(new ItemStack(GraviItems.NEPTUNE_AXE.get()), 10),
-                        WeightedEntry.wrap(new ItemStack(GraviItems.NEPTUNE_BATTLEAXE.get()), 10),
-                        WeightedEntry.wrap(new ItemStack(GraviItems.NEPTUNE_CUTLASS.get()), 10),
-                        WeightedEntry.wrap(new ItemStack(GraviItems.NEPTUNE_PICKAXE.get()), 10),
-                        WeightedEntry.wrap(new ItemStack(GraviItems.NEPTUNE_SHOVEL.get()), 10),
-                        WeightedEntry.wrap(new ItemStack(GraviItems.NEPTUNE_RING.get()), 5),
-                        WeightedEntry.wrap(new ItemStack(GraviItems.NEPTUNE_PENDANT.get()), 5),
-                        WeightedEntry.wrap(new ItemStack(GraviItems.VALKYRIE_BATTLEAXE.get()), 10),
-                        WeightedEntry.wrap(new ItemStack(GraviItems.GREATER_HEALING_STONE.get()), 10),
-                        WeightedEntry.wrap(new ItemStack(GraviItems.DENSE_STONE.get(), 2), 10),
-                        WeightedEntry.wrap(new ItemStack(GraviItems.DENSE_STONE.get()), 10)
-                )
+                        WeightedEntry.wrap(new ItemStack(GraviItems.NEPTUNE_AXE.get()), 30),
+                        WeightedEntry.wrap(new ItemStack(GraviItems.NEPTUNE_BATTLEAXE.get()), 30),
+                        WeightedEntry.wrap(new ItemStack(GraviItems.NEPTUNE_CUTLASS.get()), 30),
+                        WeightedEntry.wrap(new ItemStack(GraviItems.NEPTUNE_PICKAXE.get()), 30),
+                        WeightedEntry.wrap(new ItemStack(GraviItems.NEPTUNE_SHOVEL.get()), 30),
+                        WeightedEntry.wrap(new ItemStack(GraviItems.NEPTUNE_RING.get()), 10),
+                        WeightedEntry.wrap(new ItemStack(GraviItems.NEPTUNE_PENDANT.get()), 10),
+                        WeightedEntry.wrap(new ItemStack(GraviItems.VALKYRIE_BATTLEAXE.get()), 50),
+                        WeightedEntry.wrap(new ItemStack(GraviItems.GREATER_HEALING_STONE.get()), 40),
+                        WeightedEntry.wrap(new ItemStack(GraviItems.DENSE_STONE.get(), 2), 40),
+                        WeightedEntry.wrap(new ItemStack(GraviItems.DENSE_STONE.get()), 40)
+                ),
+                340,
+                0.7f
         ));
 
         add("gold_loot", new AetherDungeonLootModifiers(
@@ -53,7 +57,9 @@ public class LootDataProvider extends GlobalLootModifierProvider {
                         WeightedEntry.wrap(new ItemStack(GraviItems.POWER_STONE.get()), 50),
                         WeightedEntry.wrap(new ItemStack(GraviItems.DENSE_STONE.get(), 2), 40),
                         WeightedEntry.wrap(new ItemStack(GraviItems.RAINBOW_STONE.get(), 1), 10)
-                )
+                ),
+                100,
+                0.8f
         ));
     }
 }
