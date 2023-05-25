@@ -8,54 +8,99 @@
   ],
   "items": [
     {
-      "Count": 1,
-      "id": "gravitation:neptune_axe",
-      "tag": {
-        "Damage": 0
-      }
+      "data": {
+        "Count": 1,
+        "id": "gravitation:neptune_axe",
+        "tag": {
+          "Damage": 0
+        }
+      },
+      "weight": 10
     },
     {
-      "Count": 1,
-      "id": "gravitation:neptune_battleaxe",
-      "tag": {
-        "Damage": 0
-      }
+      "data": {
+        "Count": 1,
+        "id": "gravitation:neptune_battleaxe",
+        "tag": {
+          "Damage": 0
+        }
+      },
+      "weight": 10
     },
     {
-      "Count": 1,
-      "id": "gravitation:neptune_cutlass",
-      "tag": {
-        "Damage": 0
-      }
+      "data": {
+        "Count": 1,
+        "id": "gravitation:neptune_cutlass",
+        "tag": {
+          "Damage": 0
+        }
+      },
+      "weight": 10
     },
     {
-      "Count": 1,
-      "id": "gravitation:neptune_pickaxe",
-      "tag": {
-        "Damage": 0
-      }
+      "data": {
+        "Count": 1,
+        "id": "gravitation:neptune_pickaxe",
+        "tag": {
+          "Damage": 0
+        }
+      },
+      "weight": 10
     },
     {
-      "Count": 1,
-      "id": "gravitation:neptune_shovel",
-      "tag": {
-        "Damage": 0
-      }
+      "data": {
+        "Count": 1,
+        "id": "gravitation:neptune_shovel",
+        "tag": {
+          "Damage": 0
+        }
+      },
+      "weight": 10
     },
     {
-      "Count": 1,
-      "id": "gravitation:neptune_ring"
+      "data": {
+        "Count": 1,
+        "id": "gravitation:neptune_ring"
+      },
+      "weight": 5
     },
     {
-      "Count": 1,
-      "id": "gravitation:neptune_pendant"
+      "data": {
+        "Count": 1,
+        "id": "gravitation:neptune_pendant"
+      },
+      "weight": 5
     },
     {
-      "Count": 1,
-      "id": "gravitation:valkyrie_battleaxe",
-      "tag": {
-        "Damage": 0
-      }
+      "data": {
+        "Count": 1,
+        "id": "gravitation:valkyrie_battleaxe",
+        "tag": {
+          "Damage": 0
+        }
+      },
+      "weight": 10
+    },
+    {
+      "data": {
+        "Count": 1,
+        "id": "gravitation:greater_healing_stone"
+      },
+      "weight": 10
+    },
+    {
+      "data": {
+        "Count": 2,
+        "id": "gravitation:dense_stone"
+      },
+      "weight": 10
+    },
+    {
+      "data": {
+        "Count": 1,
+        "id": "gravitation:dense_stone"
+      },
+      "weight": 10
     }
   ]
 }

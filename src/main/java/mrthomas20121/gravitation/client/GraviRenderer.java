@@ -41,7 +41,6 @@ public class GraviRenderer {
         event.registerBlockEntityRenderer(GraviBlockEntityTypes.ENCHANTED_SIGN.get(), SignRenderer::new);
 
         // entities
-        event.registerEntityRenderer(GraviEntityTypes.PHOENIX_DART.get(), PhoenixDartRenderer::new);
         event.registerEntityRenderer(GraviEntityTypes.ENCHANTED_BOAT.get(), (context) -> new EnchantedBoatRenderer(context, false) );
         event.registerEntityRenderer(GraviEntityTypes.ENCHANTED_CHEST_BOAT.get(), (context) -> new EnchantedBoatRenderer(context, true) );
     }

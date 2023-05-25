@@ -23,6 +23,11 @@ public class GraviLanguageData extends LanguageProvider {
         add("gravitation.curio.neptune_ring", "+1.5 Swim Speed");
         add("itemGroup.gravitation.equipments", "Gravitation Equipments & Utilities");
         add("itemGroup.gravitation.building_blocks", "Gravitation Building Blocks");
+        addItem(GraviItems.GREATER_HEALING_STONE, "Greater Healing Stone");
+        addItem(GraviItems.POWER_STONE, "Power Stone");
+        addItem(GraviItems.DENSE_STONE, "Dense Stone");
+        addItem(GraviItems.DIG_STONE, "Dig Stone");
+        addItem(GraviItems.RAINBOW_STONE, "Rainbow Stone");
         addItem(GraviItems.NEPTUNE_RING, "Neptune Ring");
         addItem(GraviItems.NEPTUNE_PENDANT, "Neptune Pendant");
         addItem(GraviItems.NEPTUNE_AXE, "Neptune Axe");
@@ -56,8 +61,6 @@ public class GraviLanguageData extends LanguageProvider {
         addItem(GraviItems.GOLD_BATTLEAXE, "Gold Battleaxe");
         addItem(GraviItems.ENCHANTED_CHEST_BOAT, "Enchanted Chest Boat");
         addItem(GraviItems.ENCHANTED_BOAT, "Enchanted Boat");
-        addItem(GraviItems.PHOENIX_DART, "Phoenix Dart");
-        addItem(GraviItems.PHOENIX_DART_SHOOTER, "Phoenix Dart Shooter");
         addBlock(GraviBlocks.BRONZITE_ORE, "Bronzite Ore");
         addBlock(GraviBlocks.BRONZITE_ICESTONE_ORE, "Bronzite Icestone Ore");
         addBlock(GraviBlocks.BRONZITE_BLOCK, "Bronzite Block");
@@ -80,14 +83,34 @@ public class GraviLanguageData extends LanguageProvider {
         addBlock(GraviBlocks.ENCHANTED_FENCE_GATE, "Enchanted Fence Gate");
         addEntityType(GraviEntityTypes.ENCHANTED_BOAT, "Enchanted Boat");
         addEntityType(GraviEntityTypes.ENCHANTED_CHEST_BOAT, "Enchanted Chest Boat");
-        addEntityType(GraviEntityTypes.PHOENIX_DART, "Phoenix Dart");
         addEnchantment(GravitationEnchantments.NEPTUNE_WRATH, "Neptune's Wrath");
-        add("enchantment.gravitation.neptune_wrath.desc", "Deal more damage to water mobs");
+        add("enchantment.gravitation.neptune_wrath.desc", "Deal more damage to water mobs.");
 
         // lore
         add("lore.item.gravitation.bronzite_rock", "Rock with durable properties.");
-        add("lore.item.gravitation.bronzite_ring", "This Ring was crafted in the fire of the Sun Spirit.");
-        add("lore.item.gravitation.bronzite_pendent", "This Pendent was crafted in the fire of the Sun Spirit.");
+        add("lore.item.gravitation.bronzite_sword", "This Sword was crafted in the fire of the Sun Spirit. It last longer most of the time.");
+        add("lore.item.gravitation.bronzite_shovel", "This Shovel was crafted in the fire of the Sun Spirit. It last longer most of the time.");
+        add("lore.item.gravitation.bronzite_axe", "This Axe was crafted in the fire of the Sun Spirit. It last longer most of the time.");
+        add("lore.item.gravitation.bronzite_battleaxe", "This Battleaxe was crafted in the fire of the Sun Spirit. It last longer most of the time.");
+        add("lore.item.gravitation.bronzite_pickaxe", "This Pickaxe was crafted in the fire of the Sun Spirit. It last longer most of the time.");
+        add("lore.item.gravitation.bronzite_hoe", "This Hoe was crafted in the fire of the Sun Spirit. It last longer most of the time.");
+        add("lore.item.gravitation.bronzite_helmet", "This Helmet was crafted in the fire of the Sun Spirit. It last longer most of the time.");
+        add("lore.item.gravitation.bronzite_chestplate", "This Chestplate was crafted in the fire of the Sun Spirit. It last longer most of the time.");
+        add("lore.item.gravitation.bronzite_leggings", "Those Leggings were crafted in the fire of the Sun Spirit. It last longer most of the time.");
+        add("lore.item.gravitation.bronzite_boots", "Those Boots were crafted in the fire of the Sun Spirit. It last longer most of the time.");
+        add("lore.item.gravitation.bronzite_gloves", "Those Gloves were crafted in the fire of the Sun Spirit. It last longer most of the time.");
+        add("lore.item.gravitation.bronzite_ring", "This Ring was crafted in the fire of the Sun Spirit. Grant +2 Armor when worn.");
+        add("lore.item.gravitation.bronzite_pendent", "This Pendent was crafted in the fire of the Sun Spirit. Grant +2 Armor Toughness when worn.");
+
+        add("lore.item.gravitation.neptune_cutlass", "Found in Silver Dungeon, The Neptune Cutlass is a single target weapon with high attack speed.");
+        add("lore.item.gravitation.neptune_axe", "Found in Silver Dungeon.");
+        add("lore.item.gravitation.neptune_battleaxe", "Found in Silver Dungeon, The Neptune Battleaxe is a slower axe with sweeping.");
+        add("lore.item.gravitation.neptune_pickaxe", "Found in Silver Dungeon.");
+        add("lore.item.gravitation.neptune_shovel", "Found in Silver Dungeon.");
+        add("lore.item.gravitation.neptune_hoe", "Found in Silver Dungeon.");
+        add("lore.item.gravitation.neptune_pendant", "Found in Silver Dungeon, The Neptune Pendant grant the user +1.5 Swim Speed.");
+        add("lore.item.gravitation.neptune_ring", "Found in Silver Dungeon, The Neptune Ring grant the user +1.5 Swim Speed.");
+        add("lore.item.gravitation.valkyrie_battleaxe", "Found in Silver Dungeon, The Valkyrie Battleaxe is a slower Valkyrie axe with sweeping.");
 
         add("lore.block.gravitation.enchanted_sapling", "These blue saplings will grow into Enchanted Trees. They can be grown faster with Bone Meal.");
         add("lore.block.gravitation.enchanted_log", "These spawn on Enchanted Tree. They can double dropped with Skyroot Axes. When put in the crafting table they will provide 4 Enchanted Planks");

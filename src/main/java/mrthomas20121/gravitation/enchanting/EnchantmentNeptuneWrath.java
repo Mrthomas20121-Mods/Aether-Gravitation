@@ -1,8 +1,6 @@
 package mrthomas20121.gravitation.enchanting;
 
-import mrthomas20121.gravitation.item.CutlassItem;
-import mrthomas20121.gravitation.item.GraviItems;
-import mrthomas20121.gravitation.item.tools.NeptuneTool;
+import mrthomas20121.gravitation.item.tools.neptune.NeptuneTool;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;

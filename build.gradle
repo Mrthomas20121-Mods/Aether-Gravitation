@@ -113,6 +113,12 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+
+    maven {
+        name 'ModdingLegacyMaven'
+        url 'https://maven.moddinglegacy.com/maven'
+    }
+
 }
 
 dependencies {
@@ -133,6 +139,9 @@ dependencies {
     // curio
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.19.4-5.1.5.3")
     compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.19.4-5.1.5.3:api")
+
+    implementation fg.deobf("curse.maven:aether-lost-content-318602:4525639")
+    implementation fg.deobf("com.legacy:structure-gel:${structure_gel_version}")
 }
 
 jar {

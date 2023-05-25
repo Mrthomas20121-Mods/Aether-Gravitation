@@ -36,7 +36,8 @@ public class GraviItemTags extends ItemTagsProvider {
                 GraviItems.DIAMOND_BATTLEAXE.get(),
                 GraviItems.IRON_BATTLEAXE.get(),
                 GraviItems.GOLD_BATTLEAXE.get(),
-                GraviItems.BRONZITE_BATTLEAXE.get()
+                GraviItems.BRONZITE_BATTLEAXE.get()//,
+                //GraviItems.SKYJADE_BATTLEAXE.get()
         );
 
         this.tag(ItemTags.PICKAXES).add(GraviItems.BRONZITE_PICKAXE.get(), GraviItems.NEPTUNE_PICKAXE.get());

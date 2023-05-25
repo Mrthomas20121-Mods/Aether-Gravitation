@@ -51,8 +51,6 @@ public class CreativeTabRegistry {
                     output.accept(GraviItems.GOLD_BATTLEAXE.get());
                     output.accept(GraviItems.ENCHANTED_BOAT.get());
                     output.accept(GraviItems.ENCHANTED_CHEST_BOAT.get());
-                    output.accept(GraviItems.PHOENIX_DART.get());
-                    output.accept(GraviItems.PHOENIX_DART_SHOOTER.get());
                     output.accept(GraviBlocks.ENCHANTED_SAPLING.get());
                 }));
 

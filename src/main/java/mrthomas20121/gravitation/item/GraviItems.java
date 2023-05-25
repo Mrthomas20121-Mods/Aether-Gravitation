@@ -1,11 +1,10 @@
 package mrthomas20121.gravitation.item;
 
-import com.aetherteam.aether.item.AetherItems;
-import com.aetherteam.aether.item.combat.DartItem;
-import com.aetherteam.aether.item.combat.DartShooterItem;
 import mrthomas20121.gravitation.Gravitation;
-import mrthomas20121.gravitation.entity.GraviEntityTypes;
+import mrthomas20121.gravitation.item.stone.*;
 import mrthomas20121.gravitation.item.tools.*;
+import mrthomas20121.gravitation.item.tools.bronzite.*;
+import mrthomas20121.gravitation.item.tools.neptune.*;
 import mrthomas20121.gravitation.util.GravitationArmorMaterials;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
@@ -20,6 +19,12 @@ public class GraviItems {
     public static DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Gravitation.MOD_ID);
 
     public static Rarity SALMON_ROSE = Rarity.create("salmon_rose", style -> style.withColor(0xff9fb2));
+
+    public static RegistryObject<Item> GREATER_HEALING_STONE = ITEMS.register("greater_healing_stone", GreaterHealingStoneItem::new);
+    public static RegistryObject<Item> POWER_STONE = ITEMS.register("power_stone", PowerStoneItem::new);
+    public static RegistryObject<Item> DENSE_STONE = ITEMS.register("dense_stone", DenseStoneItem::new);
+    public static RegistryObject<Item> DIG_STONE = ITEMS.register("dig_stone", DigStoneItem::new);
+    public static RegistryObject<Item> RAINBOW_STONE = ITEMS.register("rainbow_stone", RainbowStoneItem::new);
 
     public static RegistryObject<Item> BRONZITE_INGOT = ITEMS.register("bronzite_ingot", () -> new Item(new Item.Properties().rarity(SALMON_ROSE)));
     public static RegistryObject<Item> BRONZITE_NUGGET = ITEMS.register("bronzite_nugget", () -> new Item(new Item.Properties().rarity(SALMON_ROSE)));
@@ -54,10 +59,7 @@ public class GraviItems {
     public static RegistryObject<Item> DIAMOND_BATTLEAXE = ITEMS.register("diamond_battleaxe", DiamondBattleAxeItem::new);
     public static RegistryObject<Item> IRON_BATTLEAXE = ITEMS.register("iron_battleaxe", IronBattleAxeItem::new);
     public static RegistryObject<Item> GOLD_BATTLEAXE = ITEMS.register("gold_battleaxe", GoldBattleAxeItem::new);
-
-    public static RegistryObject<Item> PHOENIX_DART = ITEMS.register("phoenix_dart", () -> new DartItem(GraviEntityTypes.PHOENIX_DART, new Item.Properties().rarity(AetherItems.AETHER_LOOT)));
-
-    public static final RegistryObject<Item> PHOENIX_DART_SHOOTER = ITEMS.register("phoenix_dart_shooter", () -> new DartShooterItem(PHOENIX_DART, new Item.Properties().rarity(AetherItems.AETHER_LOOT).stacksTo(1)));
+    //public static RegistryObject<Item> SKYJADE_BATTLEAXE = ITEMS.register("skyjade_battleaxe", SkyjadeBattleaxeItem::new);
 
     public static final RegistryObject<Item> ENCHANTED_BOAT = ITEMS.register("enchanted_boat", () -> new EnchantedBoatItem(false, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> ENCHANTED_CHEST_BOAT = ITEMS.register("enchanted_chest_boat", () -> new EnchantedBoatItem(true, new Item.Properties().stacksTo(1)));

@@ -2,8 +2,6 @@ package mrthomas20121.gravitation.item.tools;
 
 import com.aetherteam.aether.item.combat.AetherItemTiers;
 import com.aetherteam.aether.item.tools.abilities.GravititeTool;
-import com.aetherteam.aether.item.tools.gravitite.GravititeAxeItem;
-import mrthomas20121.gravitation.item.BattleAxeItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;

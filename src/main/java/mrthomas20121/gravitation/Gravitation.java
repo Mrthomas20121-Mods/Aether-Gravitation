@@ -51,13 +51,7 @@ public class Gravitation {
 			GraviBlocks.registerFlammability();
 			GraviBlocks.registerPots();
 			GraviBlocks.registerStripping();
-
-			this.registerDispenserBehaviors();
 		});
-	}
-
-	private void registerDispenserBehaviors() {
-		DispenserBlock.registerBehavior(GraviItems.PHOENIX_DART.get(), new DispenseDartBehavior(GraviItems.PHOENIX_DART));
 	}
 
 	public void datagen(GatherDataEvent event) {

@@ -19,19 +19,14 @@ import java.util.function.Supplier;
 public class AetherDungeonLootModifiers extends LootModifier {
 
     public static final Supplier<Codec<AetherDungeonLootModifiers>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.create(inst -> codecStart(inst)
-            .and(ItemStack.CODEC.listOf().fieldOf("items").forGetter(m -> m.items))
+            .and(WeightedEntry.Wrapper.codec(ItemStack.CODEC).listOf().fieldOf("items").forGetter(m -> m.items))
             .apply(inst, AetherDungeonLootModifiers::new)));
 
-    public final List<ItemStack> items;
-    public final List<WeightedEntry.Wrapper<ItemStack>> itemStackList = new ObjectArrayList<>();
+    public final List<WeightedEntry.Wrapper<ItemStack>> items;
 
-    public AetherDungeonLootModifiers(final LootItemCondition[] conditionsIn, List<ItemStack> items) {
+    public AetherDungeonLootModifiers(final LootItemCondition[] conditionsIn, List<WeightedEntry.Wrapper<ItemStack>> items) {
         super(conditionsIn);
         this.items = items;
-
-        for(ItemStack stack: items) {
-            itemStackList.add(WeightedEntry.wrap(stack, 1));
-        }
     }
 
     @Override
@@ -40,16 +35,27 @@ public class AetherDungeonLootModifiers extends LootModifier {
         ObjectArrayList<ItemStack> list = new ObjectArrayList<>();
         int size = generatedLoot.size();
         boolean isFull = size == 27;
+        int sizeDiff = 27-size;
 
-        if(context.getRandom().nextFloat() >= 0.5f) {
-            WeightedRandom.getRandomItem(context.getRandom(), this.itemStackList, items.size()).ifPresent(e -> list.add(e.getData()));
-        }
         for(ItemStack stack: generatedLoot) {
-            if(isFull && context.getRandom().nextFloat() > 0.2f) {
-                WeightedRandom.getRandomItem(context.getRandom(), this.itemStackList, items.size()).ifPresent(e -> list.add(e.getData()));
+            // check if the chest is full, if it is replace the item by one of my item
+            if(isFull) {
+                if(context.getRandom().nextFloat() > 0.8f) {
+                    WeightedRandom.getRandomItem(context.getRandom(), this.items, 100).ifPresent(e -> list.add(e.getData()));
+                }
             }
             else {
+                // add the existing loot to our new list
                 list.add(stack);
+            }
+        }
+
+        if(!isFull) {
+            for(int i = 0; i<= sizeDiff; i++) {
+                // 20% chance to add one of our item
+                if(context.getRandom().nextFloat() > 0.8f) {
+                    WeightedRandom.getRandomItem(context.getRandom(), this.items, 100).ifPresent(e -> list.add(e.getData()));
+                }
             }
         }
 

@@ -16,6 +16,11 @@ public class GraviItemData extends AetherItemModelProvider {
 
     @Override
     protected void registerModels() {
+        this.item(GraviItems.GREATER_HEALING_STONE.get(), "");
+        this.item(GraviItems.POWER_STONE.get(), "");
+        this.item(GraviItems.DENSE_STONE.get(), "");
+        this.item(GraviItems.DIG_STONE.get(), "");
+        this.item(GraviItems.RAINBOW_STONE.get(), "");
         this.item(GraviItems.ENCHANTED_CHEST_BOAT.get(),  "");
         this.item(GraviItems.ENCHANTED_BOAT.get(),  "");
         this.item(GraviBlocks.ENCHANTED_SAPLING.get().asItem(), "");
@@ -70,8 +75,6 @@ public class GraviItemData extends AetherItemModelProvider {
         this.handheldItem(GraviItems.DIAMOND_BATTLEAXE.get(), "");
         this.handheldItem(GraviItems.IRON_BATTLEAXE.get(), "");
         this.handheldItem(GraviItems.GOLD_BATTLEAXE.get(), "");
-        this.dartShooterItem(GraviItems.PHOENIX_DART_SHOOTER.get(), "");
-        this.item(GraviItems.PHOENIX_DART.get(), "");
         this.itemBlock(GraviBlocks.ENCHANTED_BOOKSHELF.get());
     }
 }

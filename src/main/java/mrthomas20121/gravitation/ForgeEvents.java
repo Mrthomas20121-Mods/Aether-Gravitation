@@ -1,7 +1,7 @@
 package mrthomas20121.gravitation;
 
 import mrthomas20121.gravitation.enchanting.GravitationEnchantments;
-import mrthomas20121.gravitation.item.tools.NeptuneTool;
+import mrthomas20121.gravitation.item.tools.neptune.NeptuneTool;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;

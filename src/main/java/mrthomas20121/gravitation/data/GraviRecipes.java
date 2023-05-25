@@ -14,6 +14,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.crafting.ConditionalRecipe;
+import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Consumer;
@@ -143,6 +146,7 @@ public class GraviRecipes extends AetherRecipeProvider {
         battleaxeRecipe(consumer, net.minecraft.world.item.Items.GOLD_INGOT, net.minecraft.world.item.Items.STICK, GraviItems.GOLD_BATTLEAXE.get());
         battleaxeRecipe(consumer, GraviItems.BRONZITE_INGOT.get(), AetherItems.SKYROOT_STICK.get(), GraviItems.BRONZITE_BATTLEAXE.get());
         netheriteSmithing(consumer, GraviItems.DIAMOND_BATTLEAXE.get(), RecipeCategory.TOOLS, GraviItems.NETHERITE_BATTLEAXE.get());
+        //conditionalBattleaxeRecipe("deep_aether", ForgeRegistries.ITEMS.getValue(new ResourceLocation("deep_aether:skyjade")), AetherItems.SKYROOT_STICK.get(), GraviItems.SKYJADE_BATTLEAXE.get());
 
         zaniteSmithing(consumer, GraviItems.BRONZITE_ROCK.get(), RecipeCategory.TOOLS, GraviItems.BRONZITE_INGOT.get());
 
@@ -159,6 +163,10 @@ public class GraviRecipes extends AetherRecipeProvider {
 
     protected static void battleaxeRecipe(Consumer<FinishedRecipe> consumer, ItemLike material, Item stick, Item output) {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, output).group("battleaxe").define('#', material).define('X', stick).pattern("###").pattern("#X#").pattern(" X ").unlockedBy("has", has(material)).save(consumer);
+    }
+
+    protected static void conditionalBattleaxeRecipe(String modid, ItemLike material, Item stick, Item output) {
+        ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid)).addRecipe(ConditionalFinishedRecipe.create(ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, output).group("battleaxe").define('#', material).define('X', stick).pattern("###").pattern("#X#").pattern(" X ").unlockedBy("has", has(material))));
     }
 
     protected static void zaniteSmithing(Consumer<FinishedRecipe> p_251614_, Item p_250046_, RecipeCategory p_248986_, Item p_250389_) {
