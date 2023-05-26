@@ -4,6 +4,10 @@ import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.item.stone.*;
 import mrthomas20121.gravitation.item.tools.*;
 import mrthomas20121.gravitation.item.tools.bronzite.*;
+import mrthomas20121.gravitation.item.tools.elemental.FlamingCrossbowItem;
+import mrthomas20121.gravitation.item.tools.elemental.HolyCrossbowItem;
+import mrthomas20121.gravitation.item.tools.elemental.LightningCrossbowItem;
+import mrthomas20121.gravitation.item.tools.elemental.VampireCrossbowItem;
 import mrthomas20121.gravitation.item.tools.neptune.*;
 import mrthomas20121.gravitation.util.GravitationArmorMaterials;
 import net.minecraft.sounds.SoundEvents;
@@ -59,6 +63,12 @@ public class GraviItems {
     public static RegistryObject<Item> DIAMOND_BATTLEAXE = ITEMS.register("diamond_battleaxe", DiamondBattleAxeItem::new);
     public static RegistryObject<Item> IRON_BATTLEAXE = ITEMS.register("iron_battleaxe", IronBattleAxeItem::new);
     public static RegistryObject<Item> GOLD_BATTLEAXE = ITEMS.register("gold_battleaxe", GoldBattleAxeItem::new);
+
+    public static RegistryObject<FlamingCrossbowItem> FLAMING_CROSSBOW = ITEMS.register("flaming_crossbow", FlamingCrossbowItem::new);
+    public static RegistryObject<HolyCrossbowItem> HOLY_CROSSBOW = ITEMS.register("holy_crossbow", HolyCrossbowItem::new);
+    public static RegistryObject<LightningCrossbowItem> LIGHTNING_CROSSBOW = ITEMS.register("lightning_crossbow", LightningCrossbowItem::new);
+    public static RegistryObject<VampireCrossbowItem> VAMPIRE_CROSSBOW = ITEMS.register("vampire_crossbow", VampireCrossbowItem::new);
+
     //public static RegistryObject<Item> SKYJADE_BATTLEAXE = ITEMS.register("skyjade_battleaxe", SkyjadeBattleaxeItem::new);
 
     public static final RegistryObject<Item> ENCHANTED_BOAT = ITEMS.register("enchanted_boat", () -> new EnchantedBoatItem(false, new Item.Properties().stacksTo(1)));

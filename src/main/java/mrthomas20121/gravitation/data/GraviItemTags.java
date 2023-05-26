@@ -40,6 +40,13 @@ public class GraviItemTags extends ItemTagsProvider {
                 //GraviItems.SKYJADE_BATTLEAXE.get()
         );
 
+        this.tag(Tags.Items.TOOLS_CROSSBOWS).add(
+                GraviItems.FLAMING_CROSSBOW.get(),
+                GraviItems.HOLY_CROSSBOW.get(),
+                GraviItems.LIGHTNING_CROSSBOW.get(),
+                GraviItems.VAMPIRE_CROSSBOW.get()
+        );
+
         this.tag(ItemTags.PICKAXES).add(GraviItems.BRONZITE_PICKAXE.get(), GraviItems.NEPTUNE_PICKAXE.get());
 
         this.tag(GraviTags.Items.INGOT_BRONZITE).add(GraviItems.BRONZITE_INGOT.get());

@@ -6,6 +6,7 @@ import mrthomas20121.gravitation.block.GraviBlocks;
 import mrthomas20121.gravitation.item.GraviItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class GraviItemData extends AetherItemModelProvider {
@@ -76,5 +77,26 @@ public class GraviItemData extends AetherItemModelProvider {
         this.handheldItem(GraviItems.IRON_BATTLEAXE.get(), "");
         this.handheldItem(GraviItems.GOLD_BATTLEAXE.get(), "");
         this.itemBlock(GraviBlocks.ENCHANTED_BOOKSHELF.get());
+
+        this.crossbowItem(GraviItems.FLAMING_CROSSBOW.get());
+        this.crossbowItem(GraviItems.HOLY_CROSSBOW.get());
+        this.crossbowItem(GraviItems.LIGHTNING_CROSSBOW.get());
+        this.crossbowItem(GraviItems.VAMPIRE_CROSSBOW.get());
+    }
+
+    public void crossbowItem(Item item) {
+        this.withExistingParent(this.itemName(item) + "_pulling_0", this.mcLoc("item/crossbow")).texture("layer0", this.modLoc("item/" + this.itemName(item) + "_pulling_0"));
+        this.withExistingParent(this.itemName(item) + "_pulling_1", this.mcLoc("item/crossbow")).texture("layer0", this.modLoc("item/" + this.itemName(item) + "_pulling_1"));
+        this.withExistingParent(this.itemName(item) + "_pulling_2", this.mcLoc("item/crossbow")).texture("layer0", this.modLoc("item/" + this.itemName(item) + "_pulling_2"));
+        this.withExistingParent(this.itemName(item) + "_arrow", this.mcLoc("item/crossbow")).texture("layer0", this.modLoc("item/" + this.itemName(item) + "_arrow"));
+        this.withExistingParent(this.itemName(item) + "_firework", this.mcLoc("item/crossbow")).texture("layer0", this.modLoc("item/" + this.itemName(item) + "_firework"));
+
+        this.withExistingParent(this.itemName(item), this.mcLoc("item/crossbow"))
+                .texture("layer0", this.modLoc("item/" + this.itemName(item)  + "_standby"))
+                .override().predicate(new ResourceLocation("pulling"), 1).model(this.getExistingFile(this.modLoc("item/" + this.itemName(item) + "_pulling_0"))).end()
+                .override().predicate(new ResourceLocation("pulling"), 1).predicate(new ResourceLocation("pull"), 0.58F).model(this.getExistingFile(this.modLoc("item/" + this.itemName(item) + "_pulling_1"))).end()
+                .override().predicate(new ResourceLocation("pulling"), 1).predicate(new ResourceLocation("pull"), 1.0F).model(this.getExistingFile(this.modLoc("item/" + this.itemName(item) + "_pulling_2"))).end()
+                .override().predicate(new ResourceLocation("charged"), 1).model(this.getExistingFile(this.modLoc("item/" + this.itemName(item) + "_arrow"))).end()
+                .override().predicate(new ResourceLocation("charged"), 1).predicate(new ResourceLocation("firework"), 1).model(this.getExistingFile(this.modLoc("item/" + this.itemName(item) + "_firework"))).end();
     }
 }

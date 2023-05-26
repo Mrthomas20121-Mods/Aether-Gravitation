@@ -59,6 +59,10 @@ public class GraviLanguageData extends LanguageProvider {
         addItem(GraviItems.DIAMOND_BATTLEAXE, "Diamond Battleaxe");
         addItem(GraviItems.IRON_BATTLEAXE, "Iron Battleaxe");
         addItem(GraviItems.GOLD_BATTLEAXE, "Gold Battleaxe");
+        addItem(GraviItems.FLAMING_CROSSBOW, "Flaming Crossbow");
+        addItem(GraviItems.HOLY_CROSSBOW, "Holy Crossbow");
+        addItem(GraviItems.LIGHTNING_CROSSBOW, "Lightning Crossbow");
+        addItem(GraviItems.VAMPIRE_CROSSBOW, "Vampire Crossbow");
         addItem(GraviItems.ENCHANTED_CHEST_BOAT, "Enchanted Chest Boat");
         addItem(GraviItems.ENCHANTED_BOAT, "Enchanted Boat");
         addBlock(GraviBlocks.BRONZITE_ORE, "Bronzite Ore");
