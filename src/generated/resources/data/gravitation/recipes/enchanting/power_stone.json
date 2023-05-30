@@ -1,0 +1,10 @@
+{
+  "type": "aether:enchanting",
+  "category": "enchanting_misc",
+  "cookingtime": 40,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "aether:hellfire_stone"
+  },
+  "result": "gravitation:power_stone"
+}

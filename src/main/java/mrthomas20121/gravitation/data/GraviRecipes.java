@@ -151,6 +151,11 @@ public class GraviRecipes extends AetherRecipeProvider {
         zaniteSmithing(consumer, GraviItems.BRONZITE_ROCK.get(), RecipeCategory.TOOLS, GraviItems.BRONZITE_INGOT.get());
 
         enchantingRecipe(RecipeCategory.MISC, GraviBlocks.ENCHANTED_SAPLING.get(), AetherBlocks.SKYROOT_SAPLING.get(), 0.20f, 50).save(consumer, new ResourceLocation("gravitation:enchanting/enchanted_sapling"));
+
+        enchantingRecipe(RecipeCategory.MISC, GraviItems.DIG_STONE.get(), AetherBlocks.CARVED_STONE.get(), 0.20f, 20).save(consumer, new ResourceLocation("gravitation:enchanting/dig_stone"));
+        enchantingRecipe(RecipeCategory.MISC, GraviItems.DENSE_STONE.get(), AetherBlocks.ANGELIC_STONE.get(), 0.20f, 30).save(consumer, new ResourceLocation("gravitation:enchanting/dense_stone"));
+        enchantingRecipe(RecipeCategory.MISC, GraviItems.POWER_STONE.get(), AetherBlocks.HELLFIRE_STONE.get(), 0.20f, 40).save(consumer, new ResourceLocation("gravitation:enchanting/power_stone"));
+        enchantingRecipe(RecipeCategory.MISC, GraviItems.GREATER_HEALING_STONE.get(), AetherItems.HEALING_STONE.get(), 0.20f, 120).save(consumer, new ResourceLocation("gravitation:enchanting/greater_healing_stone"));
     }
 
     protected static void stickFromPlanks(Consumer<FinishedRecipe> consumer, ResourceLocation name, ItemLike output, ItemLike input) {

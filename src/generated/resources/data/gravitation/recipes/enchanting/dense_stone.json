@@ -1,0 +1,10 @@
+{
+  "type": "aether:enchanting",
+  "category": "enchanting_misc",
+  "cookingtime": 30,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "aether:angelic_stone"
+  },
+  "result": "gravitation:dense_stone"
+}

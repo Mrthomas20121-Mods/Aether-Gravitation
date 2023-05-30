@@ -45,20 +45,25 @@ public class LootDataProvider extends GlobalLootModifierProvider {
                         WeightedEntry.wrap(new ItemStack(GraviItems.VALKYRIE_BATTLEAXE.get()), 50),
                         WeightedEntry.wrap(new ItemStack(GraviItems.GREATER_HEALING_STONE.get()), 40),
                         WeightedEntry.wrap(new ItemStack(GraviItems.DENSE_STONE.get(), 2), 40),
-                        WeightedEntry.wrap(new ItemStack(GraviItems.DENSE_STONE.get()), 40)
+                        WeightedEntry.wrap(new ItemStack(GraviItems.DENSE_STONE.get()), 40),
+                        WeightedEntry.wrap(new ItemStack(GraviItems.LIGHTNING_CROSSBOW.get(), 1), 20)
                 ),
-                340,
+                360,
                 0.7f
         ));
 
         add("gold_loot", new AetherDungeonLootModifiers(
                 new LootItemCondition[] { LootTableIdCondition.builder(new ResourceLocation("aether:chests/dungeon/gold/gold_dungeon_reward")).build() },
                 List.of(
-                        WeightedEntry.wrap(new ItemStack(GraviItems.POWER_STONE.get()), 50),
-                        WeightedEntry.wrap(new ItemStack(GraviItems.DENSE_STONE.get(), 2), 40),
-                        WeightedEntry.wrap(new ItemStack(GraviItems.RAINBOW_STONE.get(), 1), 10)
+                        WeightedEntry.wrap(new ItemStack(GraviItems.POWER_STONE.get()), 40),
+                        WeightedEntry.wrap(new ItemStack(GraviItems.DENSE_STONE.get(), 2), 30),
+                        WeightedEntry.wrap(new ItemStack(GraviItems.RAINBOW_STONE.get(), 1), 10),
+                        WeightedEntry.wrap(new ItemStack(GraviItems.HOLY_CROSSBOW.get(), 1), 30),
+                        WeightedEntry.wrap(new ItemStack(GraviItems.VAMPIRE_CROSSBOW.get(), 1), 30),
+                        WeightedEntry.wrap(new ItemStack(GraviItems.LIGHTNING_CROSSBOW.get(), 1), 30),
+                        WeightedEntry.wrap(new ItemStack(GraviItems.FLAMING_CROSSBOW.get(), 1), 30)
                 ),
-                100,
+                200,
                 0.8f
         ));
     }

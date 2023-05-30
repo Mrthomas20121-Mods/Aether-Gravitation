@@ -1,0 +1,10 @@
+{
+  "type": "aether:enchanting",
+  "category": "enchanting_misc",
+  "cookingtime": 20,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "aether:carved_stone"
+  },
+  "result": "gravitation:dig_stone"
+}

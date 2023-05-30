@@ -1,0 +1,10 @@
+{
+  "type": "aether:enchanting",
+  "category": "enchanting_misc",
+  "cookingtime": 120,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "aether:healing_stone"
+  },
+  "result": "gravitation:greater_healing_stone"
+}

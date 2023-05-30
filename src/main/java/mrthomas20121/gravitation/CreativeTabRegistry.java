@@ -19,6 +19,15 @@ public class CreativeTabRegistry {
                 .icon(() -> new ItemStack(GraviItems.NEPTUNE_PICKAXE.get()))
                 .title(Component.translatable("itemGroup.gravitation.equipments"))
                 .displayItems((parameters, output) -> {
+                    output.accept(GraviItems.DIG_STONE.get());
+                    output.accept(GraviItems.DENSE_STONE.get());
+                    output.accept(GraviItems.POWER_STONE.get());
+                    output.accept(GraviItems.RAINBOW_STONE.get());
+                    output.accept(GraviItems.GREATER_HEALING_STONE.get());
+                    output.accept(GraviItems.FLAMING_CROSSBOW.get());
+                    output.accept(GraviItems.HOLY_CROSSBOW.get());
+                    output.accept(GraviItems.LIGHTNING_CROSSBOW.get());
+                    output.accept(GraviItems.VAMPIRE_CROSSBOW.get());
                     output.accept(GraviItems.BRONZITE_ROCK.get());
                     output.accept(GraviItems.BRONZITE_INGOT.get());
                     output.accept(GraviItems.BRONZITE_AXE.get());
