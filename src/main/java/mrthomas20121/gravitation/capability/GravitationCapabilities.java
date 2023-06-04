@@ -36,6 +36,8 @@ public class GravitationCapabilities {
             if (event.getObject() instanceof AbstractArrow abstractArrow) {
                 event.addCapability(new ResourceLocation(Gravitation.MOD_ID, "flaming_arrow"), new FlamingArrowProvider(new FlamingArrowCapability(abstractArrow)));
                 event.addCapability(new ResourceLocation(Gravitation.MOD_ID, "thunder_arrow"), new ThunderArrowProvider(new ThunderArrowCapability(abstractArrow)));
+                event.addCapability(new ResourceLocation(Gravitation.MOD_ID, "holy_arrow"), new ThunderArrowProvider(new ThunderArrowCapability(abstractArrow)));
+                event.addCapability(new ResourceLocation(Gravitation.MOD_ID, "vampire_arrow"), new VampireArrowProvider(new VampireArrowCapability(abstractArrow)));
             }
         }
     }
