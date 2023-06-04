@@ -53,7 +53,7 @@ public class AetherDungeonLootModifiers extends LootModifier {
         int sizeDiff = 27-size;
 
         for(ItemStack stack: generatedLoot) {
-            // chest is full => 20% chance to replace the item by one of my item
+            // chest is full => x chance to replace the item by one of my item
             // chest is not full => we don't replace any loot
             if(isFull) {
                 if(context.getRandom().nextFloat() > chance) {
@@ -65,7 +65,7 @@ public class AetherDungeonLootModifiers extends LootModifier {
             }
         }
 
-        // if the loot is not full, for each slot remaining, have 20% to change to add one of our item in the slot
+        // if the loot is not full, for each slot remaining, have x chance to add one of our item in the empty slots
         if(!isFull) {
             for(int i = 0; i<= sizeDiff; i++) {
                 if(context.getRandom().nextFloat() > chance) {
