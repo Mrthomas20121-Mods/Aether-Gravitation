@@ -30,6 +30,7 @@ public class CreativeTabRegistry {
                     output.accept(GraviItems.VAMPIRE_CROSSBOW.get());
                     output.accept(GraviItems.BRONZITE_ROCK.get());
                     output.accept(GraviItems.BRONZITE_INGOT.get());
+                    output.accept(GraviItems.BRONZITE_NUGGET.get());
                     output.accept(GraviItems.BRONZITE_AXE.get());
                     output.accept(GraviItems.BRONZITE_BATTLEAXE.get());
                     output.accept(GraviItems.BRONZITE_HOE.get());
@@ -67,11 +68,13 @@ public class CreativeTabRegistry {
                 .icon(() -> new ItemStack(GraviBlocks.STRIPPED_ENCHANTED_LOG.get()))
                 .title(Component.translatable("itemGroup.gravitation.building_blocks"))
                 .displayItems((parameters, output) -> {
+                    output.accept(GraviBlocks.BRONZITE_ORE.get());
                     output.accept(GraviBlocks.BRONZITE_ICESTONE_ORE.get());
                     output.accept(GraviBlocks.BRONZITE_BLOCK.get());
                     output.accept(GraviBlocks.ENCHANTED_SIGN.get());
                     output.accept(GraviBlocks.ENCHANTED_WALL_SIGN.get());
                     output.accept(GraviBlocks.ENCHANTED_BOOKSHELF.get());
+                    output.accept(GraviBlocks.ENCHANTED_LEAVES.get());
                     output.accept(GraviBlocks.ENCHANTED_LOG.get());
                     output.accept(GraviBlocks.STRIPPED_ENCHANTED_LOG.get());
                     output.accept(GraviBlocks.ENCHANTED_WOOD.get());

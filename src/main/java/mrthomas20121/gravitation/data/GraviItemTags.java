@@ -36,8 +36,7 @@ public class GraviItemTags extends ItemTagsProvider {
                 GraviItems.DIAMOND_BATTLEAXE.get(),
                 GraviItems.IRON_BATTLEAXE.get(),
                 GraviItems.GOLD_BATTLEAXE.get(),
-                GraviItems.BRONZITE_BATTLEAXE.get()//,
-                //GraviItems.SKYJADE_BATTLEAXE.get()
+                GraviItems.BRONZITE_BATTLEAXE.get()
         );
 
         this.tag(Tags.Items.TOOLS_CROSSBOWS).add(
@@ -46,6 +45,8 @@ public class GraviItemTags extends ItemTagsProvider {
                 GraviItems.LIGHTNING_CROSSBOW.get(),
                 GraviItems.VAMPIRE_CROSSBOW.get()
         );
+
+        this.tag(AetherTags.Items.SKYROOT_TOOL_CRAFTING).add(GraviBlocks.ENCHANTED_PLANKS.get().asItem());
 
         this.tag(ItemTags.PICKAXES).add(GraviItems.BRONZITE_PICKAXE.get(), GraviItems.NEPTUNE_PICKAXE.get());
 

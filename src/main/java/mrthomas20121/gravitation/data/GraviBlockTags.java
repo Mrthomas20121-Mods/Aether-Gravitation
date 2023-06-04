@@ -1,5 +1,6 @@
 package mrthomas20121.gravitation.data;
 
+import com.aetherteam.aether.AetherTags;
 import mrthomas20121.gravitation.GraviTags;
 import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.block.GraviBlocks;
@@ -52,11 +53,9 @@ public class GraviBlockTags extends BlockTagsProvider {
                 GraviBlocks.ENCHANTED_BOOKSHELF.get()
         );
 
-        this.tag(Tags.Blocks.ORES).add(GraviBlocks.BRONZITE_ICESTONE_ORE.get());
+        this.tag(Tags.Blocks.ORES).add(GraviBlocks.BRONZITE_ICESTONE_ORE.get(), GraviBlocks.BRONZITE_ORE.get());
 
-        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(GraviBlocks.BRONZITE_BLOCK.get(), GraviBlocks.BRONZITE_ICESTONE_ORE.get());
-
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(GraviBlocks.BRONZITE_BLOCK.get(), GraviBlocks.BRONZITE_ICESTONE_ORE.get());
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(GraviBlocks.BRONZITE_BLOCK.get(), GraviBlocks.BRONZITE_ICESTONE_ORE.get(), GraviBlocks.BRONZITE_ORE.get());
 
         this.tag(Tags.Blocks.STORAGE_BLOCKS).add(GraviBlocks.BRONZITE_BLOCK.get());
 
