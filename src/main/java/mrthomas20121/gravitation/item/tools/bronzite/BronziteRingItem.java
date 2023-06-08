@@ -23,7 +23,7 @@ public class BronziteRingItem extends RingItem {
     private final String NAME = "bronzite_modifier";
 
     public BronziteRingItem() {
-        super(AetherSoundEvents.ITEM_ACCESSORY_EQUIP_ZANITE_RING, new Item.Properties().rarity(SALMON_ROSE));
+        super(AetherSoundEvents.ITEM_ACCESSORY_EQUIP_ZANITE_RING, new Item.Properties().rarity(SALMON_ROSE).stacksTo(1));
     }
 
     @Override

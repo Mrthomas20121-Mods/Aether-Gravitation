@@ -13,7 +13,7 @@ import java.util.function.Supplier;
 public class BronziteGlovesItem extends GlovesItem {
 
     public BronziteGlovesItem(double punchDamage, String glovesName, Supplier<? extends SoundEvent> glovesSound, Properties properties) {
-        super(punchDamage, glovesName, glovesSound, properties);
+        super(punchDamage, glovesName, glovesSound, properties.stacksTo(1));
 
         this.setRenderTexture(Gravitation.MOD_ID, glovesName);
     }

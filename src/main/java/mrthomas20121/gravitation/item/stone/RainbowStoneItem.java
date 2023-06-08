@@ -7,6 +7,6 @@ import net.minecraft.world.item.Rarity;
 public class RainbowStoneItem extends FoilItem {
 
     public RainbowStoneItem() {
-        super(new Properties().rarity(Rarity.EPIC).food(GravitationFoods.RAINBOW_STONE));
+        super(new Properties().rarity(Rarity.EPIC).food(GravitationFoods.RAINBOW_STONE).stacksTo(8));
     }
 }

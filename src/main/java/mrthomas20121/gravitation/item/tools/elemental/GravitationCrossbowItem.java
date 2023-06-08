@@ -35,7 +35,7 @@ public abstract class GravitationCrossbowItem extends CrossbowItem {
     private boolean midLoadSoundPlayed;
 
     public GravitationCrossbowItem() {
-        super(new Properties().rarity(AetherItems.AETHER_LOOT));
+        super(new Properties().rarity(AetherItems.AETHER_LOOT).stacksTo(1));
     }
 
     protected abstract AbstractArrow customArrow(AbstractArrow arrow);

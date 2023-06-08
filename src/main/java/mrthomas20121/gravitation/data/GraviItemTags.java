@@ -1,6 +1,7 @@
 package mrthomas20121.gravitation.data;
 
 import com.aetherteam.aether.AetherTags;
+import com.aetherteam.aether.data.generators.tags.AetherItemTagData;
 import mrthomas20121.gravitation.GraviTags;
 import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.block.GraviBlocks;
@@ -47,8 +48,14 @@ public class GraviItemTags extends ItemTagsProvider {
         );
 
         this.tag(AetherTags.Items.SKYROOT_TOOL_CRAFTING).add(GraviBlocks.ENCHANTED_PLANKS.get().asItem());
-
         this.tag(ItemTags.PICKAXES).add(GraviItems.BRONZITE_PICKAXE.get(), GraviItems.NEPTUNE_PICKAXE.get());
+        this.tag(AetherTags.Items.TREATED_AS_AETHER_ITEM).add(
+                GraviItems.BRONZITE_PICKAXE.get(),
+                GraviItems.NEPTUNE_PICKAXE.get(),
+                GraviItems.NEPTUNE_AXE.get(),
+                GraviItems.NEPTUNE_CUTLASS.get(),
+                GraviItems.NEPTUNE_SHOVEL.get()
+        ).addTag(GraviTags.Items.BATTLEAXES);
 
         this.tag(GraviTags.Items.INGOT_BRONZITE).add(GraviItems.BRONZITE_INGOT.get());
         this.tag(GraviTags.Items.NUGGET_BRONZITE).add(GraviItems.BRONZITE_NUGGET.get());

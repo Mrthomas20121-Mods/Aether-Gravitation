@@ -33,7 +33,7 @@ public class AetherDungeonLootModifiers extends LootModifier {
 
     public AetherDungeonLootModifiers(final LootItemCondition[] conditionsIn, List<WeightedEntry.Wrapper<ItemStack>> items, int totalWeight, float chance) {
         super(conditionsIn);
-        this.items = items;
+        this.items = items.stream().map(wrapper -> WeightedEntry.wrap(wrapper.getData().copy(), wrapper.getWeight().asInt())).toList();
         this.totalWeight = totalWeight;
         this.chance = chance;
     }

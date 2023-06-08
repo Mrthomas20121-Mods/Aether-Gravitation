@@ -53,6 +53,24 @@ public class GraviBlockTags extends BlockTagsProvider {
                 GraviBlocks.ENCHANTED_BOOKSHELF.get()
         );
 
+        this.tag(AetherTags.Blocks.TREATED_AS_AETHER_BLOCK).add(
+                GraviBlocks.ENCHANTED_LOG.get(),
+                GraviBlocks.ENCHANTED_WOOD.get(),
+                GraviBlocks.STRIPPED_ENCHANTED_LOG.get(),
+                GraviBlocks.STRIPPED_ENCHANTED_WOOD.get(),
+                GraviBlocks.ENCHANTED_BUTTON.get(),
+                GraviBlocks.ENCHANTED_PREASURE_PLATE.get(),
+                GraviBlocks.ENCHANTED_STAIRS.get(),
+                GraviBlocks.ENCHANTED_SIGN.get(),
+                GraviBlocks.ENCHANTED_SLAB.get(),
+                GraviBlocks.ENCHANTED_FENCE_GATE.get(),
+                GraviBlocks.ENCHANTED_FENCE.get(),
+                GraviBlocks.ENCHANTED_BOOKSHELF.get(),
+                GraviBlocks.BRONZITE_ICESTONE_ORE.get(),
+                GraviBlocks.BRONZITE_ORE.get(),
+                GraviBlocks.BRONZITE_BLOCK.get()
+        );
+
         this.tag(Tags.Blocks.ORES).add(GraviBlocks.BRONZITE_ICESTONE_ORE.get(), GraviBlocks.BRONZITE_ORE.get());
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(GraviBlocks.BRONZITE_BLOCK.get(), GraviBlocks.BRONZITE_ICESTONE_ORE.get(), GraviBlocks.BRONZITE_ORE.get());

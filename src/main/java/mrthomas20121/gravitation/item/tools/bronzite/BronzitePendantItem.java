@@ -23,7 +23,7 @@ public class BronzitePendantItem extends PendantItem {
     private final String NAME = "bronzite_pendant_modifier";
 
     public BronzitePendantItem() {
-        super("neptune_pendant", AetherSoundEvents.ITEM_ACCESSORY_EQUIP_ZANITE_RING, new Properties().rarity(SALMON_ROSE));
+        super("neptune_pendant", AetherSoundEvents.ITEM_ACCESSORY_EQUIP_ZANITE_RING, new Properties().rarity(SALMON_ROSE).stacksTo(1));
         this.setRenderTexture(Gravitation.MOD_ID, "bronzite_pendant");
     }
 

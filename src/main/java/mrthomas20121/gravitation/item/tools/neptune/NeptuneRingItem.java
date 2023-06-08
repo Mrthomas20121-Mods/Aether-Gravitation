@@ -22,7 +22,7 @@ public class NeptuneRingItem extends RingItem {
     private final String NAME = "npetune_modifier";
 
     public NeptuneRingItem() {
-        super(AetherSoundEvents.ITEM_ACCESSORY_EQUIP_ZANITE_RING, new Properties().rarity(AetherItems.AETHER_LOOT));
+        super(AetherSoundEvents.ITEM_ACCESSORY_EQUIP_ZANITE_RING, new Properties().rarity(AetherItems.AETHER_LOOT).stacksTo(1));
         this.addDungeonTooltip(AetherItems.SILVER_DUNGEON_TOOLTIP);
     }
 

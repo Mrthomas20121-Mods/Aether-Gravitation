@@ -7,6 +7,6 @@ import net.minecraft.world.item.Rarity;
 public class DenseStoneItem extends FoilItem {
 
     public DenseStoneItem() {
-        super(new Properties().rarity(Rarity.EPIC).food(GravitationFoods.DENSE_STONE));
+        super(new Properties().rarity(Rarity.EPIC).food(GravitationFoods.DENSE_STONE).stacksTo(16));
     }
 }

@@ -6,7 +6,7 @@ import mrthomas20121.gravitation.Gravitation;
 public class GravitationCapeItem extends CapeItem {
 
     public GravitationCapeItem(String capeLocation, Properties properties) {
-        super(capeLocation, properties);
+        super(capeLocation, properties.stacksTo(1));
 
         this.setRenderTexture(Gravitation.MOD_ID, capeLocation);
     }

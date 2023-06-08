@@ -22,7 +22,7 @@ public class NeptunePendantItem extends PendantItem {
     private final String NAME = "npetune_pendant_modifier";
 
     public NeptunePendantItem() {
-        super("neptune_pendant", AetherSoundEvents.ITEM_ACCESSORY_EQUIP_ZANITE_RING, new Properties().rarity(AetherItems.AETHER_LOOT));
+        super("neptune_pendant", AetherSoundEvents.ITEM_ACCESSORY_EQUIP_ZANITE_RING, new Properties().rarity(AetherItems.AETHER_LOOT).stacksTo(1));
         this.addDungeonTooltip(AetherItems.SILVER_DUNGEON_TOOLTIP);
         this.setRenderTexture(Gravitation.MOD_ID, "neptune_pendant");
     }
