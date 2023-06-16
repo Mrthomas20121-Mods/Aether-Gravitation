@@ -27,7 +27,7 @@ public class NeptuneRingItem extends RingItem {
     }
 
     private AttributeModifier createModifier() {
-        return new AttributeModifier(ID, NAME, 1.5f, AttributeModifier.Operation.ADDITION);
+        return new AttributeModifier(ID, NAME, 2f, AttributeModifier.Operation.ADDITION);
     }
 
     @Override

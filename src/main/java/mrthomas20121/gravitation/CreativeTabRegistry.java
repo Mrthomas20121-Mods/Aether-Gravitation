@@ -37,6 +37,7 @@ public class CreativeTabRegistry {
                     output.accept(GraviItems.BRONZITE_PICKAXE.get());
                     output.accept(GraviItems.BRONZITE_Shovel.get());
                     output.accept(GraviItems.BRONZITE_SWORD.get());
+                    output.accept(GraviItems.BRONZITE_SHIELD.get());
                     output.accept(GraviItems.BRONZITE_HELMET.get());
                     output.accept(GraviItems.BRONZITE_CHESTPLATE.get());
                     output.accept(GraviItems.BRONZITE_LEGGING.get());

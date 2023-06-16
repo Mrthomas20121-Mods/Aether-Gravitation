@@ -17,7 +17,7 @@ public class GraviLanguageData extends LanguageProvider {
     protected void addTranslations() {
         add("gravitation.curio.pendant", "When in Pendant Slot:");
         add("gravitation.curio.bronzite_pendant", "+2 Armor Toughness");
-        add("gravitation.curio.neptune_pendant", "+1.5 Swim Speed");
+        add("gravitation.curio.neptune_pendant", "Gain water breathing underwater.");
         add("gravitation.curio.ring", "When in Ring Slot:");
         add("gravitation.curio.bronzite_ring", "+2 Armor");
         add("gravitation.curio.neptune_ring", "+1.5 Swim Speed");
@@ -44,6 +44,7 @@ public class GraviLanguageData extends LanguageProvider {
         addItem(GraviItems.BRONZITE_PICKAXE, "Bronzite Pickaxe");
         addItem(GraviItems.BRONZITE_Shovel, "Bronzite Shovel");
         addItem(GraviItems.BRONZITE_SWORD, "Bronzite Sword");
+        addItem(GraviItems.BRONZITE_SHIELD, "Bronzite Shield");
         addItem(GraviItems.BRONZITE_RING, "Bronzite Ring");
         addItem(GraviItems.BRONZITE_PENDANT, "Bronzite Pendant");
         addItem(GraviItems.BRONZITE_HELMET, "Bronzite Helmet");

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "item": "gravitation:bronzite_ingot"
+    },
+    "Y": {
+      "tag": "aether:skyroot_stick"
+    }
+  },
+  "pattern": [
+    "XYX",
+    "XXX",
+    " X "
+  ],
+  "result": {
+    "item": "gravitation:bronzite_shield"
+  },
+  "show_notification": true
+}

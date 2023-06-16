@@ -11,6 +11,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.ShieldItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -36,6 +37,8 @@ public class GraviItems {
     public static RegistryObject<Item> BRONZITE_HOE = ITEMS.register("bronzite_hoe", BronziteHoeItem::new);
     public static RegistryObject<Item> BRONZITE_Shovel = ITEMS.register("bronzite_shovel", BronziteShovelItem::new);
     public static RegistryObject<Item> BRONZITE_SWORD = ITEMS.register("bronzite_sword", BronziteSwordItem::new);
+
+    public static RegistryObject<Item> BRONZITE_SHIELD = ITEMS.register("bronzite_shield", BronziteShieldItem::new);
     public static RegistryObject<Item> BRONZITE_HELMET = ITEMS.register("bronzite_helmet", () -> new BronziteArmorItem(GravitationArmorMaterials.BRONZITE, ArmorItem.Type.HELMET, new Item.Properties().rarity(SALMON_ROSE)));
     public static RegistryObject<Item> BRONZITE_CHESTPLATE = ITEMS.register("bronzite_chestplate", () -> new BronziteArmorItem(GravitationArmorMaterials.BRONZITE, ArmorItem.Type.CHESTPLATE, new Item.Properties().rarity(SALMON_ROSE)));
     public static RegistryObject<Item> BRONZITE_LEGGING = ITEMS.register("bronzite_leggings", () -> new BronziteArmorItem(GravitationArmorMaterials.BRONZITE, ArmorItem.Type.LEGGINGS, new Item.Properties().rarity(SALMON_ROSE)));

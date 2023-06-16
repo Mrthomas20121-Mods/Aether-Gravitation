@@ -1,5 +1,6 @@
 package mrthomas20121.gravitation.data;
 
+import com.aetherteam.aether.AetherTags;
 import com.aetherteam.aether.block.AetherBlocks;
 import com.aetherteam.aether.data.providers.AetherRecipeProvider;
 import com.aetherteam.aether.item.AetherItems;
@@ -16,7 +17,6 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
-import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Consumer;
@@ -32,11 +32,11 @@ public class GraviRecipes extends AetherRecipeProvider {
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GraviBlocks.ENCHANTED_BOOKSHELF.get(), 1)
                 .define('P', GraviBlocks.ENCHANTED_PLANKS.get())
-                .define('B', net.minecraft.world.item.Items.BOOK)
+                .define('B', Items.BOOK)
                 .pattern("PPP")
                 .pattern("BBB")
                 .pattern("PPP")
-                .unlockedBy(getHasName(net.minecraft.world.item.Items.BOOK), has(net.minecraft.world.item.Items.BOOK))
+                .unlockedBy(getHasName(Items.BOOK), has(Items.BOOK))
                 .save(consumer);
 
         doorBuilder(GraviBlocks.ENCHANTED_DOOR.get(), Ingredient.of(GraviBlocks.ENCHANTED_PLANKS.get())).group("door").unlockedBy("has_enchanted_planks", has(GraviBlocks.ENCHANTED_PLANKS.get())).save(consumer);
@@ -81,6 +81,24 @@ public class GraviRecipes extends AetherRecipeProvider {
                 .requires(GraviItems.BRONZITE_INGOT.get())
                 .unlockedBy("has_bronzite_ingot", has(GraviItems.BRONZITE_INGOT.get()))
                 .save(consumer, new ResourceLocation("gravitation:crafting/bronzite_nugget_from_ingot"));
+
+        ConditionalRecipe.builder().addCondition(new ModLoadedCondition("lost_aether_content")).addRecipe(ConditionalFinishedRecipe.create(ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GraviItems.BRONZITE_SHIELD.get())
+                .define('X', GraviItems.BRONZITE_INGOT.get())
+                .define('Y', Ingredient.of(AetherTags.Items.SKYROOT_STICKS))
+                .pattern("XYX")
+                .pattern("XXX")
+                .pattern(" X ")
+                .unlockedBy("has_bronzite_ingot", has(GraviItems.BRONZITE_INGOT.get()))));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GraviItems.BRONZITE_SHIELD.get())
+                .define('X', GraviItems.BRONZITE_INGOT.get())
+                .define('Y', Ingredient.of(AetherTags.Items.SKYROOT_STICKS))
+                .pattern("XYX")
+                .pattern("XXX")
+                .pattern(" X ")
+                .unlockedBy("has_bronzite_ingot", has(GraviItems.BRONZITE_INGOT.get()))
+                .save(consumer, new ResourceLocation("gravitation:crafting/bronzite_shield"));
+
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GraviItems.BRONZITE_HELMET.get())
                 .define('X', GraviItems.BRONZITE_INGOT.get())
@@ -141,9 +159,9 @@ public class GraviRecipes extends AetherRecipeProvider {
 
         battleaxeRecipe(consumer, AetherBlocks.ENCHANTED_GRAVITITE.get(), AetherItems.SKYROOT_STICK.get(), GraviItems.GRAVITITE_BATTLEAXE.get());
         battleaxeRecipe(consumer, AetherItems.ZANITE_GEMSTONE.get(), AetherItems.SKYROOT_STICK.get(), GraviItems.ZANITE_BATTLEAXE.get());
-        battleaxeRecipe(consumer, net.minecraft.world.item.Items.DIAMOND, net.minecraft.world.item.Items.STICK, GraviItems.DIAMOND_BATTLEAXE.get());
-        battleaxeRecipe(consumer, net.minecraft.world.item.Items.IRON_INGOT, net.minecraft.world.item.Items.STICK, GraviItems.IRON_BATTLEAXE.get());
-        battleaxeRecipe(consumer, net.minecraft.world.item.Items.GOLD_INGOT, net.minecraft.world.item.Items.STICK, GraviItems.GOLD_BATTLEAXE.get());
+        battleaxeRecipe(consumer, Items.DIAMOND, Items.STICK, GraviItems.DIAMOND_BATTLEAXE.get());
+        battleaxeRecipe(consumer, Items.IRON_INGOT, Items.STICK, GraviItems.IRON_BATTLEAXE.get());
+        battleaxeRecipe(consumer, Items.GOLD_INGOT, Items.STICK, GraviItems.GOLD_BATTLEAXE.get());
         battleaxeRecipe(consumer, GraviItems.BRONZITE_INGOT.get(), AetherItems.SKYROOT_STICK.get(), GraviItems.BRONZITE_BATTLEAXE.get());
         netheriteSmithing(consumer, GraviItems.DIAMOND_BATTLEAXE.get(), RecipeCategory.TOOLS, GraviItems.NETHERITE_BATTLEAXE.get());
         //conditionalBattleaxeRecipe("deep_aether", ForgeRegistries.ITEMS.getValue(new ResourceLocation("deep_aether:skyjade")), AetherItems.SKYROOT_STICK.get(), GraviItems.SKYJADE_BATTLEAXE.get());
@@ -174,7 +192,9 @@ public class GraviRecipes extends AetherRecipeProvider {
         ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid)).addRecipe(ConditionalFinishedRecipe.create(ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, output).group("battleaxe").define('#', material).define('X', stick).pattern("###").pattern("#X#").pattern(" X ").unlockedBy("has", has(material))));
     }
 
-    protected static void zaniteSmithing(Consumer<FinishedRecipe> p_251614_, Item p_250046_, RecipeCategory p_248986_, Item p_250389_) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(p_250046_), Ingredient.of(AetherItems.ZANITE_GEMSTONE.get()), p_248986_, p_250389_).unlocks("has_netherite_ingot", has(Items.NETHERITE_INGOT)).save(p_251614_, getItemName(p_250389_) + "_smithing");
+    @SuppressWarnings("deprecation")
+    protected static void zaniteSmithing(Consumer<FinishedRecipe> consumer, Item input, RecipeCategory p_248986_, Item p_250389_) {
+        LegacyUpgradeRecipeBuilder.smithing(Ingredient.of(input), Ingredient.of(AetherItems.ZANITE_GEMSTONE.get()), RecipeCategory.TOOLS, p_250389_).unlocks(getHasName(input), has(input)).save(consumer, getItemName(p_250389_) + "_smithing");
+        //SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(input), Ingredient.of(AetherItems.ZANITE_GEMSTONE.get()), p_248986_, p_250389_).unlocks("has_netherite_ingot", has(Items.NETHERITE_INGOT)).save(consumer, getItemName(p_250389_) + "_smithing");
     }
 }

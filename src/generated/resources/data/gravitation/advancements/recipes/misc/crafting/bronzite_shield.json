@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bronzite_rock": {
+    "has_bronzite_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "gravitation:bronzite_rock"
+              "gravitation:bronzite_ingot"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:bronzite_ingot_smithing"
+        "recipe": "gravitation:crafting/bronzite_shield"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_bronzite_rock",
+      "has_bronzite_ingot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:bronzite_ingot_smithing"
+      "gravitation:crafting/bronzite_shield"
     ]
   }
 }

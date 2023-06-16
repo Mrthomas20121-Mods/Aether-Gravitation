@@ -57,6 +57,7 @@ public class GraviItemTags extends ItemTagsProvider {
                 GraviItems.NEPTUNE_SHOVEL.get()
         ).addTag(GraviTags.Items.BATTLEAXES);
 
+        this.tag(GraviTags.Items.BRONZITE_REPAIRING).add(GraviItems.BRONZITE_INGOT.get());
         this.tag(GraviTags.Items.INGOT_BRONZITE).add(GraviItems.BRONZITE_INGOT.get());
         this.tag(GraviTags.Items.NUGGET_BRONZITE).add(GraviItems.BRONZITE_NUGGET.get());
 
