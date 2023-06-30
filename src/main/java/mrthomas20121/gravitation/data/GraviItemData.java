@@ -3,11 +3,13 @@ package mrthomas20121.gravitation.data;
 import com.aetherteam.aether.data.providers.AetherItemModelProvider;
 import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.block.GraviBlocks;
+import mrthomas20121.gravitation.compat.ModCompat;
 import mrthomas20121.gravitation.item.GraviItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.fml.ModList;
 
 public class GraviItemData extends AetherItemModelProvider {
 
@@ -82,6 +84,8 @@ public class GraviItemData extends AetherItemModelProvider {
         this.crossbowItem(GraviItems.HOLY_CROSSBOW.get());
         this.crossbowItem(GraviItems.LIGHTNING_CROSSBOW.get());
         this.crossbowItem(GraviItems.VAMPIRE_CROSSBOW.get());
+
+        ModCompat.GetCompatList().forEach(compat -> compat.addItemModels(this));
     }
 
     public void crossbowItem(Item item) {

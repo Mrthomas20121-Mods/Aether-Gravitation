@@ -1,0 +1,7 @@
+{
+  "type": "aether:repairing",
+  "ingredient": {
+    "item": "gravitation:bronzite_helmet"
+  },
+  "repairTime": 500
+}

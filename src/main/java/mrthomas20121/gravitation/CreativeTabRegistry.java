@@ -1,6 +1,7 @@
 package mrthomas20121.gravitation;
 
 import mrthomas20121.gravitation.block.GraviBlocks;
+import mrthomas20121.gravitation.compat.ModCompat;
 import mrthomas20121.gravitation.item.GraviCreativeTabs;
 import mrthomas20121.gravitation.item.GraviItems;
 import net.minecraft.network.chat.Component;
@@ -8,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = Gravitation.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -63,6 +65,8 @@ public class CreativeTabRegistry {
                     output.accept(GraviItems.ENCHANTED_BOAT.get());
                     output.accept(GraviItems.ENCHANTED_CHEST_BOAT.get());
                     output.accept(GraviBlocks.ENCHANTED_SAPLING.get());
+
+                    ModCompat.GetCompatList().stream().filter(compat -> ModList.get().isLoaded(compat.getModID())).forEach(compat -> compat.addToCreativeTab(output));
                 }));
 
         GraviCreativeTabs.BUILDING_BLOCKS = event.registerCreativeModeTab(new ResourceLocation(Gravitation.MOD_ID, "building_blocks"), (builder) -> builder

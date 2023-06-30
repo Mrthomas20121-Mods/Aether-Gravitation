@@ -1,11 +1,13 @@
 package mrthomas20121.gravitation.data;
 
 import mrthomas20121.gravitation.block.GraviBlocks;
+import mrthomas20121.gravitation.compat.ModCompat;
 import mrthomas20121.gravitation.enchanting.GravitationEnchantments;
 import mrthomas20121.gravitation.entity.GraviEntityTypes;
 import mrthomas20121.gravitation.item.GraviItems;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
+import net.minecraftforge.fml.ModList;
 
 public class GraviLanguageData extends LanguageProvider {
 
@@ -90,6 +92,9 @@ public class GraviLanguageData extends LanguageProvider {
         addEntityType(GraviEntityTypes.ENCHANTED_CHEST_BOAT, "Enchanted Chest Boat");
         addEnchantment(GravitationEnchantments.NEPTUNE_WRATH, "Neptune's Wrath");
         add("enchantment.gravitation.neptune_wrath.desc", "Deal more damage to water mobs.");
+        addEnchantment(GravitationEnchantments.HERCULES_STRENGTH, "Hercules's Strength");
+        add("enchantment.gravitation.hercules_strength.desc", "Deal more damage to Aether Bosses(Sun Spirit not included).");
+        add("gravitation.tooltip.can_create_enchanting_table", "Right click on a Enchanted Gravitite Block to create an Enchanting Table.");
 
         // lore
         add("lore.item.gravitation.bronzite_rock", "Rock with durable properties.");
@@ -121,5 +126,7 @@ public class GraviLanguageData extends LanguageProvider {
         add("lore.block.gravitation.enchanted_log", "These spawn on Enchanted Tree. They can double dropped with Skyroot Axes. When put in the crafting table they will provide 4 Enchanted Planks");
         add("lore.item.gravitation.phoenix_dart", "These Phoenix Darts are found in Gold Dungeon. Set the target on fire on hit.");
         add("lore.item.gravitation.phoenix_dart_shooter", "The Phoenix Dart Shooter is found in Gold Dungeon. It can shoot Phoenix Darts");
+
+        ModCompat.GetCompatList().stream().filter(compat -> ModList.get().isLoaded(compat.getModID())).forEach(compat -> compat.addLang(this));
     }
 }

@@ -2,6 +2,7 @@ package mrthomas20121.gravitation.data;
 
 import com.aetherteam.aether.AetherTags;
 import com.aetherteam.aether.data.generators.tags.AetherItemTagData;
+import com.aetherteam.aether.item.AetherItems;
 import mrthomas20121.gravitation.GraviTags;
 import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.block.GraviBlocks;
@@ -27,6 +28,8 @@ public class GraviItemTags extends ItemTagsProvider {
     protected void addTags(@NotNull HolderLookup.Provider provider) {
         this.tag(GraviTags.Items.ENCHANTED_LOGS).add(GraviBlocks.ENCHANTED_LOG.get().asItem(), GraviBlocks.ENCHANTED_WOOD.get().asItem(), GraviBlocks.STRIPPED_ENCHANTED_LOG.get().asItem(), GraviBlocks.STRIPPED_ENCHANTED_WOOD.get().asItem());
         this.tag(Tags.Items.BOOKSHELVES).add(GraviBlocks.ENCHANTED_BOOKSHELF.get().asItem());
+
+        this.tag(GraviTags.Items.CAN_CREATE_ENCHANTING_TABLE).add(AetherItems.GOLDEN_AMBER.get());
 
         this.tag(GraviTags.Items.BATTLEAXES).add(
                 GraviItems.NEPTUNE_BATTLEAXE.get(),

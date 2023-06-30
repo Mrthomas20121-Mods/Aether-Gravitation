@@ -5,6 +5,7 @@ import mrthomas20121.gravitation.block.GraviBlocks;
 import mrthomas20121.gravitation.block.wood.GraviWoodType;
 import mrthomas20121.gravitation.block_entity.GraviBlockEntityTypes;
 import mrthomas20121.gravitation.client.GraviModelPredicate;
+import mrthomas20121.gravitation.compat.ModCompat;
 import mrthomas20121.gravitation.data.*;
 import mrthomas20121.gravitation.enchanting.GravitationEnchantments;
 import mrthomas20121.gravitation.entity.GraviEntityTypes;
@@ -19,6 +20,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -46,6 +48,11 @@ public class Gravitation {
 		GraviEntityTypes.ENTITY_TYPES.register(bus);
 		GlobalLootModifiers.LOOT_MODIFIERS.register(bus);
 		GravitationEnchantments.ENCHANTING.register(bus);
+
+		// register the compats to the game
+		ModCompat.register();
+
+		ModCompat.GetCompatList().stream().filter(compat -> ModList.get().isLoaded(compat.getModID())).forEach(compat -> compat.register(bus));
 
 		GraviWoodType.registerWoodTypes();
 

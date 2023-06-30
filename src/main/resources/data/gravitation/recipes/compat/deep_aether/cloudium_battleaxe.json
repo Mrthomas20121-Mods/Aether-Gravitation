@@ -1,0 +1,25 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "deep_aether"
+        }
+      ],
+      "recipe": {	
+        "type": "minecraft:smithing",
+        "addition": {
+          "item": "deep_aether:cloudium_ingot"
+        },
+        "base": {
+          "item": "gravitation:gravitite_battleaxe"
+        },
+        "result": {
+          "item": "gravitation:cloudium_battleaxe"
+        }
+      }
+    }
+  ]
+}

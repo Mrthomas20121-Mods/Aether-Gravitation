@@ -5,7 +5,9 @@ import com.aetherteam.aether.block.AetherBlocks;
 import com.aetherteam.aether.data.providers.AetherRecipeProvider;
 import com.aetherteam.aether.item.AetherItems;
 import mrthomas20121.gravitation.GraviTags;
+import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.block.GraviBlocks;
+import mrthomas20121.gravitation.compat.ModCompat;
 import mrthomas20121.gravitation.item.GraviItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -153,6 +155,8 @@ public class GraviRecipes extends AetherRecipeProvider {
         repairingRecipe(RecipeCategory.TOOLS, GraviItems.DIAMOND_BATTLEAXE.get(), 1500).save(consumer, new ResourceLocation("gravitation:repairing/diamond_battleaxe"));
         repairingRecipe(RecipeCategory.TOOLS, GraviItems.IRON_BATTLEAXE.get(), 750).save(consumer, new ResourceLocation("gravitation:repairing/iron_battleaxe"));
         repairingRecipe(RecipeCategory.TOOLS, GraviItems.GOLD_BATTLEAXE.get(), 500).save(consumer, new ResourceLocation("gravitation:repairing/gold_battleaxe"));
+        repairingRecipe(RecipeCategory.TOOLS, GraviItems.BRONZITE_HELMET.get(), 500).save(consumer, new ResourceLocation("gravitation:repairing/bronzite_helmet"));
+        repairingRecipe(RecipeCategory.TOOLS, GraviItems.BRONZITE_CHESTPLATE.get(), 500).save(consumer, new ResourceLocation("gravitation:repairing/bronzite_chestplate"));
         repairingRecipe(RecipeCategory.TOOLS, GraviItems.BRONZITE_GLOVES.get(), 500).save(consumer, new ResourceLocation("gravitation:repairing/bronzite_gloves"));
         repairingRecipe(RecipeCategory.TOOLS, GraviItems.BRONZITE_BOOTS.get(), 500).save(consumer, new ResourceLocation("gravitation:repairing/bronzite_boots"));
         repairingRecipe(RecipeCategory.TOOLS, GraviItems.BRONZITE_LEGGING.get(), 500).save(consumer, new ResourceLocation("gravitation:repairing/bronzite_leggings"));
@@ -174,6 +178,10 @@ public class GraviRecipes extends AetherRecipeProvider {
         enchantingRecipe(RecipeCategory.MISC, GraviItems.DENSE_STONE.get(), AetherBlocks.ANGELIC_STONE.get(), 0.20f, 30).save(consumer, new ResourceLocation("gravitation:enchanting/dense_stone"));
         enchantingRecipe(RecipeCategory.MISC, GraviItems.POWER_STONE.get(), AetherBlocks.HELLFIRE_STONE.get(), 0.20f, 40).save(consumer, new ResourceLocation("gravitation:enchanting/power_stone"));
         enchantingRecipe(RecipeCategory.MISC, GraviItems.GREATER_HEALING_STONE.get(), AetherItems.HEALING_STONE.get(), 0.20f, 120).save(consumer, new ResourceLocation("gravitation:enchanting/greater_healing_stone"));
+
+        freezingRecipe(RecipeCategory.MISC, Items.LAPIS_LAZULI, AetherItems.GOLDEN_AMBER.get(), 1.0f, 10).save(consumer, "gravitation:golden_amber_to_lapis");
+
+        ModCompat.GetCompatList().forEach(compat -> compat.addRecipes(consumer, this));
     }
 
     protected static void stickFromPlanks(Consumer<FinishedRecipe> consumer, ResourceLocation name, ItemLike output, ItemLike input) {
@@ -188,8 +196,8 @@ public class GraviRecipes extends AetherRecipeProvider {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, output).group("battleaxe").define('#', material).define('X', stick).pattern("###").pattern("#X#").pattern(" X ").unlockedBy("has", has(material)).save(consumer);
     }
 
-    protected static void conditionalBattleaxeRecipe(String modid, ItemLike material, Item stick, Item output) {
-        ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid)).addRecipe(ConditionalFinishedRecipe.create(ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, output).group("battleaxe").define('#', material).define('X', stick).pattern("###").pattern("#X#").pattern(" X ").unlockedBy("has", has(material))));
+    public void conditionalBattleaxeRecipe(Consumer<FinishedRecipe> consumer, String name ,  String modid, ItemLike material, Item stick, Item output) {
+        ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid)).addRecipe(ConditionalFinishedRecipe.create(ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, output).group("battleaxe").define('#', material).define('X', stick).pattern("###").pattern("#X#").pattern(" X ").unlockedBy("has", has(material)))).build(consumer, new ResourceLocation(Gravitation.MOD_ID, name));
     }
 
     @SuppressWarnings("deprecation")

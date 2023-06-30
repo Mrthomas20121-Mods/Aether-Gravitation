@@ -11,4 +11,6 @@ public class GravitationEnchantments {
     public static DeferredRegister<Enchantment> ENCHANTING = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, Gravitation.MOD_ID);
 
     public static RegistryObject<Enchantment> NEPTUNE_WRATH = ENCHANTING.register("neptune_wrath", EnchantmentNeptuneWrath::new);
+
+    public static RegistryObject<Enchantment> HERCULES_STRENGTH = ENCHANTING.register("hercules_strength", EnchantmentHerculesStrength::new);
 }

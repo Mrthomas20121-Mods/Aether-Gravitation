@@ -11,6 +11,8 @@ public class GraviTags {
 
     public static class Entities {
 
+        public static TagKey<EntityType<?>> IS_AFFECTED_BY_HERCULE_STRENGTH = tag("is_affected_by_hercule_strength");
+
         public static TagKey<EntityType<?>> IS_AFFECTED_BY_NEPTUNE_WRATH = tag("is_affected_by_neptune_wrath");
 
         private static TagKey<EntityType<?>> tag(String name) {
@@ -46,6 +48,8 @@ public class GraviTags {
         public static TagKey<Item> ENCHANTED_LOGS = tag("enchanted_logs");
 
         public static TagKey<Item> BATTLEAXES = forgeTag("battleaxes");
+
+        public static TagKey<Item> CAN_CREATE_ENCHANTING_TABLE = tag("can_create_enchanting_table");
 
         public static TagKey<Item> BRONZITE_REPAIRING = tag("bronzite_repairing");
 
