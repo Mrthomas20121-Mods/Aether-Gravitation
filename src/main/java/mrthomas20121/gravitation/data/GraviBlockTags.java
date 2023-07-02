@@ -24,6 +24,9 @@ public class GraviBlockTags extends BlockTagsProvider {
     @Override
     @SuppressWarnings("unchecked")
     protected void addTags(@NotNull HolderLookup.Provider provider) {
+
+        this.tag(BlockTags.OVERWORLD_CARVER_REPLACEABLES).addTags(AetherTags.Blocks.AETHER_DIRT);
+
         this.tag(BlockTags.LOGS_THAT_BURN).add(GraviBlocks.ENCHANTED_LOG.get(), GraviBlocks.STRIPPED_ENCHANTED_LOG.get());
 
         this.tag(BlockTags.LEAVES).add(GraviBlocks.ENCHANTED_LEAVES.get());
