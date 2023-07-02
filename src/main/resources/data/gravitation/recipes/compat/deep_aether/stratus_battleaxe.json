@@ -11,13 +11,13 @@
       "recipe": {	
         "type": "minecraft:smithing",
         "addition": {
-          "item": "deep_aether:cloudium_ingot"
+          "item": "deep_aether:stratus_ingot"
         },
         "base": {
           "item": "gravitation:gravitite_battleaxe"
         },
         "result": {
-          "item": "gravitation:cloudium_battleaxe"
+          "item": "gravitation:stratus_battleaxe"
         }
       }
     }

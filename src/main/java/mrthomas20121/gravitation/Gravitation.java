@@ -1,6 +1,5 @@
 package mrthomas20121.gravitation;
 
-import com.aetherteam.aether.block.dispenser.DispenseDartBehavior;
 import mrthomas20121.gravitation.block.GraviBlocks;
 import mrthomas20121.gravitation.block.wood.GraviWoodType;
 import mrthomas20121.gravitation.block_entity.GraviBlockEntityTypes;
@@ -12,9 +11,11 @@ import mrthomas20121.gravitation.entity.GraviEntityTypes;
 import mrthomas20121.gravitation.item.GraviItems;
 import mrthomas20121.gravitation.data.loot.GlobalLootModifiers;
 import mrthomas20121.gravitation.data.loot.LootDataProvider;
+import mrthomas20121.gravitation.world.biome.GravitationRegion;
+import mrthomas20121.gravitation.world.biome.GravitationSurfaceData;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.level.block.DispenserBlock;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -27,6 +28,9 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import teamrazor.aeroblender.aether.AetherRuleCategory;
+import terrablender.api.Regions;
+import terrablender.api.SurfaceRuleManager;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -70,6 +74,10 @@ public class Gravitation {
 			GraviBlocks.registerFlammability();
 			GraviBlocks.registerPots();
 			GraviBlocks.registerStripping();
+
+			Regions.register(new GravitationRegion(new ResourceLocation(MOD_ID, "gravitation"), 4));
+
+			SurfaceRuleManager.addSurfaceRules(AetherRuleCategory.THE_AETHER, MOD_ID, GravitationSurfaceData.rules());
 		});
 	}
 
@@ -90,6 +98,8 @@ public class Gravitation {
 		event.getGenerator().addProvider(event.includeServer(), blockTags);
 		event.getGenerator().addProvider(event.includeServer(), GraviLoot.create(packOutput));
 		event.getGenerator().addProvider(event.includeServer(), new GraviRecipes(packOutput));
+		event.getGenerator().addProvider(event.includeServer(), new GraviEntityTagsData(packOutput, lookupProvider, existingFileHelper));
 		event.getGenerator().addProvider(event.includeServer(), new GraviItemTags(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
+		event.getGenerator().addProvider(event.includeServer(), new GraviBiomeTagsData(packOutput, lookupProvider, existingFileHelper));
 	}
 }

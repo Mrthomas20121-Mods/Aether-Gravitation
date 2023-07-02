@@ -10,9 +10,9 @@ import net.minecraftforge.common.data.ForgeEntityTypeTagsProvider;
 
 import java.util.concurrent.CompletableFuture;
 
-public class EntityTagsData extends ForgeEntityTypeTagsProvider {
+public class GraviEntityTagsData extends ForgeEntityTypeTagsProvider {
 
-    public EntityTagsData(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper) {
+    public GraviEntityTagsData(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, existingFileHelper);
     }
 

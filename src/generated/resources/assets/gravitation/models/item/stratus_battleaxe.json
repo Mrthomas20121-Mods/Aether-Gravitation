@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "gravitation:item/cloudium_battleaxe"
+    "layer0": "gravitation:item/stratus_battleaxe"
   }
 }

@@ -3,6 +3,8 @@ package mrthomas20121.gravitation.data;
 import com.aetherteam.aether.AetherTags;
 import com.aetherteam.aether.block.AetherBlocks;
 import com.aetherteam.aether.data.resources.AetherFeatureStates;
+import com.aetherteam.aether.world.foliageplacer.CrystalFoliagePlacer;
+import com.google.common.collect.ImmutableList;
 import mrthomas20121.gravitation.block.GraviBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -18,10 +20,9 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BushFoliagePlacer;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.treedecorators.AlterGroundDecorator;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.structure.templatesystem.BlockMatchTest;
@@ -53,15 +54,15 @@ public class GraviConfiguredFeatures {
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createEnchanted() {
-        return createStraightBlobTree(GraviBlocks.ENCHANTED_LOG.get(), GraviBlocks.ENCHANTED_LEAVES.get(), 5, 3, 0, 3).ignoreVines();
+        return createStraightBlobTree(GraviBlocks.ENCHANTED_LOG.get(), GraviBlocks.ENCHANTED_LEAVES.get(), 3, 3, 1, 3).decorators(ImmutableList.of(new AlterGroundDecorator(BlockStateProvider.simple(AetherBlocks.ENCHANTED_AETHER_GRASS_BLOCK.get())))).ignoreVines();
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createBush(Supplier<Block> leaves, Supplier<RotatedPillarBlock> log) {
-        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(log.get()), new StraightTrunkPlacer(1, 0, 0), BlockStateProvider.simple(leaves.get()), new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2), new TwoLayersFeatureSize(0, 0, 0)).ignoreVines();
+        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(log.get()), new StraightTrunkPlacer(1, 0, 0), BlockStateProvider.simple(leaves.get()), new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2), new TwoLayersFeatureSize(0, 0, 0)).decorators(ImmutableList.of(new AlterGroundDecorator(BlockStateProvider.simple(AetherBlocks.ENCHANTED_AETHER_GRASS_BLOCK.get())))).ignoreVines();
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(Block p_195147_, Block p_195148_, int p_195149_, int p_195150_, int p_195151_, int p_195152_) {
-        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(p_195147_), new StraightTrunkPlacer(p_195149_, p_195150_, p_195151_), BlockStateProvider.simple(p_195148_), new BlobFoliagePlacer(ConstantInt.of(p_195152_), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0, 1));
+        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(p_195147_), new StraightTrunkPlacer(p_195149_, p_195150_, p_195151_), BlockStateProvider.simple(p_195148_), new PineFoliagePlacer(ConstantInt.of(p_195152_), ConstantInt.of(0), ConstantInt.of(2)), new TwoLayersFeatureSize(1, 0, 1));
     }
 
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {

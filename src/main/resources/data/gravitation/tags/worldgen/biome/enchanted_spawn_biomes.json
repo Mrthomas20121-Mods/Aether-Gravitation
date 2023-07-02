@@ -1,8 +1,6 @@
 {
   "replace": false,
   "values": [
-    "aether:skyroot_meadow",
-    "aether:skyroot_grove",
-    "aether:skyroot_forest"
+    "gravitation:enchanted_forest"
   ]
 }
