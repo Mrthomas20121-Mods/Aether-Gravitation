@@ -19,6 +19,6 @@ public class GraviBiomeTagsData extends BiomeTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        this.tag(AetherTags.Biomes.IS_AETHER).add(GravitationBiomes.ENCHANTED_FOREST);
+        //this.tag(AetherTags.Biomes.IS_AETHER).add(GravitationBiomes.ENCHANTED_FOREST);
     }
 }

@@ -44,7 +44,7 @@ public class GraviPlacedFeatures {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(GraviConfiguredFeatures.ENCHANTED_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(4, 0.1F, 1)));
+                treePlacement(PlacementUtils.countExtra(5, 0.1F, 1)));
 
         register(context, SMALL_ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(GraviConfiguredFeatures.SMALL_ENCHANTED_TREE_CONFIGURATION),
                 treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
