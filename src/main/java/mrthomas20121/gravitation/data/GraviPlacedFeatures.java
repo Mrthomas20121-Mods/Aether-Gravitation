@@ -32,8 +32,12 @@ import java.util.List;
 public class GraviPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> ENCHANTED_TREES_PLACEMENT = createKey("enchanted_tree");
+
+    public static final ResourceKey<PlacedFeature> GOLDEN_ENCHANTED_TREES_PLACEMENT = createKey("golden_enchanted_tree");
     public static final ResourceKey<PlacedFeature> SMALL_ENCHANTED_TREES_PLACEMENT = createKey("small_enchanted_tree");
     public static final ResourceKey<PlacedFeature> BRONZITE_ORE_PLACEMENT = createKey("bronzite_ore");
+    public static final ResourceKey<PlacedFeature> LARGE_BRONZITE_ORE_PLACEMENT = createKey("large_bronzite_ore");
+    public static final ResourceKey<PlacedFeature> LARGE_BLUE_AERCLOUD_PLACEMENT = createKey("large_blue_aercloud");
 
     private static ResourceKey<PlacedFeature> createKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(Gravitation.MOD_ID, name));
@@ -44,13 +48,22 @@ public class GraviPlacedFeatures {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(GraviConfiguredFeatures.ENCHANTED_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(5, 0.1F, 1)));
+                treePlacement(PlacementUtils.countExtra(6, 0.2F, 1)));
+
+        register(context, GOLDEN_ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(AetherConfiguredFeatures.GOLDEN_OAK_TREE_CONFIGURATION),
+                treePlacement(PlacementUtils.countExtra(2, 0.1F, 1)));
 
         register(context, SMALL_ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(GraviConfiguredFeatures.SMALL_ENCHANTED_TREE_CONFIGURATION),
+                treePlacement(PlacementUtils.countExtra(3, 0.1F, 1)));
+
+        register(context, LARGE_BLUE_AERCLOUD_PLACEMENT, configuredFeatures.getOrThrow(AetherConfiguredFeatures.BLUE_AERCLOUD_CONFIGURATION),
                 treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
 
         register(context, BRONZITE_ORE_PLACEMENT, configuredFeatures.getOrThrow(GraviConfiguredFeatures.BRONZITE_ORE),
                 AetherPlacedFeatureBuilders.commonOrePlacement(12, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(75))));
+
+        register(context, LARGE_BRONZITE_ORE_PLACEMENT, configuredFeatures.getOrThrow(GraviConfiguredFeatures.BRONZITE_ORE),
+                AetherPlacedFeatureBuilders.commonOrePlacement(20, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(128))));
     }
 
     public static List<PlacementModifier> treePlacement(PlacementModifier count) {

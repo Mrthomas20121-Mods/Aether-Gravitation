@@ -50,11 +50,11 @@ public class GraviConfiguredFeatures {
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createEnchanted() {
-        return createStraightBlobTree(GraviBlocks.ENCHANTED_LOG.get(), GraviBlocks.ENCHANTED_LEAVES.get(), 4, 2, 1).decorators(ImmutableList.of(new AlterGroundDecorator(BlockStateProvider.simple(AetherBlocks.ENCHANTED_AETHER_GRASS_BLOCK.get())))).ignoreVines();
+        return createStraightBlobTree(GraviBlocks.ENCHANTED_LOG.get(), GraviBlocks.ENCHANTED_LEAVES.get(), 4, 2, 1).ignoreVines();
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createBush(Supplier<Block> leaves, Supplier<RotatedPillarBlock> log) {
-        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(log.get()), new StraightTrunkPlacer(1, 0, 0), BlockStateProvider.simple(leaves.get()), new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2), new TwoLayersFeatureSize(0, 0, 0)).decorators(ImmutableList.of(new AlterGroundDecorator(BlockStateProvider.simple(AetherBlocks.ENCHANTED_AETHER_GRASS_BLOCK.get())))).ignoreVines();
+        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(log.get()), new StraightTrunkPlacer(1, 0, 0), BlockStateProvider.simple(leaves.get()), new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2), new TwoLayersFeatureSize(0, 0, 0)).ignoreVines();
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(Block p_195147_, Block p_195148_, int p_195149_, int p_195150_, int p_195151_) {
