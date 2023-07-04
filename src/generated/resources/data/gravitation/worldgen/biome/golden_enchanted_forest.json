@@ -37,8 +37,8 @@
     [],
     [],
     [
-      "gravitation:small_enchanted_tree",
       "gravitation:enchanted_tree",
+      "gravitation:golden_enchanted_tree",
       "aether:grass_patch",
       "aether:tall_grass_patch",
       "aether:white_flower_patch",
