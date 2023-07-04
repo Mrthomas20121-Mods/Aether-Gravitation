@@ -22,11 +22,24 @@ public class GravitationRegion extends Region {
 
     @Override
     public void addBiomes(Registry<Biome> registry, Consumer<Pair<Climate.ParameterPoint, ResourceKey<Biome>>> mapper) {
-        Climate.Parameter fullRange = Climate.Parameter.span(0F, 1.0F);
+        // full range
+        Climate.Parameter fullRange = Climate.Parameter.span(-1.0F, 1.0F);
 
-        Climate.Parameter temp = Climate.Parameter.span(-1F, 0.4F);
+        // golden mountain, golden enchanted forest and enchanted forest
+        Climate.Parameter temps1 = Climate.Parameter.span(-0.1F, 0.0F);
 
-        this.addBiome(mapper, new Climate.ParameterPoint(temp, Climate.Parameter.span(-1.0F, 0.3F), fullRange, fullRange, fullRange, fullRange, 0),
+        // enchanted shore
+        Climate.Parameter temps2 = Climate.Parameter.span(0.0F, 0.4F);
+
+        this.addBiome(mapper, new Climate.ParameterPoint(temps1, Climate.Parameter.span(-1F, 0.5F), fullRange, fullRange, fullRange, fullRange, 0),
+                GravitationBiomes.GOLDEN_MOUNTAIN);
+
+        this.addBiome(mapper, new Climate.ParameterPoint(temps1, Climate.Parameter.span(-0.8F, 1F), fullRange, fullRange, fullRange, fullRange, 0),
+                GravitationBiomes.GOLDEN_ENCHANTED_FOREST);
+        this.addBiome(mapper, new Climate.ParameterPoint(temps1, Climate.Parameter.span(-1F, 0.8F), fullRange, fullRange, fullRange, fullRange, 0),
                 GravitationBiomes.ENCHANTED_FOREST);
+
+        this.addBiome(mapper, new Climate.ParameterPoint(temps2, Climate.Parameter.span(0F, 1F), fullRange, fullRange, fullRange, fullRange, 1),
+                GravitationBiomes.ENCHANTED_SHORE);
     }
 }
