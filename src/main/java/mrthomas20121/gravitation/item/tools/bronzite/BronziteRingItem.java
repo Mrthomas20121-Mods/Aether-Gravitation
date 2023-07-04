@@ -53,7 +53,7 @@ public class BronziteRingItem extends RingItem {
     @Override
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
         if (!slotContext.entity().level.isClientSide()) {
-            AttributeInstance attributeInstance = slotContext.entity().getAttribute(ForgeMod.SWIM_SPEED.get());
+            AttributeInstance attributeInstance = slotContext.entity().getAttribute(Attributes.ARMOR);
 
             if(attributeInstance != null) {
                 attributeInstance.removeModifier(ID);
