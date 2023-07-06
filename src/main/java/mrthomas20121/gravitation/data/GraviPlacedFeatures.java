@@ -19,6 +19,7 @@ import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -51,7 +52,7 @@ public class GraviPlacedFeatures {
                 treePlacement(PlacementUtils.countExtra(6, 0.2F, 1)));
 
         register(context, GOLDEN_ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(AetherConfiguredFeatures.GOLDEN_OAK_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(2, 0.1F, 1)));
+                treePlacement(CountPlacement.of(UniformInt.of(0, 1))));
 
         register(context, SMALL_ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(GraviConfiguredFeatures.SMALL_ENCHANTED_TREE_CONFIGURATION),
                 treePlacement(PlacementUtils.countExtra(3, 0.1F, 1)));

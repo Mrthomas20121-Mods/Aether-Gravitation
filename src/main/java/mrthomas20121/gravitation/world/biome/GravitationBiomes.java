@@ -26,7 +26,6 @@ import static com.aetherteam.aether.data.resources.builders.AetherBiomeBuilders.
 public class GravitationBiomes {
 
     public static ResourceKey<Biome> ENCHANTED_FOREST = createKey("enchanted_forest");
-    public static ResourceKey<Biome> GOLDEN_ENCHANTED_FOREST = createKey("golden_enchanted_forest");
     public static ResourceKey<Biome> GOLDEN_MOUNTAIN = createKey("golden_mountain");
     public static ResourceKey<Biome> ENCHANTED_SHORE = createKey("enchanted_shore");
 
@@ -38,7 +37,6 @@ public class GravitationBiomes {
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         HolderGetter<ConfiguredWorldCarver<?>> vanillaConfiguredCarvers = context.lookup(Registries.CONFIGURED_CARVER);
         context.register(ENCHANTED_FOREST, enchantedForestBiome(placedFeatures, vanillaConfiguredCarvers));
-        context.register(GOLDEN_ENCHANTED_FOREST, goldenEnchantedForestBiome(placedFeatures, vanillaConfiguredCarvers));
         context.register(GOLDEN_MOUNTAIN, goldenMountainBiome(placedFeatures, vanillaConfiguredCarvers));
         context.register(ENCHANTED_SHORE, enchantedShoreBiome(placedFeatures, vanillaConfiguredCarvers));
     }
@@ -47,12 +45,8 @@ public class GravitationBiomes {
         return makeDefaultBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers).addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GraviPlacedFeatures.SMALL_ENCHANTED_TREES_PLACEMENT));
     }
 
-    public static Biome goldenEnchantedForestBiome(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
-        return makeDefaultBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers).addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GraviPlacedFeatures.ENCHANTED_TREES_PLACEMENT).addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GraviPlacedFeatures.GOLDEN_ENCHANTED_TREES_PLACEMENT));
-    }
-
     public static Biome goldenMountainBiome(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
-        return makeDefaultBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers));
+        return makeDefaultBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers).addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GraviPlacedFeatures.GOLDEN_ENCHANTED_TREES_PLACEMENT));
     }
 
     public static Biome enchantedForestBiome(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
@@ -108,7 +102,7 @@ public class GravitationBiomes {
                         .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, AetherPlacedFeatures.ORE_ZANITE_PLACEMENT)
                         .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, AetherPlacedFeatures.ORE_GRAVITITE_PLACEMENT)
                         .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, AetherPlacedFeatures.ORE_GRAVITITE_LOWER_PLACEMENT)
-                        .addFeature(GenerationStep.Decoration.UNDERGROUND_ORES, GraviPlacedFeatures.LARGE_BRONZITE_ORE_PLACEMENT)
+                        .addFeature(GenerationStep.Decoration.UNDERGROUND_DECORATION, GraviPlacedFeatures.LARGE_BRONZITE_ORE_PLACEMENT)
                         .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AetherPlacedFeatures.GRASS_PATCH_PLACEMENT)
                         .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AetherPlacedFeatures.TALL_GRASS_PATCH_PLACEMENT)
                         .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AetherPlacedFeatures.WHITE_FLOWER_PATCH_PLACEMENT)

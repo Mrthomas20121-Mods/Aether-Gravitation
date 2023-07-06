@@ -31,10 +31,11 @@
       "aether:ambrosium_ore",
       "aether:zanite_ore",
       "aether:gravitite_ore",
-      "aether:lower_gravitite_ore",
+      "aether:lower_gravitite_ore"
+    ],
+    [
       "gravitation:large_bronzite_ore"
     ],
-    [],
     [],
     [
       "gravitation:small_enchanted_tree",
