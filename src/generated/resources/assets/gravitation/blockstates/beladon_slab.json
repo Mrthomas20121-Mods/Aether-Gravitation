@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "gravitation:block/beladon_slab"
+    },
+    "type=double": {
+      "model": "gravitation:block/beladon_planks"
+    },
+    "type=top": {
+      "model": "gravitation:block/beladon_slab_top"
+    }
+  }
+}

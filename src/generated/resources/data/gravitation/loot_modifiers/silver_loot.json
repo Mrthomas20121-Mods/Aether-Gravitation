@@ -102,13 +102,6 @@
         "id": "gravitation:dense_stone"
       },
       "weight": 40
-    },
-    {
-      "data": {
-        "Count": 1,
-        "id": "gravitation:lightning_crossbow"
-      },
-      "weight": 20
     }
   ],
   "totalWeight": 360

@@ -17,7 +17,9 @@
     "water_fog_color": 329011
   },
   "features": [
-    [],
+    [
+      "aether:quicksoil_shelf"
+    ],
     [
       "aether:water_lake"
     ],
@@ -30,24 +32,24 @@
       "aether:icestone_ore",
       "aether:ambrosium_ore",
       "aether:zanite_ore",
-      "aether:gravitite_ore",
-      "aether:lower_gravitite_ore"
-    ],
-    [
-      "gravitation:large_bronzite_ore"
+      "aether:gravitite_ore_buried",
+      "aether:gravitite_ore"
     ],
     [],
     [
+      "aether:water_spring"
+    ],
+    [
       "gravitation:golden_enchanted_tree",
-      "aether:grass_patch",
-      "aether:tall_grass_patch",
+      "aether:holiday_tree",
       "aether:white_flower_patch",
       "aether:purple_flower_patch",
       "aether:berry_bush_patch"
     ],
     [
+      "aether:crystal_island",
       "aether:cold_aercloud",
-      "gravitation:large_blue_aercloud",
+      "aether:blue_aercloud",
       "aether:golden_aercloud"
     ]
   ],

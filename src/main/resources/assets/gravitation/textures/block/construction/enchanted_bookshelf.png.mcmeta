@@ -1,6 +1,6 @@
 {
     "ctm": {
         "ctm_version": 1,
-        "proxy": "aether:block/construction/skyroot_bookshelf-ctmh"
+        "proxy": "gravitation:block/construction/enchanted_bookshelf-ctmh"
     }
 }

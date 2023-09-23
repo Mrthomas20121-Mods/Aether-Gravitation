@@ -10,9 +10,12 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeMod;
 import top.theillusivec4.curios.api.SlotContext;
 
+import javax.annotation.Nullable;
 import java.util.List;
 import java.util.UUID;
 
@@ -23,11 +26,19 @@ public class NeptuneRingItem extends RingItem {
 
     public NeptuneRingItem() {
         super(AetherSoundEvents.ITEM_ACCESSORY_EQUIP_ZANITE_RING, new Properties().rarity(AetherItems.AETHER_LOOT).stacksTo(1));
-        this.addDungeonTooltip(AetherItems.SILVER_DUNGEON_TOOLTIP);
     }
 
     private AttributeModifier createModifier() {
         return new AttributeModifier(ID, NAME, 2f, AttributeModifier.Operation.ADDITION);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
+        super.appendHoverText(stack, level, components, flag);
+        if (flag.isCreative()) {
+            components.add(AetherItems.SILVER_DUNGEON_TOOLTIP);
+        }
+
     }
 
     @Override

@@ -1,13 +1,13 @@
 package mrthomas20121.gravitation.item.tools;
 
-import com.aetherteam.aether.item.combat.AetherSwordItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraftforge.common.ToolActions;
 
-public class CutlassItem extends AetherSwordItem {
+public class CutlassItem extends SwordItem {
     public CutlassItem(Tier p_43269_, int attackDamage, float attackSpeed, Properties properties) {
         super(p_43269_, attackDamage, attackSpeed, properties);
     }

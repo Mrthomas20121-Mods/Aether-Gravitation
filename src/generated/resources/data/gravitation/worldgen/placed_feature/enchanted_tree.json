@@ -7,8 +7,8 @@
         "type": "minecraft:weighted_list",
         "distribution": [
           {
-            "data": 6,
-            "weight": 4
+            "data": 4,
+            "weight": 99
           },
           {
             "data": 7,
@@ -38,6 +38,18 @@
     },
     {
       "type": "aether:dungeon_blacklist_filter"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:would_survive",
+        "state": {
+          "Name": "gravitation:beladon_sapling",
+          "Properties": {
+            "stage": "0"
+          }
+        }
+      }
     },
     {
       "type": "minecraft:block_predicate_filter",

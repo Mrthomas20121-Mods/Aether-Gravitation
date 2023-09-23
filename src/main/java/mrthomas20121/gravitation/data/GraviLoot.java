@@ -34,6 +34,25 @@ public class GraviLoot extends AetherBlockLootSubProvider {
 
     @Override
     protected void generate() {
+
+        this.dropSelf(GraviBlocks.ENCHANTED_MOSS.get());
+        this.add(GraviBlocks.BELADON_LEAVES.get(), (leaves) -> this.droppingWithChancesAndSkyrootSticks(leaves, GraviBlocks.BELADON_SAPLING.get(), BlockLootAccessor.aether$getNormalLeavesSaplingChances()));
+        this.dropSelf(GraviBlocks.BELADON_SAPLING.get());
+        this.dropSelf(GraviBlocks.BELADON_SIGN.get());
+        this.dropSelfDouble(GraviBlocks.BELADON_LOG.get());
+        this.dropSelf(GraviBlocks.BELADON_WOOD.get());
+        this.dropSelf(GraviBlocks.STRIPPED_BELADON_WOOD.get());
+        this.dropSelf(GraviBlocks.STRIPPED_BELADON_LOG.get());
+        this.dropSelf(GraviBlocks.BELADON_PLANKS.get());
+        this.dropSelf(GraviBlocks.BELADON_DOOR.get());
+        this.dropSelf(GraviBlocks.BELADON_TRAPDOOR.get());
+        this.dropSelf(GraviBlocks.BELADON_FENCE_GATE.get());
+        this.dropSelf(GraviBlocks.BELADON_FENCE.get());
+        this.dropSelf(GraviBlocks.BELADON_SLAB.get());
+        this.dropSelf(GraviBlocks.BELADON_STAIRS.get());
+        this.dropSelf(GraviBlocks.BELADON_BUTTON.get());
+        this.dropSelf(GraviBlocks.BELADON_PREASURE_PLATE.get());
+
         this.add(GraviBlocks.ENCHANTED_LEAVES.get(), (leaves) -> this.droppingWithChancesAndSkyrootSticks(leaves, GraviBlocks.ENCHANTED_SAPLING.get(), BlockLootAccessor.aether$getNormalLeavesSaplingChances()));
         this.dropSelf(GraviBlocks.ENCHANTED_SAPLING.get());
         this.dropSelf(GraviBlocks.ENCHANTED_SIGN.get());
@@ -53,6 +72,8 @@ public class GraviLoot extends AetherBlockLootSubProvider {
         this.dropWithFortune(GraviBlocks.BRONZITE_ICESTONE_ORE.get(), GraviItems.BRONZITE_ROCK.get());
         this.dropWithFortune(GraviBlocks.BRONZITE_ORE.get(), GraviItems.BRONZITE_ROCK.get());
         this.dropSelf(GraviBlocks.BRONZITE_BLOCK.get());
+        this.add(GraviBlocks.BELADON_BOOKSHELF.get(),
+                (bookshelf) -> createSingleItemTableWithSilkTouch(bookshelf, Items.BOOK, ConstantValue.exactly(3)));
         this.add(GraviBlocks.ENCHANTED_BOOKSHELF.get(),
                 (bookshelf) -> createSingleItemTableWithSilkTouch(bookshelf, Items.BOOK, ConstantValue.exactly(3)));
     }

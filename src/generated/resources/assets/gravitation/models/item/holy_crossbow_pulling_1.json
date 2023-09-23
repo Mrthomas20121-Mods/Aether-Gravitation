@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/crossbow",
-  "textures": {
-    "layer0": "gravitation:item/holy_crossbow_pulling_1"
-  }
-}

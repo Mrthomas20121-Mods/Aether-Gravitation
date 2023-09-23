@@ -1,5 +1,5 @@
 {
-  "feature": "gravitation:small_enchanted_tree",
+  "feature": "gravitation:enchanted_tree",
   "placement": [
     {
       "type": "minecraft:count",
@@ -7,11 +7,11 @@
         "type": "minecraft:weighted_list",
         "distribution": [
           {
-            "data": 3,
+            "data": 1,
             "weight": 9
           },
           {
-            "data": 4,
+            "data": 2,
             "weight": 1
           }
         ]
@@ -38,6 +38,18 @@
     },
     {
       "type": "aether:dungeon_blacklist_filter"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:would_survive",
+        "state": {
+          "Name": "gravitation:beladon_sapling",
+          "Properties": {
+            "stage": "0"
+          }
+        }
+      }
     },
     {
       "type": "minecraft:block_predicate_filter",

@@ -9,19 +9,19 @@ import java.util.List;
 
 public class ModCompat {
 
-    private static List<IModCompat> compats = new ArrayList<>();
+    private static final List<IModCompat> compatList = new ArrayList<>();
 
-    public static List<IModCompat> GetCompatList() {
-        return compats;
+    public static List<IModCompat> getCompatList() {
+        return compatList;
     }
 
     public static void register() {
         if(ModList.get().isLoaded("lost_aether_content")) {
-            compats.add(new LostAetherCompat());
+            compatList.add(new LostAetherCompat());
         }
 
         if(ModList.get().isLoaded("deep_aether")) {
-            compats.add(new DeepAetherCompat());
+            compatList.add(new DeepAetherCompat());
         }
     }
 }

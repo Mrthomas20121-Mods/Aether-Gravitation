@@ -36,11 +36,17 @@ public class GraviRenderer {
         // entities
         event.registerEntityRenderer(GraviEntityTypes.ENCHANTED_BOAT.get(), (context) -> new EnchantedBoatRenderer(context, false) );
         event.registerEntityRenderer(GraviEntityTypes.ENCHANTED_CHEST_BOAT.get(), (context) -> new EnchantedBoatRenderer(context, true) );
+
+        event.registerEntityRenderer(GraviEntityTypes.BELADON_BOAT.get(), (context) -> new BeladonBoatRenderer(context, false) );
+        event.registerEntityRenderer(GraviEntityTypes.BELADON_CHEST_BOAT.get(), (context) -> new BeladonBoatRenderer(context, true) );
     }
 
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(GraviModelLayers.ENCHANTED_BOAT, BoatModel::createBodyModel);
         event.registerLayerDefinition(GraviModelLayers.ENCHANTED_CHEST_BOAT, ChestBoatModel::createBodyModel);
+
+        event.registerLayerDefinition(GraviModelLayers.BELADON_BOAT, BoatModel::createBodyModel);
+        event.registerLayerDefinition(GraviModelLayers.BELADON_CHEST_BOAT, ChestBoatModel::createBodyModel);
     }
 }

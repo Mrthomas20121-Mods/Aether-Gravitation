@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "gravitation:block/natural/beladon_log",
+    "side": "gravitation:block/natural/beladon_log"
+  }
+}

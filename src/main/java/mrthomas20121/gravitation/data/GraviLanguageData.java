@@ -62,10 +62,6 @@ public class GraviLanguageData extends LanguageProvider {
         addItem(GraviItems.DIAMOND_BATTLEAXE, "Diamond Battleaxe");
         addItem(GraviItems.IRON_BATTLEAXE, "Iron Battleaxe");
         addItem(GraviItems.GOLD_BATTLEAXE, "Gold Battleaxe");
-        addItem(GraviItems.FLAMING_CROSSBOW, "Flaming Crossbow");
-        addItem(GraviItems.HOLY_CROSSBOW, "Holy Crossbow");
-        addItem(GraviItems.LIGHTNING_CROSSBOW, "Lightning Crossbow");
-        addItem(GraviItems.VAMPIRE_CROSSBOW, "Vampire Crossbow");
         addItem(GraviItems.ENCHANTED_CHEST_BOAT, "Enchanted Chest Boat");
         addItem(GraviItems.ENCHANTED_BOAT, "Enchanted Boat");
         addBlock(GraviBlocks.BRONZITE_ORE, "Bronzite Ore");
@@ -88,8 +84,32 @@ public class GraviLanguageData extends LanguageProvider {
         addBlock(GraviBlocks.ENCHANTED_PREASURE_PLATE, "Enchanted Preasure Plate");
         addBlock(GraviBlocks.ENCHANTED_FENCE, "Enchanted Fence");
         addBlock(GraviBlocks.ENCHANTED_FENCE_GATE, "Enchanted Fence Gate");
+        addBlock(GraviBlocks.ENCHANTED_MOSS, "Enchanted Moss");
         addEntityType(GraviEntityTypes.ENCHANTED_BOAT, "Enchanted Boat");
         addEntityType(GraviEntityTypes.ENCHANTED_CHEST_BOAT, "Enchanted Chest Boat");
+
+        addItem(GraviItems.BELADON_CHEST_BOAT, "Beladon Chest Boat");
+        addItem(GraviItems.BELADON_BOAT, "Beladon Boat");
+        addBlock(GraviBlocks.BELADON_SIGN, "Beladon Sign");
+        addBlock(GraviBlocks.BELADON_LEAVES, "Beladon Leaves");
+        addBlock(GraviBlocks.BELADON_SAPLING, "Beladon Sapling");
+        addBlock(GraviBlocks.BELADON_PLANKS, "Beladon Planks");
+        addBlock(GraviBlocks.BELADON_STAIRS, "Beladon Stairs");
+        addBlock(GraviBlocks.BELADON_SLAB, "Beladon Slab");
+        addBlock(GraviBlocks.BELADON_BOOKSHELF, "Beladon Bookshelf");
+        addBlock(GraviBlocks.BELADON_LOG, "Beladon Log");
+        addBlock(GraviBlocks.BELADON_WOOD, "Beladon Wood");
+        addBlock(GraviBlocks.STRIPPED_BELADON_LOG, "Stripped Beladon Log");
+        addBlock(GraviBlocks.STRIPPED_BELADON_WOOD, "Stripped Beladon Wood");
+        addBlock(GraviBlocks.BELADON_DOOR, "Beladon Door");
+        addBlock(GraviBlocks.BELADON_TRAPDOOR, "Beladon Trapdoor");
+        addBlock(GraviBlocks.BELADON_BUTTON, "Beladon Button");
+        addBlock(GraviBlocks.BELADON_PREASURE_PLATE, "Beladon Preasure Plate");
+        addBlock(GraviBlocks.BELADON_FENCE, "Beladon Fence");
+        addBlock(GraviBlocks.BELADON_FENCE_GATE, "Beladon Fence Gate");
+        addEntityType(GraviEntityTypes.BELADON_BOAT, "Beladon Boat");
+        addEntityType(GraviEntityTypes.BELADON_CHEST_BOAT, "Beladon Chest Boat");
+
         addEnchantment(GravitationEnchantments.NEPTUNE_WRATH, "Neptune's Wrath");
         add("enchantment.gravitation.neptune_wrath.desc", "Deal more damage to water mobs.");
         addEnchantment(GravitationEnchantments.HERCULES_STRENGTH, "Hercules's Strength");
@@ -127,6 +147,6 @@ public class GraviLanguageData extends LanguageProvider {
         add("lore.item.gravitation.phoenix_dart", "These Phoenix Darts are found in Gold Dungeon. Set the target on fire on hit.");
         add("lore.item.gravitation.phoenix_dart_shooter", "The Phoenix Dart Shooter is found in Gold Dungeon. It can shoot Phoenix Darts");
 
-        ModCompat.GetCompatList().stream().filter(compat -> ModList.get().isLoaded(compat.getModID())).forEach(compat -> compat.addLang(this));
+        ModCompat.getCompatList().stream().filter(compat -> ModList.get().isLoaded(compat.getModID())).forEach(compat -> compat.addLang(this));
     }
 }

@@ -15,9 +15,33 @@ public class GraviBlockstateData extends AetherBlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
+
+        this.block(GraviBlocks.ENCHANTED_MOSS.get(), "natural/");
         this.block(GraviBlocks.BRONZITE_ORE.get(), "natural/");
         this.block(GraviBlocks.BRONZITE_ICESTONE_ORE.get(), "natural/");
         this.block(GraviBlocks.BRONZITE_BLOCK.get(), "construction/");
+
+        this.block(GraviBlocks.BELADON_PLANKS.get(), "natural/");
+        this.block(GraviBlocks.BELADON_LEAVES.get(), "natural/");
+        this.log(GraviBlocks.BELADON_LOG.get());
+        this.log(GraviBlocks.STRIPPED_BELADON_LOG.get());
+        this.wood(GraviBlocks.BELADON_WOOD.get(), GraviBlocks.BELADON_LOG.get());
+        this.wood(GraviBlocks.STRIPPED_BELADON_WOOD.get(), GraviBlocks.STRIPPED_BELADON_LOG.get());
+
+        this.doorBlock(GraviBlocks.BELADON_DOOR.get(), new ResourceLocation("gravitation:block/natural/beladon_door_bottom"), new ResourceLocation("gravitation:block/natural/beladon_door_top"));
+        this.trapdoorBlock(GraviBlocks.BELADON_TRAPDOOR.get(), new ResourceLocation("gravitation:block/natural/beladon_trapdoor"), true);
+        this.stairs(GraviBlocks.BELADON_STAIRS.get(), GraviBlocks.BELADON_PLANKS.get(), "natural/");
+        this.slab(GraviBlocks.BELADON_SLAB.get(), GraviBlocks.BELADON_PLANKS.get(), "natural/");
+        this.fence(GraviBlocks.BELADON_FENCE.get(), GraviBlocks.BELADON_PLANKS.get(), "natural/");
+        this.fenceGateBlock(GraviBlocks.BELADON_FENCE_GATE.get(), GraviBlocks.BELADON_PLANKS.get(), "natural/");
+        this.buttonBlock(GraviBlocks.BELADON_BUTTON.get(), new ResourceLocation("gravitation:block/natural/beladon_planks"));
+        this.pressurePlateBlock(GraviBlocks.BELADON_PREASURE_PLATE.get(), new ResourceLocation("gravitation:block/natural/beladon_planks"));
+        this.bookshelf(GraviBlocks.BELADON_BOOKSHELF.get(), GraviBlocks.BELADON_PLANKS.get());
+
+        this.signBlock(GraviBlocks.BELADON_SIGN.get(), GraviBlocks.BELADON_WALL_SIGN.get(), this.texture(this.name(GraviBlocks.BELADON_PLANKS.get()), "natural/"));
+
+        this.saplingBlock(GraviBlocks.BELADON_SAPLING.get(), "natural/");
+
         this.block(GraviBlocks.ENCHANTED_PLANKS.get(), "natural/");
         this.block(GraviBlocks.ENCHANTED_LEAVES.get(), "natural/");
         this.log(GraviBlocks.ENCHANTED_LOG.get());

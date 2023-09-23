@@ -5,23 +5,24 @@ import com.aetherteam.aether.block.AetherBlocks;
 import com.aetherteam.aether.data.providers.AetherRecipeProvider;
 import com.aetherteam.aether.item.AetherItems;
 import mrthomas20121.gravitation.GraviTags;
-import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.block.GraviBlocks;
 import mrthomas20121.gravitation.compat.ModCompat;
 import mrthomas20121.gravitation.item.GraviItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.*;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class GraviRecipes extends AetherRecipeProvider {
 
@@ -32,36 +33,47 @@ public class GraviRecipes extends AetherRecipeProvider {
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GraviBlocks.ENCHANTED_BOOKSHELF.get(), 1)
-                .define('P', GraviBlocks.ENCHANTED_PLANKS.get())
-                .define('B', Items.BOOK)
-                .pattern("PPP")
-                .pattern("BBB")
-                .pattern("PPP")
-                .unlockedBy(getHasName(Items.BOOK), has(Items.BOOK))
-                .save(consumer);
+        woodRecipes(
+                "enchanted",
+                GraviBlocks.ENCHANTED_PLANKS,
+                GraviBlocks.ENCHANTED_DOOR.get(),
+                GraviBlocks.ENCHANTED_TRAPDOOR.get(),
+                GraviBlocks.ENCHANTED_BUTTON.get(),
+                GraviBlocks.ENCHANTED_FENCE,
+                GraviBlocks.ENCHANTED_FENCE_GATE,
+                GraviBlocks.ENCHANTED_STAIRS,
+                GraviBlocks.ENCHANTED_SLAB.get(),
+                GraviBlocks.STRIPPED_ENCHANTED_LOG.get(),
+                GraviBlocks.STRIPPED_ENCHANTED_WOOD.get(),
+                GraviBlocks.ENCHANTED_WOOD.get(),
+                GraviBlocks.ENCHANTED_LOG.get(),
+                GraviTags.Items.ENCHANTED_LOGS,
+                GraviBlocks.ENCHANTED_BOOKSHELF.get(),
+                GraviBlocks.ENCHANTED_SIGN.get(),
+                GraviItems.ENCHANTED_BOAT.get(),
+                GraviItems.ENCHANTED_CHEST_BOAT.get(),
+                consumer);
 
-        doorBuilder(GraviBlocks.ENCHANTED_DOOR.get(), Ingredient.of(GraviBlocks.ENCHANTED_PLANKS.get())).group("door").unlockedBy("has_enchanted_planks", has(GraviBlocks.ENCHANTED_PLANKS.get())).save(consumer);
-        trapdoorBuilder(GraviBlocks.ENCHANTED_TRAPDOOR.get(), Ingredient.of(GraviBlocks.ENCHANTED_PLANKS.get())).group("trapdoor").unlockedBy("has_enchanted_planks", has(GraviBlocks.ENCHANTED_PLANKS.get())).save(consumer);
-        fence(GraviBlocks.ENCHANTED_FENCE, GraviBlocks.ENCHANTED_PLANKS).save(consumer);
-        fenceGate(GraviBlocks.ENCHANTED_FENCE_GATE, GraviBlocks.ENCHANTED_PLANKS).save(consumer);
-        buttonBuilder(GraviBlocks.ENCHANTED_BUTTON.get(), Ingredient.of(GraviBlocks.ENCHANTED_PLANKS.get())).group("wooden").unlockedBy("has_enchanted_planks", has(GraviBlocks.ENCHANTED_PLANKS.get())).save(consumer, new ResourceLocation("gravitation:enchanted_button"));
-        stairs(GraviBlocks.ENCHANTED_STAIRS, GraviBlocks.ENCHANTED_PLANKS).group("stairs").save(consumer, new ResourceLocation("gravitation:enchanted_stairs_from_planks"));
-        slab(consumer, RecipeCategory.BUILDING_BLOCKS, GraviBlocks.ENCHANTED_SLAB.get(), GraviBlocks.ENCHANTED_PLANKS.get());
-        woodFromLogs(consumer, GraviBlocks.STRIPPED_ENCHANTED_WOOD.get(), GraviBlocks.STRIPPED_ENCHANTED_LOG.get());
-        woodFromLogs(consumer, GraviBlocks.ENCHANTED_WOOD.get(), GraviBlocks.ENCHANTED_LOG.get());
-        planksFromLogs(consumer, GraviBlocks.ENCHANTED_PLANKS.get(), GraviTags.Items.ENCHANTED_LOGS, 4);
-        stickFromPlanks(consumer, new ResourceLocation("gravitation:skyroot_stick_from_enchanted_planks"), AetherItems.SKYROOT_STICK.get(), GraviBlocks.ENCHANTED_PLANKS.get());
-        woodenBoat(consumer, GraviItems.ENCHANTED_BOAT.get(), GraviBlocks.ENCHANTED_PLANKS.get());
-        chestBoat(consumer, GraviItems.ENCHANTED_CHEST_BOAT.get(), GraviBlocks.ENCHANTED_PLANKS.get());
-        signBuilder(GraviBlocks.ENCHANTED_SIGN.get(), Ingredient.of(GraviBlocks.ENCHANTED_PLANKS.get()), AetherItems.SKYROOT_STICK.get()).group("sign").unlockedBy("has_enchanted_planks", has(GraviBlocks.ENCHANTED_PLANKS.get())).save(consumer);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.CRAFTING_TABLE)
-                .define('X', GraviBlocks.ENCHANTED_PLANKS.get())
-                .pattern("XX")
-                .pattern("XX")
-                .unlockedBy("has_enchanted_planks", has(GraviBlocks.ENCHANTED_PLANKS.get()))
-                .save(consumer, new ResourceLocation("gravitation:crafting/crafting_table"));
+        woodRecipes(
+                "beladon",
+                GraviBlocks.BELADON_PLANKS,
+                GraviBlocks.BELADON_DOOR.get(),
+                GraviBlocks.BELADON_TRAPDOOR.get(),
+                GraviBlocks.BELADON_BUTTON.get(),
+                GraviBlocks.BELADON_FENCE,
+                GraviBlocks.BELADON_FENCE_GATE,
+                GraviBlocks.BELADON_STAIRS,
+                GraviBlocks.BELADON_SLAB.get(),
+                GraviBlocks.STRIPPED_BELADON_LOG.get(),
+                GraviBlocks.STRIPPED_BELADON_WOOD.get(),
+                GraviBlocks.BELADON_WOOD.get(),
+                GraviBlocks.BELADON_LOG.get(),
+                GraviTags.Items.BELADON_LOGS,
+                GraviBlocks.BELADON_BOOKSHELF.get(),
+                GraviBlocks.BELADON_SIGN.get(),
+                GraviItems.BELADON_BOAT.get(),
+                GraviItems.BELADON_CHEST_BOAT.get(),
+                consumer);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GraviBlocks.BRONZITE_BLOCK.get())
                 .define('X', GraviItems.BRONZITE_INGOT.get())
@@ -84,13 +96,13 @@ public class GraviRecipes extends AetherRecipeProvider {
                 .unlockedBy("has_bronzite_ingot", has(GraviItems.BRONZITE_INGOT.get()))
                 .save(consumer, new ResourceLocation("gravitation:crafting/bronzite_nugget_from_ingot"));
 
-        ConditionalRecipe.builder().addCondition(new ModLoadedCondition("lost_aether_content")).addRecipe(ConditionalFinishedRecipe.create(ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GraviItems.BRONZITE_SHIELD.get())
+        ConditionalRecipe.builder().addCondition(new ModLoadedCondition("lost_aether_content")).addRecipe(b -> ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GraviItems.BRONZITE_SHIELD.get())
                 .define('X', GraviItems.BRONZITE_INGOT.get())
                 .define('Y', Ingredient.of(AetherTags.Items.SKYROOT_STICKS))
                 .pattern("XYX")
                 .pattern("XXX")
                 .pattern(" X ")
-                .unlockedBy("has_bronzite_ingot", has(GraviItems.BRONZITE_INGOT.get()))));
+                .unlockedBy("has_bronzite_ingot", has(GraviItems.BRONZITE_INGOT.get())).save(b, "gravitation:compat/lost_aether_content/bronzite_shield"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GraviItems.BRONZITE_SHIELD.get())
                 .define('X', GraviItems.BRONZITE_INGOT.get())
@@ -173,6 +185,7 @@ public class GraviRecipes extends AetherRecipeProvider {
         zaniteSmithing(consumer, GraviItems.BRONZITE_ROCK.get(), RecipeCategory.TOOLS, GraviItems.BRONZITE_INGOT.get());
 
         enchantingRecipe(RecipeCategory.MISC, GraviBlocks.ENCHANTED_SAPLING.get(), AetherBlocks.SKYROOT_SAPLING.get(), 0.20f, 50).save(consumer, new ResourceLocation("gravitation:enchanting/enchanted_sapling"));
+        enchantingRecipe(RecipeCategory.MISC, GraviBlocks.ENCHANTED_MOSS.get(), Blocks.MOSS_BLOCK, 0.20f, 60).save(consumer, new ResourceLocation("gravitation:enchanting/enchanted_moss"));
 
         enchantingRecipe(RecipeCategory.MISC, GraviItems.DIG_STONE.get(), AetherBlocks.CARVED_STONE.get(), 0.20f, 20).save(consumer, new ResourceLocation("gravitation:enchanting/dig_stone"));
         enchantingRecipe(RecipeCategory.MISC, GraviItems.DENSE_STONE.get(), AetherBlocks.ANGELIC_STONE.get(), 0.20f, 30).save(consumer, new ResourceLocation("gravitation:enchanting/dense_stone"));
@@ -181,7 +194,7 @@ public class GraviRecipes extends AetherRecipeProvider {
 
         freezingRecipe(RecipeCategory.MISC, Items.LAPIS_LAZULI, AetherItems.GOLDEN_AMBER.get(), 1.0f, 10).save(consumer, "gravitation:golden_amber_to_lapis");
 
-        ModCompat.GetCompatList().forEach(compat -> compat.addRecipes(consumer, this));
+        ModCompat.getCompatList().forEach(compat -> compat.addRecipes(consumer, this));
     }
 
     protected static void stickFromPlanks(Consumer<FinishedRecipe> consumer, ResourceLocation name, ItemLike output, ItemLike input) {
@@ -196,8 +209,40 @@ public class GraviRecipes extends AetherRecipeProvider {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, output).group("battleaxe").define('#', material).define('X', stick).pattern("###").pattern("#X#").pattern(" X ").unlockedBy("has", has(material)).save(consumer);
     }
 
-    public void conditionalBattleaxeRecipe(Consumer<FinishedRecipe> consumer, String name ,  String modid, ItemLike material, Item stick, Item output) {
-        ConditionalRecipe.builder().addCondition(new ModLoadedCondition(modid)).addRecipe(ConditionalFinishedRecipe.create(ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, output).group("battleaxe").define('#', material).define('X', stick).pattern("###").pattern("#X#").pattern(" X ").unlockedBy("has", has(material)))).build(consumer, new ResourceLocation(Gravitation.MOD_ID, name));
+    protected void woodRecipes(String woodName, Supplier<Block> planks, DoorBlock door, TrapDoorBlock trapDoorBlock, ButtonBlock buttonBlock, Supplier<FenceBlock> fenceBlock, Supplier<FenceGateBlock> fenceGateBlock, Supplier<StairBlock> stairBlock, SlabBlock slabBlock, Block strippedLog, Block strippedWood, Block wood, Block log, TagKey<Item> woodType, Block bookshelf, SignBlock signBlock, Item boat, Item chestBoat, Consumer<FinishedRecipe> consumer) {
+        Block plank = planks.get();
+        Ingredient ingredient = Ingredient.of(plank);
+        doorBuilder(door, ingredient).group("door").unlockedBy("has_"+ woodName +"_planks", has(plank)).save(consumer);
+        trapdoorBuilder(trapDoorBlock, ingredient).group("trapdoor").unlockedBy("has_"+ woodName +"_planks", has(plank)).save(consumer);
+        fence(fenceBlock, planks).save(consumer);
+        fenceGate(fenceGateBlock, planks).save(consumer);
+        buttonBuilder(buttonBlock, ingredient).group("wooden").unlockedBy("has_"+ woodName +"_planks", has(plank)).save(consumer, new ResourceLocation("gravitation:"+ woodName +"_button"));
+        stairs(stairBlock, planks).group("stairs").save(consumer, new ResourceLocation("gravitation:"+ woodName +"_stairs_from_planks"));
+        slab(consumer, RecipeCategory.BUILDING_BLOCKS, slabBlock, plank);
+        woodFromLogs(consumer, strippedWood, strippedLog);
+        woodFromLogs(consumer, wood, log);
+        planksFromLogs(consumer, plank, woodType, 4);
+        stickFromPlanks(consumer, new ResourceLocation("gravitation:skyroot_stick_from_"+ woodName +"_planks"), AetherItems.SKYROOT_STICK.get(), plank);
+        woodenBoat(consumer, boat, plank);
+        chestBoat(consumer, chestBoat, plank);
+        signBuilder(signBlock, ingredient, AetherItems.SKYROOT_STICK.get()).group("sign").unlockedBy("has_"+ woodName +"_planks", has(plank)).save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.CRAFTING_TABLE)
+                .define('X', ingredient)
+                .pattern("XX")
+                .pattern("XX")
+                .unlockedBy("has_"+ woodName +"_planks", has(plank))
+                .save(consumer, new ResourceLocation("gravitation:crafting/"+ woodName +"_crafting_table"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, bookshelf, 1)
+                .define('P', ingredient)
+                .define('B', Items.BOOK)
+                .pattern("PPP")
+                .pattern("BBB")
+                .pattern("PPP")
+                .unlockedBy(getHasName(Items.BOOK), has(Items.BOOK))
+                .save(consumer);
+
     }
 
     @SuppressWarnings("deprecation")

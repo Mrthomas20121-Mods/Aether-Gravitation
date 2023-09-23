@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "sign",
+  "key": {
+    "#": {
+      "item": "gravitation:beladon_planks"
+    },
+    "X": {
+      "item": "aether:skyroot_stick"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    " X "
+  ],
+  "result": {
+    "count": 3,
+    "item": "gravitation:beladon_sign"
+  },
+  "show_notification": true
+}

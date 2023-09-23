@@ -5,6 +5,10 @@ import net.minecraft.resources.ResourceLocation;
 
 public class GraviModelLayers {
 
+    public static final ModelLayerLocation BELADON_CHEST_BOAT = register("beladon_chest_boat");
+
+    public static final ModelLayerLocation BELADON_BOAT = register("beladon_boat");
+
     public static final ModelLayerLocation ENCHANTED_CHEST_BOAT = register("enchanted_chest_boat");
     public static final ModelLayerLocation ENCHANTED_BOAT = register("enchanted_boat");
 

@@ -1,7 +1,6 @@
 package mrthomas20121.gravitation.data;
 
 import com.aetherteam.aether.AetherTags;
-import com.aetherteam.aether.data.generators.tags.AetherItemTagData;
 import com.aetherteam.aether.item.AetherItems;
 import mrthomas20121.gravitation.GraviTags;
 import mrthomas20121.gravitation.Gravitation;
@@ -27,7 +26,9 @@ public class GraviItemTags extends ItemTagsProvider {
     @Override
     protected void addTags(@NotNull HolderLookup.Provider provider) {
         this.tag(GraviTags.Items.ENCHANTED_LOGS).add(GraviBlocks.ENCHANTED_LOG.get().asItem(), GraviBlocks.ENCHANTED_WOOD.get().asItem(), GraviBlocks.STRIPPED_ENCHANTED_LOG.get().asItem(), GraviBlocks.STRIPPED_ENCHANTED_WOOD.get().asItem());
-        this.tag(Tags.Items.BOOKSHELVES).add(GraviBlocks.ENCHANTED_BOOKSHELF.get().asItem());
+        this.tag(GraviTags.Items.BELADON_LOGS).add(GraviBlocks.BELADON_LOG.get().asItem(), GraviBlocks.BELADON_WOOD.get().asItem(), GraviBlocks.STRIPPED_BELADON_LOG.get().asItem(), GraviBlocks.STRIPPED_BELADON_WOOD.get().asItem());
+
+        this.tag(Tags.Items.BOOKSHELVES).add(GraviBlocks.ENCHANTED_BOOKSHELF.get().asItem(), GraviBlocks.BELADON_BOOKSHELF.get().asItem());
 
         this.tag(GraviTags.Items.CAN_CREATE_ENCHANTING_TABLE).add(AetherItems.GOLDEN_AMBER.get());
 
@@ -41,13 +42,6 @@ public class GraviItemTags extends ItemTagsProvider {
                 GraviItems.IRON_BATTLEAXE.get(),
                 GraviItems.GOLD_BATTLEAXE.get(),
                 GraviItems.BRONZITE_BATTLEAXE.get()
-        );
-
-        this.tag(Tags.Items.TOOLS_CROSSBOWS).add(
-                GraviItems.FLAMING_CROSSBOW.get(),
-                GraviItems.HOLY_CROSSBOW.get(),
-                GraviItems.LIGHTNING_CROSSBOW.get(),
-                GraviItems.VAMPIRE_CROSSBOW.get()
         );
 
         this.tag(AetherTags.Items.SKYROOT_TOOL_CRAFTING).add(GraviBlocks.ENCHANTED_PLANKS.get().asItem());

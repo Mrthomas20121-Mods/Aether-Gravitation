@@ -13,7 +13,7 @@
         "Count": 1,
         "id": "gravitation:power_stone"
       },
-      "weight": 40
+      "weight": 50
     },
     {
       "data": {
@@ -27,36 +27,8 @@
         "Count": 1,
         "id": "gravitation:rainbow_stone"
       },
-      "weight": 10
-    },
-    {
-      "data": {
-        "Count": 1,
-        "id": "gravitation:holy_crossbow"
-      },
-      "weight": 30
-    },
-    {
-      "data": {
-        "Count": 1,
-        "id": "gravitation:vampire_crossbow"
-      },
-      "weight": 30
-    },
-    {
-      "data": {
-        "Count": 1,
-        "id": "gravitation:lightning_crossbow"
-      },
-      "weight": 30
-    },
-    {
-      "data": {
-        "Count": 1,
-        "id": "gravitation:flaming_crossbow"
-      },
-      "weight": 30
+      "weight": 20
     }
   ],
-  "totalWeight": 200
+  "totalWeight": 10
 }

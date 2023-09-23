@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "gravitation:block/natural/beladon_planks"
+  }
+}

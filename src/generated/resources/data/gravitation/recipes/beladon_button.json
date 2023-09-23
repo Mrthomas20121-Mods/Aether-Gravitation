@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "wooden",
+  "ingredients": [
+    {
+      "item": "gravitation:beladon_planks"
+    }
+  ],
+  "result": {
+    "item": "gravitation:beladon_button"
+  }
+}

@@ -26,10 +26,6 @@ public class CreativeTabRegistry {
                     output.accept(GraviItems.POWER_STONE.get());
                     output.accept(GraviItems.RAINBOW_STONE.get());
                     output.accept(GraviItems.GREATER_HEALING_STONE.get());
-                    output.accept(GraviItems.FLAMING_CROSSBOW.get());
-                    output.accept(GraviItems.HOLY_CROSSBOW.get());
-                    output.accept(GraviItems.LIGHTNING_CROSSBOW.get());
-                    output.accept(GraviItems.VAMPIRE_CROSSBOW.get());
                     output.accept(GraviItems.BRONZITE_ROCK.get());
                     output.accept(GraviItems.BRONZITE_INGOT.get());
                     output.accept(GraviItems.BRONZITE_NUGGET.get());
@@ -62,11 +58,13 @@ public class CreativeTabRegistry {
                     output.accept(GraviItems.DIAMOND_BATTLEAXE.get());
                     output.accept(GraviItems.IRON_BATTLEAXE.get());
                     output.accept(GraviItems.GOLD_BATTLEAXE.get());
+
+                    output.accept(GraviItems.BELADON_BOAT.get());
+                    output.accept(GraviItems.BELADON_CHEST_BOAT.get());
                     output.accept(GraviItems.ENCHANTED_BOAT.get());
                     output.accept(GraviItems.ENCHANTED_CHEST_BOAT.get());
-                    output.accept(GraviBlocks.ENCHANTED_SAPLING.get());
 
-                    ModCompat.GetCompatList().stream().filter(compat -> ModList.get().isLoaded(compat.getModID())).forEach(compat -> compat.addToCreativeTab(output));
+                    ModCompat.getCompatList().stream().filter(compat -> ModList.get().isLoaded(compat.getModID())).forEach(compat -> compat.addToCreativeTab(output));
                 }));
 
         GraviCreativeTabs.BUILDING_BLOCKS = event.registerCreativeModeTab(new ResourceLocation(Gravitation.MOD_ID, "building_blocks"), (builder) -> builder
@@ -76,6 +74,25 @@ public class CreativeTabRegistry {
                     output.accept(GraviBlocks.BRONZITE_ORE.get());
                     output.accept(GraviBlocks.BRONZITE_ICESTONE_ORE.get());
                     output.accept(GraviBlocks.BRONZITE_BLOCK.get());
+
+                    output.accept(GraviBlocks.BELADON_SIGN.get());
+                    output.accept(GraviBlocks.BELADON_WALL_SIGN.get());
+                    output.accept(GraviBlocks.BELADON_BOOKSHELF.get());
+                    output.accept(GraviBlocks.BELADON_LEAVES.get());
+                    output.accept(GraviBlocks.BELADON_LOG.get());
+                    output.accept(GraviBlocks.STRIPPED_BELADON_LOG.get());
+                    output.accept(GraviBlocks.BELADON_WOOD.get());
+                    output.accept(GraviBlocks.STRIPPED_BELADON_WOOD.get());
+                    output.accept(GraviBlocks.BELADON_PLANKS.get());
+                    output.accept(GraviBlocks.BELADON_STAIRS.get());
+                    output.accept(GraviBlocks.BELADON_SLAB.get());
+                    output.accept(GraviBlocks.BELADON_FENCE_GATE.get());
+                    output.accept(GraviBlocks.BELADON_BUTTON.get());
+                    output.accept(GraviBlocks.BELADON_DOOR.get());
+                    output.accept(GraviBlocks.BELADON_TRAPDOOR.get());
+                    output.accept(GraviBlocks.BELADON_FENCE.get());
+                    output.accept(GraviBlocks.BELADON_SAPLING.get());
+
                     output.accept(GraviBlocks.ENCHANTED_SIGN.get());
                     output.accept(GraviBlocks.ENCHANTED_WALL_SIGN.get());
                     output.accept(GraviBlocks.ENCHANTED_BOOKSHELF.get());
@@ -86,12 +103,14 @@ public class CreativeTabRegistry {
                     output.accept(GraviBlocks.STRIPPED_ENCHANTED_WOOD.get());
                     output.accept(GraviBlocks.ENCHANTED_PLANKS.get());
                     output.accept(GraviBlocks.ENCHANTED_STAIRS.get());
-                    output.accept(GraviBlocks.ENCHANTED_SLAB.get());
-                    output.accept(GraviBlocks.ENCHANTED_DOOR.get());
-                    output.accept(GraviBlocks.ENCHANTED_TRAPDOOR.get());
                     output.accept(GraviBlocks.ENCHANTED_FENCE.get());
                     output.accept(GraviBlocks.ENCHANTED_FENCE_GATE.get());
                     output.accept(GraviBlocks.ENCHANTED_BUTTON.get());
+                    output.accept(GraviBlocks.ENCHANTED_SLAB.get());
+                    output.accept(GraviBlocks.ENCHANTED_DOOR.get());
+                    output.accept(GraviBlocks.ENCHANTED_TRAPDOOR.get());
+                    output.accept(GraviBlocks.ENCHANTED_SAPLING.get());
+                    output.accept(GraviBlocks.ENCHANTED_MOSS.get());
 
                 }));
     }

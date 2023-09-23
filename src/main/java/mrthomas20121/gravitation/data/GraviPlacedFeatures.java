@@ -6,6 +6,7 @@ import com.aetherteam.aether.data.resources.builders.AetherPlacedFeatureBuilders
 import com.aetherteam.aether.data.resources.registries.AetherConfiguredFeatures;
 import com.aetherteam.aether.world.placementmodifier.DungeonBlacklistFilter;
 import com.aetherteam.aether.world.placementmodifier.ImprovedLayerPlacementModifier;
+import com.aetherteam.nitrogen.data.resources.builders.NitrogenPlacedFeatureBuilders;
 import com.google.common.collect.ImmutableList;
 import mrthomas20121.gravitation.GraviTags;
 import mrthomas20121.gravitation.Gravitation;
@@ -32,8 +33,9 @@ import java.util.List;
 
 public class GraviPlacedFeatures {
 
+    public static final ResourceKey<PlacedFeature> BELADON_FOREST_PLACEMENT = createKey("beladon_forest_placement");
+    public static final ResourceKey<PlacedFeature> BELADON_MIRE_PLACEMENT = createKey("beladon_mire");
     public static final ResourceKey<PlacedFeature> ENCHANTED_TREES_PLACEMENT = createKey("enchanted_tree");
-
     public static final ResourceKey<PlacedFeature> GOLDEN_ENCHANTED_TREES_PLACEMENT = createKey("golden_enchanted_tree");
     public static final ResourceKey<PlacedFeature> SMALL_ENCHANTED_TREES_PLACEMENT = createKey("small_enchanted_tree");
     public static final ResourceKey<PlacedFeature> BRONZITE_ORE_PLACEMENT = createKey("bronzite_ore");
@@ -48,27 +50,33 @@ public class GraviPlacedFeatures {
 
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
+        register(context, BELADON_FOREST_PLACEMENT, configuredFeatures.getOrThrow(GraviConfiguredFeatures.BELADON_TREE_CONFIGURATION),
+                treePlacement(PlacementUtils.countExtra(4, 0.1F, 2)));
+
+        register(context, BELADON_MIRE_PLACEMENT, configuredFeatures.getOrThrow(GraviConfiguredFeatures.BELADON_TREE_CONFIGURATION),
+                treePlacement(PlacementUtils.countExtra(2, 0.1F, 1)));
+
         register(context, ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(GraviConfiguredFeatures.ENCHANTED_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(6, 0.2F, 1)));
+                treePlacement(PlacementUtils.countExtra(4, 0.01F, 3)));
 
         register(context, GOLDEN_ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(AetherConfiguredFeatures.GOLDEN_OAK_TREE_CONFIGURATION),
-                treePlacement(CountPlacement.of(UniformInt.of(0, 1))));
+                treePlacement(PlacementUtils.countExtra(2, 0.1F, 1)));
 
-        register(context, SMALL_ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(GraviConfiguredFeatures.SMALL_ENCHANTED_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(3, 0.1F, 1)));
+        register(context, SMALL_ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(GraviConfiguredFeatures.ENCHANTED_TREE_CONFIGURATION),
+                treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
 
         register(context, LARGE_BLUE_AERCLOUD_PLACEMENT, configuredFeatures.getOrThrow(AetherConfiguredFeatures.BLUE_AERCLOUD_CONFIGURATION),
                 treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
 
         register(context, BRONZITE_ORE_PLACEMENT, configuredFeatures.getOrThrow(GraviConfiguredFeatures.BRONZITE_ORE),
-                AetherPlacedFeatureBuilders.commonOrePlacement(12, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(75))));
+                NitrogenPlacedFeatureBuilders.commonOrePlacement(12, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(75))));
 
         register(context, LARGE_BRONZITE_ORE_PLACEMENT, configuredFeatures.getOrThrow(GraviConfiguredFeatures.BRONZITE_ORE),
-                AetherPlacedFeatureBuilders.commonOrePlacement(20, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(128))));
+                NitrogenPlacedFeatureBuilders.commonOrePlacement(20, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(128))));
     }
 
     public static List<PlacementModifier> treePlacement(PlacementModifier count) {
-        return treePlacementBase(count).add(BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(GraviBlocks.ENCHANTED_SAPLING.get().defaultBlockState(), BlockPos.ZERO))).build();
+        return treePlacementBase(count).add(BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(GraviBlocks.BELADON_SAPLING.get().defaultBlockState(), BlockPos.ZERO))).add(BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(GraviBlocks.ENCHANTED_SAPLING.get().defaultBlockState(), BlockPos.ZERO))).build();
     }
 
     private static ImmutableList.Builder<PlacementModifier> treePlacementBase(PlacementModifier count) {

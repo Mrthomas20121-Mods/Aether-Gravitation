@@ -43,8 +43,8 @@ public class Gravitation {
 	public Gravitation() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-		bus.addListener(this::datagen);
 		bus.addListener(this::setup);
+		bus.addListener(this::datagen);
 
 		GraviBlockEntityTypes.BLOCK_ENTITY_TYPES.register(bus);
 		GraviBlocks.BLOCKS.register(bus);
@@ -56,7 +56,7 @@ public class Gravitation {
 		// register the compats to the game
 		ModCompat.register();
 
-		ModCompat.GetCompatList().stream().filter(compat -> ModList.get().isLoaded(compat.getModID())).forEach(compat -> compat.register(bus));
+		ModCompat.getCompatList().stream().filter(compat -> ModList.get().isLoaded(compat.getModID())).forEach(compat -> compat.register(bus));
 
 		GraviWoodType.registerWoodTypes();
 
@@ -75,7 +75,7 @@ public class Gravitation {
 			GraviBlocks.registerPots();
 			GraviBlocks.registerStripping();
 
-			Regions.register(new GravitationRegion(new ResourceLocation(MOD_ID, "gravitation"), 4));
+			Regions.register(new GravitationRegion(new ResourceLocation(MOD_ID, "gravitation"), 20));
 
 			SurfaceRuleManager.addSurfaceRules(AetherRuleCategory.THE_AETHER, MOD_ID, GravitationSurfaceData.rules());
 		});

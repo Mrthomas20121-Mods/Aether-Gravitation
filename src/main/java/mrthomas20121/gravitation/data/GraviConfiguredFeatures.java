@@ -12,6 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -35,8 +36,8 @@ public class GraviConfiguredFeatures {
     public static final RuleTest ICESTONE = new BlockStateMatchTest(AetherFeatureStates.ICESTONE);
     public static final RuleTest HOLYSTONE = new TagMatchTest(AetherTags.Blocks.HOLYSTONE);
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> BELADON_TREE_CONFIGURATION = createKey("beladon_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ENCHANTED_TREE_CONFIGURATION = createKey("enchanted_tree");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> SMALL_ENCHANTED_TREE_CONFIGURATION = createKey("small_enchanted_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BRONZITE_ORE = createKey("bronzite_ore");
 
     private static ResourceKey<ConfiguredFeature<?, ?>> createKey(String name) {
@@ -45,16 +46,20 @@ public class GraviConfiguredFeatures {
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         register(context, BRONZITE_ORE, Feature.ORE, new OreConfiguration(List.of(OreConfiguration.target(ICESTONE, GraviBlocks.BRONZITE_ICESTONE_ORE.get().defaultBlockState()), OreConfiguration.target(HOLYSTONE, GraviBlocks.BRONZITE_ORE.get().defaultBlockState())), 8));
+        register(context, BELADON_TREE_CONFIGURATION, Feature.TREE, createBeladon().dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
         register(context, ENCHANTED_TREE_CONFIGURATION, Feature.TREE, createEnchanted().dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
-        register(context, SMALL_ENCHANTED_TREE_CONFIGURATION, Feature.TREE, createBush(GraviBlocks.ENCHANTED_LEAVES, GraviBlocks.ENCHANTED_LOG).dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createEnchanted() {
         return createStraightBlobTree(GraviBlocks.ENCHANTED_LOG.get(), GraviBlocks.ENCHANTED_LEAVES.get(), 4, 2, 1).ignoreVines();
     }
 
-    private static TreeConfiguration.TreeConfigurationBuilder createBush(Supplier<Block> leaves, Supplier<RotatedPillarBlock> log) {
-        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(log.get()), new StraightTrunkPlacer(1, 0, 0), BlockStateProvider.simple(leaves.get()), new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2), new TwoLayersFeatureSize(0, 0, 0)).ignoreVines();
+    private static TreeConfiguration.TreeConfigurationBuilder createBeladon() {
+        return createStraightBlobTree(GraviBlocks.BELADON_LOG.get(), GraviBlocks.BELADON_LEAVES.get(), 3, 2, 2, 3).ignoreVines();
+    }
+
+    private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(Block p_195147_, Block p_195148_, int p_195149_, int p_195150_, int p_195151_, int p_195152_) {
+        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(p_195147_), new StraightTrunkPlacer(p_195149_, p_195150_, p_195151_), BlockStateProvider.simple(p_195148_), new AcaciaFoliagePlacer(ConstantInt.of(p_195152_), ConstantInt.of(0)), new TwoLayersFeatureSize(1, 0, 1));
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(Block p_195147_, Block p_195148_, int p_195149_, int p_195150_, int p_195151_) {

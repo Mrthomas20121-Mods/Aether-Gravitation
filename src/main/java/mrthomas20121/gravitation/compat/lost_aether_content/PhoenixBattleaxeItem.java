@@ -4,6 +4,7 @@ import com.aetherteam.aether.item.AetherItems;
 import com.legacy.lost_aether.item.util.LCItemTier;
 import mrthomas20121.gravitation.item.tools.BattleAxeItem;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Tiers;
 import net.minecraftforge.common.TierSortingRegistry;
 
 public class PhoenixBattleaxeItem extends BattleAxeItem {

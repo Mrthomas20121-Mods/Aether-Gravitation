@@ -1,0 +1,10 @@
+{
+  "type": "aether:enchanting",
+  "category": "enchanting_misc",
+  "cookingtime": 60,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "minecraft:moss_block"
+  },
+  "result": "gravitation:enchanted_moss"
+}

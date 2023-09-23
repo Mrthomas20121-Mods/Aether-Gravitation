@@ -9,7 +9,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.ModList;
 
 public class GraviItemData extends AetherItemModelProvider {
 
@@ -24,12 +23,37 @@ public class GraviItemData extends AetherItemModelProvider {
         this.item(GraviItems.DENSE_STONE.get(), "");
         this.item(GraviItems.DIG_STONE.get(), "");
         this.item(GraviItems.RAINBOW_STONE.get(), "");
-        this.item(GraviItems.ENCHANTED_CHEST_BOAT.get(),  "");
-        this.item(GraviItems.ENCHANTED_BOAT.get(),  "");
-        this.item(GraviBlocks.ENCHANTED_SAPLING.get().asItem(), "");
         this.itemBlock(GraviBlocks.BRONZITE_BLOCK.get());
         this.itemBlock(GraviBlocks.BRONZITE_ORE.get());
         this.itemBlock(GraviBlocks.BRONZITE_ICESTONE_ORE.get());
+        this.itemBlock(GraviBlocks.ENCHANTED_MOSS.get());
+
+        // beladon set
+        this.item(GraviItems.BELADON_CHEST_BOAT.get(),  "");
+        this.item(GraviItems.BELADON_BOAT.get(),  "");
+        this.item(GraviBlocks.BELADON_SAPLING.get().asItem(), "");
+        this.itemBlock(GraviBlocks.BELADON_LEAVES.get());
+        this.itemBlock(GraviBlocks.BELADON_PLANKS.get());
+        this.itemBlock(GraviBlocks.BELADON_LOG.get());
+        this.itemBlock(GraviBlocks.BELADON_WOOD.get());
+        this.itemBlock(GraviBlocks.STRIPPED_BELADON_LOG.get());
+        this.itemBlock(GraviBlocks.STRIPPED_BELADON_WOOD.get());
+        this.itemBlock(GraviBlocks.BELADON_BOOKSHELF.get());
+        this.itemBlock(GraviBlocks.BELADON_STAIRS.get());
+        this.itemBlock(GraviBlocks.BELADON_SLAB.get());
+        this.item(GraviBlocks.BELADON_DOOR.get().asItem(), "");
+        this.buttonInventory("beladon_button", new ResourceLocation("gravitation:block/natural/beladon_planks"));
+        this.fenceInventory("beladon_fence", new ResourceLocation("gravitation:block/natural/beladon_planks"));
+        this.itemBlock(GraviBlocks.BELADON_FENCE_GATE.get());
+        this.itemBlock(GraviBlocks.BELADON_TRAPDOOR.get(), "_bottom");
+        this.itemBlock(GraviBlocks.BELADON_PREASURE_PLATE.get());
+        this.item(GraviBlocks.BELADON_SIGN.get().asItem(), "");
+        this.item(GraviBlocks.BELADON_WALL_SIGN.get().asItem(), "");
+
+        // enchanted set
+        this.item(GraviItems.ENCHANTED_CHEST_BOAT.get(),  "");
+        this.item(GraviItems.ENCHANTED_BOAT.get(),  "");
+        this.item(GraviBlocks.ENCHANTED_SAPLING.get().asItem(), "");
         this.itemBlock(GraviBlocks.ENCHANTED_LEAVES.get());
         this.itemBlock(GraviBlocks.ENCHANTED_PLANKS.get());
         this.itemBlock(GraviBlocks.ENCHANTED_LOG.get());
@@ -46,6 +70,7 @@ public class GraviItemData extends AetherItemModelProvider {
         this.itemBlock(GraviBlocks.ENCHANTED_PREASURE_PLATE.get());
         this.item(GraviBlocks.ENCHANTED_SIGN.get().asItem(), "");
         this.item(GraviBlocks.ENCHANTED_WALL_SIGN.get().asItem(), "");
+
         this.handheldItem(GraviItems.NEPTUNE_AXE.get(), "");
         this.handheldItem(GraviItems.NEPTUNE_BATTLEAXE.get(), "");
         this.handheldItem(GraviItems.NEPTUNE_CUTLASS.get(), "");
@@ -80,12 +105,7 @@ public class GraviItemData extends AetherItemModelProvider {
         this.handheldItem(GraviItems.GOLD_BATTLEAXE.get(), "");
         this.itemBlock(GraviBlocks.ENCHANTED_BOOKSHELF.get());
 
-        this.crossbowItem(GraviItems.FLAMING_CROSSBOW.get());
-        this.crossbowItem(GraviItems.HOLY_CROSSBOW.get());
-        this.crossbowItem(GraviItems.LIGHTNING_CROSSBOW.get());
-        this.crossbowItem(GraviItems.VAMPIRE_CROSSBOW.get());
-
-        ModCompat.GetCompatList().forEach(compat -> compat.addItemModels(this));
+        ModCompat.getCompatList().forEach(compat -> compat.addItemModels(this));
     }
 
     public void crossbowItem(Item item) {

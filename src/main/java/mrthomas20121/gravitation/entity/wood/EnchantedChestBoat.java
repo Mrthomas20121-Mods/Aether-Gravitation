@@ -1,5 +1,7 @@
 package mrthomas20121.gravitation.entity.wood;
 
+import com.aetherteam.aether.item.AetherItems;
+import mrthomas20121.gravitation.block.GraviBlocks;
 import mrthomas20121.gravitation.entity.GraviEntityTypes;
 import mrthomas20121.gravitation.item.GraviItems;
 import net.minecraft.core.BlockPos;
@@ -9,12 +11,13 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.ChestBoat;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.network.NetworkHooks;
 
 import javax.annotation.Nonnull;
 
-public class EnchantedChestBoat extends ChestBoat implements EnchantedBoatBehavior {
+public class EnchantedChestBoat extends ChestBoat implements BoatBehavior {
     public EnchantedChestBoat(EntityType<? extends EnchantedChestBoat> entityType, Level level) {
         super(entityType, level);
     }
@@ -42,5 +45,15 @@ public class EnchantedChestBoat extends ChestBoat implements EnchantedBoatBehavi
     @Override
     public Packet<ClientGamePacketListener> getAddEntityPacket() {
         return NetworkHooks.getEntitySpawningPacket(this);
+    }
+
+    @Override
+    public Item getStick() {
+        return AetherItems.SKYROOT_STICK.get();
+    }
+
+    @Override
+    public Block getPlanks() {
+        return GraviBlocks.ENCHANTED_PLANKS.get();
     }
 }

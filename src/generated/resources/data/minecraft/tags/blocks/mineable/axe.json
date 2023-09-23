@@ -1,5 +1,17 @@
 {
   "values": [
+    "gravitation:beladon_log",
+    "gravitation:beladon_wood",
+    "gravitation:stripped_beladon_log",
+    "gravitation:stripped_beladon_wood",
+    "gravitation:beladon_button",
+    "gravitation:beladon_preasure_plate",
+    "gravitation:beladon_stairs",
+    "gravitation:beladon_sign",
+    "gravitation:beladon_slab",
+    "gravitation:beladon_fence_gate",
+    "gravitation:beladon_fence",
+    "gravitation:beladon_bookshelf",
     "gravitation:enchanted_log",
     "gravitation:enchanted_wood",
     "gravitation:stripped_enchanted_log",

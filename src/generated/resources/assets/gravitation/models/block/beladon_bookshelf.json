@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "gravitation:block/construction/beladon_planks",
+    "side": "gravitation:block/construction/beladon_bookshelf"
+  }
+}

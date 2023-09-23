@@ -1,14 +1,21 @@
 package mrthomas20121.gravitation.item.tools;
 
+import mrthomas20121.gravitation.enchanting.GravitationEnchantments;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraftforge.common.ToolActions;
 
 public class BattleAxeItem extends AxeItem {
 
-    public BattleAxeItem(Tier p_40521_, float p_40522_, float p_40523_, Properties p_40524_) {
-        super(p_40521_, p_40522_, p_40523_, p_40524_);
+    public BattleAxeItem(Tier tier, float attackSpeed, float attack, Properties properties) {
+        super(tier, attackSpeed, attack, properties);
+    }
+
+    @Override
+    public boolean canApplyAtEnchantingTable(ItemStack stack, Enchantment enchantment) {
+        return super.canApplyAtEnchantingTable(stack, enchantment) || enchantment.equals(GravitationEnchantments.HERCULES_STRENGTH.get());
     }
 
     @Override

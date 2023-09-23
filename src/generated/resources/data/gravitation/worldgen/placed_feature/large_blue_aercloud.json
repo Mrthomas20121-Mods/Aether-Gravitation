@@ -44,6 +44,18 @@
       "predicate": {
         "type": "minecraft:would_survive",
         "state": {
+          "Name": "gravitation:beladon_sapling",
+          "Properties": {
+            "stage": "0"
+          }
+        }
+      }
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:would_survive",
+        "state": {
           "Name": "gravitation:enchanted_sapling",
           "Properties": {
             "stage": "0"
