@@ -3,7 +3,6 @@ package mrthomas20121.gravitation.data;
 import com.aetherteam.aether.data.providers.AetherItemModelProvider;
 import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.block.GraviBlocks;
-import mrthomas20121.gravitation.compat.ModCompat;
 import mrthomas20121.gravitation.item.GraviItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -104,8 +103,6 @@ public class GraviItemData extends AetherItemModelProvider {
         this.handheldItem(GraviItems.IRON_BATTLEAXE.get(), "");
         this.handheldItem(GraviItems.GOLD_BATTLEAXE.get(), "");
         this.itemBlock(GraviBlocks.ENCHANTED_BOOKSHELF.get());
-
-        ModCompat.getCompatList().forEach(compat -> compat.addItemModels(this));
     }
 
     public void crossbowItem(Item item) {

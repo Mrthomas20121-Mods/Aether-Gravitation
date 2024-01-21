@@ -1,7 +1,6 @@
 package mrthomas20121.gravitation.data;
 
 import mrthomas20121.gravitation.block.GraviBlocks;
-import mrthomas20121.gravitation.compat.ModCompat;
 import mrthomas20121.gravitation.enchanting.GravitationEnchantments;
 import mrthomas20121.gravitation.entity.GraviEntityTypes;
 import mrthomas20121.gravitation.item.GraviItems;
@@ -147,6 +146,6 @@ public class GraviLanguageData extends LanguageProvider {
         add("lore.item.gravitation.phoenix_dart", "These Phoenix Darts are found in Gold Dungeon. Set the target on fire on hit.");
         add("lore.item.gravitation.phoenix_dart_shooter", "The Phoenix Dart Shooter is found in Gold Dungeon. It can shoot Phoenix Darts");
 
-        ModCompat.getCompatList().stream().filter(compat -> ModList.get().isLoaded(compat.getModID())).forEach(compat -> compat.addLang(this));
+//        ModCompat.getCompatList().stream().filter(compat -> ModList.get().isLoaded(compat.getModID())).forEach(compat -> compat.addLang(this));
     }
 }

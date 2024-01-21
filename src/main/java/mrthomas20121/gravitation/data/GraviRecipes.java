@@ -6,7 +6,6 @@ import com.aetherteam.aether.data.providers.AetherRecipeProvider;
 import com.aetherteam.aether.item.AetherItems;
 import mrthomas20121.gravitation.GraviTags;
 import mrthomas20121.gravitation.block.GraviBlocks;
-import mrthomas20121.gravitation.compat.ModCompat;
 import mrthomas20121.gravitation.item.GraviItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -194,7 +193,7 @@ public class GraviRecipes extends AetherRecipeProvider {
 
         freezingRecipe(RecipeCategory.MISC, Items.LAPIS_LAZULI, AetherItems.GOLDEN_AMBER.get(), 1.0f, 10).save(consumer, "gravitation:golden_amber_to_lapis");
 
-        ModCompat.getCompatList().forEach(compat -> compat.addRecipes(consumer, this));
+        //ModCompat.getCompatList().forEach(compat -> compat.addRecipes(consumer, this));
     }
 
     protected static void stickFromPlanks(Consumer<FinishedRecipe> consumer, ResourceLocation name, ItemLike output, ItemLike input) {
