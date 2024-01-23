@@ -37,6 +37,27 @@ public class GraviRecipes extends AetherRecipeProvider {
                 .save(consumer, new ResourceLocation("gravitation:freezing/aechor_string"));
 
         woodRecipes(
+                "aerfin",
+                GraviBlocks.AERFIN_PLANKS,
+                GraviBlocks.AERFIN_DOOR.get(),
+                GraviBlocks.AERFIN_TRAPDOOR.get(),
+                GraviBlocks.AERFIN_BUTTON.get(),
+                GraviBlocks.AERFIN_FENCE,
+                GraviBlocks.AERFIN_FENCE_GATE,
+                GraviBlocks.AERFIN_STAIRS,
+                GraviBlocks.AERFIN_SLAB.get(),
+                GraviBlocks.STRIPPED_AERFIN_LOG.get(),
+                GraviBlocks.STRIPPED_AERFIN_WOOD.get(),
+                GraviBlocks.AERFIN_WOOD.get(),
+                GraviBlocks.AERFIN_LOG.get(),
+                GraviTags.Items.AERFIN_LOGS,
+                GraviBlocks.AERFIN_BOOKSHELF.get(),
+                GraviBlocks.AERFIN_SIGN.get(),
+                GraviItems.AERFIN_BOAT.get(),
+                GraviItems.AERFIN_CHEST_BOAT.get(),
+                consumer);
+
+        woodRecipes(
                 "enchanted",
                 GraviBlocks.ENCHANTED_PLANKS,
                 GraviBlocks.ENCHANTED_DOOR.get(),

@@ -9,6 +9,7 @@ import mrthomas20121.gravitation.data.loot.GlobalLootModifiers;
 import mrthomas20121.gravitation.data.loot.LootDataProvider;
 import mrthomas20121.gravitation.enchanting.GravitationEnchantments;
 import mrthomas20121.gravitation.entity.GraviEntityTypes;
+import mrthomas20121.gravitation.item.GraviCreativeTab;
 import mrthomas20121.gravitation.item.GraviItems;
 import mrthomas20121.gravitation.world.biome.GravitationRegion;
 import mrthomas20121.gravitation.world.biome.GravitationSurfaceData;

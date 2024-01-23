@@ -105,6 +105,35 @@ public class GraviLanguageData extends LanguageProvider {
         addEntityType(GraviEntityTypes.ENCHANTED_BOAT, "Enchanted Boat");
         addEntityType(GraviEntityTypes.ENCHANTED_CHEST_BOAT, "Enchanted Chest Boat");
 
+        // aerfin
+        addItem(GraviItems.AERFIN_CHEST_BOAT, "Aerfin Chest Boat");
+        addItem(GraviItems.AERFIN_BOAT, "Aerfin Boat");
+        addBlock(GraviBlocks.AERFIN_SIGN, "Aerfin Sign");
+        addBlock(GraviBlocks.AERFIN_HANGING_SIGN, "Aerfin Hanging Sign");
+        addBlock(GraviBlocks.AERFIN_LEAVES, "Aerfin Leaves");
+        addBlock(GraviBlocks.BLUE_AERFIN_LEAVES, "Blue Aerfin Leaves");
+        addBlock(GraviBlocks.GOLDEN_AERFIN_LEAVES, "Golden Aerfin Leaves");
+        addBlock(GraviBlocks.AERFIN_SAPLING, "Aerfin Sapling");
+        addBlock(GraviBlocks.BLUE_AERFIN_SAPLING, "Blue Aerfin Sapling");
+        addBlock(GraviBlocks.GOLDEN_AERFIN_SAPLING, "Golden Aerfin Sapling");
+        addBlock(GraviBlocks.AERFIN_PLANKS, "Aerfin Planks");
+        addBlock(GraviBlocks.AERFIN_STAIRS, "Aerfin Stairs");
+        addBlock(GraviBlocks.AERFIN_SLAB, "Aerfin Slab");
+        addBlock(GraviBlocks.AERFIN_BOOKSHELF, "Aerfin Bookshelf");
+        addBlock(GraviBlocks.AERFIN_LOG, "Aerfin Log");
+        addBlock(GraviBlocks.AERFIN_WOOD, "Aerfin Wood");
+        addBlock(GraviBlocks.STRIPPED_AERFIN_LOG, "Stripped Aerfin Log");
+        addBlock(GraviBlocks.STRIPPED_AERFIN_WOOD, "Stripped Aerfin Wood");
+        addBlock(GraviBlocks.AERFIN_DOOR, "Aerfin Door");
+        addBlock(GraviBlocks.AERFIN_TRAPDOOR, "Aerfin Trapdoor");
+        addBlock(GraviBlocks.AERFIN_BUTTON, "Aerfin Button");
+        addBlock(GraviBlocks.AERFIN_PREASURE_PLATE, "Aerfin Preasure Plate");
+        addBlock(GraviBlocks.AERFIN_FENCE, "Aerfin Fence");
+        addBlock(GraviBlocks.AERFIN_FENCE_GATE, "Aerfin Fence Gate");
+        addEntityType(GraviEntityTypes.AERFIN_BOAT, "Aerfin Boat");
+        addEntityType(GraviEntityTypes.AERFIN_CHEST_BOAT, "Aerfin Chest Boat");
+
+        // beladon
         addItem(GraviItems.BELADON_CHEST_BOAT, "Beladon Chest Boat");
         addItem(GraviItems.BELADON_BOAT, "Beladon Boat");
         addBlock(GraviBlocks.BELADON_SIGN, "Beladon Sign");

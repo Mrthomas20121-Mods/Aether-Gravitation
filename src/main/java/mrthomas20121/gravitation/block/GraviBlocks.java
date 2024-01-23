@@ -9,6 +9,8 @@ import com.aetherteam.aether.block.natural.AetherLogBlock;
 import com.aetherteam.aether.mixin.mixins.common.accessor.FireBlockAccessor;
 import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.block.wood.*;
+import mrthomas20121.gravitation.block_entity.AerfinHangingSignBlockEntity;
+import mrthomas20121.gravitation.block_entity.AerfinSignBlockEntity;
 import mrthomas20121.gravitation.block_entity.BeladonHangingSignBlockEntity;
 import mrthomas20121.gravitation.block_entity.EnchantedHangingSignBlockEntity;
 import mrthomas20121.gravitation.item.GraviItems;
@@ -37,6 +39,34 @@ import java.util.function.Supplier;
 public class GraviBlocks {
 
     public static DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Gravitation.MOD_ID);
+
+    public static final RegistryObject<Block> AERFIN_LEAVES = register("aerfin_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_BLUE).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
+    public static final RegistryObject<Block> BLUE_AERFIN_LEAVES = register("blue_aerfin_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_BLUE).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
+    public static final RegistryObject<Block> GOLDEN_AERFIN_LEAVES = register("golden_aerfin_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.GOLD).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
+    public static final RegistryObject<RotatedPillarBlock> AERFIN_LOG = register("aerfin_log", () -> new AetherLogBlock(Block.Properties.copy(Blocks.OAK_LOG).mapColor(MapColor.COLOR_PURPLE)));
+    public static final RegistryObject<RotatedPillarBlock> STRIPPED_AERFIN_LOG = register("stripped_aerfin_log", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.STRIPPED_OAK_LOG).mapColor(MapColor.COLOR_PURPLE)));
+    public static final RegistryObject<RotatedPillarBlock> AERFIN_WOOD = register("aerfin_wood", () -> new AetherLogBlock(Block.Properties.copy(Blocks.OAK_WOOD).mapColor(MapColor.COLOR_PURPLE)));
+    public static final RegistryObject<RotatedPillarBlock> STRIPPED_AERFIN_WOOD = register("stripped_aerfin_wood", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.STRIPPED_OAK_WOOD).mapColor(MapColor.COLOR_PURPLE)));
+    public static final RegistryObject<Block> AERFIN_PLANKS = register("aerfin_planks", () -> new Block(Block.Properties.copy(Blocks.OAK_PLANKS).mapColor(MapColor.COLOR_PURPLE)));
+    public static final RegistryObject<Block> AERFIN_BOOKSHELF = register("aerfin_bookshelf", () -> new BookshelfBlock(Block.Properties.copy(Blocks.BOOKSHELF)));
+    public static final RegistryObject<StairBlock> AERFIN_STAIRS = register("aerfin_stairs", () -> new StairBlock(() -> AERFIN_PLANKS.get().defaultBlockState(), Block.Properties.copy(Blocks.OAK_STAIRS)));
+    public static final RegistryObject<SlabBlock> AERFIN_SLAB = register("aerfin_slab", () -> new SlabBlock(Block.Properties.copy(Blocks.OAK_SLAB)));
+    public static final RegistryObject<TrapDoorBlock> AERFIN_TRAPDOOR = register("aerfin_trapdoor", () -> new TrapDoorBlock(Block.Properties.copy(Blocks.OAK_TRAPDOOR).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.AERFIN_BLOCK_SET));
+    public static final RegistryObject<DoorBlock> AERFIN_DOOR = register("aerfin_door", () -> new DoorBlock(Block.Properties.copy(Blocks.OAK_DOOR).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.AERFIN_BLOCK_SET));
+    public static final RegistryObject<FenceBlock> AERFIN_FENCE = register("aerfin_fence", () -> new FenceBlock(Block.Properties.copy(Blocks.OAK_FENCE).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never)));
+    public static final RegistryObject<FenceGateBlock> AERFIN_FENCE_GATE = register("aerfin_fence_gate", () -> new FenceGateBlock(Block.Properties.copy(Blocks.OAK_FENCE_GATE).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.AERFIN));
+    public static final RegistryObject<ButtonBlock> AERFIN_BUTTON = register("aerfin_button", () -> new ButtonBlock(Block.Properties.copy(Blocks.OAK_BUTTON).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.AERFIN_BLOCK_SET, 30, true));
+    public static final RegistryObject<PressurePlateBlock> AERFIN_PREASURE_PLATE = register("aerfin_preasure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.copy(Blocks.OAK_PRESSURE_PLATE).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.AERFIN_BLOCK_SET));
+    public static final RegistryObject<StandingSignBlock> AERFIN_SIGN = registerAerfinSign("aerfin_sign", () -> new AerfinSignBlock(Block.Properties.copy(Blocks.OAK_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD), GraviWoodType.AERFIN));
+    public static final RegistryObject<WallSignBlock> AERFIN_WALL_SIGN = BLOCKS.register("aerfin_wall_sign", () -> new AerfinWallSignBlock(Block.Properties.copy(Blocks.OAK_WALL_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD).lootFrom(AERFIN_SIGN), GraviWoodType.AERFIN));
+    public static final RegistryObject<CeilingHangingSignBlock> AERFIN_HANGING_SIGN = register("aerfin_hanging_sign", () -> new GravitationCeilingHangingSignBlock(ExtendedProperties.create(properties ->
+            properties.mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()).blockEntity(AerfinSignBlockEntity::new), GraviWoodType.AERFIN));
+    public static final RegistryObject<WallHangingSignBlock> AERFIN_WALL_HANGING_SIGN = register("aerfin_wall_hanging_sign", () -> new GravitationWallHangingSignBlock(ExtendedProperties.create(properties ->
+            properties.mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()).blockEntity(AerfinHangingSignBlockEntity::new), GraviWoodType.AERFIN));
+    public static final RegistryObject<SaplingBlock> AERFIN_SAPLING = register("aerfin_sapling", () -> new SaplingBlock(new BeladonTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<SaplingBlock> BLUE_AERFIN_SAPLING = register("blue_aerfin_sapling", () -> new SaplingBlock(new BeladonTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<SaplingBlock> GOLDEN_AERFIN_SAPLING = register("golden_aerfin_sapling", () -> new SaplingBlock(new BeladonTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
+
 
     public static final RegistryObject<Block> BELADON_LEAVES = register("beladon_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_ORANGE).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
     public static final RegistryObject<RotatedPillarBlock> BELADON_LOG = register("beladon_log", () -> new AetherLogBlock(Block.Properties.copy(Blocks.OAK_LOG).mapColor(MapColor.TERRACOTTA_BROWN)));
@@ -140,6 +170,10 @@ public class GraviBlocks {
 
     public static <B extends Block> RegistryObject<B> registerBeladonSign(String name, Supplier<B> block) {
         return register(name, block, (b) -> () ->  new SignItem((new Item.Properties()).stacksTo(16), BELADON_SIGN.get(), BELADON_WALL_SIGN.get()));
+    }
+
+    public static <B extends Block> RegistryObject<B> registerAerfinSign(String name, Supplier<B> block) {
+        return register(name, block, (b) -> () ->  new SignItem((new Item.Properties()).stacksTo(16), AERFIN_SIGN.get(), AERFIN_HANGING_SIGN.get()));
     }
 
     public static <B extends Block, I extends Item> RegistryObject<B> register(String name, Supplier<B> block, Function<RegistryObject<B>, Supplier<I>> blockItem) {

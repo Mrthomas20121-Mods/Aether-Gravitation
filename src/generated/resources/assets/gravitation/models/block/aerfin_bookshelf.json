@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "gravitation:block/construction/aerfin_planks",
+    "side": "gravitation:block/construction/aerfin_bookshelf"
+  }
+}

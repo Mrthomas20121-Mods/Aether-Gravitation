@@ -25,6 +25,8 @@ public class GraviTags {
 
     public static class Blocks {
 
+        public static TagKey<Block> AERFIN_LOGS = tag("aerfin_logs");
+
         public static TagKey<Block> BELADON_LOGS = tag("beladon_logs");
 
         public static TagKey<Block> ENCHANTED_LOGS = tag("enchanted_logs");
@@ -46,6 +48,8 @@ public class GraviTags {
     }
 
     public static class Items {
+
+        public static TagKey<Item> AERFIN_LOGS = tag("aerfin_logs");
 
         public static TagKey<Item> ENCHANTED_LOGS = tag("enchanted_logs");
 

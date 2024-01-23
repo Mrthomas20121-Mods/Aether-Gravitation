@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_inventory",
+  "textures": {
+    "texture": "gravitation:block/natural/aerfin_planks"
+  }
+}

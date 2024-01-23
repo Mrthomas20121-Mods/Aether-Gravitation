@@ -8,6 +8,7 @@ import mrthomas20121.gravitation.entity.GraviEntityTypes;
 import mrthomas20121.gravitation.item.GraviItems;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
+import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -32,8 +33,16 @@ public class GraviRenderer {
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         // block entities
         event.registerBlockEntityRenderer(GraviBlockEntityTypes.ENCHANTED_SIGN.get(), SignRenderer::new);
+        event.registerBlockEntityRenderer(GraviBlockEntityTypes.BELADON_SIGN.get(), SignRenderer::new);
+        event.registerBlockEntityRenderer(GraviBlockEntityTypes.AERFIN_SIGN.get(), SignRenderer::new);
+        event.registerBlockEntityRenderer(GraviBlockEntityTypes.ENCHANTED_HANGING_SIGN.get(), HangingSignRenderer::new);
+        event.registerBlockEntityRenderer(GraviBlockEntityTypes.BELADON_HANGING_SIGN.get(), HangingSignRenderer::new);
+        event.registerBlockEntityRenderer(GraviBlockEntityTypes.AERFIN_HANGING_SIGN.get(), HangingSignRenderer::new);
 
         // entities
+        event.registerEntityRenderer(GraviEntityTypes.AERFIN_BOAT.get(), (context) -> new AerfinBoatRenderer(context, false) );
+        event.registerEntityRenderer(GraviEntityTypes.AERFIN_CHEST_BOAT.get(), (context) -> new AerfinBoatRenderer(context, true) );
+
         event.registerEntityRenderer(GraviEntityTypes.ENCHANTED_BOAT.get(), (context) -> new EnchantedBoatRenderer(context, false) );
         event.registerEntityRenderer(GraviEntityTypes.ENCHANTED_CHEST_BOAT.get(), (context) -> new EnchantedBoatRenderer(context, true) );
 
@@ -43,6 +52,9 @@ public class GraviRenderer {
 
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+        event.registerLayerDefinition(GraviModelLayers.AERFIN_BOAT, BoatModel::createBodyModel);
+        event.registerLayerDefinition(GraviModelLayers.AERFIN_CHEST_BOAT, ChestBoatModel::createBodyModel);
+
         event.registerLayerDefinition(GraviModelLayers.ENCHANTED_BOAT, BoatModel::createBodyModel);
         event.registerLayerDefinition(GraviModelLayers.ENCHANTED_CHEST_BOAT, ChestBoatModel::createBodyModel);
 

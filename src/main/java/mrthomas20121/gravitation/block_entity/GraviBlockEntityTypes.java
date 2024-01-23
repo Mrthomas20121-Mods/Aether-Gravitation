@@ -11,6 +11,12 @@ public class GraviBlockEntityTypes {
 
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, Gravitation.MOD_ID);
 
+    public static final RegistryObject<BlockEntityType<AerfinSignBlockEntity>> AERFIN_SIGN = BLOCK_ENTITY_TYPES.register("aerfin_sign", () ->
+            BlockEntityType.Builder.of(AerfinSignBlockEntity::new, GraviBlocks.AERFIN_WALL_SIGN.get(), GraviBlocks.AERFIN_SIGN.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<AerfinHangingSignBlockEntity>> AERFIN_HANGING_SIGN = BLOCK_ENTITY_TYPES.register("aerfin_hanging_sign", () ->
+            BlockEntityType.Builder.of(AerfinHangingSignBlockEntity::new, GraviBlocks.AERFIN_WALL_HANGING_SIGN.get(), GraviBlocks.AERFIN_HANGING_SIGN.get()).build(null));
+
     public static final RegistryObject<BlockEntityType<EnchantedSignBlockEntity>> ENCHANTED_SIGN = BLOCK_ENTITY_TYPES.register("enchanted_sign", () ->
             BlockEntityType.Builder.of(EnchantedSignBlockEntity::new, GraviBlocks.ENCHANTED_WALL_SIGN.get(), GraviBlocks.ENCHANTED_SIGN.get()).build(null));
 

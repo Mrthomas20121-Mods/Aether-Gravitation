@@ -31,6 +31,28 @@ public class GraviItemData extends AetherItemModelProvider {
         this.itemBlock(GraviBlocks.BRONZITE_ICESTONE_ORE.get());
         this.itemBlock(GraviBlocks.ENCHANTED_MOSS.get());
 
+        // aerfin set
+        this.item(GraviItems.AERFIN_BOAT.get(), "");
+        this.item(GraviItems.AERFIN_CHEST_BOAT.get(), "");
+        this.item(GraviBlocks.AERFIN_SAPLING.get().asItem(), "");
+        this.itemBlock(GraviBlocks.AERFIN_LEAVES.get());
+        this.itemBlock(GraviBlocks.AERFIN_PLANKS.get());
+        this.itemBlock(GraviBlocks.AERFIN_LOG.get());
+        this.itemBlock(GraviBlocks.AERFIN_WOOD.get());
+        this.itemBlock(GraviBlocks.STRIPPED_AERFIN_LOG.get());
+        this.itemBlock(GraviBlocks.STRIPPED_AERFIN_WOOD.get());
+        this.itemBlock(GraviBlocks.AERFIN_BOOKSHELF.get());
+        this.itemBlock(GraviBlocks.AERFIN_STAIRS.get());
+        this.itemBlock(GraviBlocks.AERFIN_SLAB.get());
+        this.item(GraviBlocks.AERFIN_DOOR.get().asItem(), "");
+        this.buttonInventory("aerfin_button", new ResourceLocation("gravitation:block/natural/aerfin_planks"));
+        this.fenceInventory("aerfin_fence", new ResourceLocation("gravitation:block/natural/aerfin_planks"));
+        this.itemBlock(GraviBlocks.AERFIN_FENCE_GATE.get());
+        this.itemBlock(GraviBlocks.AERFIN_TRAPDOOR.get(), "_bottom");
+        this.itemBlock(GraviBlocks.AERFIN_PREASURE_PLATE.get());
+        this.item(GraviBlocks.AERFIN_SIGN.get().asItem(), "");
+        this.item(GraviBlocks.AERFIN_HANGING_SIGN.get().asItem(), "");
+
         // beladon set
         this.item(GraviItems.BELADON_CHEST_BOAT.get(),  "");
         this.item(GraviItems.BELADON_BOAT.get(),  "");

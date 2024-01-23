@@ -25,10 +25,39 @@ public class GraviItemTags extends ItemTagsProvider {
 
     @Override
     protected void addTags(@NotNull HolderLookup.Provider provider) {
-        this.tag(GraviTags.Items.ENCHANTED_LOGS).add(GraviBlocks.ENCHANTED_LOG.get().asItem(), GraviBlocks.ENCHANTED_WOOD.get().asItem(), GraviBlocks.STRIPPED_ENCHANTED_LOG.get().asItem(), GraviBlocks.STRIPPED_ENCHANTED_WOOD.get().asItem());
-        this.tag(GraviTags.Items.BELADON_LOGS).add(GraviBlocks.BELADON_LOG.get().asItem(), GraviBlocks.BELADON_WOOD.get().asItem(), GraviBlocks.STRIPPED_BELADON_LOG.get().asItem(), GraviBlocks.STRIPPED_BELADON_WOOD.get().asItem());
 
-        this.tag(Tags.Items.BOOKSHELVES).add(GraviBlocks.ENCHANTED_BOOKSHELF.get().asItem(), GraviBlocks.BELADON_BOOKSHELF.get().asItem());
+        this.tag(GraviTags.Items.AERFIN_LOGS).add(
+                GraviBlocks.AERFIN_LOG.get().asItem(),
+                GraviBlocks.AERFIN_WOOD.get().asItem(),
+                GraviBlocks.STRIPPED_AERFIN_LOG.get().asItem(),
+                GraviBlocks.STRIPPED_AERFIN_WOOD.get().asItem()
+        );
+        this.tag(GraviTags.Items.ENCHANTED_LOGS).add(
+                GraviBlocks.ENCHANTED_LOG.get().asItem(),
+                GraviBlocks.ENCHANTED_WOOD.get().asItem(),
+                GraviBlocks.STRIPPED_ENCHANTED_LOG.get().asItem(),
+                GraviBlocks.STRIPPED_ENCHANTED_WOOD.get().asItem()
+        );
+        this.tag(GraviTags.Items.BELADON_LOGS).add(
+                GraviBlocks.BELADON_LOG.get().asItem(),
+                GraviBlocks.BELADON_WOOD.get().asItem(),
+                GraviBlocks.STRIPPED_BELADON_LOG.get().asItem(),
+                GraviBlocks.STRIPPED_BELADON_WOOD.get().asItem()
+        );
+
+        this.tag(Tags.Items.BOOKSHELVES).add(
+                GraviBlocks.AERFIN_BOOKSHELF.get().asItem(),
+                GraviBlocks.ENCHANTED_BOOKSHELF.get().asItem(),
+                GraviBlocks.BELADON_BOOKSHELF.get().asItem()
+        );
+
+        this.tag(ItemTags.SAPLINGS).add(
+                GraviBlocks.AERFIN_SAPLING.get().asItem(),
+                GraviBlocks.BLUE_AERFIN_SAPLING.get().asItem(),
+                GraviBlocks.GOLDEN_AERFIN_SAPLING.get().asItem(),
+                GraviBlocks.ENCHANTED_SAPLING.get().asItem(),
+                GraviBlocks.BELADON_SAPLING.get().asItem()
+        );
 
         this.tag(GraviTags.Items.CAN_CREATE_ENCHANTING_TABLE).add(AetherItems.GOLDEN_AMBER.get());
 

@@ -1,5 +1,7 @@
-package mrthomas20121.gravitation;
+package mrthomas20121.gravitation.item;
 
+import com.aetherteam.aether.Aether;
+import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.block.GraviBlocks;
 import mrthomas20121.gravitation.item.GraviItems;
 import net.minecraft.core.registries.Registries;
@@ -78,6 +80,7 @@ public class GraviCreativeTab {
     public static RegistryObject<CreativeModeTab> BUILDING_BLOCKS = CREATIVE_TABS.register("building_blocks", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(GraviBlocks.STRIPPED_ENCHANTED_LOG.get()))
             .title(Component.translatable("itemGroup.gravitation.building_blocks"))
+            .withTabsBefore(new ResourceLocation(Aether.MODID, "spawn_eggs"))
             .withTabsAfter(new ResourceLocation(Gravitation.MOD_ID, "tools"))
             .displayItems((parameters, output) -> {
                 output.accept(GraviBlocks.BRONZITE_ORE.get());
@@ -98,6 +101,28 @@ public class GraviCreativeTab {
                 output.accept(GraviBlocks.POLISHED_CONGLOMERATE_WALLS.get());
                 output.accept(GraviBlocks.POLISHED_CONGLOMERATE_STAIRS.get());
                 output.accept(GraviBlocks.POLISHED_CONGLOMERATE_SLAB.get());
+
+                output.accept(GraviBlocks.AERFIN_SIGN.get());
+                output.accept(GraviBlocks.AERFIN_HANGING_SIGN.get());
+                output.accept(GraviBlocks.AERFIN_BOOKSHELF.get());
+                output.accept(GraviBlocks.AERFIN_LEAVES.get());
+                output.accept(GraviBlocks.BLUE_AERFIN_LEAVES.get());
+                output.accept(GraviBlocks.GOLDEN_AERFIN_LEAVES.get());
+                output.accept(GraviBlocks.AERFIN_LOG.get());
+                output.accept(GraviBlocks.STRIPPED_AERFIN_LOG.get());
+                output.accept(GraviBlocks.AERFIN_WOOD.get());
+                output.accept(GraviBlocks.STRIPPED_AERFIN_WOOD.get());
+                output.accept(GraviBlocks.AERFIN_PLANKS.get());
+                output.accept(GraviBlocks.AERFIN_STAIRS.get());
+                output.accept(GraviBlocks.AERFIN_SLAB.get());
+                output.accept(GraviBlocks.AERFIN_FENCE_GATE.get());
+                output.accept(GraviBlocks.AERFIN_BUTTON.get());
+                output.accept(GraviBlocks.AERFIN_DOOR.get());
+                output.accept(GraviBlocks.AERFIN_TRAPDOOR.get());
+                output.accept(GraviBlocks.AERFIN_FENCE.get());
+                output.accept(GraviBlocks.AERFIN_SAPLING.get());
+                output.accept(GraviBlocks.BLUE_AERFIN_SAPLING.get());
+                output.accept(GraviBlocks.GOLDEN_AERFIN_SAPLING.get());
 
                 output.accept(GraviBlocks.BELADON_SIGN.get());
                 output.accept(GraviBlocks.BELADON_HANGING_SIGN.get());

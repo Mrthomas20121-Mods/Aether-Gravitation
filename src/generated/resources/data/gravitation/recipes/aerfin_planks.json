@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "gravitation:aerfin_logs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "gravitation:aerfin_planks"
+  }
+}

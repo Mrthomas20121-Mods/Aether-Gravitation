@@ -7,6 +7,10 @@
     "gravitation:beladon_hanging_sign",
     "gravitation:enchanted_hanging_sign",
     "gravitation:beladon_wall_sign",
-    "gravitation:enchanted_wall_sign"
+    "gravitation:enchanted_wall_sign",
+    "gravitation:aerfin_sign",
+    "gravitation:aerfin_wall_sign",
+    "gravitation:aerfin_wall_hanging_sign",
+    "gravitation:aerfin_hanging_sign"
   ]
 }

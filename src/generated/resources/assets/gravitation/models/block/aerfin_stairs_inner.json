@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "gravitation:block/natural/aerfin_planks",
+    "side": "gravitation:block/natural/aerfin_planks",
+    "top": "gravitation:block/natural/aerfin_planks"
+  }
+}

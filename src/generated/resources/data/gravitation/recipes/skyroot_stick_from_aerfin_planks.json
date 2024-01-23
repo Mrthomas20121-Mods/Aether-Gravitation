@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "planks",
+  "key": {
+    "X": {
+      "item": "gravitation:aerfin_planks"
+    }
+  },
+  "pattern": [
+    "X",
+    "X"
+  ],
+  "result": {
+    "count": 4,
+    "item": "aether:skyroot_stick"
+  },
+  "show_notification": true
+}

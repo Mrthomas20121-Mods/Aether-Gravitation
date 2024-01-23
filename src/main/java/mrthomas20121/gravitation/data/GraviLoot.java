@@ -52,6 +52,29 @@ public class GraviLoot extends AetherBlockLootSubProvider {
         this.dropSelf(GraviBlocks.POLISHED_CONGLOMERATE_STAIRS.get());
         this.dropSelf(GraviBlocks.POLISHED_CONGLOMERATE_SLAB.get());
 
+        this.add(GraviBlocks.AERFIN_LEAVES.get(), (leaves) -> this.droppingWithChancesAndSkyrootSticks(leaves, GraviBlocks.AERFIN_SAPLING.get(), BlockLootAccessor.aether$getNormalLeavesSaplingChances()));
+        this.add(GraviBlocks.BLUE_AERFIN_LEAVES.get(), (leaves) -> this.droppingWithChancesAndSkyrootSticks(leaves, GraviBlocks.BLUE_AERFIN_SAPLING.get(), BlockLootAccessor.aether$getNormalLeavesSaplingChances()));
+        this.add(GraviBlocks.GOLDEN_AERFIN_LEAVES.get(), (leaves) -> this.droppingWithChancesAndSkyrootSticks(leaves, GraviBlocks.GOLDEN_AERFIN_SAPLING.get(), BlockLootAccessor.aether$getNormalLeavesSaplingChances()));
+        this.dropSelf(GraviBlocks.AERFIN_SAPLING.get());
+        this.dropSelf(GraviBlocks.BLUE_AERFIN_SAPLING.get());
+        this.dropSelf(GraviBlocks.GOLDEN_AERFIN_SAPLING.get());
+        this.dropSelf(GraviBlocks.AERFIN_SIGN.get());
+        this.dropSelf(GraviBlocks.AERFIN_HANGING_SIGN.get());
+        this.dropSelf(GraviBlocks.AERFIN_WALL_HANGING_SIGN.get());
+        this.dropSelfDouble(GraviBlocks.AERFIN_LOG.get());
+        this.dropSelf(GraviBlocks.AERFIN_WOOD.get());
+        this.dropSelf(GraviBlocks.STRIPPED_AERFIN_WOOD.get());
+        this.dropSelf(GraviBlocks.STRIPPED_AERFIN_LOG.get());
+        this.dropSelf(GraviBlocks.AERFIN_PLANKS.get());
+        this.dropSelf(GraviBlocks.AERFIN_DOOR.get());
+        this.dropSelf(GraviBlocks.AERFIN_TRAPDOOR.get());
+        this.dropSelf(GraviBlocks.AERFIN_FENCE_GATE.get());
+        this.dropSelf(GraviBlocks.AERFIN_FENCE.get());
+        this.dropSelf(GraviBlocks.AERFIN_SLAB.get());
+        this.dropSelf(GraviBlocks.AERFIN_STAIRS.get());
+        this.dropSelf(GraviBlocks.AERFIN_BUTTON.get());
+        this.dropSelf(GraviBlocks.AERFIN_PREASURE_PLATE.get());
+
         this.add(GraviBlocks.BELADON_LEAVES.get(), (leaves) -> this.droppingWithChancesAndSkyrootSticks(leaves, GraviBlocks.BELADON_SAPLING.get(), BlockLootAccessor.aether$getNormalLeavesSaplingChances()));
         this.dropSelf(GraviBlocks.BELADON_SAPLING.get());
         this.dropSelf(GraviBlocks.BELADON_SIGN.get());
@@ -93,6 +116,8 @@ public class GraviLoot extends AetherBlockLootSubProvider {
         this.dropWithFortune(GraviBlocks.BRONZITE_ICESTONE_ORE.get(), GraviItems.BRONZITE_ROCK.get());
         this.dropWithFortune(GraviBlocks.BRONZITE_ORE.get(), GraviItems.BRONZITE_ROCK.get());
         this.dropSelf(GraviBlocks.BRONZITE_BLOCK.get());
+        this.add(GraviBlocks.AERFIN_BOOKSHELF.get(),
+                (bookshelf) -> createSingleItemTableWithSilkTouch(bookshelf, Items.BOOK, ConstantValue.exactly(3)));
         this.add(GraviBlocks.BELADON_BOOKSHELF.get(),
                 (bookshelf) -> createSingleItemTableWithSilkTouch(bookshelf, Items.BOOK, ConstantValue.exactly(3)));
         this.add(GraviBlocks.ENCHANTED_BOOKSHELF.get(),

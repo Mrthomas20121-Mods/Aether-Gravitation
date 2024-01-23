@@ -21,6 +21,26 @@ public class GraviBlockstateData extends AetherBlockStateProvider {
         this.block(GraviBlocks.BRONZITE_ICESTONE_ORE.get(), "natural/");
         this.block(GraviBlocks.BRONZITE_BLOCK.get(), "construction/");
 
+        // aerfin set
+        this.block(GraviBlocks.AERFIN_PLANKS.get(), "natural/");
+        this.block(GraviBlocks.AERFIN_LEAVES.get(), "natural/");
+        this.log(GraviBlocks.AERFIN_LOG.get());
+        this.log(GraviBlocks.STRIPPED_AERFIN_LOG.get());
+        this.wood(GraviBlocks.AERFIN_WOOD.get(), GraviBlocks.AERFIN_LOG.get());
+        this.wood(GraviBlocks.STRIPPED_AERFIN_WOOD.get(), GraviBlocks.STRIPPED_AERFIN_LOG.get());
+        this.doorBlock(GraviBlocks.AERFIN_DOOR.get(), new ResourceLocation("gravitation:block/natural/aerfin_door_bottom"), new ResourceLocation("gravitation:block/natural/aerfin_door_top"));
+        this.trapdoorBlock(GraviBlocks.AERFIN_TRAPDOOR.get(), new ResourceLocation("gravitation:block/natural/aerfin_trapdoor"), true);
+        this.stairs(GraviBlocks.AERFIN_STAIRS.get(), GraviBlocks.AERFIN_PLANKS.get(), "natural/");
+        this.slab(GraviBlocks.AERFIN_SLAB.get(), GraviBlocks.AERFIN_PLANKS.get(), "natural/");
+        this.fence(GraviBlocks.AERFIN_FENCE.get(), GraviBlocks.AERFIN_PLANKS.get(), "natural/");
+        this.fenceGateBlock(GraviBlocks.AERFIN_FENCE_GATE.get(), GraviBlocks.AERFIN_PLANKS.get(), "natural/");
+        this.buttonBlock(GraviBlocks.AERFIN_BUTTON.get(), new ResourceLocation("gravitation:block/natural/aerfin_planks"));
+        this.pressurePlateBlock(GraviBlocks.AERFIN_PREASURE_PLATE.get(), new ResourceLocation("gravitation:block/natural/aerfin_planks"));
+        this.bookshelf(GraviBlocks.AERFIN_BOOKSHELF.get(), GraviBlocks.AERFIN_PLANKS.get());
+        this.signBlock(GraviBlocks.AERFIN_SIGN.get(), GraviBlocks.AERFIN_WALL_SIGN.get(), this.texture(this.name(GraviBlocks.AERFIN_PLANKS.get()), "natural/"));
+        this.hangingSignBlock(GraviBlocks.AERFIN_HANGING_SIGN.get(), GraviBlocks.AERFIN_WALL_HANGING_SIGN.get(), this.texture(this.name(GraviBlocks.AERFIN_PLANKS.get()), "natural/"));
+        this.saplingBlock(GraviBlocks.AERFIN_SAPLING.get(), "natural/");
+
         // beladon set
         this.block(GraviBlocks.BELADON_PLANKS.get(), "natural/");
         this.block(GraviBlocks.BELADON_LEAVES.get(), "natural/");
