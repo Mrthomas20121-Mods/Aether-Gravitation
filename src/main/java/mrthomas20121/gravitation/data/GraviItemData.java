@@ -35,7 +35,11 @@ public class GraviItemData extends AetherItemModelProvider {
         this.item(GraviItems.AERFIN_BOAT.get(), "");
         this.item(GraviItems.AERFIN_CHEST_BOAT.get(), "");
         this.item(GraviBlocks.AERFIN_SAPLING.get().asItem(), "");
+        this.item(GraviBlocks.BLUE_AERFIN_SAPLING.get().asItem(), "");
+        this.item(GraviBlocks.GOLDEN_AERFIN_SAPLING.get().asItem(), "");
         this.itemBlock(GraviBlocks.AERFIN_LEAVES.get());
+        this.itemBlock(GraviBlocks.BLUE_AERFIN_LEAVES.get());
+        this.itemBlock(GraviBlocks.GOLDEN_AERFIN_LEAVES.get());
         this.itemBlock(GraviBlocks.AERFIN_PLANKS.get());
         this.itemBlock(GraviBlocks.AERFIN_LOG.get());
         this.itemBlock(GraviBlocks.AERFIN_WOOD.get());

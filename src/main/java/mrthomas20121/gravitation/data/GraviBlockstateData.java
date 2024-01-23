@@ -24,6 +24,8 @@ public class GraviBlockstateData extends AetherBlockStateProvider {
         // aerfin set
         this.block(GraviBlocks.AERFIN_PLANKS.get(), "natural/");
         this.block(GraviBlocks.AERFIN_LEAVES.get(), "natural/");
+        this.block(GraviBlocks.BLUE_AERFIN_LEAVES.get(), "natural/");
+        this.block(GraviBlocks.GOLDEN_AERFIN_LEAVES.get(), "natural/");
         this.log(GraviBlocks.AERFIN_LOG.get());
         this.log(GraviBlocks.STRIPPED_AERFIN_LOG.get());
         this.wood(GraviBlocks.AERFIN_WOOD.get(), GraviBlocks.AERFIN_LOG.get());
@@ -40,6 +42,8 @@ public class GraviBlockstateData extends AetherBlockStateProvider {
         this.signBlock(GraviBlocks.AERFIN_SIGN.get(), GraviBlocks.AERFIN_WALL_SIGN.get(), this.texture(this.name(GraviBlocks.AERFIN_PLANKS.get()), "natural/"));
         this.hangingSignBlock(GraviBlocks.AERFIN_HANGING_SIGN.get(), GraviBlocks.AERFIN_WALL_HANGING_SIGN.get(), this.texture(this.name(GraviBlocks.AERFIN_PLANKS.get()), "natural/"));
         this.saplingBlock(GraviBlocks.AERFIN_SAPLING.get(), "natural/");
+        this.saplingBlock(GraviBlocks.BLUE_AERFIN_SAPLING.get(), "natural/");
+        this.saplingBlock(GraviBlocks.GOLDEN_AERFIN_SAPLING.get(), "natural/");
 
         // beladon set
         this.block(GraviBlocks.BELADON_PLANKS.get(), "natural/");
