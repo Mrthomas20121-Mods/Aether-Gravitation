@@ -30,5 +30,6 @@
     "recipes": [
       "gravitation:iron_battleaxe"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "gravitation:block/natural/polished_conglomerate"
+  }
+}

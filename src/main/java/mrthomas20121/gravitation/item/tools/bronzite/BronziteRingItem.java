@@ -39,7 +39,7 @@ public class BronziteRingItem extends RingItem {
 
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
-        if (!slotContext.entity().level.isClientSide()) {
+        if (!slotContext.entity().level().isClientSide()) {
             AttributeInstance attributeInstance = slotContext.entity().getAttribute(Attributes.ARMOR);
 
             if(attributeInstance != null) {
@@ -52,7 +52,7 @@ public class BronziteRingItem extends RingItem {
 
     @Override
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        if (!slotContext.entity().level.isClientSide()) {
+        if (!slotContext.entity().level().isClientSide()) {
             AttributeInstance attributeInstance = slotContext.entity().getAttribute(Attributes.ARMOR);
 
             if(attributeInstance != null) {

@@ -22,6 +22,10 @@ public class GraviItemData extends AetherItemModelProvider {
         this.item(GraviItems.DENSE_STONE.get(), "");
         this.item(GraviItems.DIG_STONE.get(), "");
         this.item(GraviItems.RAINBOW_STONE.get(), "");
+
+        this.item(GraviItems.AECHOR_STRING.get(), "");
+
+        this.item(GraviItems.BRONZITE_UPGRADE.get(), "");
         this.itemBlock(GraviBlocks.BRONZITE_BLOCK.get());
         this.itemBlock(GraviBlocks.BRONZITE_ORE.get());
         this.itemBlock(GraviBlocks.BRONZITE_ICESTONE_ORE.get());
@@ -47,7 +51,7 @@ public class GraviItemData extends AetherItemModelProvider {
         this.itemBlock(GraviBlocks.BELADON_TRAPDOOR.get(), "_bottom");
         this.itemBlock(GraviBlocks.BELADON_PREASURE_PLATE.get());
         this.item(GraviBlocks.BELADON_SIGN.get().asItem(), "");
-        this.item(GraviBlocks.BELADON_WALL_SIGN.get().asItem(), "");
+        this.item(GraviBlocks.BELADON_HANGING_SIGN.get().asItem(), "");
 
         // enchanted set
         this.item(GraviItems.ENCHANTED_CHEST_BOAT.get(),  "");
@@ -68,7 +72,7 @@ public class GraviItemData extends AetherItemModelProvider {
         this.itemBlock(GraviBlocks.ENCHANTED_TRAPDOOR.get(), "_bottom");
         this.itemBlock(GraviBlocks.ENCHANTED_PREASURE_PLATE.get());
         this.item(GraviBlocks.ENCHANTED_SIGN.get().asItem(), "");
-        this.item(GraviBlocks.ENCHANTED_WALL_SIGN.get().asItem(), "");
+        this.item(GraviBlocks.ENCHANTED_HANGING_SIGN.get().asItem(), "");
 
         this.handheldItem(GraviItems.NEPTUNE_AXE.get(), "");
         this.handheldItem(GraviItems.NEPTUNE_BATTLEAXE.get(), "");
@@ -103,21 +107,22 @@ public class GraviItemData extends AetherItemModelProvider {
         this.handheldItem(GraviItems.IRON_BATTLEAXE.get(), "");
         this.handheldItem(GraviItems.GOLD_BATTLEAXE.get(), "");
         this.itemBlock(GraviBlocks.ENCHANTED_BOOKSHELF.get());
+
+        // conglomerate
+        this.itemBlock(GraviBlocks.CONGLOMERATE.get());
+        this.itemWallBlock(GraviBlocks.CONGLOMERATE_WALLS.get(), GraviBlocks.CONGLOMERATE.get(), "natural/");
+        this.itemBlock(GraviBlocks.CONGLOMERATE_STAIRS.get());
+        this.itemBlock(GraviBlocks.CONGLOMERATE_SLAB.get());
+
+        this.itemBlock(GraviBlocks.CONGLOMERATE_BRICKS.get());
+        this.itemWallBlock(GraviBlocks.CONGLOMERATE_BRICK_WALLS.get(), GraviBlocks.CONGLOMERATE_BRICKS.get(), "natural/");
+        this.itemBlock(GraviBlocks.CONGLOMERATE_BRICK_STAIRS.get());
+        this.itemBlock(GraviBlocks.CONGLOMERATE_BRICK_SLAB.get());
+
+        this.itemBlock(GraviBlocks.POLISHED_CONGLOMERATE.get());
+        this.itemWallBlock(GraviBlocks.POLISHED_CONGLOMERATE_WALLS.get(), GraviBlocks.POLISHED_CONGLOMERATE.get(), "natural/");
+        this.itemBlock(GraviBlocks.POLISHED_CONGLOMERATE_STAIRS.get());
+        this.itemBlock(GraviBlocks.POLISHED_CONGLOMERATE_SLAB.get());
     }
 
-    public void crossbowItem(Item item) {
-        this.withExistingParent(this.itemName(item) + "_pulling_0", this.mcLoc("item/crossbow")).texture("layer0", this.modLoc("item/" + this.itemName(item) + "_pulling_0"));
-        this.withExistingParent(this.itemName(item) + "_pulling_1", this.mcLoc("item/crossbow")).texture("layer0", this.modLoc("item/" + this.itemName(item) + "_pulling_1"));
-        this.withExistingParent(this.itemName(item) + "_pulling_2", this.mcLoc("item/crossbow")).texture("layer0", this.modLoc("item/" + this.itemName(item) + "_pulling_2"));
-        this.withExistingParent(this.itemName(item) + "_arrow", this.mcLoc("item/crossbow")).texture("layer0", this.modLoc("item/" + this.itemName(item) + "_arrow"));
-        this.withExistingParent(this.itemName(item) + "_firework", this.mcLoc("item/crossbow")).texture("layer0", this.modLoc("item/" + this.itemName(item) + "_firework"));
-
-        this.withExistingParent(this.itemName(item), this.mcLoc("item/crossbow"))
-                .texture("layer0", this.modLoc("item/" + this.itemName(item)  + "_standby"))
-                .override().predicate(new ResourceLocation("pulling"), 1).model(this.getExistingFile(this.modLoc("item/" + this.itemName(item) + "_pulling_0"))).end()
-                .override().predicate(new ResourceLocation("pulling"), 1).predicate(new ResourceLocation("pull"), 0.58F).model(this.getExistingFile(this.modLoc("item/" + this.itemName(item) + "_pulling_1"))).end()
-                .override().predicate(new ResourceLocation("pulling"), 1).predicate(new ResourceLocation("pull"), 1.0F).model(this.getExistingFile(this.modLoc("item/" + this.itemName(item) + "_pulling_2"))).end()
-                .override().predicate(new ResourceLocation("charged"), 1).model(this.getExistingFile(this.modLoc("item/" + this.itemName(item) + "_arrow"))).end()
-                .override().predicate(new ResourceLocation("charged"), 1).predicate(new ResourceLocation("firework"), 1).model(this.getExistingFile(this.modLoc("item/" + this.itemName(item) + "_firework"))).end();
-    }
 }

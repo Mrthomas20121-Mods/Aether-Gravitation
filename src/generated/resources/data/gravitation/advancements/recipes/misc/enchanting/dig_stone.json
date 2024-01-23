@@ -30,5 +30,6 @@
     "recipes": [
       "gravitation:enchanting/dig_stone"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "gravitation:beladon_door"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -40,7 +40,7 @@ public class BronzitePendantItem extends PendantItem {
 
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
-        if (!slotContext.entity().level.isClientSide()) {
+        if (!slotContext.entity().level().isClientSide()) {
             AttributeInstance attributeInstance = slotContext.entity().getAttribute(Attributes.ARMOR_TOUGHNESS);
 
             if(attributeInstance != null) {
@@ -53,7 +53,7 @@ public class BronzitePendantItem extends PendantItem {
 
     @Override
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        if (!slotContext.entity().level.isClientSide()) {
+        if (!slotContext.entity().level().isClientSide()) {
             AttributeInstance attributeInstance = slotContext.entity().getAttribute(ForgeMod.SWIM_SPEED.get());
 
             if(attributeInstance != null) {

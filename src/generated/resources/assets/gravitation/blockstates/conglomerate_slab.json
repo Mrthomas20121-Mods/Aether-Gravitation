@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "gravitation:block/conglomerate_slab"
+    },
+    "type=double": {
+      "model": "gravitation:block/conglomerate"
+    },
+    "type=top": {
+      "model": "gravitation:block/conglomerate_slab_top"
+    }
+  }
+}

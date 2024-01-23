@@ -29,6 +29,7 @@ public class GraviLanguageData extends LanguageProvider {
         addItem(GraviItems.DENSE_STONE, "Dense Stone");
         addItem(GraviItems.DIG_STONE, "Dig Stone");
         addItem(GraviItems.RAINBOW_STONE, "Rainbow Stone");
+        addItem(GraviItems.AECHOR_STRING, "Aechor String");
         addItem(GraviItems.NEPTUNE_RING, "Neptune Ring");
         addItem(GraviItems.NEPTUNE_PENDANT, "Neptune Pendant");
         addItem(GraviItems.NEPTUNE_AXE, "Neptune Axe");
@@ -63,10 +64,27 @@ public class GraviLanguageData extends LanguageProvider {
         addItem(GraviItems.GOLD_BATTLEAXE, "Gold Battleaxe");
         addItem(GraviItems.ENCHANTED_CHEST_BOAT, "Enchanted Chest Boat");
         addItem(GraviItems.ENCHANTED_BOAT, "Enchanted Boat");
+
+        addBlock(GraviBlocks.CONGLOMERATE, "Conglomerate");
+        addBlock(GraviBlocks.CONGLOMERATE_WALLS, "Conglomerate Wall");
+        addBlock(GraviBlocks.CONGLOMERATE_STAIRS, "Conglomerate Stairs");
+        addBlock(GraviBlocks.CONGLOMERATE_SLAB, "Conglomerate Slab");
+
+        addBlock(GraviBlocks.CONGLOMERATE_BRICKS, "Conglomerate Bricks");
+        addBlock(GraviBlocks.CONGLOMERATE_BRICK_WALLS, "Conglomerate Brick Wall");
+        addBlock(GraviBlocks.CONGLOMERATE_BRICK_STAIRS, "Conglomerate Brick Stairs");
+        addBlock(GraviBlocks.CONGLOMERATE_BRICK_SLAB, "Conglomerate Brick Slab");
+
+        addBlock(GraviBlocks.POLISHED_CONGLOMERATE, "Polished Conglomerate");
+        addBlock(GraviBlocks.POLISHED_CONGLOMERATE_WALLS, "Polished Conglomerate Wall");
+        addBlock(GraviBlocks.POLISHED_CONGLOMERATE_STAIRS, "Polished Conglomerate Stairs");
+        addBlock(GraviBlocks.POLISHED_CONGLOMERATE_SLAB, "Polished Conglomerate Slab");
+
         addBlock(GraviBlocks.BRONZITE_ORE, "Bronzite Ore");
         addBlock(GraviBlocks.BRONZITE_ICESTONE_ORE, "Bronzite Icestone Ore");
         addBlock(GraviBlocks.BRONZITE_BLOCK, "Bronzite Block");
         addBlock(GraviBlocks.ENCHANTED_SIGN, "Enchanted Sign");
+        addBlock(GraviBlocks.ENCHANTED_HANGING_SIGN, "Enchanted Hanging Sign");
         addBlock(GraviBlocks.ENCHANTED_LEAVES, "Enchanted Leaves");
         addBlock(GraviBlocks.ENCHANTED_SAPLING, "Enchanted Sapling");
         addBlock(GraviBlocks.ENCHANTED_PLANKS, "Enchanted Planks");
@@ -90,6 +108,7 @@ public class GraviLanguageData extends LanguageProvider {
         addItem(GraviItems.BELADON_CHEST_BOAT, "Beladon Chest Boat");
         addItem(GraviItems.BELADON_BOAT, "Beladon Boat");
         addBlock(GraviBlocks.BELADON_SIGN, "Beladon Sign");
+        addBlock(GraviBlocks.BELADON_HANGING_SIGN, "Beladon Hanging Sign");
         addBlock(GraviBlocks.BELADON_LEAVES, "Beladon Leaves");
         addBlock(GraviBlocks.BELADON_SAPLING, "Beladon Sapling");
         addBlock(GraviBlocks.BELADON_PLANKS, "Beladon Planks");

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_enchanted_planks": {
+    "has_bronzite_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "gravitation:enchanted_planks"
+              "gravitation:bronzite_ingot"
             ]
           }
         ]
@@ -22,7 +22,7 @@
   },
   "requirements": [
     [
-      "has_enchanted_planks",
+      "has_bronzite_ingot",
       "has_the_recipe"
     ]
   ],
@@ -30,5 +30,6 @@
     "recipes": [
       "gravitation:crafting/bronzite_block"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

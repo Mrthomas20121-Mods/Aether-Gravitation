@@ -21,13 +21,13 @@ public class GraviBlockstateData extends AetherBlockStateProvider {
         this.block(GraviBlocks.BRONZITE_ICESTONE_ORE.get(), "natural/");
         this.block(GraviBlocks.BRONZITE_BLOCK.get(), "construction/");
 
+        // beladon set
         this.block(GraviBlocks.BELADON_PLANKS.get(), "natural/");
         this.block(GraviBlocks.BELADON_LEAVES.get(), "natural/");
         this.log(GraviBlocks.BELADON_LOG.get());
         this.log(GraviBlocks.STRIPPED_BELADON_LOG.get());
         this.wood(GraviBlocks.BELADON_WOOD.get(), GraviBlocks.BELADON_LOG.get());
         this.wood(GraviBlocks.STRIPPED_BELADON_WOOD.get(), GraviBlocks.STRIPPED_BELADON_LOG.get());
-
         this.doorBlock(GraviBlocks.BELADON_DOOR.get(), new ResourceLocation("gravitation:block/natural/beladon_door_bottom"), new ResourceLocation("gravitation:block/natural/beladon_door_top"));
         this.trapdoorBlock(GraviBlocks.BELADON_TRAPDOOR.get(), new ResourceLocation("gravitation:block/natural/beladon_trapdoor"), true);
         this.stairs(GraviBlocks.BELADON_STAIRS.get(), GraviBlocks.BELADON_PLANKS.get(), "natural/");
@@ -37,23 +37,20 @@ public class GraviBlockstateData extends AetherBlockStateProvider {
         this.buttonBlock(GraviBlocks.BELADON_BUTTON.get(), new ResourceLocation("gravitation:block/natural/beladon_planks"));
         this.pressurePlateBlock(GraviBlocks.BELADON_PREASURE_PLATE.get(), new ResourceLocation("gravitation:block/natural/beladon_planks"));
         this.bookshelf(GraviBlocks.BELADON_BOOKSHELF.get(), GraviBlocks.BELADON_PLANKS.get());
-
         this.signBlock(GraviBlocks.BELADON_SIGN.get(), GraviBlocks.BELADON_WALL_SIGN.get(), this.texture(this.name(GraviBlocks.BELADON_PLANKS.get()), "natural/"));
-
+        this.hangingSignBlock(GraviBlocks.BELADON_HANGING_SIGN.get(), GraviBlocks.BELADON_WALL_HANGING_SIGN.get(), this.texture(this.name(GraviBlocks.BELADON_PLANKS.get()), "natural/"));
         this.saplingBlock(GraviBlocks.BELADON_SAPLING.get(), "natural/");
 
+        // enchanted set
         this.block(GraviBlocks.ENCHANTED_PLANKS.get(), "natural/");
         this.block(GraviBlocks.ENCHANTED_LEAVES.get(), "natural/");
         this.log(GraviBlocks.ENCHANTED_LOG.get());
         this.log(GraviBlocks.STRIPPED_ENCHANTED_LOG.get());
         this.wood(GraviBlocks.ENCHANTED_WOOD.get(), GraviBlocks.ENCHANTED_LOG.get());
         this.wood(GraviBlocks.STRIPPED_ENCHANTED_WOOD.get(), GraviBlocks.STRIPPED_ENCHANTED_LOG.get());
-
         this.signBlock(GraviBlocks.ENCHANTED_SIGN.get(), GraviBlocks.ENCHANTED_WALL_SIGN.get(), this.texture(this.name(GraviBlocks.ENCHANTED_PLANKS.get()), "natural/"));
-
+        this.hangingSignBlock(GraviBlocks.ENCHANTED_HANGING_SIGN.get(), GraviBlocks.ENCHANTED_WALL_HANGING_SIGN.get(), this.texture(this.name(GraviBlocks.ENCHANTED_PLANKS.get()), "natural/"));
         this.saplingBlock(GraviBlocks.ENCHANTED_SAPLING.get(), "natural/");
-
-        // wood stuff
         this.doorBlock(GraviBlocks.ENCHANTED_DOOR.get(), new ResourceLocation("gravitation:block/natural/enchanted_door_bottom"), new ResourceLocation("gravitation:block/natural/enchanted_door_top"));
         this.trapdoorBlock(GraviBlocks.ENCHANTED_TRAPDOOR.get(), new ResourceLocation("gravitation:block/natural/enchanted_trapdoor"), true);
         this.stairs(GraviBlocks.ENCHANTED_STAIRS.get(), GraviBlocks.ENCHANTED_PLANKS.get(), "natural/");
@@ -63,5 +60,21 @@ public class GraviBlockstateData extends AetherBlockStateProvider {
         this.buttonBlock(GraviBlocks.ENCHANTED_BUTTON.get(), new ResourceLocation("gravitation:block/natural/enchanted_planks"));
         this.pressurePlateBlock(GraviBlocks.ENCHANTED_PREASURE_PLATE.get(), new ResourceLocation("gravitation:block/natural/enchanted_planks"));
         this.bookshelf(GraviBlocks.ENCHANTED_BOOKSHELF.get(), GraviBlocks.ENCHANTED_PLANKS.get());
+
+        // conglomerate
+        this.block(GraviBlocks.CONGLOMERATE.get(), "natural/");
+        this.wallBlock(GraviBlocks.CONGLOMERATE_WALLS.get(), new ResourceLocation("gravitation:block/natural/conglomerate"));
+        this.stairsBlock(GraviBlocks.CONGLOMERATE_STAIRS.get(), new ResourceLocation("gravitation:block/natural/conglomerate"));
+        this.slab(GraviBlocks.CONGLOMERATE_SLAB.get(), GraviBlocks.CONGLOMERATE.get(), "natural/");
+
+        this.block(GraviBlocks.CONGLOMERATE_BRICKS.get(), "natural/");
+        this.wallBlock(GraviBlocks.CONGLOMERATE_BRICK_WALLS.get(), new ResourceLocation("gravitation:block/natural/conglomerate_bricks"));
+        this.stairsBlock(GraviBlocks.CONGLOMERATE_BRICK_STAIRS.get(), new ResourceLocation("gravitation:block/natural/conglomerate_bricks"));
+        this.slab(GraviBlocks.CONGLOMERATE_BRICK_SLAB.get(), GraviBlocks.CONGLOMERATE_BRICKS.get(), "natural/");
+
+        this.block(GraviBlocks.POLISHED_CONGLOMERATE.get(), "natural/");
+        this.wallBlock(GraviBlocks.POLISHED_CONGLOMERATE_WALLS.get(), new ResourceLocation("gravitation:block/natural/polished_conglomerate"));
+        this.stairsBlock(GraviBlocks.POLISHED_CONGLOMERATE_STAIRS.get(), new ResourceLocation("gravitation:block/natural/polished_conglomerate"));
+        this.slab(GraviBlocks.POLISHED_CONGLOMERATE_SLAB.get(), GraviBlocks.POLISHED_CONGLOMERATE.get(), "natural/");
     }
 }

@@ -50,6 +50,7 @@ public class Gravitation {
 		GraviEntityTypes.ENTITY_TYPES.register(bus);
 		GlobalLootModifiers.LOOT_MODIFIERS.register(bus);
 		GravitationEnchantments.ENCHANTING.register(bus);
+		GraviCreativeTab.CREATIVE_TABS.register(bus);
 
 		GraviWoodType.registerWoodTypes();
 
@@ -86,7 +87,6 @@ public class Gravitation {
 
 		// server
 		event.getGenerator().addProvider(event.includeServer(), new LootDataProvider(packOutput));
-		event.getGenerator().addProvider(event.includeServer(), new GraviRegistrySets(packOutput, lookupProvider));
 		GraviBlockTags blockTags = new GraviBlockTags(packOutput, lookupProvider, existingFileHelper);
 		event.getGenerator().addProvider(event.includeServer(), blockTags);
 		event.getGenerator().addProvider(event.includeServer(), GraviLoot.create(packOutput));
@@ -94,5 +94,6 @@ public class Gravitation {
 		event.getGenerator().addProvider(event.includeServer(), new GraviEntityTagsData(packOutput, lookupProvider, existingFileHelper));
 		event.getGenerator().addProvider(event.includeServer(), new GraviItemTags(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
 		event.getGenerator().addProvider(event.includeServer(), new GraviBiomeTagsData(packOutput, lookupProvider, existingFileHelper));
+		event.getGenerator().addProvider(event.includeServer(), new GraviRegistrySets(packOutput, lookupProvider));
 	}
 }

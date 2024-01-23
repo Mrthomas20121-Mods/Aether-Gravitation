@@ -30,5 +30,6 @@
     "recipes": [
       "gravitation:crafting/bronzite_ingot_from_nugget"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

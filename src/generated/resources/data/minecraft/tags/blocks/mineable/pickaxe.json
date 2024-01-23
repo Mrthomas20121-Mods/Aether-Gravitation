@@ -2,6 +2,18 @@
   "values": [
     "gravitation:bronzite_block",
     "gravitation:bronzite_icestone_ore",
-    "gravitation:bronzite_ore"
+    "gravitation:bronzite_ore",
+    "gravitation:conglomerate",
+    "gravitation:conglomerate_stairs",
+    "gravitation:conglomerate_slab",
+    "gravitation:conglomerate_wall",
+    "gravitation:conglomerate_bricks",
+    "gravitation:conglomerate_brick_stairs",
+    "gravitation:conglomerate_brick_slab",
+    "gravitation:conglomerate_brick_wall",
+    "gravitation:polished_conglomerate",
+    "gravitation:polished_conglomerate_stairs",
+    "gravitation:polished_conglomerate_slab",
+    "gravitation:polished_conglomerate_wall"
   ]
 }

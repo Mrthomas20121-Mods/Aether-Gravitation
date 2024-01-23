@@ -30,5 +30,6 @@
     "recipes": [
       "gravitation:repairing/gravitite_battleaxe"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "gravitation:crafting/bronzite_pendant"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

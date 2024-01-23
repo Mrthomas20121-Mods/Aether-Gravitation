@@ -30,5 +30,6 @@
     "recipes": [
       "gravitation:skyroot_stick_from_enchanted_planks"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

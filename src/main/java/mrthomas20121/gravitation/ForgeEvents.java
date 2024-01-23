@@ -69,7 +69,7 @@ public class ForgeEvents {
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event) {
         BlockPos blockpos = event.getPos();
         Player livingEntity = event.getEntity();
-        Level level = event.getEntity().level;
+        Level level = event.getLevel();
         BlockState state = level.getBlockState(blockpos);
         if(event.getItemStack().is(GraviTags.Items.CAN_CREATE_ENCHANTING_TABLE) && state.is(AetherBlocks.ENCHANTED_GRAVITITE.get())) {
             event.setUseBlock(Event.Result.ALLOW);

@@ -26,9 +26,9 @@ public interface BoatBehavior {
                     }
 
                     boat.causeFallDamage(boat.fallDistance, 1.0F, boat.damageSources().fall());
-                    if (!boat.level.isClientSide && !boat.isRemoved()) {
+                    if (!boat.level().isClientSide() && !boat.isRemoved()) {
                         boat.kill();
-                        if (boat.level.getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
+                        if (boat.level().getGameRules().getBoolean(GameRules.RULE_DOENTITYDROPS)) {
                             int j;
                             for(j = 0; j < 3; ++j) {
                                 boat.spawnAtLocation(getPlanks());
@@ -42,7 +42,7 @@ public interface BoatBehavior {
                 }
 
                 boat.resetFallDistance();
-            } else if (!boat.level.getFluidState(boat.blockPosition().below()).is(FluidTags.WATER) && y < 0.0) {
+            } else if (!boat.level().getFluidState(boat.blockPosition().below()).is(FluidTags.WATER) && y < 0.0) {
                 boat.fallDistance -= (float)y;
             }
         }

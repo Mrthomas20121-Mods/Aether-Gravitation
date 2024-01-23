@@ -3,15 +3,16 @@
   "category": "building",
   "key": {
     "X": {
-      "item": "gravitation:enchanted_planks"
+      "item": "gravitation:bronzite_ingot"
     }
   },
   "pattern": [
-    "XX",
-    "XX"
+    "XXX",
+    "XXX",
+    "XXX"
   ],
   "result": {
-    "item": "minecraft:crafting_table"
+    "item": "gravitation:bronzite_block"
   },
   "show_notification": true
 }

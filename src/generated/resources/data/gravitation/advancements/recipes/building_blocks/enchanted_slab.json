@@ -30,5 +30,6 @@
     "recipes": [
       "gravitation:enchanted_slab"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -30,5 +30,6 @@
     "recipes": [
       "gravitation:repairing/diamond_battleaxe"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

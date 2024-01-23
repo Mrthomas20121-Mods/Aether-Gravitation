@@ -5,12 +5,14 @@ import mrthomas20121.gravitation.item.stone.*;
 import mrthomas20121.gravitation.item.tools.*;
 import mrthomas20121.gravitation.item.tools.bronzite.*;
 import mrthomas20121.gravitation.item.tools.neptune.*;
+import mrthomas20121.gravitation.item.wood.AerfinBoatItem;
+import mrthomas20121.gravitation.item.wood.BeladonBoatItem;
+import mrthomas20121.gravitation.item.wood.EnchantedBoatItem;
 import mrthomas20121.gravitation.util.GravitationArmorMaterials;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.ShieldItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -21,12 +23,15 @@ public class GraviItems {
 
     public static Rarity SALMON_ROSE = Rarity.create("salmon_rose", style -> style.withColor(0xff9fb2));
 
+    public static RegistryObject<Item> AECHOR_STRING = ITEMS.register("aechor_string", () -> new Item(new Item.Properties()));
+
     public static RegistryObject<Item> GREATER_HEALING_STONE = ITEMS.register("greater_healing_stone", GreaterHealingStoneItem::new);
     public static RegistryObject<Item> POWER_STONE = ITEMS.register("power_stone", PowerStoneItem::new);
     public static RegistryObject<Item> DENSE_STONE = ITEMS.register("dense_stone", DenseStoneItem::new);
     public static RegistryObject<Item> DIG_STONE = ITEMS.register("dig_stone", DigStoneItem::new);
     public static RegistryObject<Item> RAINBOW_STONE = ITEMS.register("rainbow_stone", RainbowStoneItem::new);
 
+    public static RegistryObject<Item> BRONZITE_UPGRADE = ITEMS.register("bronzite_upgrade_smithing_template", () -> new Item(new Item.Properties().rarity(SALMON_ROSE)));
     public static RegistryObject<Item> BRONZITE_INGOT = ITEMS.register("bronzite_ingot", () -> new Item(new Item.Properties().rarity(SALMON_ROSE)));
     public static RegistryObject<Item> BRONZITE_NUGGET = ITEMS.register("bronzite_nugget", () -> new Item(new Item.Properties().rarity(SALMON_ROSE)));
     public static RegistryObject<Item> BRONZITE_ROCK = ITEMS.register("bronzite_rock", () -> new Item(new Item.Properties().rarity(SALMON_ROSE)));
@@ -62,6 +67,9 @@ public class GraviItems {
     public static RegistryObject<Item> DIAMOND_BATTLEAXE = ITEMS.register("diamond_battleaxe", DiamondBattleAxeItem::new);
     public static RegistryObject<Item> IRON_BATTLEAXE = ITEMS.register("iron_battleaxe", IronBattleAxeItem::new);
     public static RegistryObject<Item> GOLD_BATTLEAXE = ITEMS.register("gold_battleaxe", GoldBattleAxeItem::new);
+
+    public static final RegistryObject<Item> AERFIN_BOAT = ITEMS.register("aerfin_boat", () -> new AerfinBoatItem(false, new Item.Properties().stacksTo(1)));
+    public static final RegistryObject<Item> AERFIN_CHEST_BOAT = ITEMS.register("aerfin_chest_boat", () -> new AerfinBoatItem(true, new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> BELADON_BOAT = ITEMS.register("beladon_boat", () -> new BeladonBoatItem(false, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> BELADON_CHEST_BOAT = ITEMS.register("beladon_chest_boat", () -> new BeladonBoatItem(true, new Item.Properties().stacksTo(1)));

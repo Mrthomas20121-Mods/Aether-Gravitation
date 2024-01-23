@@ -91,10 +91,68 @@ public class GraviBlockTags extends BlockTagsProvider {
 
         this.tag(Tags.Blocks.ORES).add(GraviBlocks.BRONZITE_ICESTONE_ORE.get(), GraviBlocks.BRONZITE_ORE.get());
 
-        // vanilla add moss to the tag so i'm doing the same but it causes
+        // vanilla add moss to the tag so i'm doing the same
         this.tag(BlockTags.DIRT).add(GraviBlocks.ENCHANTED_MOSS.get());
 
-        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(GraviBlocks.BRONZITE_BLOCK.get(), GraviBlocks.BRONZITE_ICESTONE_ORE.get(), GraviBlocks.BRONZITE_ORE.get());
+        this.tag(BlockTags.WALLS).add(
+                GraviBlocks.CONGLOMERATE_WALLS.get(),
+                GraviBlocks.CONGLOMERATE_BRICK_WALLS.get(),
+                GraviBlocks.POLISHED_CONGLOMERATE_WALLS.get()
+        );
+
+        this.tag(BlockTags.WALL_SIGNS).add(
+                GraviBlocks.BELADON_WALL_SIGN.get(),
+                GraviBlocks.ENCHANTED_WALL_SIGN.get()
+        );
+
+        this.tag(BlockTags.SIGNS).add(
+                GraviBlocks.BELADON_SIGN.get(),
+                GraviBlocks.ENCHANTED_SIGN.get()
+        );
+
+        this.tag(BlockTags.CEILING_HANGING_SIGNS).add(
+                GraviBlocks.BELADON_HANGING_SIGN.get(),
+                GraviBlocks.ENCHANTED_HANGING_SIGN.get()
+        );
+
+        this.tag(BlockTags.WALL_HANGING_SIGNS).add(
+                GraviBlocks.BELADON_WALL_HANGING_SIGN.get(),
+                GraviBlocks.ENCHANTED_WALL_HANGING_SIGN.get()
+        );
+
+        this.tag(BlockTags.STANDING_SIGNS).add(
+                GraviBlocks.BELADON_SIGN.get(),
+                GraviBlocks.ENCHANTED_SIGN.get()
+        );
+
+        this.tag(BlockTags.ALL_SIGNS).add(
+                GraviBlocks.BELADON_SIGN.get(),
+                GraviBlocks.ENCHANTED_SIGN.get(),
+                GraviBlocks.BELADON_WALL_HANGING_SIGN.get(),
+                GraviBlocks.ENCHANTED_WALL_HANGING_SIGN.get(),
+                GraviBlocks.BELADON_HANGING_SIGN.get(),
+                GraviBlocks.ENCHANTED_HANGING_SIGN.get(),
+                GraviBlocks.BELADON_WALL_SIGN.get(),
+                GraviBlocks.ENCHANTED_WALL_SIGN.get()
+        );
+
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+                GraviBlocks.BRONZITE_BLOCK.get(),
+                GraviBlocks.BRONZITE_ICESTONE_ORE.get(),
+                GraviBlocks.BRONZITE_ORE.get(),
+                GraviBlocks.CONGLOMERATE.get(),
+                GraviBlocks.CONGLOMERATE_STAIRS.get(),
+                GraviBlocks.CONGLOMERATE_SLAB.get(),
+                GraviBlocks.CONGLOMERATE_WALLS.get(),
+                GraviBlocks.CONGLOMERATE_BRICKS.get(),
+                GraviBlocks.CONGLOMERATE_BRICK_STAIRS.get(),
+                GraviBlocks.CONGLOMERATE_BRICK_SLAB.get(),
+                GraviBlocks.CONGLOMERATE_BRICK_WALLS.get(),
+                GraviBlocks.POLISHED_CONGLOMERATE.get(),
+                GraviBlocks.POLISHED_CONGLOMERATE_STAIRS.get(),
+                GraviBlocks.POLISHED_CONGLOMERATE_SLAB.get(),
+                GraviBlocks.POLISHED_CONGLOMERATE_WALLS.get()
+        );
 
         this.tag(Tags.Blocks.STORAGE_BLOCKS).add(GraviBlocks.BRONZITE_BLOCK.get());
 

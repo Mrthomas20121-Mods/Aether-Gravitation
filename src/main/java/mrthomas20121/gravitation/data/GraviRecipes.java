@@ -14,6 +14,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.SmithingRecipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
@@ -31,6 +32,9 @@ public class GraviRecipes extends AetherRecipeProvider {
 
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
+
+        freezingRecipe(RecipeCategory.MISC, GraviItems.AECHOR_STRING.get(), AetherItems.AECHOR_PETAL.get(), 0.5f, 10)
+                .save(consumer, new ResourceLocation("gravitation:freezing/aechor_string"));
 
         woodRecipes(
                 "enchanted",
@@ -73,6 +77,39 @@ public class GraviRecipes extends AetherRecipeProvider {
                 GraviItems.BELADON_BOAT.get(),
                 GraviItems.BELADON_CHEST_BOAT.get(),
                 consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GraviBlocks.POLISHED_CONGLOMERATE.get())
+                .define('X', GraviBlocks.CONGLOMERATE.get())
+                .pattern("XX")
+                .pattern("XX")
+                .unlockedBy("has_conglomerate_ingot", has(GraviBlocks.CONGLOMERATE.get()))
+                .save(consumer, new ResourceLocation("gravitation:crafting/polished_conglomerate"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GraviBlocks.CONGLOMERATE_BRICKS.get())
+                .define('X', GraviBlocks.POLISHED_CONGLOMERATE.get())
+                .pattern("XX")
+                .pattern("XX")
+                .unlockedBy("has_polished_conglomerate_ingot", has(GraviBlocks.POLISHED_CONGLOMERATE.get()))
+                .save(consumer, new ResourceLocation("gravitation:crafting/conglomerate_bricks"));
+
+        wall(consumer, new ResourceLocation("gravitation:crafting/conglomerate_wall"), RecipeCategory.BUILDING_BLOCKS,
+                GraviBlocks.CONGLOMERATE_WALLS.get(), GraviBlocks.CONGLOMERATE.get());
+        wall(consumer, new ResourceLocation("gravitation:crafting/conglomerate_brick_wall"), RecipeCategory.BUILDING_BLOCKS,
+                GraviBlocks.CONGLOMERATE_BRICK_WALLS.get(), GraviBlocks.CONGLOMERATE_BRICKS.get());
+        wall(consumer, new ResourceLocation("gravitation:crafting/polished_conglomerate_wall"), RecipeCategory.BUILDING_BLOCKS,
+                GraviBlocks.POLISHED_CONGLOMERATE_WALLS.get(), GraviBlocks.POLISHED_CONGLOMERATE.get());
+        stairs(consumer, new ResourceLocation("gravitation:crafting/conglomerate_stairs"),
+                GraviBlocks.CONGLOMERATE_STAIRS, GraviBlocks.CONGLOMERATE);
+        stairs(consumer, new ResourceLocation("gravitation:crafting/conglomerate_brick_stairs"),
+                GraviBlocks.CONGLOMERATE_BRICK_STAIRS, GraviBlocks.CONGLOMERATE_BRICKS);
+        stairs(consumer, new ResourceLocation("gravitation:crafting/polished_conglomerate_stairs"),
+                GraviBlocks.POLISHED_CONGLOMERATE_STAIRS, GraviBlocks.POLISHED_CONGLOMERATE);
+        slab(consumer, new ResourceLocation("gravitation:crafting/conglomerate_slab"),RecipeCategory.BUILDING_BLOCKS,
+                GraviBlocks.CONGLOMERATE_SLAB.get(), GraviBlocks.CONGLOMERATE.get());
+        slab(consumer, new ResourceLocation("gravitation:crafting/conglomerate_brick_slab"),RecipeCategory.BUILDING_BLOCKS,
+                GraviBlocks.CONGLOMERATE_BRICK_SLAB.get(), GraviBlocks.CONGLOMERATE_BRICKS.get());
+        slab(consumer, new ResourceLocation("gravitation:crafting/polished_conglomerate_slab"),RecipeCategory.BUILDING_BLOCKS,
+                GraviBlocks.POLISHED_CONGLOMERATE_SLAB.get(), GraviBlocks.POLISHED_CONGLOMERATE.get());
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GraviBlocks.BRONZITE_BLOCK.get())
                 .define('X', GraviItems.BRONZITE_INGOT.get())
@@ -244,9 +281,19 @@ public class GraviRecipes extends AetherRecipeProvider {
 
     }
 
-    @SuppressWarnings("deprecation")
-    protected static void zaniteSmithing(Consumer<FinishedRecipe> consumer, Item input, RecipeCategory p_248986_, Item p_250389_) {
-        LegacyUpgradeRecipeBuilder.smithing(Ingredient.of(input), Ingredient.of(AetherItems.ZANITE_GEMSTONE.get()), RecipeCategory.TOOLS, p_250389_).unlocks(getHasName(input), has(input)).save(consumer, getItemName(p_250389_) + "_smithing");
-        //SmithingTransformRecipeBuilder.smithing(Ingredient.of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), Ingredient.of(input), Ingredient.of(AetherItems.ZANITE_GEMSTONE.get()), p_248986_, p_250389_).unlocks("has_netherite_ingot", has(Items.NETHERITE_INGOT)).save(consumer, getItemName(p_250389_) + "_smithing");
+    protected static void zaniteSmithing(Consumer<FinishedRecipe> p_251614_, Item p_250046_, RecipeCategory p_248986_, Item p_250389_) {
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(GraviItems.BRONZITE_UPGRADE.get()), Ingredient.of(p_250046_), Ingredient.of(AetherItems.ZANITE_GEMSTONE.get()), p_248986_, p_250389_).unlocks("has_zanite_gemstone", has(AetherItems.ZANITE_GEMSTONE.get())).save(p_251614_, getItemName(p_250389_) + "_zanite_smithing");
+    }
+
+    protected void stairs(Consumer<FinishedRecipe> consumer, ResourceLocation name, Supplier<? extends Block> stairs, Supplier<? extends Block> material) {
+        stairs(stairs, material).save(consumer, name);
+    }
+
+    protected static void wall(Consumer<FinishedRecipe> p_251034_, ResourceLocation name, RecipeCategory p_251148_, ItemLike p_250499_, ItemLike p_249970_) {
+        wallBuilder(p_251148_, p_250499_, Ingredient.of(p_249970_)).unlockedBy(getHasName(p_249970_), has(p_249970_)).save(p_251034_, name);
+    }
+
+    protected static void slab(Consumer<FinishedRecipe> p_248880_, ResourceLocation name, RecipeCategory p_251848_, ItemLike p_249368_, ItemLike p_252133_) {
+        slabBuilder(p_251848_, p_249368_, Ingredient.of(p_252133_)).unlockedBy(getHasName(p_252133_), has(p_252133_)).save(p_248880_, name);
     }
 }

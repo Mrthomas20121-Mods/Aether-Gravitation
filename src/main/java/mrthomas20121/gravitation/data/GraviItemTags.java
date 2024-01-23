@@ -32,6 +32,11 @@ public class GraviItemTags extends ItemTagsProvider {
 
         this.tag(GraviTags.Items.CAN_CREATE_ENCHANTING_TABLE).add(AetherItems.GOLDEN_AMBER.get());
 
+        this.tag(Tags.Items.STRING).add(GraviItems.AECHOR_STRING.get());
+
+        this.tag(AetherTags.Items.FREEZABLE_RINGS).add(GraviItems.BRONZITE_RING.get());
+        this.tag(AetherTags.Items.FREEZABLE_PENDANTS).add(GraviItems.BRONZITE_PENDANT.get());
+
         this.tag(GraviTags.Items.BATTLEAXES).add(
                 GraviItems.NEPTUNE_BATTLEAXE.get(),
                 GraviItems.VALKYRIE_BATTLEAXE.get(),

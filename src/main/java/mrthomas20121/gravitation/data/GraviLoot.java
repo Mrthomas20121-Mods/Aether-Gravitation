@@ -36,9 +36,27 @@ public class GraviLoot extends AetherBlockLootSubProvider {
     protected void generate() {
 
         this.dropSelf(GraviBlocks.ENCHANTED_MOSS.get());
+
+        this.dropSelf(GraviBlocks.CONGLOMERATE.get());
+        this.dropSelf(GraviBlocks.CONGLOMERATE_WALLS.get());
+        this.dropSelf(GraviBlocks.CONGLOMERATE_STAIRS.get());
+        this.dropSelf(GraviBlocks.CONGLOMERATE_SLAB.get());
+
+        this.dropSelf(GraviBlocks.CONGLOMERATE_BRICKS.get());
+        this.dropSelf(GraviBlocks.CONGLOMERATE_BRICK_WALLS.get());
+        this.dropSelf(GraviBlocks.CONGLOMERATE_BRICK_STAIRS.get());
+        this.dropSelf(GraviBlocks.CONGLOMERATE_BRICK_SLAB.get());
+
+        this.dropSelf(GraviBlocks.POLISHED_CONGLOMERATE.get());
+        this.dropSelf(GraviBlocks.POLISHED_CONGLOMERATE_WALLS.get());
+        this.dropSelf(GraviBlocks.POLISHED_CONGLOMERATE_STAIRS.get());
+        this.dropSelf(GraviBlocks.POLISHED_CONGLOMERATE_SLAB.get());
+
         this.add(GraviBlocks.BELADON_LEAVES.get(), (leaves) -> this.droppingWithChancesAndSkyrootSticks(leaves, GraviBlocks.BELADON_SAPLING.get(), BlockLootAccessor.aether$getNormalLeavesSaplingChances()));
         this.dropSelf(GraviBlocks.BELADON_SAPLING.get());
         this.dropSelf(GraviBlocks.BELADON_SIGN.get());
+        this.dropSelf(GraviBlocks.BELADON_HANGING_SIGN.get());
+        this.dropSelf(GraviBlocks.BELADON_WALL_HANGING_SIGN.get());
         this.dropSelfDouble(GraviBlocks.BELADON_LOG.get());
         this.dropSelf(GraviBlocks.BELADON_WOOD.get());
         this.dropSelf(GraviBlocks.STRIPPED_BELADON_WOOD.get());
@@ -56,6 +74,8 @@ public class GraviLoot extends AetherBlockLootSubProvider {
         this.add(GraviBlocks.ENCHANTED_LEAVES.get(), (leaves) -> this.droppingWithChancesAndSkyrootSticks(leaves, GraviBlocks.ENCHANTED_SAPLING.get(), BlockLootAccessor.aether$getNormalLeavesSaplingChances()));
         this.dropSelf(GraviBlocks.ENCHANTED_SAPLING.get());
         this.dropSelf(GraviBlocks.ENCHANTED_SIGN.get());
+        this.dropSelf(GraviBlocks.ENCHANTED_HANGING_SIGN.get());
+        this.dropSelf(GraviBlocks.ENCHANTED_WALL_HANGING_SIGN.get());
         this.dropSelfDouble(GraviBlocks.ENCHANTED_LOG.get());
         this.dropSelf(GraviBlocks.ENCHANTED_WOOD.get());
         this.dropSelf(GraviBlocks.STRIPPED_ENCHANTED_WOOD.get());
@@ -69,6 +89,7 @@ public class GraviLoot extends AetherBlockLootSubProvider {
         this.dropSelf(GraviBlocks.ENCHANTED_STAIRS.get());
         this.dropSelf(GraviBlocks.ENCHANTED_BUTTON.get());
         this.dropSelf(GraviBlocks.ENCHANTED_PREASURE_PLATE.get());
+
         this.dropWithFortune(GraviBlocks.BRONZITE_ICESTONE_ORE.get(), GraviItems.BRONZITE_ROCK.get());
         this.dropWithFortune(GraviBlocks.BRONZITE_ORE.get(), GraviItems.BRONZITE_ROCK.get());
         this.dropSelf(GraviBlocks.BRONZITE_BLOCK.get());

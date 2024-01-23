@@ -50,7 +50,7 @@ public class NeptuneRingItem extends RingItem {
 
     @Override
     public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
-        if (!slotContext.entity().level.isClientSide()) {
+        if (!slotContext.entity().level().isClientSide()) {
             AttributeInstance attributeInstance = slotContext.entity().getAttribute(ForgeMod.SWIM_SPEED.get());
 
             if(attributeInstance != null) {
@@ -63,7 +63,7 @@ public class NeptuneRingItem extends RingItem {
 
     @Override
     public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        if (!slotContext.entity().level.isClientSide()) {
+        if (!slotContext.entity().level().isClientSide()) {
             AttributeInstance attributeInstance = slotContext.entity().getAttribute(ForgeMod.SWIM_SPEED.get());
 
             if(attributeInstance != null) {

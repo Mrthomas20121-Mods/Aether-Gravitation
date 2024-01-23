@@ -28,5 +28,6 @@
     "recipes": [
       "gravitation:enchanted_chest_boat"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

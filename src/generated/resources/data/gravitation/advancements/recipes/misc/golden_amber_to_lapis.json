@@ -30,5 +30,6 @@
     "recipes": [
       "gravitation:golden_amber_to_lapis"
     ]
-  }
+  },
+  "sends_telemetry_event": true
 }

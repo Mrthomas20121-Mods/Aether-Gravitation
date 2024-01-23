@@ -30,5 +30,6 @@
     "recipes": [
       "gravitation:enchanted_stairs_from_planks"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

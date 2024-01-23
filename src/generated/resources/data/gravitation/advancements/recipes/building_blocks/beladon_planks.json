@@ -28,5 +28,6 @@
     "recipes": [
       "gravitation:beladon_planks"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

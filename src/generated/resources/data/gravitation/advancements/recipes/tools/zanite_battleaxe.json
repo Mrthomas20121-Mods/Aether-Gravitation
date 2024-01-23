@@ -30,5 +30,6 @@
     "recipes": [
       "gravitation:zanite_battleaxe"
     ]
-  }
+  },
+  "sends_telemetry_event": false
 }

@@ -1,0 +1,10 @@
+{
+  "type": "aether:freezing",
+  "category": "freezable_misc",
+  "cookingtime": 10,
+  "experience": 0.5,
+  "ingredient": {
+    "item": "aether:aechor_petal"
+  },
+  "result": "gravitation:aechor_string"
+}
