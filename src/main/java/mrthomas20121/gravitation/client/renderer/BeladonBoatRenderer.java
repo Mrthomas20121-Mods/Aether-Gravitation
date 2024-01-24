@@ -1,4 +1,4 @@
-package mrthomas20121.gravitation.client;
+package mrthomas20121.gravitation.client.renderer;
 
 import com.mojang.datafixers.util.Pair;
 import mrthomas20121.gravitation.Gravitation;

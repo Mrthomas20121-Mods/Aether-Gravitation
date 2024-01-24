@@ -3,7 +3,6 @@ package mrthomas20121.gravitation;
 import mrthomas20121.gravitation.block.GraviBlocks;
 import mrthomas20121.gravitation.block.wood.GraviWoodType;
 import mrthomas20121.gravitation.block_entity.GraviBlockEntityTypes;
-import mrthomas20121.gravitation.client.GraviModelPredicate;
 import mrthomas20121.gravitation.data.*;
 import mrthomas20121.gravitation.data.loot.GlobalLootModifiers;
 import mrthomas20121.gravitation.data.loot.LootDataProvider;
@@ -16,13 +15,10 @@ import mrthomas20121.gravitation.world.biome.GravitationSurfaceData;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
@@ -54,14 +50,6 @@ public class Gravitation {
 		GraviCreativeTab.CREATIVE_TABS.register(bus);
 
 		GraviWoodType.registerWoodTypes();
-
-		DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
-			bus.addListener(this::clientSetup);
-		});
-	}
-
-	public void clientSetup(FMLClientSetupEvent event) {
-		event.enqueueWork(GraviModelPredicate::init);
 	}
 
 	public void setup(FMLCommonSetupEvent event) {

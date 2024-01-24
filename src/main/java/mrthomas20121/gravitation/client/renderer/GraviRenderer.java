@@ -1,4 +1,4 @@
-package mrthomas20121.gravitation.client;
+package mrthomas20121.gravitation.client.renderer;
 
 import com.aetherteam.aether.client.renderer.accessory.GlovesRenderer;
 import com.aetherteam.aether.client.renderer.accessory.PendantRenderer;

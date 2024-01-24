@@ -1,4 +1,4 @@
-package mrthomas20121.gravitation.client;
+package mrthomas20121.gravitation.client.renderer;
 
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.resources.ResourceLocation;

@@ -71,11 +71,6 @@ public class GraviBlockTags extends BlockTagsProvider {
                 GraviTags.Blocks.BELADON_LOGS
         );
 
-        this.tag(BlockTags.FENCES).add(
-                GraviBlocks.AERFIN_FENCE.get(),
-                GraviBlocks.ENCHANTED_FENCE.get(),
-                GraviBlocks.BELADON_FENCE.get()
-        );
         this.tag(BlockTags.WOODEN_FENCES).add(
                 GraviBlocks.AERFIN_FENCE.get(),
                 GraviBlocks.ENCHANTED_FENCE.get(),
