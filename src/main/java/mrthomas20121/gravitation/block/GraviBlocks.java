@@ -2,16 +2,11 @@ package mrthomas20121.gravitation.block;
 
 import com.aetherteam.aether.block.AetherBlocks;
 import com.aetherteam.aether.block.construction.BookshelfBlock;
-import com.aetherteam.aether.block.construction.SkyrootCeilingHangingSignBlock;
-import com.aetherteam.aether.block.construction.SkyrootWallHangingSignBlock;
 import com.aetherteam.aether.block.natural.AetherDoubleDropsLeaves;
 import com.aetherteam.aether.block.natural.AetherLogBlock;
 import com.aetherteam.aether.mixin.mixins.common.accessor.FireBlockAccessor;
 import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.block.wood.*;
-import mrthomas20121.gravitation.block_entity.AerfinHangingSignBlockEntity;
-import mrthomas20121.gravitation.block_entity.AerfinSignBlockEntity;
-import mrthomas20121.gravitation.block_entity.BeladonHangingSignBlockEntity;
 import mrthomas20121.gravitation.block_entity.EnchantedHangingSignBlockEntity;
 import mrthomas20121.gravitation.item.GraviItems;
 import mrthomas20121.gravitation.util.ToolAction;
@@ -20,6 +15,7 @@ import mrthomas20121.gravitation.world.EnchantedTree;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.HangingSignItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SignItem;
 import net.minecraft.world.level.BlockGetter;
@@ -58,11 +54,9 @@ public class GraviBlocks {
     public static final RegistryObject<ButtonBlock> AERFIN_BUTTON = register("aerfin_button", () -> new ButtonBlock(Block.Properties.copy(Blocks.OAK_BUTTON).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.AERFIN_BLOCK_SET, 30, true));
     public static final RegistryObject<PressurePlateBlock> AERFIN_PREASURE_PLATE = register("aerfin_preasure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.copy(Blocks.OAK_PRESSURE_PLATE).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.AERFIN_BLOCK_SET));
     public static final RegistryObject<StandingSignBlock> AERFIN_SIGN = registerAerfinSign("aerfin_sign", () -> new AerfinSignBlock(Block.Properties.copy(Blocks.OAK_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD), GraviWoodType.AERFIN));
-    public static final RegistryObject<WallSignBlock> AERFIN_WALL_SIGN = BLOCKS.register("aerfin_wall_sign", () -> new AerfinWallSignBlock(Block.Properties.copy(Blocks.OAK_WALL_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD).lootFrom(AERFIN_SIGN), GraviWoodType.AERFIN));
-    public static final RegistryObject<CeilingHangingSignBlock> AERFIN_HANGING_SIGN = register("aerfin_hanging_sign", () -> new GravitationCeilingHangingSignBlock(ExtendedProperties.create(properties ->
-            properties.mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()).blockEntity(AerfinHangingSignBlockEntity::new), GraviWoodType.AERFIN));
-    public static final RegistryObject<WallHangingSignBlock> AERFIN_WALL_HANGING_SIGN = register("aerfin_wall_hanging_sign", () -> new GravitationWallHangingSignBlock(ExtendedProperties.create(properties ->
-            properties.mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()).blockEntity(AerfinHangingSignBlockEntity::new), GraviWoodType.AERFIN));
+    public static final RegistryObject<WallSignBlock> AERFIN_WALL_SIGN = registerAerfinSign("aerfin_wall_sign", () -> new AerfinWallSignBlock(Block.Properties.copy(Blocks.OAK_WALL_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD).lootFrom(AERFIN_SIGN), GraviWoodType.AERFIN));
+    public static final RegistryObject<CeilingHangingSignBlock> AERFIN_HANGING_SIGN = registerAerfinHangingSign("aerfin_hanging_sign", () -> new AerfinHangingSignBlock(BlockBehaviour.Properties.of().mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava(), GraviWoodType.AERFIN));
+    public static final RegistryObject<WallHangingSignBlock> AERFIN_WALL_HANGING_SIGN = registerAerfinHangingSign("aerfin_wall_hanging_sign", () -> new AerfinWallHangingSignBlock(BlockBehaviour.Properties.of().mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava(), GraviWoodType.AERFIN));
     public static final RegistryObject<SaplingBlock> AERFIN_SAPLING = register("aerfin_sapling", () -> new SaplingBlock(new BeladonTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
     public static final RegistryObject<SaplingBlock> BLUE_AERFIN_SAPLING = register("blue_aerfin_sapling", () -> new SaplingBlock(new BeladonTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
     public static final RegistryObject<SaplingBlock> GOLDEN_AERFIN_SAPLING = register("golden_aerfin_sapling", () -> new SaplingBlock(new BeladonTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
@@ -84,11 +78,9 @@ public class GraviBlocks {
     public static final RegistryObject<ButtonBlock> BELADON_BUTTON = register("beladon_button", () -> new ButtonBlock(Block.Properties.copy(Blocks.OAK_BUTTON).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.BELADON_BLOCK_SET, 30, true));
     public static final RegistryObject<PressurePlateBlock> BELADON_PREASURE_PLATE = register("beladon_preasure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.copy(Blocks.OAK_PRESSURE_PLATE).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.BELADON_BLOCK_SET));
     public static final RegistryObject<StandingSignBlock> BELADON_SIGN = registerBeladonSign("beladon_sign", () -> new BeladonSignBlock(Block.Properties.copy(Blocks.OAK_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD), GraviWoodType.BELADON));
-    public static final RegistryObject<WallSignBlock> BELADON_WALL_SIGN = BLOCKS.register("beladon_wall_sign", () -> new BeladonWallSignBlock(Block.Properties.copy(Blocks.OAK_WALL_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD).lootFrom(BELADON_SIGN), GraviWoodType.BELADON));
-    public static final RegistryObject<CeilingHangingSignBlock> BELADON_HANGING_SIGN = register("beladon_hanging_sign", () -> new GravitationCeilingHangingSignBlock(ExtendedProperties.create(properties ->
-            properties.mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()).blockEntity(BeladonHangingSignBlockEntity::new), GraviWoodType.BELADON));
-    public static final RegistryObject<WallHangingSignBlock> BELADON_WALL_HANGING_SIGN = register("beladon_wall_hanging_sign", () -> new GravitationWallHangingSignBlock(ExtendedProperties.create(properties ->
-            properties.mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()).blockEntity(BeladonHangingSignBlockEntity::new), GraviWoodType.BELADON));
+    public static final RegistryObject<WallSignBlock> BELADON_WALL_SIGN = registerBeladonSign("beladon_wall_sign", () -> new BeladonWallSignBlock(Block.Properties.copy(Blocks.OAK_WALL_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD).lootFrom(BELADON_SIGN), GraviWoodType.BELADON));
+    public static final RegistryObject<CeilingHangingSignBlock> BELADON_HANGING_SIGN = registerBeladonHangingSign("beladon_hanging_sign", () -> new BeladonHangingSignBlock(Block.Properties.copy(Blocks.OAK_WALL_SIGN).mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava(), GraviWoodType.BELADON));
+    public static final RegistryObject<WallHangingSignBlock> BELADON_WALL_HANGING_SIGN = registerBeladonHangingSign("beladon_wall_hanging_sign", () -> new BeladonWallHangingSignBlock(Block.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN).mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava(), GraviWoodType.BELADON));
     public static final RegistryObject<SaplingBlock> BELADON_SAPLING = register("beladon_sapling", () -> new SaplingBlock(new BeladonTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
 
     public static final RegistryObject<Block> ENCHANTED_LEAVES = register("enchanted_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
@@ -107,10 +99,10 @@ public class GraviBlocks {
     public static final RegistryObject<ButtonBlock> ENCHANTED_BUTTON = register("enchanted_button", () -> new ButtonBlock(Block.Properties.copy(Blocks.OAK_BUTTON).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.ENCHANTED_BLOCK_SET, 30, true));
     public static final RegistryObject<PressurePlateBlock> ENCHANTED_PREASURE_PLATE = register("enchanted_preasure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.copy(Blocks.OAK_PRESSURE_PLATE).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.ENCHANTED_BLOCK_SET));
     public static final RegistryObject<StandingSignBlock> ENCHANTED_SIGN = registerEnchantedSign("enchanted_sign", () -> new EnchantedSignBlock(Block.Properties.copy(Blocks.OAK_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD), GraviWoodType.ENCHANTED));
-    public static final RegistryObject<WallSignBlock> ENCHANTED_WALL_SIGN = BLOCKS.register("enchanted_wall_sign", () -> new EnchantedWallSignBlock(Block.Properties.copy(Blocks.OAK_WALL_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD).lootFrom(ENCHANTED_SIGN), GraviWoodType.ENCHANTED));
-    public static final RegistryObject<CeilingHangingSignBlock> ENCHANTED_HANGING_SIGN = register("enchanted_hanging_sign", () -> new GravitationCeilingHangingSignBlock(ExtendedProperties.create(properties ->
+    public static final RegistryObject<WallSignBlock> ENCHANTED_WALL_SIGN = registerEnchantedSign("enchanted_wall_sign", () -> new EnchantedWallSignBlock(Block.Properties.copy(Blocks.OAK_WALL_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD).lootFrom(ENCHANTED_SIGN), GraviWoodType.ENCHANTED));
+    public static final RegistryObject<CeilingHangingSignBlock> ENCHANTED_HANGING_SIGN = registerEnchantedHangingSign("enchanted_hanging_sign", () -> new GravitationCeilingHangingSignBlock(ExtendedProperties.create(properties ->
             properties.mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()).blockEntity(EnchantedHangingSignBlockEntity::new), GraviWoodType.ENCHANTED));
-    public static final RegistryObject<WallHangingSignBlock> ENCHANTED_WALL_HANGING_SIGN = register("enchanted_wall_hanging_sign", () -> new GravitationWallHangingSignBlock(ExtendedProperties.create(properties ->
+    public static final RegistryObject<WallHangingSignBlock> ENCHANTED_WALL_HANGING_SIGN = registerEnchantedHangingSign("enchanted_wall_hanging_sign", () -> new GravitationWallHangingSignBlock(ExtendedProperties.create(properties ->
             properties.mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()).blockEntity(EnchantedHangingSignBlockEntity::new), GraviWoodType.ENCHANTED));
     public static final RegistryObject<SaplingBlock> ENCHANTED_SAPLING = register("enchanted_sapling", () -> new SaplingBlock(new EnchantedTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
 
@@ -165,15 +157,27 @@ public class GraviBlocks {
     }
 
     public static <B extends Block> RegistryObject<B> registerEnchantedSign(String name, Supplier<B> block) {
-        return register(name, block, (b) -> () ->  new SignItem((new Item.Properties()).stacksTo(16), ENCHANTED_SIGN.get(), ENCHANTED_WALL_SIGN.get()));
+        return register(name, block, (b) -> () ->  new SignItem(new Item.Properties().stacksTo(16), ENCHANTED_SIGN.get(), ENCHANTED_WALL_SIGN.get()));
+    }
+
+    public static <B extends Block> RegistryObject<B> registerEnchantedHangingSign(String name, Supplier<B> block) {
+        return register(name, block, (b) -> () ->  new HangingSignItem(ENCHANTED_HANGING_SIGN.get(), ENCHANTED_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
     }
 
     public static <B extends Block> RegistryObject<B> registerBeladonSign(String name, Supplier<B> block) {
-        return register(name, block, (b) -> () ->  new SignItem((new Item.Properties()).stacksTo(16), BELADON_SIGN.get(), BELADON_WALL_SIGN.get()));
+        return register(name, block, (b) -> () ->  new SignItem(new Item.Properties().stacksTo(16), BELADON_SIGN.get(), BELADON_WALL_SIGN.get()));
+    }
+
+    public static <B extends Block> RegistryObject<B> registerBeladonHangingSign(String name, Supplier<B> block) {
+        return register(name, block, (b) -> () ->  new HangingSignItem(BELADON_HANGING_SIGN.get(), BELADON_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
     }
 
     public static <B extends Block> RegistryObject<B> registerAerfinSign(String name, Supplier<B> block) {
-        return register(name, block, (b) -> () ->  new SignItem((new Item.Properties()).stacksTo(16), AERFIN_SIGN.get(), AERFIN_HANGING_SIGN.get()));
+        return register(name, block, (b) -> () ->  new SignItem(new Item.Properties().stacksTo(16), AERFIN_SIGN.get(), AERFIN_WALL_SIGN.get()));
+    }
+
+    public static <B extends Block> RegistryObject<B> registerAerfinHangingSign(String name, Supplier<B> block) {
+        return register(name, block, (b) -> () ->  new HangingSignItem(AERFIN_HANGING_SIGN.get(), AERFIN_WALL_HANGING_SIGN.get(), new Item.Properties().stacksTo(16)));
     }
 
     public static <B extends Block, I extends Item> RegistryObject<B> register(String name, Supplier<B> block, Function<RegistryObject<B>, Supplier<I>> blockItem) {
