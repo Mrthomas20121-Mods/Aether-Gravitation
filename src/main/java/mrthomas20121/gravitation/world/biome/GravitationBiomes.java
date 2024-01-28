@@ -44,6 +44,7 @@ public class GravitationBiomes {
         context.register(GOLDEN_MOUNTAIN, goldenMountainBiome(placedFeatures, vanillaConfiguredCarvers));
         context.register(BELADON_PLAINS, beladonMireBiome(placedFeatures, vanillaConfiguredCarvers));
         context.register(AERFIN_FOREST, aerfinForestBiome(placedFeatures, vanillaConfiguredCarvers));
+        context.register(BELADON_FOREST, beladonForest(placedFeatures, vanillaConfiguredCarvers));
     }
 
     public static Biome beladonForest(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
