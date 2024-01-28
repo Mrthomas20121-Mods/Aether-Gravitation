@@ -30,6 +30,7 @@ public class GraviItemData extends AetherItemModelProvider {
         this.itemBlock(GraviBlocks.BRONZITE_ORE.get());
         this.itemBlock(GraviBlocks.BRONZITE_ICESTONE_ORE.get());
         this.itemBlock(GraviBlocks.ENCHANTED_MOSS.get());
+        this.itemBlock(GraviBlocks.AER_GRASS.get());
 
         // aerfin set
         this.item(GraviItems.AERFIN_BOAT.get(), "");

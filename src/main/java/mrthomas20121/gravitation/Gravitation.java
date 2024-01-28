@@ -12,6 +12,8 @@ import mrthomas20121.gravitation.item.GraviCreativeTab;
 import mrthomas20121.gravitation.item.GraviItems;
 import mrthomas20121.gravitation.world.biome.GravitationRegion;
 import mrthomas20121.gravitation.world.biome.GravitationSurfaceData;
+import mrthomas20121.gravitation.world.foliageplacer.GravitationFoliagePlacerType;
+import mrthomas20121.gravitation.world.treedecorator.GravitationDecoratorTypes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -48,6 +50,8 @@ public class Gravitation {
 		GlobalLootModifiers.LOOT_MODIFIERS.register(bus);
 		GravitationEnchantments.ENCHANTING.register(bus);
 		GraviCreativeTab.CREATIVE_TABS.register(bus);
+		GravitationFoliagePlacerType.FOLIAGE_PLACERS.register(bus);
+		GravitationDecoratorTypes.TREE_DECORATORS.register(bus);
 
 		GraviWoodType.registerWoodTypes();
 	}

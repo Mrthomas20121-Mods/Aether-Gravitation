@@ -1,5 +1,6 @@
 package mrthomas20121.gravitation.data;
 
+import com.aetherteam.aether.block.AetherBlocks;
 import com.aetherteam.aether.data.providers.AetherBlockStateProvider;
 import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.block.GraviBlocks;
@@ -20,6 +21,7 @@ public class GraviBlockstateData extends AetherBlockStateProvider {
         this.block(GraviBlocks.BRONZITE_ORE.get(), "natural/");
         this.block(GraviBlocks.BRONZITE_ICESTONE_ORE.get(), "natural/");
         this.block(GraviBlocks.BRONZITE_BLOCK.get(), "construction/");
+        this.grass(GraviBlocks.AER_GRASS.get(), AetherBlocks.AETHER_DIRT.get());
 
         // aerfin set
         this.block(GraviBlocks.AERFIN_PLANKS.get(), "natural/");

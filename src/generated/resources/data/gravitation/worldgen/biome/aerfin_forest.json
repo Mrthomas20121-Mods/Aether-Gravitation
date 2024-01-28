@@ -42,7 +42,9 @@
       "aether:water_spring"
     ],
     [
-      "gravitation:small_enchanted_tree",
+      "gravitation:aerfin_forest_placement",
+      "gravitation:blue_aerfin_forest_placement",
+      "gravitation:golden_aerfin_forest_placement",
       "aether:holiday_tree",
       "aether:grass_patch",
       "aether:tall_grass_patch",

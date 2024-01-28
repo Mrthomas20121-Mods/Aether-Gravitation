@@ -28,6 +28,8 @@ public class GraviBlockTags extends BlockTagsProvider {
 
         this.tag(BlockTags.OVERWORLD_CARVER_REPLACEABLES).addTags(AetherTags.Blocks.AETHER_DIRT);
 
+        this.tag(AetherTags.Blocks.AETHER_DIRT).add(GraviBlocks.AER_GRASS.get());
+
         this.tag(BlockTags.LEAVES).add(
                 GraviBlocks.AERFIN_LEAVES.get(),
                 GraviBlocks.BLUE_AERFIN_LEAVES.get(),

@@ -65,6 +65,7 @@ public class GraviLanguageData extends LanguageProvider {
         addItem(GraviItems.ENCHANTED_CHEST_BOAT, "Enchanted Chest Boat");
         addItem(GraviItems.ENCHANTED_BOAT, "Enchanted Boat");
 
+        addBlock(GraviBlocks.AER_GRASS, "Aer Grass");
         addBlock(GraviBlocks.CONGLOMERATE, "Conglomerate");
         addBlock(GraviBlocks.CONGLOMERATE_WALLS, "Conglomerate Wall");
         addBlock(GraviBlocks.CONGLOMERATE_STAIRS, "Conglomerate Stairs");

@@ -9,28 +9,28 @@ import net.minecraft.world.level.levelgen.SurfaceRules;
 
 public class GravitationSurfaceData {
 
-    private static SurfaceRules.RuleSource makeStateRule(Block p_194811_) {
-        return SurfaceRules.state(p_194811_.defaultBlockState());
+    private static SurfaceRules.RuleSource makeStateRule(Block block) {
+        return SurfaceRules.state(block.defaultBlockState());
     }
 
     public static SurfaceRules.RuleSource rules() {
 
         SurfaceRules.RuleSource holystone = makeStateRule(AetherBlocks.HOLYSTONE.get());
-        SurfaceRules.RuleSource moss = makeStateRule(GraviBlocks.ENCHANTED_MOSS.get());
+        SurfaceRules.RuleSource grass = makeStateRule(AetherBlocks.AETHER_GRASS_BLOCK.get());
 
         return SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(GravitationBiomes.ENCHANTED_FOREST),
                         SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR,
                                 SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, 0.1D),
                                         SurfaceRules.state(AetherBlocks.HOLYSTONE.get().defaultBlockState())))),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(GravitationBiomes.ENCHANTED_SHORE),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(GravitationBiomes.BELADON_PLAINS),
                         SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR,
                                 SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, -0.1D, 0.1d),
-                                        SurfaceRules.state(AetherBlocks.HOLYSTONE.get().defaultBlockState())))),
+                                        makeStateRule(GraviBlocks.AER_GRASS.get())))),
                 SurfaceRules.ifTrue(
                         SurfaceRules.isBiome(GravitationBiomes.GOLDEN_MOUNTAIN),
                         SurfaceRules.sequence(
-                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.POWDER_SNOW, -0.2d, 0.2d), moss)),
+                                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.POWDER_SNOW, -0.2d, 0.2d), grass)),
                                 holystone
                         )
                 )

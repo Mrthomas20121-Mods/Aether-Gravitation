@@ -26,6 +26,8 @@ public class GraviItemTags extends ItemTagsProvider {
     @Override
     protected void addTags(@NotNull HolderLookup.Provider provider) {
 
+        this.tag(AetherTags.Items.AETHER_DIRT).add(GraviBlocks.AER_GRASS.get().asItem());
+
         this.tag(GraviTags.Items.AERFIN_LOGS).add(
                 GraviBlocks.AERFIN_LOG.get().asItem(),
                 GraviBlocks.AERFIN_WOOD.get().asItem(),

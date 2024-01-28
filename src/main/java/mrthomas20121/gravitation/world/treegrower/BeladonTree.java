@@ -1,4 +1,4 @@
-package mrthomas20121.gravitation.world;
+package mrthomas20121.gravitation.world.treegrower;
 
 import mrthomas20121.gravitation.data.GraviConfiguredFeatures;
 import net.minecraft.resources.ResourceKey;

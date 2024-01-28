@@ -3,6 +3,7 @@ package mrthomas20121.gravitation.block;
 import com.aetherteam.aether.block.AetherBlocks;
 import com.aetherteam.aether.block.construction.BookshelfBlock;
 import com.aetherteam.aether.block.natural.AetherDoubleDropsLeaves;
+import com.aetherteam.aether.block.natural.AetherGrassBlock;
 import com.aetherteam.aether.block.natural.AetherLogBlock;
 import com.aetherteam.aether.mixin.mixins.common.accessor.FireBlockAccessor;
 import mrthomas20121.gravitation.Gravitation;
@@ -10,8 +11,7 @@ import mrthomas20121.gravitation.block.wood.*;
 import mrthomas20121.gravitation.block_entity.EnchantedHangingSignBlockEntity;
 import mrthomas20121.gravitation.item.GraviItems;
 import mrthomas20121.gravitation.util.ToolAction;
-import mrthomas20121.gravitation.world.BeladonTree;
-import mrthomas20121.gravitation.world.EnchantedTree;
+import mrthomas20121.gravitation.world.treegrower.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.BlockItem;
@@ -36,6 +36,8 @@ public class GraviBlocks {
 
     public static DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Gravitation.MOD_ID);
 
+    public static final RegistryObject<AetherGrassBlock> AER_GRASS = register("aer_grass", () -> new AetherGrassBlock(Block.Properties.copy(AetherBlocks.AETHER_GRASS_BLOCK.get())));
+
     public static final RegistryObject<Block> AERFIN_LEAVES = register("aerfin_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_BLUE).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
     public static final RegistryObject<Block> BLUE_AERFIN_LEAVES = register("blue_aerfin_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_BLUE).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
     public static final RegistryObject<Block> GOLDEN_AERFIN_LEAVES = register("golden_aerfin_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.GOLD).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
@@ -57,9 +59,9 @@ public class GraviBlocks {
     public static final RegistryObject<WallSignBlock> AERFIN_WALL_SIGN = register("aerfin_wall_sign", () -> new AerfinWallSignBlock(Block.Properties.copy(Blocks.OAK_WALL_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD).lootFrom(AERFIN_SIGN), GraviWoodType.AERFIN));
     public static final RegistryObject<CeilingHangingSignBlock> AERFIN_HANGING_SIGN = registerAerfinHangingSign("aerfin_hanging_sign", () -> new AerfinHangingSignBlock(BlockBehaviour.Properties.of().mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava(), GraviWoodType.AERFIN));
     public static final RegistryObject<WallHangingSignBlock> AERFIN_WALL_HANGING_SIGN = register("aerfin_wall_hanging_sign", () -> new AerfinWallHangingSignBlock(BlockBehaviour.Properties.of().mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava(), GraviWoodType.AERFIN));
-    public static final RegistryObject<SaplingBlock> AERFIN_SAPLING = register("aerfin_sapling", () -> new SaplingBlock(new BeladonTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
-    public static final RegistryObject<SaplingBlock> BLUE_AERFIN_SAPLING = register("blue_aerfin_sapling", () -> new SaplingBlock(new BeladonTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
-    public static final RegistryObject<SaplingBlock> GOLDEN_AERFIN_SAPLING = register("golden_aerfin_sapling", () -> new SaplingBlock(new BeladonTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<SaplingBlock> AERFIN_SAPLING = register("aerfin_sapling", () -> new SaplingBlock(new AerfinTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<SaplingBlock> BLUE_AERFIN_SAPLING = register("blue_aerfin_sapling", () -> new SaplingBlock(new BlueAerfinTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<SaplingBlock> GOLDEN_AERFIN_SAPLING = register("golden_aerfin_sapling", () -> new SaplingBlock(new GoldenAerfinTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
 
 
     public static final RegistryObject<Block> BELADON_LEAVES = register("beladon_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_ORANGE).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));

@@ -35,6 +35,7 @@ public class GraviLoot extends AetherBlockLootSubProvider {
     @Override
     protected void generate() {
 
+        this.dropSelf(GraviBlocks.AER_GRASS.get());
         this.dropSelf(GraviBlocks.ENCHANTED_MOSS.get());
 
         this.dropSelf(GraviBlocks.CONGLOMERATE.get());
