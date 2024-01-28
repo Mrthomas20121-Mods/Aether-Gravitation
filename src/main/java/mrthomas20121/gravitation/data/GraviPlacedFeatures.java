@@ -66,7 +66,7 @@ public class GraviPlacedFeatures {
                 treePlacement(PlacementUtils.countExtra(4, 0.1F, 2)));
 
         register(context, BELADON_MIRE_PLACEMENT, configuredFeatures.getOrThrow(GraviConfiguredFeatures.BELADON_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(2, 0.1F, 1)));
+                treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
 
         register(context, ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(GraviConfiguredFeatures.ENCHANTED_TREE_CONFIGURATION),
                 treePlacement(PlacementUtils.countExtra(4, 0.01F, 3)));
