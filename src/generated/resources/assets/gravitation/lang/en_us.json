@@ -152,8 +152,6 @@
   "itemGroup.gravitation.building_blocks": "Gravitation Building Blocks",
   "itemGroup.gravitation.equipments": "Gravitation Equipments & Utilities",
   "itemGroup.gravitation.misc": "Gravitation Misc",
-  "lore.gravitation.lore.hercules_strength": "Hercules's Strength deal more damage to Aether Bosses(Sun Spirit Excluded).",
-  "lore.gravitation.lore.neptune_wrath": "Neptune's Wrath deal more damage to Water Mobs.",
   "lore.item.gravitation.bronzite_axe": "This axe last longer most of the time.",
   "lore.item.gravitation.bronzite_battleaxe": "This axe has a good swing to it, you should try using it like a sword.",
   "lore.item.gravitation.bronzite_pendant": "This pendant has defensive properties.",
@@ -169,5 +167,7 @@
   "lore.item.gravitation.netherite_battleaxe": "This axe has a good swing to it, you should try using it like a sword.",
   "lore.item.gravitation.valkyrie_battleaxe": "This axe has a good swing to it, you should try using it like a sword.",
   "lore.item.minecraft.smithing_template": "A smithing upgrade used by the ancients to turn bronzite into a material.",
+  "lore.lore.gravitation.hercules_strength": "Hercules's Strength deal more damage to Aether Bosses(Sun Spirit Excluded).",
+  "lore.lore.gravitation.neptune_wrath": "Neptune's Wrath deal more damage to Water Mobs.",
   "upgrade.gravitation.bronzite_upgrade": "Bronzite Upgrade"
 }
