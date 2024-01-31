@@ -149,7 +149,6 @@
   "item.gravitation.smithing_template.bronzite_upgrade.ingredients": "Zanite Gemstone",
   "item.gravitation.valkyrie_battleaxe": "Valkyrie Battleaxe",
   "item.gravitation.zanite_battleaxe": "Zanite Battleaxe",
-  "item.minecraft.smithing_template": "Bronzite Smithing Upgrade",
   "itemGroup.gravitation.building_blocks": "Gravitation Building Blocks",
   "itemGroup.gravitation.equipments": "Gravitation Equipments & Utilities",
   "itemGroup.gravitation.misc": "Gravitation Misc",
@@ -170,5 +169,5 @@
   "lore.item.gravitation.netherite_battleaxe": "This axe has a good swing to it, you should try using it like a sword.",
   "lore.item.gravitation.valkyrie_battleaxe": "This axe has a good swing to it, you should try using it like a sword.",
   "lore.item.minecraft.smithing_template": "A smithing upgrade used by the ancients to turn bronzite into a material.",
-  "upgrade_gravitation.bronzite_upgrade": "Bronzite Upgrade"
+  "upgrade.gravitation.bronzite_upgrade": "Bronzite Upgrade"
 }

@@ -43,11 +43,10 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addAdvancement("hercules_strength", "The Strength of Hercules");
         addAdvancementDesc("hercules_strength", "Enchant a tool with the Hercules Strength enchantment.");
 
-        add("upgrade_gravitation.bronzite_upgrade", "Bronzite Upgrade");
+        add("upgrade.gravitation.bronzite_upgrade", "Bronzite Upgrade");
         add("item.gravitation.smithing_template.bronzite_upgrade.applies_to", "Bronzite Rock");
         add("item.gravitation.smithing_template.bronzite_upgrade.ingredients", "Zanite Gemstone");
 
-        addItem(GravitationItems.BRONZITE_UPGRADE, "Bronzite Smithing Upgrade");
         addItem(GravitationItems.GREATER_HEALING_STONE, "Greater Healing Stone");
         addItem(GravitationItems.POWER_STONE, "Power Stone");
         addItem(GravitationItems.DENSE_STONE, "Dense Stone");
