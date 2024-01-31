@@ -84,7 +84,7 @@ public class GravitationItems {
     public static final RegistryObject<Item> ENCHANTED_BOAT = ITEMS.register("enchanted_boat", () -> new EnchantedBoatItem(false, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> ENCHANTED_CHEST_BOAT = ITEMS.register("enchanted_chest_boat", () -> new EnchantedBoatItem(true, new Item.Properties().stacksTo(1)));
 
-    private static final Component BRONZITE_UPGRADE_TEXT = Component.translatable(Util.makeDescriptionId("upgrade", new ResourceLocation("gravitation:bronzite_upgrade"))).withStyle(ChatFormatting.BLUE);
+    private static final Component BRONZITE_UPGRADE_TEXT = Component.translatable(Util.makeDescriptionId("upgrade", new ResourceLocation("gravitation:bronzite_upgrade"))).withStyle(ChatFormatting.GRAY);
     private static final Component BRONZITE_UPGRADE_APPLIES_TO = Component.translatable(Util.makeDescriptionId("item", new ResourceLocation("gravitation:smithing_template.bronzite_upgrade.applies_to"))).withStyle(ChatFormatting.BLUE);
     private static final Component BRONZITE_UPGRADE_INGREDIENTS = Component.translatable(Util.makeDescriptionId("item", new ResourceLocation("gravitation:smithing_template.bronzite_upgrade.ingredients"))).withStyle(ChatFormatting.BLUE);
     private static final Component BRONZITE_UPGRADE_BASE_SLOT_DESCRIPTION = Component.translatable(Util.makeDescriptionId("item", new ResourceLocation("gravitation:smithing_template.bronzite_upgrade.base_slot_description")));

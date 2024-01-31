@@ -2,7 +2,7 @@ package mrthomas20121.gravitation.item;
 
 import com.aetherteam.aether.Aether;
 import mrthomas20121.gravitation.Gravitation;
-import mrthomas20121.gravitation.block.GraviBlocks;
+import mrthomas20121.gravitation.block.GravitationBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -78,88 +78,88 @@ public class GravitationCreativeTab {
     );
 
     public static RegistryObject<CreativeModeTab> BUILDING_BLOCKS = CREATIVE_TABS.register("building_blocks", () -> CreativeModeTab.builder()
-            .icon(() -> new ItemStack(GraviBlocks.STRIPPED_ENCHANTED_LOG.get()))
+            .icon(() -> new ItemStack(GravitationBlocks.STRIPPED_ENCHANTED_LOG.get()))
             .title(Component.translatable("itemGroup.gravitation.building_blocks"))
             .withTabsBefore(new ResourceLocation(Aether.MODID, "spawn_eggs"))
             .withTabsAfter(new ResourceLocation(Gravitation.MOD_ID, "tools"))
             .displayItems((parameters, output) -> {
-                output.accept(GraviBlocks.BRONZITE_ORE.get());
-                output.accept(GraviBlocks.BRONZITE_ICESTONE_ORE.get());
-                output.accept(GraviBlocks.BRONZITE_BLOCK.get());
+                output.accept(GravitationBlocks.BRONZITE_ORE.get());
+                output.accept(GravitationBlocks.BRONZITE_ICESTONE_ORE.get());
+                output.accept(GravitationBlocks.BRONZITE_BLOCK.get());
 
-                output.accept(GraviBlocks.CONGLOMERATE.get());
-                output.accept(GraviBlocks.CONGLOMERATE_WALLS.get());
-                output.accept(GraviBlocks.CONGLOMERATE_STAIRS.get());
-                output.accept(GraviBlocks.CONGLOMERATE_SLAB.get());
+                output.accept(GravitationBlocks.CONGLOMERATE.get());
+                output.accept(GravitationBlocks.CONGLOMERATE_WALLS.get());
+                output.accept(GravitationBlocks.CONGLOMERATE_STAIRS.get());
+                output.accept(GravitationBlocks.CONGLOMERATE_SLAB.get());
 
-                output.accept(GraviBlocks.CONGLOMERATE_BRICKS.get());
-                output.accept(GraviBlocks.CONGLOMERATE_BRICK_WALLS.get());
-                output.accept(GraviBlocks.CONGLOMERATE_BRICK_STAIRS.get());
-                output.accept(GraviBlocks.CONGLOMERATE_BRICK_SLAB.get());
+                output.accept(GravitationBlocks.CONGLOMERATE_BRICKS.get());
+                output.accept(GravitationBlocks.CONGLOMERATE_BRICK_WALLS.get());
+                output.accept(GravitationBlocks.CONGLOMERATE_BRICK_STAIRS.get());
+                output.accept(GravitationBlocks.CONGLOMERATE_BRICK_SLAB.get());
 
-                output.accept(GraviBlocks.POLISHED_CONGLOMERATE.get());
-                output.accept(GraviBlocks.POLISHED_CONGLOMERATE_WALLS.get());
-                output.accept(GraviBlocks.POLISHED_CONGLOMERATE_STAIRS.get());
-                output.accept(GraviBlocks.POLISHED_CONGLOMERATE_SLAB.get());
+                output.accept(GravitationBlocks.POLISHED_CONGLOMERATE.get());
+                output.accept(GravitationBlocks.POLISHED_CONGLOMERATE_WALLS.get());
+                output.accept(GravitationBlocks.POLISHED_CONGLOMERATE_STAIRS.get());
+                output.accept(GravitationBlocks.POLISHED_CONGLOMERATE_SLAB.get());
 
-                output.accept(GraviBlocks.AERFIN_SIGN.get());
-                output.accept(GraviBlocks.AERFIN_HANGING_SIGN.get());
-                output.accept(GraviBlocks.AERFIN_BOOKSHELF.get());
-                output.accept(GraviBlocks.AERFIN_LEAVES.get());
-                output.accept(GraviBlocks.BLUE_AERFIN_LEAVES.get());
-                output.accept(GraviBlocks.GOLDEN_AERFIN_LEAVES.get());
-                output.accept(GraviBlocks.AERFIN_LOG.get());
-                output.accept(GraviBlocks.STRIPPED_AERFIN_LOG.get());
-                output.accept(GraviBlocks.AERFIN_WOOD.get());
-                output.accept(GraviBlocks.STRIPPED_AERFIN_WOOD.get());
-                output.accept(GraviBlocks.AERFIN_PLANKS.get());
-                output.accept(GraviBlocks.AERFIN_STAIRS.get());
-                output.accept(GraviBlocks.AERFIN_SLAB.get());
-                output.accept(GraviBlocks.AERFIN_FENCE_GATE.get());
-                output.accept(GraviBlocks.AERFIN_BUTTON.get());
-                output.accept(GraviBlocks.AERFIN_DOOR.get());
-                output.accept(GraviBlocks.AERFIN_TRAPDOOR.get());
-                output.accept(GraviBlocks.AERFIN_FENCE.get());
-                output.accept(GraviBlocks.AERFIN_SAPLING.get());
-                output.accept(GraviBlocks.BLUE_AERFIN_SAPLING.get());
-                output.accept(GraviBlocks.GOLDEN_AERFIN_SAPLING.get());
+                output.accept(GravitationBlocks.AERFIN_SIGN.get());
+                output.accept(GravitationBlocks.AERFIN_HANGING_SIGN.get());
+                output.accept(GravitationBlocks.AERFIN_BOOKSHELF.get());
+                output.accept(GravitationBlocks.AERFIN_LEAVES.get());
+                output.accept(GravitationBlocks.BLUE_AERFIN_LEAVES.get());
+                output.accept(GravitationBlocks.GOLDEN_AERFIN_LEAVES.get());
+                output.accept(GravitationBlocks.AERFIN_LOG.get());
+                output.accept(GravitationBlocks.STRIPPED_AERFIN_LOG.get());
+                output.accept(GravitationBlocks.AERFIN_WOOD.get());
+                output.accept(GravitationBlocks.STRIPPED_AERFIN_WOOD.get());
+                output.accept(GravitationBlocks.AERFIN_PLANKS.get());
+                output.accept(GravitationBlocks.AERFIN_STAIRS.get());
+                output.accept(GravitationBlocks.AERFIN_SLAB.get());
+                output.accept(GravitationBlocks.AERFIN_FENCE_GATE.get());
+                output.accept(GravitationBlocks.AERFIN_BUTTON.get());
+                output.accept(GravitationBlocks.AERFIN_DOOR.get());
+                output.accept(GravitationBlocks.AERFIN_TRAPDOOR.get());
+                output.accept(GravitationBlocks.AERFIN_FENCE.get());
+                output.accept(GravitationBlocks.AERFIN_SAPLING.get());
+                output.accept(GravitationBlocks.BLUE_AERFIN_SAPLING.get());
+                output.accept(GravitationBlocks.GOLDEN_AERFIN_SAPLING.get());
 
-                output.accept(GraviBlocks.BELADON_SIGN.get());
-                output.accept(GraviBlocks.BELADON_HANGING_SIGN.get());
-                output.accept(GraviBlocks.BELADON_BOOKSHELF.get());
-                output.accept(GraviBlocks.BELADON_LEAVES.get());
-                output.accept(GraviBlocks.BELADON_LOG.get());
-                output.accept(GraviBlocks.STRIPPED_BELADON_LOG.get());
-                output.accept(GraviBlocks.BELADON_WOOD.get());
-                output.accept(GraviBlocks.STRIPPED_BELADON_WOOD.get());
-                output.accept(GraviBlocks.BELADON_PLANKS.get());
-                output.accept(GraviBlocks.BELADON_STAIRS.get());
-                output.accept(GraviBlocks.BELADON_SLAB.get());
-                output.accept(GraviBlocks.BELADON_FENCE_GATE.get());
-                output.accept(GraviBlocks.BELADON_BUTTON.get());
-                output.accept(GraviBlocks.BELADON_DOOR.get());
-                output.accept(GraviBlocks.BELADON_TRAPDOOR.get());
-                output.accept(GraviBlocks.BELADON_FENCE.get());
-                output.accept(GraviBlocks.BELADON_SAPLING.get());
+                output.accept(GravitationBlocks.BELADON_SIGN.get());
+                output.accept(GravitationBlocks.BELADON_HANGING_SIGN.get());
+                output.accept(GravitationBlocks.BELADON_BOOKSHELF.get());
+                output.accept(GravitationBlocks.BELADON_LEAVES.get());
+                output.accept(GravitationBlocks.BELADON_LOG.get());
+                output.accept(GravitationBlocks.STRIPPED_BELADON_LOG.get());
+                output.accept(GravitationBlocks.BELADON_WOOD.get());
+                output.accept(GravitationBlocks.STRIPPED_BELADON_WOOD.get());
+                output.accept(GravitationBlocks.BELADON_PLANKS.get());
+                output.accept(GravitationBlocks.BELADON_STAIRS.get());
+                output.accept(GravitationBlocks.BELADON_SLAB.get());
+                output.accept(GravitationBlocks.BELADON_FENCE_GATE.get());
+                output.accept(GravitationBlocks.BELADON_BUTTON.get());
+                output.accept(GravitationBlocks.BELADON_DOOR.get());
+                output.accept(GravitationBlocks.BELADON_TRAPDOOR.get());
+                output.accept(GravitationBlocks.BELADON_FENCE.get());
+                output.accept(GravitationBlocks.BELADON_SAPLING.get());
 
-                output.accept(GraviBlocks.ENCHANTED_SIGN.get());
-                output.accept(GraviBlocks.ENCHANTED_HANGING_SIGN.get());
-                output.accept(GraviBlocks.ENCHANTED_BOOKSHELF.get());
-                output.accept(GraviBlocks.ENCHANTED_LEAVES.get());
-                output.accept(GraviBlocks.ENCHANTED_LOG.get());
-                output.accept(GraviBlocks.STRIPPED_ENCHANTED_LOG.get());
-                output.accept(GraviBlocks.ENCHANTED_WOOD.get());
-                output.accept(GraviBlocks.STRIPPED_ENCHANTED_WOOD.get());
-                output.accept(GraviBlocks.ENCHANTED_PLANKS.get());
-                output.accept(GraviBlocks.ENCHANTED_STAIRS.get());
-                output.accept(GraviBlocks.ENCHANTED_FENCE.get());
-                output.accept(GraviBlocks.ENCHANTED_FENCE_GATE.get());
-                output.accept(GraviBlocks.ENCHANTED_BUTTON.get());
-                output.accept(GraviBlocks.ENCHANTED_SLAB.get());
-                output.accept(GraviBlocks.ENCHANTED_DOOR.get());
-                output.accept(GraviBlocks.ENCHANTED_TRAPDOOR.get());
-                output.accept(GraviBlocks.ENCHANTED_SAPLING.get());
-                output.accept(GraviBlocks.ENCHANTED_MOSS.get());
+                output.accept(GravitationBlocks.ENCHANTED_SIGN.get());
+                output.accept(GravitationBlocks.ENCHANTED_HANGING_SIGN.get());
+                output.accept(GravitationBlocks.ENCHANTED_BOOKSHELF.get());
+                output.accept(GravitationBlocks.ENCHANTED_LEAVES.get());
+                output.accept(GravitationBlocks.ENCHANTED_LOG.get());
+                output.accept(GravitationBlocks.STRIPPED_ENCHANTED_LOG.get());
+                output.accept(GravitationBlocks.ENCHANTED_WOOD.get());
+                output.accept(GravitationBlocks.STRIPPED_ENCHANTED_WOOD.get());
+                output.accept(GravitationBlocks.ENCHANTED_PLANKS.get());
+                output.accept(GravitationBlocks.ENCHANTED_STAIRS.get());
+                output.accept(GravitationBlocks.ENCHANTED_FENCE.get());
+                output.accept(GravitationBlocks.ENCHANTED_FENCE_GATE.get());
+                output.accept(GravitationBlocks.ENCHANTED_BUTTON.get());
+                output.accept(GravitationBlocks.ENCHANTED_SLAB.get());
+                output.accept(GravitationBlocks.ENCHANTED_DOOR.get());
+                output.accept(GravitationBlocks.ENCHANTED_TRAPDOOR.get());
+                output.accept(GravitationBlocks.ENCHANTED_SAPLING.get());
+                output.accept(GravitationBlocks.ENCHANTED_MOSS.get());
 
             }).build()
     );

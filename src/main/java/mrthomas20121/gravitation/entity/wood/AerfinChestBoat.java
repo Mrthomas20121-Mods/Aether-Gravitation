@@ -1,7 +1,7 @@
 package mrthomas20121.gravitation.entity.wood;
 
 import com.aetherteam.aether.item.AetherItems;
-import mrthomas20121.gravitation.block.GraviBlocks;
+import mrthomas20121.gravitation.block.GravitationBlocks;
 import mrthomas20121.gravitation.entity.GraviEntityTypes;
 import mrthomas20121.gravitation.item.GravitationItems;
 import net.minecraft.core.BlockPos;
@@ -54,6 +54,6 @@ public class AerfinChestBoat extends ChestBoat implements BoatBehavior {
 
     @Override
     public Block getPlanks() {
-        return GraviBlocks.BELADON_PLANKS.get();
+        return GravitationBlocks.BELADON_PLANKS.get();
     }
 }

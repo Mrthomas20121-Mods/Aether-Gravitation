@@ -1,8 +1,6 @@
 package mrthomas20121.gravitation.entity.wood;
 
-import com.aetherteam.aether.item.AetherItems;
 import com.aetherteam.aether.mixin.mixins.common.accessor.BoatAccessor;
-import mrthomas20121.gravitation.block.GraviBlocks;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.entity.vehicle.Boat;
 import net.minecraft.world.item.Item;

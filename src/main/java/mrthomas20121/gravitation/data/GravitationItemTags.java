@@ -4,7 +4,7 @@ import com.aetherteam.aether.AetherTags;
 import com.aetherteam.aether.item.AetherItems;
 import mrthomas20121.gravitation.GraviTags;
 import mrthomas20121.gravitation.Gravitation;
-import mrthomas20121.gravitation.block.GraviBlocks;
+import mrthomas20121.gravitation.block.GravitationBlocks;
 import mrthomas20121.gravitation.item.GravitationItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -26,7 +26,7 @@ public class GravitationItemTags extends ItemTagsProvider {
     @Override
     protected void addTags(@NotNull HolderLookup.Provider provider) {
 
-        this.tag(AetherTags.Items.AETHER_DIRT).add(GraviBlocks.AER_GRASS.get().asItem());
+        this.tag(AetherTags.Items.AETHER_DIRT).add(GravitationBlocks.AER_GRASS.get().asItem());
 
         this.tag(GraviTags.Items.NEPTUNE_TOOLS).add(
                 GravitationItems.NEPTUNE_CUTLASS.get(),
@@ -37,36 +37,36 @@ public class GravitationItemTags extends ItemTagsProvider {
         );
 
         this.tag(GraviTags.Items.AERFIN_LOGS).add(
-                GraviBlocks.AERFIN_LOG.get().asItem(),
-                GraviBlocks.AERFIN_WOOD.get().asItem(),
-                GraviBlocks.STRIPPED_AERFIN_LOG.get().asItem(),
-                GraviBlocks.STRIPPED_AERFIN_WOOD.get().asItem()
+                GravitationBlocks.AERFIN_LOG.get().asItem(),
+                GravitationBlocks.AERFIN_WOOD.get().asItem(),
+                GravitationBlocks.STRIPPED_AERFIN_LOG.get().asItem(),
+                GravitationBlocks.STRIPPED_AERFIN_WOOD.get().asItem()
         );
         this.tag(GraviTags.Items.ENCHANTED_LOGS).add(
-                GraviBlocks.ENCHANTED_LOG.get().asItem(),
-                GraviBlocks.ENCHANTED_WOOD.get().asItem(),
-                GraviBlocks.STRIPPED_ENCHANTED_LOG.get().asItem(),
-                GraviBlocks.STRIPPED_ENCHANTED_WOOD.get().asItem()
+                GravitationBlocks.ENCHANTED_LOG.get().asItem(),
+                GravitationBlocks.ENCHANTED_WOOD.get().asItem(),
+                GravitationBlocks.STRIPPED_ENCHANTED_LOG.get().asItem(),
+                GravitationBlocks.STRIPPED_ENCHANTED_WOOD.get().asItem()
         );
         this.tag(GraviTags.Items.BELADON_LOGS).add(
-                GraviBlocks.BELADON_LOG.get().asItem(),
-                GraviBlocks.BELADON_WOOD.get().asItem(),
-                GraviBlocks.STRIPPED_BELADON_LOG.get().asItem(),
-                GraviBlocks.STRIPPED_BELADON_WOOD.get().asItem()
+                GravitationBlocks.BELADON_LOG.get().asItem(),
+                GravitationBlocks.BELADON_WOOD.get().asItem(),
+                GravitationBlocks.STRIPPED_BELADON_LOG.get().asItem(),
+                GravitationBlocks.STRIPPED_BELADON_WOOD.get().asItem()
         );
 
         this.tag(Tags.Items.BOOKSHELVES).add(
-                GraviBlocks.AERFIN_BOOKSHELF.get().asItem(),
-                GraviBlocks.ENCHANTED_BOOKSHELF.get().asItem(),
-                GraviBlocks.BELADON_BOOKSHELF.get().asItem()
+                GravitationBlocks.AERFIN_BOOKSHELF.get().asItem(),
+                GravitationBlocks.ENCHANTED_BOOKSHELF.get().asItem(),
+                GravitationBlocks.BELADON_BOOKSHELF.get().asItem()
         );
 
         this.tag(ItemTags.SAPLINGS).add(
-                GraviBlocks.AERFIN_SAPLING.get().asItem(),
-                GraviBlocks.BLUE_AERFIN_SAPLING.get().asItem(),
-                GraviBlocks.GOLDEN_AERFIN_SAPLING.get().asItem(),
-                GraviBlocks.ENCHANTED_SAPLING.get().asItem(),
-                GraviBlocks.BELADON_SAPLING.get().asItem()
+                GravitationBlocks.AERFIN_SAPLING.get().asItem(),
+                GravitationBlocks.BLUE_AERFIN_SAPLING.get().asItem(),
+                GravitationBlocks.GOLDEN_AERFIN_SAPLING.get().asItem(),
+                GravitationBlocks.ENCHANTED_SAPLING.get().asItem(),
+                GravitationBlocks.BELADON_SAPLING.get().asItem()
         );
 
         this.tag(GraviTags.Items.CAN_CREATE_ENCHANTING_TABLE).add(AetherItems.GOLDEN_AMBER.get());
@@ -88,7 +88,7 @@ public class GravitationItemTags extends ItemTagsProvider {
                 GravitationItems.BRONZITE_BATTLEAXE.get()
         );
 
-        this.tag(AetherTags.Items.SKYROOT_TOOL_CRAFTING).add(GraviBlocks.ENCHANTED_PLANKS.get().asItem());
+        this.tag(AetherTags.Items.SKYROOT_TOOL_CRAFTING).add(GravitationBlocks.ENCHANTED_PLANKS.get().asItem());
         this.tag(ItemTags.PICKAXES).add(GravitationItems.BRONZITE_PICKAXE.get(), GravitationItems.NEPTUNE_PICKAXE.get());
         this.tag(AetherTags.Items.TREATED_AS_AETHER_ITEM).add(
                 GravitationItems.BRONZITE_PICKAXE.get(),
@@ -112,6 +112,6 @@ public class GravitationItemTags extends ItemTagsProvider {
 
         this.tag(AetherTags.Items.AETHER_CAPE).add(GravitationItems.BRONZITE_CAPE.get());
 
-        this.tag(GraviTags.Items.BRONZITE_ORE).add(GraviBlocks.BRONZITE_ORE.get().asItem(), GraviBlocks.BRONZITE_ICESTONE_ORE.get().asItem());
+        this.tag(GraviTags.Items.BRONZITE_ORE).add(GravitationBlocks.BRONZITE_ORE.get().asItem(), GravitationBlocks.BRONZITE_ICESTONE_ORE.get().asItem());
     }
 }

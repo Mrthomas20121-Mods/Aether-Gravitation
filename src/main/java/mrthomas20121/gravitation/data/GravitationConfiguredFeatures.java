@@ -4,7 +4,7 @@ import com.aetherteam.aether.AetherTags;
 import com.aetherteam.aether.block.AetherBlocks;
 import com.aetherteam.aether.data.resources.AetherFeatureStates;
 import com.google.common.collect.ImmutableList;
-import mrthomas20121.gravitation.block.GraviBlocks;
+import mrthomas20121.gravitation.block.GravitationBlocks;
 import mrthomas20121.gravitation.world.foliageplacer.AerfinFoliagePlacer;
 import mrthomas20121.gravitation.world.foliageplacer.EnchantedFoliagePlacer;
 import mrthomas20121.gravitation.world.treedecorator.GraviAlterGroundDecorator;
@@ -49,35 +49,35 @@ public class GravitationConfiguredFeatures {
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         register(context, BRONZITE_ORE, Feature.ORE, new OreConfiguration(
                 List.of(
-                        OreConfiguration.target(ICESTONE, GraviBlocks.BRONZITE_ICESTONE_ORE.get().defaultBlockState()),
-                        OreConfiguration.target(HOLYSTONE, GraviBlocks.BRONZITE_ORE.get().defaultBlockState())), 8));
+                        OreConfiguration.target(ICESTONE, GravitationBlocks.BRONZITE_ICESTONE_ORE.get().defaultBlockState()),
+                        OreConfiguration.target(HOLYSTONE, GravitationBlocks.BRONZITE_ORE.get().defaultBlockState())), 8));
         register(context, AERFIN_TREE_CONFIGURATION, Feature.TREE, createAerfin().dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
         register(context, BLUE_AERFIN_TREE_CONFIGURATION, Feature.TREE, createBlueAerfin().dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get()))
-                .decorators(ImmutableList.of(new GraviAlterGroundDecorator(BlockStateProvider.simple(GraviBlocks.AER_GRASS.get())))).build());
+                .decorators(ImmutableList.of(new GraviAlterGroundDecorator(BlockStateProvider.simple(GravitationBlocks.AER_GRASS.get())))).build());
         register(context, GOLDEN_AERFIN_TREE_CONFIGURATION, Feature.TREE, createGoldenAerfin().dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get()))
-                .decorators(ImmutableList.of(new GraviAlterGroundDecorator(BlockStateProvider.simple(GraviBlocks.ENCHANTED_MOSS.get())))).build());
+                .decorators(ImmutableList.of(new GraviAlterGroundDecorator(BlockStateProvider.simple(GravitationBlocks.ENCHANTED_MOSS.get())))).build());
         register(context, BELADON_TREE_CONFIGURATION, Feature.TREE, createBeladon().dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
         register(context, ENCHANTED_TREE_CONFIGURATION, Feature.TREE, createEnchanted().dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createEnchanted() {
-        return createEnchantedTree(GraviBlocks.ENCHANTED_LOG.get(), GraviBlocks.ENCHANTED_LEAVES.get(), 4, 3, 1).ignoreVines();
+        return createEnchantedTree(GravitationBlocks.ENCHANTED_LOG.get(), GravitationBlocks.ENCHANTED_LEAVES.get(), 4, 3, 1).ignoreVines();
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createBeladon() {
-        return createStraightBlobTree(GraviBlocks.BELADON_LOG.get(), GraviBlocks.BELADON_LEAVES.get(), 3, 2, 2, 3).ignoreVines();
+        return createStraightBlobTree(GravitationBlocks.BELADON_LOG.get(), GravitationBlocks.BELADON_LEAVES.get(), 3, 2, 2, 3).ignoreVines();
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createBlueAerfin() {
-        return createAerfinBase(GraviBlocks.AERFIN_LOG.get(), GraviBlocks.BLUE_AERFIN_LEAVES.get(), 6, 0, 2).ignoreVines();
+        return createAerfinBase(GravitationBlocks.AERFIN_LOG.get(), GravitationBlocks.BLUE_AERFIN_LEAVES.get(), 6, 0, 2).ignoreVines();
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createGoldenAerfin() {
-        return createAerfinBase(GraviBlocks.AERFIN_LOG.get(), GraviBlocks.GOLDEN_AERFIN_LEAVES.get(), 8, 1, 2).ignoreVines();
+        return createAerfinBase(GravitationBlocks.AERFIN_LOG.get(), GravitationBlocks.GOLDEN_AERFIN_LEAVES.get(), 8, 1, 2).ignoreVines();
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createAerfin() {
-        return createAerfinBase(GraviBlocks.AERFIN_LOG.get(), GraviBlocks.AERFIN_LEAVES.get(), 4, 2, 2).ignoreVines();
+        return createAerfinBase(GravitationBlocks.AERFIN_LOG.get(), GravitationBlocks.AERFIN_LEAVES.get(), 4, 2, 2).ignoreVines();
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createAerfinBase(Block p_195147_, Block p_195148_, int baseHeight, int heightRandA, int heightRandB) {

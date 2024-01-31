@@ -5,7 +5,7 @@ import com.aetherteam.aether.block.AetherBlocks;
 import com.aetherteam.aether.data.providers.AetherRecipeProvider;
 import com.aetherteam.aether.item.AetherItems;
 import mrthomas20121.gravitation.GraviTags;
-import mrthomas20121.gravitation.block.GraviBlocks;
+import mrthomas20121.gravitation.block.GravitationBlocks;
 import mrthomas20121.gravitation.item.GravitationItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -37,101 +37,101 @@ public class GravitationRecipes extends AetherRecipeProvider {
 
         woodRecipes(
                 "aerfin",
-                GraviBlocks.AERFIN_PLANKS,
-                GraviBlocks.AERFIN_DOOR.get(),
-                GraviBlocks.AERFIN_TRAPDOOR.get(),
-                GraviBlocks.AERFIN_BUTTON.get(),
-                GraviBlocks.AERFIN_FENCE,
-                GraviBlocks.AERFIN_FENCE_GATE,
-                GraviBlocks.AERFIN_STAIRS,
-                GraviBlocks.AERFIN_SLAB.get(),
-                GraviBlocks.STRIPPED_AERFIN_LOG.get(),
-                GraviBlocks.STRIPPED_AERFIN_WOOD.get(),
-                GraviBlocks.AERFIN_WOOD.get(),
-                GraviBlocks.AERFIN_LOG.get(),
+                GravitationBlocks.AERFIN_PLANKS,
+                GravitationBlocks.AERFIN_DOOR.get(),
+                GravitationBlocks.AERFIN_TRAPDOOR.get(),
+                GravitationBlocks.AERFIN_BUTTON.get(),
+                GravitationBlocks.AERFIN_FENCE,
+                GravitationBlocks.AERFIN_FENCE_GATE,
+                GravitationBlocks.AERFIN_STAIRS,
+                GravitationBlocks.AERFIN_SLAB.get(),
+                GravitationBlocks.STRIPPED_AERFIN_LOG.get(),
+                GravitationBlocks.STRIPPED_AERFIN_WOOD.get(),
+                GravitationBlocks.AERFIN_WOOD.get(),
+                GravitationBlocks.AERFIN_LOG.get(),
                 GraviTags.Items.AERFIN_LOGS,
-                GraviBlocks.AERFIN_BOOKSHELF.get(),
-                GraviBlocks.AERFIN_SIGN.get(),
+                GravitationBlocks.AERFIN_BOOKSHELF.get(),
+                GravitationBlocks.AERFIN_SIGN.get(),
                 GravitationItems.AERFIN_BOAT.get(),
                 GravitationItems.AERFIN_CHEST_BOAT.get(),
                 consumer);
 
         woodRecipes(
                 "enchanted",
-                GraviBlocks.ENCHANTED_PLANKS,
-                GraviBlocks.ENCHANTED_DOOR.get(),
-                GraviBlocks.ENCHANTED_TRAPDOOR.get(),
-                GraviBlocks.ENCHANTED_BUTTON.get(),
-                GraviBlocks.ENCHANTED_FENCE,
-                GraviBlocks.ENCHANTED_FENCE_GATE,
-                GraviBlocks.ENCHANTED_STAIRS,
-                GraviBlocks.ENCHANTED_SLAB.get(),
-                GraviBlocks.STRIPPED_ENCHANTED_LOG.get(),
-                GraviBlocks.STRIPPED_ENCHANTED_WOOD.get(),
-                GraviBlocks.ENCHANTED_WOOD.get(),
-                GraviBlocks.ENCHANTED_LOG.get(),
+                GravitationBlocks.ENCHANTED_PLANKS,
+                GravitationBlocks.ENCHANTED_DOOR.get(),
+                GravitationBlocks.ENCHANTED_TRAPDOOR.get(),
+                GravitationBlocks.ENCHANTED_BUTTON.get(),
+                GravitationBlocks.ENCHANTED_FENCE,
+                GravitationBlocks.ENCHANTED_FENCE_GATE,
+                GravitationBlocks.ENCHANTED_STAIRS,
+                GravitationBlocks.ENCHANTED_SLAB.get(),
+                GravitationBlocks.STRIPPED_ENCHANTED_LOG.get(),
+                GravitationBlocks.STRIPPED_ENCHANTED_WOOD.get(),
+                GravitationBlocks.ENCHANTED_WOOD.get(),
+                GravitationBlocks.ENCHANTED_LOG.get(),
                 GraviTags.Items.ENCHANTED_LOGS,
-                GraviBlocks.ENCHANTED_BOOKSHELF.get(),
-                GraviBlocks.ENCHANTED_SIGN.get(),
+                GravitationBlocks.ENCHANTED_BOOKSHELF.get(),
+                GravitationBlocks.ENCHANTED_SIGN.get(),
                 GravitationItems.ENCHANTED_BOAT.get(),
                 GravitationItems.ENCHANTED_CHEST_BOAT.get(),
                 consumer);
 
         woodRecipes(
                 "beladon",
-                GraviBlocks.BELADON_PLANKS,
-                GraviBlocks.BELADON_DOOR.get(),
-                GraviBlocks.BELADON_TRAPDOOR.get(),
-                GraviBlocks.BELADON_BUTTON.get(),
-                GraviBlocks.BELADON_FENCE,
-                GraviBlocks.BELADON_FENCE_GATE,
-                GraviBlocks.BELADON_STAIRS,
-                GraviBlocks.BELADON_SLAB.get(),
-                GraviBlocks.STRIPPED_BELADON_LOG.get(),
-                GraviBlocks.STRIPPED_BELADON_WOOD.get(),
-                GraviBlocks.BELADON_WOOD.get(),
-                GraviBlocks.BELADON_LOG.get(),
+                GravitationBlocks.BELADON_PLANKS,
+                GravitationBlocks.BELADON_DOOR.get(),
+                GravitationBlocks.BELADON_TRAPDOOR.get(),
+                GravitationBlocks.BELADON_BUTTON.get(),
+                GravitationBlocks.BELADON_FENCE,
+                GravitationBlocks.BELADON_FENCE_GATE,
+                GravitationBlocks.BELADON_STAIRS,
+                GravitationBlocks.BELADON_SLAB.get(),
+                GravitationBlocks.STRIPPED_BELADON_LOG.get(),
+                GravitationBlocks.STRIPPED_BELADON_WOOD.get(),
+                GravitationBlocks.BELADON_WOOD.get(),
+                GravitationBlocks.BELADON_LOG.get(),
                 GraviTags.Items.BELADON_LOGS,
-                GraviBlocks.BELADON_BOOKSHELF.get(),
-                GraviBlocks.BELADON_SIGN.get(),
+                GravitationBlocks.BELADON_BOOKSHELF.get(),
+                GravitationBlocks.BELADON_SIGN.get(),
                 GravitationItems.BELADON_BOAT.get(),
                 GravitationItems.BELADON_CHEST_BOAT.get(),
                 consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GraviBlocks.POLISHED_CONGLOMERATE.get())
-                .define('X', GraviBlocks.CONGLOMERATE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GravitationBlocks.POLISHED_CONGLOMERATE.get())
+                .define('X', GravitationBlocks.CONGLOMERATE.get())
                 .pattern("XX")
                 .pattern("XX")
-                .unlockedBy("has_conglomerate_ingot", has(GraviBlocks.CONGLOMERATE.get()))
+                .unlockedBy("has_conglomerate_ingot", has(GravitationBlocks.CONGLOMERATE.get()))
                 .save(consumer, new ResourceLocation("gravitation:crafting/polished_conglomerate"));
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GraviBlocks.CONGLOMERATE_BRICKS.get())
-                .define('X', GraviBlocks.POLISHED_CONGLOMERATE.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GravitationBlocks.CONGLOMERATE_BRICKS.get())
+                .define('X', GravitationBlocks.POLISHED_CONGLOMERATE.get())
                 .pattern("XX")
                 .pattern("XX")
-                .unlockedBy("has_polished_conglomerate_ingot", has(GraviBlocks.POLISHED_CONGLOMERATE.get()))
+                .unlockedBy("has_polished_conglomerate_ingot", has(GravitationBlocks.POLISHED_CONGLOMERATE.get()))
                 .save(consumer, new ResourceLocation("gravitation:crafting/conglomerate_bricks"));
 
         wall(consumer, new ResourceLocation("gravitation:crafting/conglomerate_wall"), RecipeCategory.BUILDING_BLOCKS,
-                GraviBlocks.CONGLOMERATE_WALLS.get(), GraviBlocks.CONGLOMERATE.get());
+                GravitationBlocks.CONGLOMERATE_WALLS.get(), GravitationBlocks.CONGLOMERATE.get());
         wall(consumer, new ResourceLocation("gravitation:crafting/conglomerate_brick_wall"), RecipeCategory.BUILDING_BLOCKS,
-                GraviBlocks.CONGLOMERATE_BRICK_WALLS.get(), GraviBlocks.CONGLOMERATE_BRICKS.get());
+                GravitationBlocks.CONGLOMERATE_BRICK_WALLS.get(), GravitationBlocks.CONGLOMERATE_BRICKS.get());
         wall(consumer, new ResourceLocation("gravitation:crafting/polished_conglomerate_wall"), RecipeCategory.BUILDING_BLOCKS,
-                GraviBlocks.POLISHED_CONGLOMERATE_WALLS.get(), GraviBlocks.POLISHED_CONGLOMERATE.get());
+                GravitationBlocks.POLISHED_CONGLOMERATE_WALLS.get(), GravitationBlocks.POLISHED_CONGLOMERATE.get());
         stairs(consumer, new ResourceLocation("gravitation:crafting/conglomerate_stairs"),
-                GraviBlocks.CONGLOMERATE_STAIRS, GraviBlocks.CONGLOMERATE);
+                GravitationBlocks.CONGLOMERATE_STAIRS, GravitationBlocks.CONGLOMERATE);
         stairs(consumer, new ResourceLocation("gravitation:crafting/conglomerate_brick_stairs"),
-                GraviBlocks.CONGLOMERATE_BRICK_STAIRS, GraviBlocks.CONGLOMERATE_BRICKS);
+                GravitationBlocks.CONGLOMERATE_BRICK_STAIRS, GravitationBlocks.CONGLOMERATE_BRICKS);
         stairs(consumer, new ResourceLocation("gravitation:crafting/polished_conglomerate_stairs"),
-                GraviBlocks.POLISHED_CONGLOMERATE_STAIRS, GraviBlocks.POLISHED_CONGLOMERATE);
+                GravitationBlocks.POLISHED_CONGLOMERATE_STAIRS, GravitationBlocks.POLISHED_CONGLOMERATE);
         slab(consumer, new ResourceLocation("gravitation:crafting/conglomerate_slab"),RecipeCategory.BUILDING_BLOCKS,
-                GraviBlocks.CONGLOMERATE_SLAB.get(), GraviBlocks.CONGLOMERATE.get());
+                GravitationBlocks.CONGLOMERATE_SLAB.get(), GravitationBlocks.CONGLOMERATE.get());
         slab(consumer, new ResourceLocation("gravitation:crafting/conglomerate_brick_slab"),RecipeCategory.BUILDING_BLOCKS,
-                GraviBlocks.CONGLOMERATE_BRICK_SLAB.get(), GraviBlocks.CONGLOMERATE_BRICKS.get());
+                GravitationBlocks.CONGLOMERATE_BRICK_SLAB.get(), GravitationBlocks.CONGLOMERATE_BRICKS.get());
         slab(consumer, new ResourceLocation("gravitation:crafting/polished_conglomerate_slab"),RecipeCategory.BUILDING_BLOCKS,
-                GraviBlocks.POLISHED_CONGLOMERATE_SLAB.get(), GraviBlocks.POLISHED_CONGLOMERATE.get());
+                GravitationBlocks.POLISHED_CONGLOMERATE_SLAB.get(), GravitationBlocks.POLISHED_CONGLOMERATE.get());
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GraviBlocks.BRONZITE_BLOCK.get())
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GravitationBlocks.BRONZITE_BLOCK.get())
                 .define('X', GravitationItems.BRONZITE_INGOT.get())
                 .pattern("XXX")
                 .pattern("XXX")
@@ -240,8 +240,8 @@ public class GravitationRecipes extends AetherRecipeProvider {
 
         zaniteSmithing(consumer, GravitationItems.BRONZITE_ROCK.get(), RecipeCategory.TOOLS, GravitationItems.BRONZITE_INGOT.get());
 
-        enchantingRecipe(RecipeCategory.MISC, GraviBlocks.ENCHANTED_SAPLING.get(), AetherBlocks.SKYROOT_SAPLING.get(), 0.20f, 50).save(consumer, new ResourceLocation("gravitation:enchanting/enchanted_sapling"));
-        enchantingRecipe(RecipeCategory.MISC, GraviBlocks.ENCHANTED_MOSS.get(), Blocks.MOSS_BLOCK, 0.20f, 60).save(consumer, new ResourceLocation("gravitation:enchanting/enchanted_moss"));
+        enchantingRecipe(RecipeCategory.MISC, GravitationBlocks.ENCHANTED_SAPLING.get(), AetherBlocks.SKYROOT_SAPLING.get(), 0.20f, 50).save(consumer, new ResourceLocation("gravitation:enchanting/enchanted_sapling"));
+        enchantingRecipe(RecipeCategory.MISC, GravitationBlocks.ENCHANTED_MOSS.get(), Blocks.MOSS_BLOCK, 0.20f, 60).save(consumer, new ResourceLocation("gravitation:enchanting/enchanted_moss"));
 
         enchantingRecipe(RecipeCategory.MISC, GravitationItems.DIG_STONE.get(), AetherBlocks.CARVED_STONE.get(), 0.20f, 20).save(consumer, new ResourceLocation("gravitation:enchanting/dig_stone"));
         enchantingRecipe(RecipeCategory.MISC, GravitationItems.DENSE_STONE.get(), AetherBlocks.ANGELIC_STONE.get(), 0.20f, 30).save(consumer, new ResourceLocation("gravitation:enchanting/dense_stone"));

@@ -1,6 +1,6 @@
 package mrthomas20121.gravitation;
 
-import mrthomas20121.gravitation.block.GraviBlocks;
+import mrthomas20121.gravitation.block.GravitationBlocks;
 import mrthomas20121.gravitation.block.wood.GraviWoodType;
 import mrthomas20121.gravitation.block_entity.GraviBlockEntityTypes;
 import mrthomas20121.gravitation.data.*;
@@ -45,7 +45,7 @@ public class Gravitation {
 		bus.addListener(this::datagen);
 
 		GraviBlockEntityTypes.BLOCK_ENTITY_TYPES.register(bus);
-		GraviBlocks.BLOCKS.register(bus);
+		GravitationBlocks.BLOCKS.register(bus);
 		GravitationItems.ITEMS.register(bus);
 		GraviEntityTypes.ENTITY_TYPES.register(bus);
 		GlobalLootModifiers.LOOT_MODIFIERS.register(bus);
@@ -60,9 +60,9 @@ public class Gravitation {
 
 	public void setup(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			GraviBlocks.registerFlammability();
-			GraviBlocks.registerPots();
-			GraviBlocks.registerStripping();
+			GravitationBlocks.registerFlammability();
+			GravitationBlocks.registerPots();
+			GravitationBlocks.registerStripping();
 
 			Regions.register(new GravitationRegion(new ResourceLocation(MOD_ID, "gravitation"), 20));
 

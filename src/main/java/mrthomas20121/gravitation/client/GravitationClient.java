@@ -1,7 +1,10 @@
 package mrthomas20121.gravitation.client;
 
+import com.aetherteam.aether.inventory.menu.LoreBookMenu;
 import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.block.wood.GraviWoodType;
+import mrthomas20121.gravitation.enchanting.GravitationEnchantments;
+import mrthomas20121.gravitation.item.GravitationItems;
 import mrthomas20121.gravitation.particle.AerfinParticle;
 import mrthomas20121.gravitation.particle.GraviParticleTypes;
 import net.minecraft.client.particle.CherryParticle;
@@ -24,6 +27,9 @@ public class GravitationClient {
             Sheets.addWoodType(GraviWoodType.BELADON);
             Sheets.addWoodType(GraviWoodType.ENCHANTED);
         });
+
+        LoreBookMenu.addLoreEntryOverride(stack -> stack.getEnchantmentLevel(GravitationEnchantments.HERCULES_STRENGTH.get()) > 0, "lore.gravitation.hercules_strength");
+        LoreBookMenu.addLoreEntryOverride(stack -> stack.getEnchantmentLevel(GravitationEnchantments.NEPTUNE_WRATH.get()) > 0, "lore.gravitation.neptune_wrath");
     }
 
     @SubscribeEvent

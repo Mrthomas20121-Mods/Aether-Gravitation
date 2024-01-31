@@ -32,15 +32,15 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class GraviBlocks {
+public class GravitationBlocks {
 
     public static DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Gravitation.MOD_ID);
 
     public static final RegistryObject<AetherGrassBlock> AER_GRASS = register("aer_grass", () -> new AetherGrassBlock(Block.Properties.copy(AetherBlocks.AETHER_GRASS_BLOCK.get())));
 
-    public static final RegistryObject<Block> AERFIN_LEAVES = register("aerfin_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_BLUE).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
-    public static final RegistryObject<Block> BLUE_AERFIN_LEAVES = register("blue_aerfin_leaves", () -> new BlueAerfinLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_BLUE).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
-    public static final RegistryObject<Block> GOLDEN_AERFIN_LEAVES = register("golden_aerfin_leaves", () -> new GoldenAerfinLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.GOLD).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
+    public static final RegistryObject<Block> AERFIN_LEAVES = register("aerfin_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_BLUE).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GravitationBlocks::ocelotOrParrot).isSuffocating(GravitationBlocks::never).isViewBlocking(GravitationBlocks::never)));
+    public static final RegistryObject<Block> BLUE_AERFIN_LEAVES = register("blue_aerfin_leaves", () -> new BlueAerfinLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_BLUE).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GravitationBlocks::ocelotOrParrot).isSuffocating(GravitationBlocks::never).isViewBlocking(GravitationBlocks::never)));
+    public static final RegistryObject<Block> GOLDEN_AERFIN_LEAVES = register("golden_aerfin_leaves", () -> new GoldenAerfinLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.GOLD).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GravitationBlocks::ocelotOrParrot).isSuffocating(GravitationBlocks::never).isViewBlocking(GravitationBlocks::never)));
 
     public static final RegistryObject<SaplingBlock> AERFIN_SAPLING = register("aerfin_sapling", () -> new SaplingBlock(new AerfinTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
     public static final RegistryObject<SaplingBlock> BLUE_AERFIN_SAPLING = register("blue_aerfin_sapling", () -> new SaplingBlock(new BlueAerfinTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
@@ -58,18 +58,18 @@ public class GraviBlocks {
     public static final RegistryObject<Block> AERFIN_BOOKSHELF = register("aerfin_bookshelf", () -> new BookshelfBlock(Block.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<StairBlock> AERFIN_STAIRS = register("aerfin_stairs", () -> new StairBlock(() -> AERFIN_PLANKS.get().defaultBlockState(), Block.Properties.copy(Blocks.OAK_STAIRS)));
     public static final RegistryObject<SlabBlock> AERFIN_SLAB = register("aerfin_slab", () -> new SlabBlock(Block.Properties.copy(Blocks.OAK_SLAB)));
-    public static final RegistryObject<TrapDoorBlock> AERFIN_TRAPDOOR = register("aerfin_trapdoor", () -> new TrapDoorBlock(Block.Properties.copy(Blocks.OAK_TRAPDOOR).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.AERFIN_BLOCK_SET));
-    public static final RegistryObject<DoorBlock> AERFIN_DOOR = register("aerfin_door", () -> new DoorBlock(Block.Properties.copy(Blocks.OAK_DOOR).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.AERFIN_BLOCK_SET));
-    public static final RegistryObject<FenceBlock> AERFIN_FENCE = register("aerfin_fence", () -> new FenceBlock(Block.Properties.copy(Blocks.OAK_FENCE).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never)));
-    public static final RegistryObject<FenceGateBlock> AERFIN_FENCE_GATE = register("aerfin_fence_gate", () -> new FenceGateBlock(Block.Properties.copy(Blocks.OAK_FENCE_GATE).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.AERFIN));
-    public static final RegistryObject<ButtonBlock> AERFIN_BUTTON = register("aerfin_button", () -> new ButtonBlock(Block.Properties.copy(Blocks.OAK_BUTTON).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.AERFIN_BLOCK_SET, 30, true));
-    public static final RegistryObject<PressurePlateBlock> AERFIN_PREASURE_PLATE = register("aerfin_preasure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.copy(Blocks.OAK_PRESSURE_PLATE).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.AERFIN_BLOCK_SET));
+    public static final RegistryObject<TrapDoorBlock> AERFIN_TRAPDOOR = register("aerfin_trapdoor", () -> new TrapDoorBlock(Block.Properties.copy(Blocks.OAK_TRAPDOOR).strength(3.0F).noOcclusion().isValidSpawn(GravitationBlocks::never), GraviWoodType.AERFIN_BLOCK_SET));
+    public static final RegistryObject<DoorBlock> AERFIN_DOOR = register("aerfin_door", () -> new DoorBlock(Block.Properties.copy(Blocks.OAK_DOOR).strength(3.0F).noOcclusion().isValidSpawn(GravitationBlocks::never), GraviWoodType.AERFIN_BLOCK_SET));
+    public static final RegistryObject<FenceBlock> AERFIN_FENCE = register("aerfin_fence", () -> new FenceBlock(Block.Properties.copy(Blocks.OAK_FENCE).strength(3.0F).noOcclusion().isValidSpawn(GravitationBlocks::never)));
+    public static final RegistryObject<FenceGateBlock> AERFIN_FENCE_GATE = register("aerfin_fence_gate", () -> new FenceGateBlock(Block.Properties.copy(Blocks.OAK_FENCE_GATE).strength(3.0F).noOcclusion().isValidSpawn(GravitationBlocks::never), GraviWoodType.AERFIN));
+    public static final RegistryObject<ButtonBlock> AERFIN_BUTTON = register("aerfin_button", () -> new ButtonBlock(Block.Properties.copy(Blocks.OAK_BUTTON).strength(3.0F).noOcclusion().isValidSpawn(GravitationBlocks::never), GraviWoodType.AERFIN_BLOCK_SET, 30, true));
+    public static final RegistryObject<PressurePlateBlock> AERFIN_PREASURE_PLATE = register("aerfin_preasure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.copy(Blocks.OAK_PRESSURE_PLATE).strength(3.0F).noOcclusion().isValidSpawn(GravitationBlocks::never), GraviWoodType.AERFIN_BLOCK_SET));
     public static final RegistryObject<StandingSignBlock> AERFIN_SIGN = registerAerfinSign("aerfin_sign", () -> new AerfinSignBlock(Block.Properties.copy(Blocks.OAK_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD), GraviWoodType.AERFIN));
     public static final RegistryObject<WallSignBlock> AERFIN_WALL_SIGN = register("aerfin_wall_sign", () -> new AerfinWallSignBlock(Block.Properties.copy(Blocks.OAK_WALL_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD).lootFrom(AERFIN_SIGN), GraviWoodType.AERFIN));
     public static final RegistryObject<CeilingHangingSignBlock> AERFIN_HANGING_SIGN = registerAerfinHangingSign("aerfin_hanging_sign", () -> new AerfinHangingSignBlock(BlockBehaviour.Properties.of().mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava(), GraviWoodType.AERFIN));
     public static final RegistryObject<WallHangingSignBlock> AERFIN_WALL_HANGING_SIGN = register("aerfin_wall_hanging_sign", () -> new AerfinWallHangingSignBlock(BlockBehaviour.Properties.of().mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava(), GraviWoodType.AERFIN));
 
-    public static final RegistryObject<Block> BELADON_LEAVES = register("beladon_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_ORANGE).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
+    public static final RegistryObject<Block> BELADON_LEAVES = register("beladon_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_ORANGE).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GravitationBlocks::ocelotOrParrot).isSuffocating(GravitationBlocks::never).isViewBlocking(GravitationBlocks::never)));
     public static final RegistryObject<RotatedPillarBlock> BELADON_LOG = register("beladon_log", () -> new AetherLogBlock(Block.Properties.copy(Blocks.OAK_LOG).mapColor(MapColor.TERRACOTTA_BROWN)));
     public static final RegistryObject<RotatedPillarBlock> STRIPPED_BELADON_LOG = register("stripped_beladon_log", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.STRIPPED_OAK_LOG)));
     public static final RegistryObject<RotatedPillarBlock> BELADON_WOOD = register("beladon_wood", () -> new AetherLogBlock(Block.Properties.copy(Blocks.OAK_WOOD)));
@@ -78,19 +78,19 @@ public class GraviBlocks {
     public static final RegistryObject<Block> BELADON_BOOKSHELF = register("beladon_bookshelf", () -> new BookshelfBlock(Block.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<StairBlock> BELADON_STAIRS = register("beladon_stairs", () -> new StairBlock(() -> BELADON_PLANKS.get().defaultBlockState(), Block.Properties.copy(Blocks.OAK_STAIRS)));
     public static final RegistryObject<SlabBlock> BELADON_SLAB = register("beladon_slab", () -> new SlabBlock(Block.Properties.copy(Blocks.OAK_SLAB)));
-    public static final RegistryObject<TrapDoorBlock> BELADON_TRAPDOOR = register("beladon_trapdoor", () -> new TrapDoorBlock(Block.Properties.copy(Blocks.OAK_TRAPDOOR).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.BELADON_BLOCK_SET));
-    public static final RegistryObject<DoorBlock> BELADON_DOOR = register("beladon_door", () -> new DoorBlock(Block.Properties.copy(Blocks.OAK_DOOR).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.BELADON_BLOCK_SET));
-    public static final RegistryObject<FenceBlock> BELADON_FENCE = register("beladon_fence", () -> new FenceBlock(Block.Properties.copy(Blocks.OAK_FENCE).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never)));
-    public static final RegistryObject<FenceGateBlock> BELADON_FENCE_GATE = register("beladon_fence_gate", () -> new FenceGateBlock(Block.Properties.copy(Blocks.OAK_FENCE_GATE).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.BELADON));
-    public static final RegistryObject<ButtonBlock> BELADON_BUTTON = register("beladon_button", () -> new ButtonBlock(Block.Properties.copy(Blocks.OAK_BUTTON).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.BELADON_BLOCK_SET, 30, true));
-    public static final RegistryObject<PressurePlateBlock> BELADON_PREASURE_PLATE = register("beladon_preasure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.copy(Blocks.OAK_PRESSURE_PLATE).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.BELADON_BLOCK_SET));
+    public static final RegistryObject<TrapDoorBlock> BELADON_TRAPDOOR = register("beladon_trapdoor", () -> new TrapDoorBlock(Block.Properties.copy(Blocks.OAK_TRAPDOOR).strength(3.0F).noOcclusion().isValidSpawn(GravitationBlocks::never), GraviWoodType.BELADON_BLOCK_SET));
+    public static final RegistryObject<DoorBlock> BELADON_DOOR = register("beladon_door", () -> new DoorBlock(Block.Properties.copy(Blocks.OAK_DOOR).strength(3.0F).noOcclusion().isValidSpawn(GravitationBlocks::never), GraviWoodType.BELADON_BLOCK_SET));
+    public static final RegistryObject<FenceBlock> BELADON_FENCE = register("beladon_fence", () -> new FenceBlock(Block.Properties.copy(Blocks.OAK_FENCE).strength(3.0F).noOcclusion().isValidSpawn(GravitationBlocks::never)));
+    public static final RegistryObject<FenceGateBlock> BELADON_FENCE_GATE = register("beladon_fence_gate", () -> new FenceGateBlock(Block.Properties.copy(Blocks.OAK_FENCE_GATE).strength(3.0F).noOcclusion().isValidSpawn(GravitationBlocks::never), GraviWoodType.BELADON));
+    public static final RegistryObject<ButtonBlock> BELADON_BUTTON = register("beladon_button", () -> new ButtonBlock(Block.Properties.copy(Blocks.OAK_BUTTON).strength(3.0F).noOcclusion().isValidSpawn(GravitationBlocks::never), GraviWoodType.BELADON_BLOCK_SET, 30, true));
+    public static final RegistryObject<PressurePlateBlock> BELADON_PREASURE_PLATE = register("beladon_preasure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.copy(Blocks.OAK_PRESSURE_PLATE).strength(3.0F).noOcclusion().isValidSpawn(GravitationBlocks::never), GraviWoodType.BELADON_BLOCK_SET));
     public static final RegistryObject<StandingSignBlock> BELADON_SIGN = registerBeladonSign("beladon_sign", () -> new BeladonSignBlock(Block.Properties.copy(Blocks.OAK_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD), GraviWoodType.BELADON));
     public static final RegistryObject<WallSignBlock> BELADON_WALL_SIGN = register("beladon_wall_sign", () -> new BeladonWallSignBlock(Block.Properties.copy(Blocks.OAK_WALL_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD).lootFrom(BELADON_SIGN), GraviWoodType.BELADON));
     public static final RegistryObject<CeilingHangingSignBlock> BELADON_HANGING_SIGN = registerBeladonHangingSign("beladon_hanging_sign", () -> new BeladonHangingSignBlock(Block.Properties.copy(Blocks.OAK_WALL_SIGN).mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava(), GraviWoodType.BELADON));
     public static final RegistryObject<WallHangingSignBlock> BELADON_WALL_HANGING_SIGN = register("beladon_wall_hanging_sign", () -> new BeladonWallHangingSignBlock(Block.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN).mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava(), GraviWoodType.BELADON));
     public static final RegistryObject<SaplingBlock> BELADON_SAPLING = register("beladon_sapling", () -> new SaplingBlock(new BeladonTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
     public static final RegistryObject<FlowerPotBlock> POTTED_BELADON_SAPLING = BLOCKS.register("potted_beladon_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BELADON_SAPLING, Block.Properties.copy(Blocks.FLOWER_POT)));
-    public static final RegistryObject<Block> ENCHANTED_LEAVES = register("enchanted_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
+    public static final RegistryObject<Block> ENCHANTED_LEAVES = register("enchanted_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GravitationBlocks::ocelotOrParrot).isSuffocating(GravitationBlocks::never).isViewBlocking(GravitationBlocks::never)));
     public static final RegistryObject<RotatedPillarBlock> ENCHANTED_LOG = register("enchanted_log", () -> new AetherLogBlock(Block.Properties.copy(Blocks.OAK_LOG)));
     public static final RegistryObject<RotatedPillarBlock> STRIPPED_ENCHANTED_LOG = register("stripped_enchanted_log", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.STRIPPED_OAK_LOG)));
     public static final RegistryObject<RotatedPillarBlock> ENCHANTED_WOOD = register("enchanted_wood", () -> new AetherLogBlock(Block.Properties.copy(Blocks.OAK_WOOD)));
@@ -99,12 +99,12 @@ public class GraviBlocks {
     public static final RegistryObject<Block> ENCHANTED_BOOKSHELF = register("enchanted_bookshelf", () -> new BookshelfBlock(Block.Properties.copy(Blocks.BOOKSHELF)));
     public static final RegistryObject<StairBlock> ENCHANTED_STAIRS = register("enchanted_stairs", () -> new StairBlock(() -> ENCHANTED_PLANKS.get().defaultBlockState(), Block.Properties.copy(Blocks.OAK_STAIRS)));
     public static final RegistryObject<SlabBlock> ENCHANTED_SLAB = register("enchanted_slab", () -> new SlabBlock(Block.Properties.copy(Blocks.OAK_SLAB)));
-    public static final RegistryObject<TrapDoorBlock> ENCHANTED_TRAPDOOR = register("enchanted_trapdoor", () -> new TrapDoorBlock(Block.Properties.copy(Blocks.OAK_TRAPDOOR).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.ENCHANTED_BLOCK_SET));
-    public static final RegistryObject<DoorBlock> ENCHANTED_DOOR = register("enchanted_door", () -> new DoorBlock(Block.Properties.copy(Blocks.OAK_DOOR).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.ENCHANTED_BLOCK_SET));
-    public static final RegistryObject<FenceBlock> ENCHANTED_FENCE = register("enchanted_fence", () -> new FenceBlock(Block.Properties.copy(Blocks.OAK_FENCE).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never)));
-    public static final RegistryObject<FenceGateBlock> ENCHANTED_FENCE_GATE = register("enchanted_fence_gate", () -> new FenceGateBlock(Block.Properties.copy(Blocks.OAK_FENCE_GATE).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.ENCHANTED));
-    public static final RegistryObject<ButtonBlock> ENCHANTED_BUTTON = register("enchanted_button", () -> new ButtonBlock(Block.Properties.copy(Blocks.OAK_BUTTON).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.ENCHANTED_BLOCK_SET, 30, true));
-    public static final RegistryObject<PressurePlateBlock> ENCHANTED_PREASURE_PLATE = register("enchanted_preasure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.copy(Blocks.OAK_PRESSURE_PLATE).strength(3.0F).noOcclusion().isValidSpawn(GraviBlocks::never), GraviWoodType.ENCHANTED_BLOCK_SET));
+    public static final RegistryObject<TrapDoorBlock> ENCHANTED_TRAPDOOR = register("enchanted_trapdoor", () -> new TrapDoorBlock(Block.Properties.copy(Blocks.OAK_TRAPDOOR).strength(3.0F).noOcclusion().isValidSpawn(GravitationBlocks::never), GraviWoodType.ENCHANTED_BLOCK_SET));
+    public static final RegistryObject<DoorBlock> ENCHANTED_DOOR = register("enchanted_door", () -> new DoorBlock(Block.Properties.copy(Blocks.OAK_DOOR).strength(3.0F).noOcclusion().isValidSpawn(GravitationBlocks::never), GraviWoodType.ENCHANTED_BLOCK_SET));
+    public static final RegistryObject<FenceBlock> ENCHANTED_FENCE = register("enchanted_fence", () -> new FenceBlock(Block.Properties.copy(Blocks.OAK_FENCE).strength(3.0F).noOcclusion().isValidSpawn(GravitationBlocks::never)));
+    public static final RegistryObject<FenceGateBlock> ENCHANTED_FENCE_GATE = register("enchanted_fence_gate", () -> new FenceGateBlock(Block.Properties.copy(Blocks.OAK_FENCE_GATE).strength(3.0F).noOcclusion().isValidSpawn(GravitationBlocks::never), GraviWoodType.ENCHANTED));
+    public static final RegistryObject<ButtonBlock> ENCHANTED_BUTTON = register("enchanted_button", () -> new ButtonBlock(Block.Properties.copy(Blocks.OAK_BUTTON).strength(3.0F).noOcclusion().isValidSpawn(GravitationBlocks::never), GraviWoodType.ENCHANTED_BLOCK_SET, 30, true));
+    public static final RegistryObject<PressurePlateBlock> ENCHANTED_PREASURE_PLATE = register("enchanted_preasure_plate", () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.EVERYTHING, Block.Properties.copy(Blocks.OAK_PRESSURE_PLATE).strength(3.0F).noOcclusion().isValidSpawn(GravitationBlocks::never), GraviWoodType.ENCHANTED_BLOCK_SET));
     public static final RegistryObject<StandingSignBlock> ENCHANTED_SIGN = registerEnchantedSign("enchanted_sign", () -> new EnchantedSignBlock(Block.Properties.copy(Blocks.OAK_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD), GraviWoodType.ENCHANTED));
     public static final RegistryObject<WallSignBlock> ENCHANTED_WALL_SIGN = register("enchanted_wall_sign", () -> new EnchantedWallSignBlock(Block.Properties.copy(Blocks.OAK_WALL_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD).lootFrom(ENCHANTED_SIGN), GraviWoodType.ENCHANTED));
     public static final RegistryObject<CeilingHangingSignBlock> ENCHANTED_HANGING_SIGN = registerEnchantedHangingSign("enchanted_hanging_sign", () -> new GravitationCeilingHangingSignBlock(ExtendedProperties.create(properties ->
@@ -139,56 +139,56 @@ public class GraviBlocks {
 
     public static void registerPots() {
         FlowerPotBlock pot = (FlowerPotBlock) Blocks.FLOWER_POT;
-        pot.addPlant(GraviBlocks.AERFIN_SAPLING.getId(), GraviBlocks.POTTED_AERFIN_SAPLING);
-        pot.addPlant(GraviBlocks.BLUE_AERFIN_SAPLING.getId(), GraviBlocks.POTTED_BLUE_AERFIN_SAPLING);
-        pot.addPlant(GraviBlocks.GOLDEN_AERFIN_SAPLING.getId(), GraviBlocks.POTTED_GOLDEN_AERFIN_SAPLING);
-        pot.addPlant(GraviBlocks.BELADON_SAPLING.getId(), GraviBlocks.POTTED_BELADON_SAPLING);
-        pot.addPlant(GraviBlocks.ENCHANTED_SAPLING.getId(), GraviBlocks.POTTED_ENCHANTED_SAPLING);
+        pot.addPlant(GravitationBlocks.AERFIN_SAPLING.getId(), GravitationBlocks.POTTED_AERFIN_SAPLING);
+        pot.addPlant(GravitationBlocks.BLUE_AERFIN_SAPLING.getId(), GravitationBlocks.POTTED_BLUE_AERFIN_SAPLING);
+        pot.addPlant(GravitationBlocks.GOLDEN_AERFIN_SAPLING.getId(), GravitationBlocks.POTTED_GOLDEN_AERFIN_SAPLING);
+        pot.addPlant(GravitationBlocks.BELADON_SAPLING.getId(), GravitationBlocks.POTTED_BELADON_SAPLING);
+        pot.addPlant(GravitationBlocks.ENCHANTED_SAPLING.getId(), GravitationBlocks.POTTED_ENCHANTED_SAPLING);
     }
 
     public static void registerFlammability() {
         FireBlockAccessor fireBlockAccessor = (FireBlockAccessor) Blocks.FIRE;
 
-        fireBlockAccessor.callSetFlammable(GraviBlocks.AERFIN_LEAVES.get(), 30, 60);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.BLUE_AERFIN_LEAVES.get(), 30, 60);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.GOLDEN_AERFIN_LEAVES.get(), 30, 60);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.AERFIN_PLANKS.get(), 5, 20);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.AERFIN_LOG.get(), 5, 5);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.STRIPPED_AERFIN_LOG.get(), 5, 5);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.AERFIN_WOOD.get(), 5, 5);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.STRIPPED_AERFIN_WOOD.get(), 5, 5);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.AERFIN_FENCE.get(), 5, 20);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.AERFIN_FENCE_GATE.get(), 5, 20);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.AERFIN_LEAVES.get(), 30, 60);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.BLUE_AERFIN_LEAVES.get(), 30, 60);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.GOLDEN_AERFIN_LEAVES.get(), 30, 60);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.AERFIN_PLANKS.get(), 5, 20);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.AERFIN_LOG.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.STRIPPED_AERFIN_LOG.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.AERFIN_WOOD.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.STRIPPED_AERFIN_WOOD.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.AERFIN_FENCE.get(), 5, 20);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.AERFIN_FENCE_GATE.get(), 5, 20);
 
-        fireBlockAccessor.callSetFlammable(GraviBlocks.BELADON_LEAVES.get(), 30, 60);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.BELADON_PLANKS.get(), 5, 20);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.BELADON_LOG.get(), 5, 5);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.STRIPPED_BELADON_LOG.get(), 5, 5);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.BELADON_WOOD.get(), 5, 5);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.STRIPPED_BELADON_WOOD.get(), 5, 5);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.BELADON_FENCE.get(), 5, 20);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.BELADON_FENCE_GATE.get(), 5, 20);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.BELADON_LEAVES.get(), 30, 60);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.BELADON_PLANKS.get(), 5, 20);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.BELADON_LOG.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.STRIPPED_BELADON_LOG.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.BELADON_WOOD.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.STRIPPED_BELADON_WOOD.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.BELADON_FENCE.get(), 5, 20);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.BELADON_FENCE_GATE.get(), 5, 20);
 
-        fireBlockAccessor.callSetFlammable(GraviBlocks.ENCHANTED_LEAVES.get(), 30, 60);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.ENCHANTED_PLANKS.get(), 5, 20);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.ENCHANTED_LOG.get(), 5, 5);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.STRIPPED_ENCHANTED_LOG.get(), 5, 5);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.ENCHANTED_WOOD.get(), 5, 5);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.STRIPPED_ENCHANTED_WOOD.get(), 5, 5);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.ENCHANTED_FENCE.get(), 5, 20);
-        fireBlockAccessor.callSetFlammable(GraviBlocks.ENCHANTED_FENCE_GATE.get(), 5, 20);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.ENCHANTED_LEAVES.get(), 30, 60);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.ENCHANTED_PLANKS.get(), 5, 20);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.ENCHANTED_LOG.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.STRIPPED_ENCHANTED_LOG.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.ENCHANTED_WOOD.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.STRIPPED_ENCHANTED_WOOD.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.ENCHANTED_FENCE.get(), 5, 20);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.ENCHANTED_FENCE_GATE.get(), 5, 20);
     }
 
     public static void registerStripping() {
 
-        ToolAction.registerStripping(GraviBlocks.AERFIN_LOG.get(), GraviBlocks.STRIPPED_AERFIN_LOG.get());
-        ToolAction.registerStripping(GraviBlocks.AERFIN_WOOD.get(), GraviBlocks.STRIPPED_AERFIN_WOOD.get());
+        ToolAction.registerStripping(GravitationBlocks.AERFIN_LOG.get(), GravitationBlocks.STRIPPED_AERFIN_LOG.get());
+        ToolAction.registerStripping(GravitationBlocks.AERFIN_WOOD.get(), GravitationBlocks.STRIPPED_AERFIN_WOOD.get());
 
-        ToolAction.registerStripping(GraviBlocks.BELADON_LOG.get(), GraviBlocks.STRIPPED_BELADON_LOG.get());
-        ToolAction.registerStripping(GraviBlocks.BELADON_WOOD.get(), GraviBlocks.STRIPPED_BELADON_WOOD.get());
+        ToolAction.registerStripping(GravitationBlocks.BELADON_LOG.get(), GravitationBlocks.STRIPPED_BELADON_LOG.get());
+        ToolAction.registerStripping(GravitationBlocks.BELADON_WOOD.get(), GravitationBlocks.STRIPPED_BELADON_WOOD.get());
 
-        ToolAction.registerStripping(GraviBlocks.ENCHANTED_LOG.get(), GraviBlocks.STRIPPED_ENCHANTED_LOG.get());
-        ToolAction.registerStripping(GraviBlocks.ENCHANTED_WOOD.get(), GraviBlocks.STRIPPED_ENCHANTED_WOOD.get());
+        ToolAction.registerStripping(GravitationBlocks.ENCHANTED_LOG.get(), GravitationBlocks.STRIPPED_ENCHANTED_LOG.get());
+        ToolAction.registerStripping(GravitationBlocks.ENCHANTED_WOOD.get(), GravitationBlocks.STRIPPED_ENCHANTED_WOOD.get());
     }
 
 

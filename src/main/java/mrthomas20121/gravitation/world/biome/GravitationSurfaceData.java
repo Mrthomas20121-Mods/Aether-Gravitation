@@ -1,8 +1,7 @@
 package mrthomas20121.gravitation.world.biome;
 
-import com.aetherteam.aether.block.AetherBlockStateProperties;
 import com.aetherteam.aether.block.AetherBlocks;
-import mrthomas20121.gravitation.block.GraviBlocks;
+import mrthomas20121.gravitation.block.GravitationBlocks;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.SurfaceRules;
@@ -26,7 +25,7 @@ public class GravitationSurfaceData {
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(GravitationBiomes.BELADON_PLAINS),
                         SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR,
                                 SurfaceRules.ifTrue(SurfaceRules.noiseCondition(Noises.SWAMP, -0.1D, 0.1d),
-                                        makeStateRule(GraviBlocks.AER_GRASS.get())))),
+                                        makeStateRule(GravitationBlocks.AER_GRASS.get())))),
                 SurfaceRules.ifTrue(
                         SurfaceRules.isBiome(GravitationBiomes.GOLDEN_MOUNTAIN),
                         SurfaceRules.sequence(

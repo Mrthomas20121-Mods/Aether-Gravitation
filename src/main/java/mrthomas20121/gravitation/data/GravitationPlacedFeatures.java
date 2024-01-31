@@ -6,7 +6,7 @@ import com.aetherteam.aether.world.placementmodifier.ImprovedLayerPlacementModif
 import com.aetherteam.nitrogen.data.resources.builders.NitrogenPlacedFeatureBuilders;
 import com.google.common.collect.ImmutableList;
 import mrthomas20121.gravitation.Gravitation;
-import mrthomas20121.gravitation.block.GraviBlocks;
+import mrthomas20121.gravitation.block.GravitationBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
@@ -81,7 +81,7 @@ public class GravitationPlacedFeatures {
     }
 
     public static List<PlacementModifier> treePlacement(PlacementModifier count) {
-        return treePlacementBase(count).add(BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(GraviBlocks.BELADON_SAPLING.get().defaultBlockState(), BlockPos.ZERO))).add(BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(GraviBlocks.ENCHANTED_SAPLING.get().defaultBlockState(), BlockPos.ZERO))).build();
+        return treePlacementBase(count).add(BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(GravitationBlocks.BELADON_SAPLING.get().defaultBlockState(), BlockPos.ZERO))).add(BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(GravitationBlocks.ENCHANTED_SAPLING.get().defaultBlockState(), BlockPos.ZERO))).build();
     }
 
     private static ImmutableList.Builder<PlacementModifier> treePlacementBase(PlacementModifier count) {
