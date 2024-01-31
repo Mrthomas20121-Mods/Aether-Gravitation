@@ -9,13 +9,12 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.common.ForgeMod;
 import top.theillusivec4.curios.api.SlotContext;
 
 import java.util.List;
 import java.util.UUID;
 
-import static mrthomas20121.gravitation.item.GraviItems.SALMON_ROSE;
+import static mrthomas20121.gravitation.item.GravitationItems.SALMON_ROSE;
 
 public class BronziteRingItem extends RingItem {
 

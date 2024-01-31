@@ -3,7 +3,7 @@ package mrthomas20121.gravitation.entity.wood;
 import com.aetherteam.aether.item.AetherItems;
 import mrthomas20121.gravitation.block.GraviBlocks;
 import mrthomas20121.gravitation.entity.GraviEntityTypes;
-import mrthomas20121.gravitation.item.GraviItems;
+import mrthomas20121.gravitation.item.GravitationItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
@@ -33,7 +33,7 @@ public class AerfinBoat extends Boat implements BoatBehavior {
     @Nonnull
     @Override
     public Item getDropItem() {
-        return GraviItems.BELADON_BOAT.get();
+        return GravitationItems.BELADON_BOAT.get();
     }
 
     @Override

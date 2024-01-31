@@ -15,7 +15,7 @@ import top.theillusivec4.curios.api.SlotContext;
 import java.util.List;
 import java.util.UUID;
 
-import static mrthomas20121.gravitation.item.GraviItems.SALMON_ROSE;
+import static mrthomas20121.gravitation.item.GravitationItems.SALMON_ROSE;
 
 public class BronzitePendantItem extends PendantItem {
 

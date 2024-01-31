@@ -5,7 +5,7 @@ import com.aetherteam.aether.client.renderer.accessory.PendantRenderer;
 import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.block_entity.GraviBlockEntityTypes;
 import mrthomas20121.gravitation.entity.GraviEntityTypes;
-import mrthomas20121.gravitation.item.GraviItems;
+import mrthomas20121.gravitation.item.GravitationItems;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
@@ -23,9 +23,9 @@ public class GraviRenderer {
     @SubscribeEvent
     public static void registerCurioRenderers(FMLClientSetupEvent event) {
         event.enqueueWork(() -> {
-            CuriosRendererRegistry.register(GraviItems.BRONZITE_GLOVES.get(), GlovesRenderer::new);
-            CuriosRendererRegistry.register(GraviItems.BRONZITE_PENDANT.get(), PendantRenderer::new);
-            CuriosRendererRegistry.register(GraviItems.NEPTUNE_PENDANT.get(), PendantRenderer::new);
+            CuriosRendererRegistry.register(GravitationItems.BRONZITE_GLOVES.get(), GlovesRenderer::new);
+            CuriosRendererRegistry.register(GravitationItems.BRONZITE_PENDANT.get(), PendantRenderer::new);
+            CuriosRendererRegistry.register(GravitationItems.NEPTUNE_PENDANT.get(), PendantRenderer::new);
         });
     }
 

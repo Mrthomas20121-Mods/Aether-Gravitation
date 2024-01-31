@@ -1,0 +1,27 @@
+{
+  "type": "gravitation:aether_dungeon_loot",
+  "chanceToSpawn": 0.1,
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "aether:chests/dungeon/bronze/bronze_dungeon"
+    }
+  ],
+  "items": [
+    {
+      "data": {
+        "Count": 1,
+        "id": "gravitation:aechor_string"
+      },
+      "weight": 60
+    },
+    {
+      "data": {
+        "Count": 1,
+        "id": "gravitation:bronzite_rock"
+      },
+      "weight": 40
+    }
+  ],
+  "totalWeight": 100
+}

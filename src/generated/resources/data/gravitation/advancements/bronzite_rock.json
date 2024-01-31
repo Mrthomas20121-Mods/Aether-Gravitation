@@ -1,0 +1,38 @@
+{
+  "parent": "aether:the_aether",
+  "criteria": {
+    "bronzite_rock": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "gravitation:bronzite_rock"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.gravitation.bronzite_rock.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "gravitation:bronzite_rock"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.gravitation.bronzite_rock"
+    }
+  },
+  "requirements": [
+    [
+      "bronzite_rock"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

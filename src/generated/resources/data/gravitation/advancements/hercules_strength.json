@@ -1,0 +1,38 @@
+{
+  "parent": "aether:the_aether",
+  "criteria": {
+    "neptune_wrath_enchant": {
+      "conditions": {
+        "item": {
+          "enchantments": [
+            {
+              "enchantment": "gravitation:hercules_strength"
+            }
+          ]
+        }
+      },
+      "trigger": "minecraft:enchanted_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.gravitation.hercules_strength.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:enchanted_book"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.gravitation.hercules_strength"
+    }
+  },
+  "requirements": [
+    [
+      "neptune_wrath_enchant"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

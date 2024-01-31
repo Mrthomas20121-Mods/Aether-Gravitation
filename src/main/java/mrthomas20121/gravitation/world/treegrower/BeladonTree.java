@@ -1,6 +1,6 @@
 package mrthomas20121.gravitation.world.treegrower;
 
-import mrthomas20121.gravitation.data.GraviConfiguredFeatures;
+import mrthomas20121.gravitation.data.GravitationConfiguredFeatures;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.grower.AbstractTreeGrower;
@@ -14,6 +14,6 @@ public class BeladonTree extends AbstractTreeGrower {
 
     @Nullable
     protected ResourceKey<ConfiguredFeature<?, ?>> getConfiguredFeature(RandomSource random, boolean largeHive) {
-        return GraviConfiguredFeatures.BELADON_TREE_CONFIGURATION;
+        return GravitationConfiguredFeatures.BELADON_TREE_CONFIGURATION;
     }
 }

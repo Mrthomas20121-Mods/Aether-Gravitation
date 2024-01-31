@@ -7,7 +7,7 @@ import net.minecraft.world.item.SwordItem;
 
 import java.util.function.Consumer;
 
-import static mrthomas20121.gravitation.item.GraviItems.SALMON_ROSE;
+import static mrthomas20121.gravitation.item.GravitationItems.SALMON_ROSE;
 
 public class BronziteSwordItem extends SwordItem {
 

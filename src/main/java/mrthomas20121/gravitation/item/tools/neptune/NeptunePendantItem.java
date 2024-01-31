@@ -31,7 +31,7 @@ public class NeptunePendantItem extends PendantItem {
     }
 
     @Override
-    public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
+    public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity().isInWaterRainOrBubble()) {
             slotContext.entity().addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0, false, false));
         }

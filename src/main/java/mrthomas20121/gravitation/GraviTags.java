@@ -67,6 +67,8 @@ public class GraviTags {
 
         public static TagKey<Item> BRONZITE_ORE = forgeTag("ores/bronzite");
 
+        public static TagKey<Item> NEPTUNE_TOOLS = tag("neptune_tools");
+
         private static TagKey<Item> tag(String name) {
             return TagKey.create(Registries.ITEM, new ResourceLocation(Gravitation.MOD_ID, name));
         }

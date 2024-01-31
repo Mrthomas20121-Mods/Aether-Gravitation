@@ -7,7 +7,7 @@ import net.minecraft.world.item.ItemStack;
 
 import java.util.function.Consumer;
 
-import static mrthomas20121.gravitation.item.GraviItems.SALMON_ROSE;
+import static mrthomas20121.gravitation.item.GravitationItems.SALMON_ROSE;
 
 public class BronziteBattleAxeItem extends BattleAxeItem {
 

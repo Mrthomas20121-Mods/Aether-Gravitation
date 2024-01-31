@@ -1,0 +1,84 @@
+{
+  "type": "gravitation:aether_dungeon_loot",
+  "chanceToSpawn": 0.5,
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "aether:chests/dungeon/bronze/bronze_dungeon_reward"
+    }
+  ],
+  "items": [
+    {
+      "data": {
+        "Count": 1,
+        "id": "gravitation:neptune_axe",
+        "tag": {
+          "Damage": 0
+        }
+      },
+      "weight": 10
+    },
+    {
+      "data": {
+        "Count": 1,
+        "id": "gravitation:neptune_battleaxe",
+        "tag": {
+          "Damage": 0
+        }
+      },
+      "weight": 10
+    },
+    {
+      "data": {
+        "Count": 1,
+        "id": "gravitation:neptune_cutlass",
+        "tag": {
+          "Damage": 0
+        }
+      },
+      "weight": 10
+    },
+    {
+      "data": {
+        "Count": 1,
+        "id": "gravitation:neptune_pickaxe",
+        "tag": {
+          "Damage": 0
+        }
+      },
+      "weight": 10
+    },
+    {
+      "data": {
+        "Count": 1,
+        "id": "gravitation:neptune_shovel",
+        "tag": {
+          "Damage": 0
+        }
+      },
+      "weight": 10
+    },
+    {
+      "data": {
+        "Count": 1,
+        "id": "gravitation:neptune_ring"
+      },
+      "weight": 10
+    },
+    {
+      "data": {
+        "Count": 1,
+        "id": "gravitation:neptune_pendant"
+      },
+      "weight": 10
+    },
+    {
+      "data": {
+        "Count": 1,
+        "id": "gravitation:dig_stone"
+      },
+      "weight": 80
+    }
+  ],
+  "totalWeight": 200
+}

@@ -1,6 +1,6 @@
 package mrthomas20121.gravitation.client;
 
-import mrthomas20121.gravitation.item.GraviItems;
+import mrthomas20121.gravitation.item.GravitationItems;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -9,7 +9,7 @@ public class GraviModelPredicate {
 
     public static void init()
     {
-        createActivePredicate(GraviItems.BRONZITE_SHIELD.get(), "blocking");
+        createActivePredicate(GravitationItems.BRONZITE_SHIELD.get(), "blocking");
     }
 
     /**

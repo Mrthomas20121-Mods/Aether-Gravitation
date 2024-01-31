@@ -1,0 +1,38 @@
+{
+  "parent": "gravitation:bronzite_rock",
+  "criteria": {
+    "bronzite_rock": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "gravitation:bronzite_upgrade_smithing_template"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.gravitation.bronzite_upgrade.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "gravitation:bronzite_upgrade_smithing_template"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.gravitation.bronzite_upgrade"
+    }
+  },
+  "requirements": [
+    [
+      "bronzite_rock"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

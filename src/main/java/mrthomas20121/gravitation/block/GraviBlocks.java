@@ -9,7 +9,7 @@ import com.aetherteam.aether.mixin.mixins.common.accessor.FireBlockAccessor;
 import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.block.wood.*;
 import mrthomas20121.gravitation.block_entity.EnchantedHangingSignBlockEntity;
-import mrthomas20121.gravitation.item.GraviItems;
+import mrthomas20121.gravitation.item.GravitationItems;
 import mrthomas20121.gravitation.util.ToolAction;
 import mrthomas20121.gravitation.world.treegrower.*;
 import net.minecraft.core.BlockPos;
@@ -39,8 +39,17 @@ public class GraviBlocks {
     public static final RegistryObject<AetherGrassBlock> AER_GRASS = register("aer_grass", () -> new AetherGrassBlock(Block.Properties.copy(AetherBlocks.AETHER_GRASS_BLOCK.get())));
 
     public static final RegistryObject<Block> AERFIN_LEAVES = register("aerfin_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_BLUE).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
-    public static final RegistryObject<Block> BLUE_AERFIN_LEAVES = register("blue_aerfin_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_BLUE).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
-    public static final RegistryObject<Block> GOLDEN_AERFIN_LEAVES = register("golden_aerfin_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.GOLD).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
+    public static final RegistryObject<Block> BLUE_AERFIN_LEAVES = register("blue_aerfin_leaves", () -> new BlueAerfinLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_BLUE).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
+    public static final RegistryObject<Block> GOLDEN_AERFIN_LEAVES = register("golden_aerfin_leaves", () -> new GoldenAerfinLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.GOLD).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
+
+    public static final RegistryObject<SaplingBlock> AERFIN_SAPLING = register("aerfin_sapling", () -> new SaplingBlock(new AerfinTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<SaplingBlock> BLUE_AERFIN_SAPLING = register("blue_aerfin_sapling", () -> new SaplingBlock(new BlueAerfinTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<SaplingBlock> GOLDEN_AERFIN_SAPLING = register("golden_aerfin_sapling", () -> new SaplingBlock(new GoldenAerfinTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
+
+    public static final RegistryObject<FlowerPotBlock> POTTED_AERFIN_SAPLING = BLOCKS.register("potted_aerfin_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, AERFIN_SAPLING, Block.Properties.copy(Blocks.FLOWER_POT)));
+    public static final RegistryObject<FlowerPotBlock> POTTED_BLUE_AERFIN_SAPLING = BLOCKS.register("potted_blue_aerfin_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BLUE_AERFIN_SAPLING, Block.Properties.copy(Blocks.FLOWER_POT)));
+    public static final RegistryObject<FlowerPotBlock> POTTED_GOLDEN_AERFIN_SAPLING = BLOCKS.register("potted_golden_aerfin_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GOLDEN_AERFIN_SAPLING, Block.Properties.copy(Blocks.FLOWER_POT)));
+
     public static final RegistryObject<RotatedPillarBlock> AERFIN_LOG = register("aerfin_log", () -> new AetherLogBlock(Block.Properties.copy(Blocks.OAK_LOG).mapColor(MapColor.COLOR_PURPLE)));
     public static final RegistryObject<RotatedPillarBlock> STRIPPED_AERFIN_LOG = register("stripped_aerfin_log", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.STRIPPED_OAK_LOG).mapColor(MapColor.COLOR_PURPLE)));
     public static final RegistryObject<RotatedPillarBlock> AERFIN_WOOD = register("aerfin_wood", () -> new AetherLogBlock(Block.Properties.copy(Blocks.OAK_WOOD).mapColor(MapColor.COLOR_PURPLE)));
@@ -59,10 +68,6 @@ public class GraviBlocks {
     public static final RegistryObject<WallSignBlock> AERFIN_WALL_SIGN = register("aerfin_wall_sign", () -> new AerfinWallSignBlock(Block.Properties.copy(Blocks.OAK_WALL_SIGN).noCollission().strength(1.0F).sound(SoundType.WOOD).lootFrom(AERFIN_SIGN), GraviWoodType.AERFIN));
     public static final RegistryObject<CeilingHangingSignBlock> AERFIN_HANGING_SIGN = registerAerfinHangingSign("aerfin_hanging_sign", () -> new AerfinHangingSignBlock(BlockBehaviour.Properties.of().mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava(), GraviWoodType.AERFIN));
     public static final RegistryObject<WallHangingSignBlock> AERFIN_WALL_HANGING_SIGN = register("aerfin_wall_hanging_sign", () -> new AerfinWallHangingSignBlock(BlockBehaviour.Properties.of().mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava(), GraviWoodType.AERFIN));
-    public static final RegistryObject<SaplingBlock> AERFIN_SAPLING = register("aerfin_sapling", () -> new SaplingBlock(new AerfinTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
-    public static final RegistryObject<SaplingBlock> BLUE_AERFIN_SAPLING = register("blue_aerfin_sapling", () -> new SaplingBlock(new BlueAerfinTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
-    public static final RegistryObject<SaplingBlock> GOLDEN_AERFIN_SAPLING = register("golden_aerfin_sapling", () -> new SaplingBlock(new GoldenAerfinTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
-
 
     public static final RegistryObject<Block> BELADON_LEAVES = register("beladon_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_ORANGE).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
     public static final RegistryObject<RotatedPillarBlock> BELADON_LOG = register("beladon_log", () -> new AetherLogBlock(Block.Properties.copy(Blocks.OAK_LOG).mapColor(MapColor.TERRACOTTA_BROWN)));
@@ -84,7 +89,7 @@ public class GraviBlocks {
     public static final RegistryObject<CeilingHangingSignBlock> BELADON_HANGING_SIGN = registerBeladonHangingSign("beladon_hanging_sign", () -> new BeladonHangingSignBlock(Block.Properties.copy(Blocks.OAK_WALL_SIGN).mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava(), GraviWoodType.BELADON));
     public static final RegistryObject<WallHangingSignBlock> BELADON_WALL_HANGING_SIGN = register("beladon_wall_hanging_sign", () -> new BeladonWallHangingSignBlock(Block.Properties.copy(Blocks.OAK_WALL_HANGING_SIGN).mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava(), GraviWoodType.BELADON));
     public static final RegistryObject<SaplingBlock> BELADON_SAPLING = register("beladon_sapling", () -> new SaplingBlock(new BeladonTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
-
+    public static final RegistryObject<FlowerPotBlock> POTTED_BELADON_SAPLING = BLOCKS.register("potted_beladon_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BELADON_SAPLING, Block.Properties.copy(Blocks.FLOWER_POT)));
     public static final RegistryObject<Block> ENCHANTED_LEAVES = register("enchanted_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GraviBlocks::ocelotOrParrot).isSuffocating(GraviBlocks::never).isViewBlocking(GraviBlocks::never)));
     public static final RegistryObject<RotatedPillarBlock> ENCHANTED_LOG = register("enchanted_log", () -> new AetherLogBlock(Block.Properties.copy(Blocks.OAK_LOG)));
     public static final RegistryObject<RotatedPillarBlock> STRIPPED_ENCHANTED_LOG = register("stripped_enchanted_log", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.STRIPPED_OAK_LOG)));
@@ -107,12 +112,13 @@ public class GraviBlocks {
     public static final RegistryObject<WallHangingSignBlock> ENCHANTED_WALL_HANGING_SIGN = register("enchanted_wall_hanging_sign", () -> new GravitationWallHangingSignBlock(ExtendedProperties.create(properties ->
             properties.mapColor(Blocks.OAK_LOG.defaultMapColor()).forceSolidOn().instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).ignitedByLava()).blockEntity(EnchantedHangingSignBlockEntity::new), GraviWoodType.ENCHANTED));
     public static final RegistryObject<SaplingBlock> ENCHANTED_SAPLING = register("enchanted_sapling", () -> new SaplingBlock(new EnchantedTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<FlowerPotBlock> POTTED_ENCHANTED_SAPLING = BLOCKS.register("potted_enchanted_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ENCHANTED_SAPLING, Block.Properties.copy(Blocks.FLOWER_POT)));
 
-    public static final RegistryObject<Block> BRONZITE_BLOCK = register("bronzite_block", () -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK)), (b) -> () -> new BlockItem(b.get(), new Item.Properties().rarity(GraviItems.SALMON_ROSE)));
+    public static final RegistryObject<Block> BRONZITE_BLOCK = register("bronzite_block", () -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK)), (b) -> () -> new BlockItem(b.get(), new Item.Properties().rarity(GravitationItems.SALMON_ROSE)));
 
-    public static final RegistryObject<Block> BRONZITE_ORE = register("bronzite_ore", () -> new Block(Block.Properties.copy(AetherBlocks.ZANITE_ORE.get())), (b) -> () -> new BlockItem(b.get(), new Item.Properties().rarity(GraviItems.SALMON_ROSE)));
+    public static final RegistryObject<Block> BRONZITE_ORE = register("bronzite_ore", () -> new Block(Block.Properties.copy(AetherBlocks.ZANITE_ORE.get())), (b) -> () -> new BlockItem(b.get(), new Item.Properties().rarity(GravitationItems.SALMON_ROSE)));
 
-    public static final RegistryObject<Block> BRONZITE_ICESTONE_ORE = register("bronzite_icestone_ore", () -> new Block(Block.Properties.copy(AetherBlocks.ZANITE_ORE.get())), (b) -> () -> new BlockItem(b.get(), new Item.Properties().rarity(GraviItems.SALMON_ROSE)));
+    public static final RegistryObject<Block> BRONZITE_ICESTONE_ORE = register("bronzite_icestone_ore", () -> new Block(Block.Properties.copy(AetherBlocks.ZANITE_ORE.get())), (b) -> () -> new BlockItem(b.get(), new Item.Properties().rarity(GravitationItems.SALMON_ROSE)));
 
     public static final RegistryObject<Block> ENCHANTED_MOSS = register("enchanted_moss", () -> new Block(Block.Properties.copy(Blocks.MOSS_BLOCK)));
 
@@ -133,11 +139,36 @@ public class GraviBlocks {
 
     public static void registerPots() {
         FlowerPotBlock pot = (FlowerPotBlock) Blocks.FLOWER_POT;
-        pot.addPlant(GraviBlocks.ENCHANTED_SAPLING.getId(), GraviBlocks.ENCHANTED_SAPLING);
+        pot.addPlant(GraviBlocks.AERFIN_SAPLING.getId(), GraviBlocks.POTTED_AERFIN_SAPLING);
+        pot.addPlant(GraviBlocks.BLUE_AERFIN_SAPLING.getId(), GraviBlocks.POTTED_BLUE_AERFIN_SAPLING);
+        pot.addPlant(GraviBlocks.GOLDEN_AERFIN_SAPLING.getId(), GraviBlocks.POTTED_GOLDEN_AERFIN_SAPLING);
+        pot.addPlant(GraviBlocks.BELADON_SAPLING.getId(), GraviBlocks.POTTED_BELADON_SAPLING);
+        pot.addPlant(GraviBlocks.ENCHANTED_SAPLING.getId(), GraviBlocks.POTTED_ENCHANTED_SAPLING);
     }
 
     public static void registerFlammability() {
         FireBlockAccessor fireBlockAccessor = (FireBlockAccessor) Blocks.FIRE;
+
+        fireBlockAccessor.callSetFlammable(GraviBlocks.AERFIN_LEAVES.get(), 30, 60);
+        fireBlockAccessor.callSetFlammable(GraviBlocks.BLUE_AERFIN_LEAVES.get(), 30, 60);
+        fireBlockAccessor.callSetFlammable(GraviBlocks.GOLDEN_AERFIN_LEAVES.get(), 30, 60);
+        fireBlockAccessor.callSetFlammable(GraviBlocks.AERFIN_PLANKS.get(), 5, 20);
+        fireBlockAccessor.callSetFlammable(GraviBlocks.AERFIN_LOG.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GraviBlocks.STRIPPED_AERFIN_LOG.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GraviBlocks.AERFIN_WOOD.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GraviBlocks.STRIPPED_AERFIN_WOOD.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GraviBlocks.AERFIN_FENCE.get(), 5, 20);
+        fireBlockAccessor.callSetFlammable(GraviBlocks.AERFIN_FENCE_GATE.get(), 5, 20);
+
+        fireBlockAccessor.callSetFlammable(GraviBlocks.BELADON_LEAVES.get(), 30, 60);
+        fireBlockAccessor.callSetFlammable(GraviBlocks.BELADON_PLANKS.get(), 5, 20);
+        fireBlockAccessor.callSetFlammable(GraviBlocks.BELADON_LOG.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GraviBlocks.STRIPPED_BELADON_LOG.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GraviBlocks.BELADON_WOOD.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GraviBlocks.STRIPPED_BELADON_WOOD.get(), 5, 5);
+        fireBlockAccessor.callSetFlammable(GraviBlocks.BELADON_FENCE.get(), 5, 20);
+        fireBlockAccessor.callSetFlammable(GraviBlocks.BELADON_FENCE_GATE.get(), 5, 20);
+
         fireBlockAccessor.callSetFlammable(GraviBlocks.ENCHANTED_LEAVES.get(), 30, 60);
         fireBlockAccessor.callSetFlammable(GraviBlocks.ENCHANTED_PLANKS.get(), 5, 20);
         fireBlockAccessor.callSetFlammable(GraviBlocks.ENCHANTED_LOG.get(), 5, 5);
@@ -149,6 +180,13 @@ public class GraviBlocks {
     }
 
     public static void registerStripping() {
+
+        ToolAction.registerStripping(GraviBlocks.AERFIN_LOG.get(), GraviBlocks.STRIPPED_AERFIN_LOG.get());
+        ToolAction.registerStripping(GraviBlocks.AERFIN_WOOD.get(), GraviBlocks.STRIPPED_AERFIN_WOOD.get());
+
+        ToolAction.registerStripping(GraviBlocks.BELADON_LOG.get(), GraviBlocks.STRIPPED_BELADON_LOG.get());
+        ToolAction.registerStripping(GraviBlocks.BELADON_WOOD.get(), GraviBlocks.STRIPPED_BELADON_WOOD.get());
+
         ToolAction.registerStripping(GraviBlocks.ENCHANTED_LOG.get(), GraviBlocks.STRIPPED_ENCHANTED_LOG.get());
         ToolAction.registerStripping(GraviBlocks.ENCHANTED_WOOD.get(), GraviBlocks.STRIPPED_ENCHANTED_WOOD.get());
     }
@@ -184,7 +222,7 @@ public class GraviBlocks {
 
     public static <B extends Block, I extends Item> RegistryObject<B> register(String name, Supplier<B> block, Function<RegistryObject<B>, Supplier<I>> blockItem) {
         RegistryObject<B> registeredBlock = BLOCKS.register(name, block);
-        GraviItems.ITEMS.register(name, blockItem.apply(registeredBlock));
+        GravitationItems.ITEMS.register(name, blockItem.apply(registeredBlock));
         return registeredBlock;
     }
 

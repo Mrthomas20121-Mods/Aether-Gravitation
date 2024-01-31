@@ -1,0 +1,38 @@
+{
+  "parent": "aether:the_aether",
+  "criteria": {
+    "neptune_wrath_enchant": {
+      "conditions": {
+        "item": {
+          "enchantments": [
+            {
+              "enchantment": "gravitation:neptune_wrath"
+            }
+          ]
+        }
+      },
+      "trigger": "minecraft:enchanted_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.gravitation.neptune_wrath.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "minecraft:enchanted_book"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.gravitation.neptune_wrath"
+    }
+  },
+  "requirements": [
+    [
+      "neptune_wrath_enchant"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

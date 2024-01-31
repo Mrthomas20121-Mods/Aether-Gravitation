@@ -1,13 +1,12 @@
 package mrthomas20121.gravitation.item.tools;
 
 import mrthomas20121.gravitation.GraviTags;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ShieldItem;
 import org.jetbrains.annotations.NotNull;
 
-import static mrthomas20121.gravitation.item.GraviItems.SALMON_ROSE;
+import static mrthomas20121.gravitation.item.GravitationItems.SALMON_ROSE;
 
 public class BronziteShieldItem extends ShieldItem {
 

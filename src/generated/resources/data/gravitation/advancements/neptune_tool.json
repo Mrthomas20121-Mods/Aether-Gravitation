@@ -1,0 +1,37 @@
+{
+  "parent": "aether:the_aether",
+  "criteria": {
+    "neptune_tool": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "gravitation:neptune_tools"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.gravitation.neptune.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "gravitation:neptune_cutlass",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.gravitation.neptune"
+    }
+  },
+  "requirements": [
+    [
+      "neptune_tool"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
