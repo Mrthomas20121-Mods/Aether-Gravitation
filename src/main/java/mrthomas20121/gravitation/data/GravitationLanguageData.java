@@ -26,22 +26,22 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         add("itemGroup.gravitation.building_blocks", "Gravitation Building Blocks");
 
         addAdvancement("bronzite_rock", "Lucky Rock");
-        addAdvancementDesc("bronzite_rock", "Obtain a Bronzite Rock.");
+        addAdvancementDesc("bronzite_rock", "Obtain a Bronzite Rock");
 
         addAdvancement("bronzite_upgrade", "Shiny Upgrade");
-        addAdvancementDesc("bronzite_upgrade", "Find a bronzite upgrade in dungeon chests.");
+        addAdvancementDesc("bronzite_upgrade", "Find a bronzite upgrade in dungeon chests");
 
         addAdvancement("bronzite_armor", "Shiny Armor Set");
-        addAdvancementDesc("bronzite_armor", "Get a full bronzite armor set.");
+        addAdvancementDesc("bronzite_armor", "Get a full bronzite armor set");
 
         addAdvancement("neptune", "God of the Sea");
-        addAdvancementDesc("neptune", "Find a neptune tool/weapon.");
+        addAdvancementDesc("neptune", "Find a neptune tool/weapon");
 
         addAdvancement("neptune_wrath", "Angering the Sea Gods");
-        addAdvancementDesc("neptune_wrath", "Enchant a tool with the Neptune Wrath enchantment.");
+        addAdvancementDesc("neptune_wrath", "Enchant a tool with the Neptune Wrath enchantment");
 
         addAdvancement("hercules_strength", "The Strength of Hercules");
-        addAdvancementDesc("hercules_strength", "Enchant a tool with the Hercules Strength enchantment.");
+        addAdvancementDesc("hercules_strength", "Enchant a tool with the Hercules Strength enchantment");
 
         add("upgrade.gravitation.bronzite_upgrade", "Bronzite Upgrade");
         add("item.gravitation.smithing_template.bronzite_upgrade.applies_to", "Bronzite Rock");
@@ -203,6 +203,10 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addLore(GravitationItems.IRON_BATTLEAXE, "This axe has a good swing to it, you should try using it like a sword.");
         addLore(GravitationItems.NETHERITE_BATTLEAXE, "This axe has a good swing to it, you should try using it like a sword.");
         addLore(GravitationItems.VALKYRIE_BATTLEAXE, "This axe has a good swing to it, you should try using it like a sword.");
+
+        addLore(GravitationItems.NEPTUNE_PICKAXE, "The Pickaxe of Neptune.");
+        addLore(GravitationItems.NEPTUNE_AXE, "The Axe of Neptune.");
+        addLore(GravitationItems.NEPTUNE_CUTLASS, "The Sharp Cutlass of Neptune.");
 
         addLoreUnique("lore.gravitation.neptune_wrath", "Neptune's Wrath deal more damage to Water Mobs.");
         addLoreUnique("lore.gravitation.hercules_strength", "Hercules's Strength deal more damage to Aether Bosses(Sun Spirit Excluded).");
