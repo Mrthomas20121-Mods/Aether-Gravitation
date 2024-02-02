@@ -204,17 +204,12 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addLore(GravitationItems.NETHERITE_BATTLEAXE, "This axe has a good swing to it, you should try using it like a sword.");
         addLore(GravitationItems.VALKYRIE_BATTLEAXE, "This axe has a good swing to it, you should try using it like a sword.");
 
+        addLore(GravitationItems.NEPTUNE_SHOVEL, "The Shovel of Neptune.");
         addLore(GravitationItems.NEPTUNE_PICKAXE, "The Pickaxe of Neptune.");
         addLore(GravitationItems.NEPTUNE_AXE, "The Axe of Neptune.");
         addLore(GravitationItems.NEPTUNE_CUTLASS, "The Sharp Cutlass of Neptune.");
 
-        addLoreUnique("lore.gravitation.neptune_wrath", "Neptune's Wrath deal more damage to Water Mobs.");
-        addLoreUnique("lore.gravitation.hercules_strength", "Hercules's Strength deal more damage to Aether Bosses(Sun Spirit Excluded).");
-//        ModCompat.getCompatList().stream().filter(compat -> ModList.get().isLoaded(compat.getModID())).forEach(compat -> compat.addLang(this));
-    }
-
-    public void advancement(String advName, String name, String desc) {
-        this.add("advancement.gravitation.%s".formatted(advName), name);
-        this.add("advancement.gravitation.%s.desc".formatted(advName), desc);
+        addLoreUnique("gravitation.neptune_wrath", "Neptune's Wrath deal more damage to Water Mobs.");
+        addLoreUnique("gravitation.hercules_strength", "Hercules's Strength deal more damage to Aether Bosses(Sun Spirit Excluded).");
     }
 }

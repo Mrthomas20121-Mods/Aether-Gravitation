@@ -49,7 +49,7 @@ public class GravitationBiomes {
 
     public static Biome beladonMireBiome(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
         return makeAetherDefaultBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers)
-                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GravitationPlacedFeatures.BELADON_MIRE_PLACEMENT));
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GravitationPlacedFeatures.BELADON_PLAINS_PLACEMENT));
     }
 
     public static Biome aerfinForestBiome(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {

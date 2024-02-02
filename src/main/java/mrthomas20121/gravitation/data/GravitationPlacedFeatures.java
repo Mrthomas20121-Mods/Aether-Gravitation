@@ -30,7 +30,7 @@ public class GravitationPlacedFeatures {
     public static final ResourceKey<PlacedFeature> BLUE_AERFIN_FOREST_PLACEMENT = createKey("blue_aerfin_forest_placement");
     public static final ResourceKey<PlacedFeature> GOLDEN_AERFIN_FOREST_PLACEMENT = createKey("golden_aerfin_forest_placement");
     public static final ResourceKey<PlacedFeature> BELADON_FOREST_PLACEMENT = createKey("beladon_forest_placement");
-    public static final ResourceKey<PlacedFeature> BELADON_MIRE_PLACEMENT = createKey("beladon_mire");
+    public static final ResourceKey<PlacedFeature> BELADON_PLAINS_PLACEMENT = createKey("beladon_plains");
     public static final ResourceKey<PlacedFeature> ENCHANTED_TREES_PLACEMENT = createKey("enchanted_tree");
     public static final ResourceKey<PlacedFeature> GOLDEN_ENCHANTED_TREES_PLACEMENT = createKey("golden_enchanted_tree");
     public static final ResourceKey<PlacedFeature> SMALL_ENCHANTED_TREES_PLACEMENT = createKey("small_enchanted_tree");
@@ -47,18 +47,18 @@ public class GravitationPlacedFeatures {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, AERFIN_FOREST_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.AERFIN_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(4, 0.1F, 2)));
+                treePlacement(PlacementUtils.countExtra(3, 0.1F, 2)));
 
         register(context, BLUE_AERFIN_FOREST_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.BLUE_AERFIN_TREE_CONFIGURATION),
                 treePlacement(PlacementUtils.countExtra(2, 0.1F, 1)));
 
         register(context, GOLDEN_AERFIN_FOREST_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.GOLDEN_AERFIN_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(3, 0.1F, 1)));
+                treePlacement(PlacementUtils.countExtra(2, 0.1F, 1)));
 
         register(context, BELADON_FOREST_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.BELADON_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(4, 0.1F, 2)));
+                treePlacement(PlacementUtils.countExtra(2, 0.1F, 2)));
 
-        register(context, BELADON_MIRE_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.BELADON_TREE_CONFIGURATION),
+        register(context, BELADON_PLAINS_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.BELADON_TREE_CONFIGURATION),
                 treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
 
         register(context, ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.ENCHANTED_TREE_CONFIGURATION),

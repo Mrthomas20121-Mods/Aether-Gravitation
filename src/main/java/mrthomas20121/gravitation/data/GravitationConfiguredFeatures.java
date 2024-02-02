@@ -5,6 +5,7 @@ import com.aetherteam.aether.block.AetherBlocks;
 import com.aetherteam.aether.data.resources.AetherFeatureStates;
 import com.google.common.collect.ImmutableList;
 import mrthomas20121.gravitation.block.GravitationBlocks;
+import mrthomas20121.gravitation.item.GravitationItems;
 import mrthomas20121.gravitation.world.foliageplacer.AerfinFoliagePlacer;
 import mrthomas20121.gravitation.world.foliageplacer.EnchantedFoliagePlacer;
 import mrthomas20121.gravitation.world.treedecorator.GraviAlterGroundDecorator;
@@ -15,6 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
@@ -56,7 +58,7 @@ public class GravitationConfiguredFeatures {
                 .decorators(ImmutableList.of(new GraviAlterGroundDecorator(BlockStateProvider.simple(GravitationBlocks.AER_GRASS.get())))).build());
         register(context, GOLDEN_AERFIN_TREE_CONFIGURATION, Feature.TREE, createGoldenAerfin().dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get()))
                 .decorators(ImmutableList.of(new GraviAlterGroundDecorator(BlockStateProvider.simple(GravitationBlocks.ENCHANTED_MOSS.get())))).build());
-        register(context, BELADON_TREE_CONFIGURATION, Feature.TREE, createBeladon().dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
+        register(context, BELADON_TREE_CONFIGURATION, Feature.TREE, createStraightBlobTree(GravitationBlocks.BELADON_LOG.get(), GravitationBlocks.BELADON_LEAVES.get(), 5, 3, 0, 3).dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
         register(context, ENCHANTED_TREE_CONFIGURATION, Feature.TREE, createEnchanted().dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
     }
 
@@ -84,12 +86,12 @@ public class GravitationConfiguredFeatures {
         return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(p_195147_), new StraightTrunkPlacer(baseHeight, heightRandA, heightRandB), BlockStateProvider.simple(p_195148_), new AerfinFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), UniformInt.of(4, 8)), new TwoLayersFeatureSize(2, 0, 2));
     }
 
-    private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(Block p_195147_, Block p_195148_, int p_195149_, int p_195150_, int p_195151_, int p_195152_) {
-        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(p_195147_), new StraightTrunkPlacer(p_195149_, p_195150_, p_195151_), BlockStateProvider.simple(p_195148_), new AcaciaFoliagePlacer(ConstantInt.of(p_195152_), ConstantInt.of(0)), new TwoLayersFeatureSize(1, 0, 1));
-    }
-
     private static TreeConfiguration.TreeConfigurationBuilder createEnchantedTree(Block p_195147_, Block p_195148_, int p_195149_, int p_195150_, int p_195151_) {
         return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(p_195147_), new StraightTrunkPlacer(p_195149_, p_195150_, p_195151_), BlockStateProvider.simple(p_195148_), new EnchantedFoliagePlacer(ConstantInt.of(2), ConstantInt.of(3), UniformInt.of(3, 4)), new TwoLayersFeatureSize(2, 0, 2));
+    }
+
+    private static TreeConfiguration.TreeConfigurationBuilder createStraightBlobTree(Block p_195147_, Block p_195148_, int p_195149_, int p_195150_, int p_195151_, int p_195152_) {
+        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(p_195147_), new StraightTrunkPlacer(p_195149_, p_195150_, p_195151_), BlockStateProvider.simple(p_195148_), new BlobFoliagePlacer(ConstantInt.of(p_195152_), ConstantInt.of(0), 3), new TwoLayersFeatureSize(1, 0, 1));
     }
 
     private static <FC extends FeatureConfiguration, F extends Feature<FC>> void register(BootstapContext<ConfiguredFeature<?, ?>> context, ResourceKey<ConfiguredFeature<?, ?>> key, F feature, FC configuration) {
