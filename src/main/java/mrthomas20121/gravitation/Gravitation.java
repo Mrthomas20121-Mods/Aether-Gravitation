@@ -64,7 +64,7 @@ public class Gravitation {
 			GravitationBlocks.registerPots();
 			GravitationBlocks.registerStripping();
 
-			Regions.register(new GravitationRegion(new ResourceLocation(MOD_ID, "gravitation"), 20));
+			Regions.register(new GravitationRegion(new ResourceLocation(MOD_ID, "gravitation"), 15));
 
 			SurfaceRuleManager.addSurfaceRules(AetherRuleCategory.THE_AETHER, MOD_ID, GravitationSurfaceData.rules());
 		});
