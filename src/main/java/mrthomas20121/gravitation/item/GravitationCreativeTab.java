@@ -56,11 +56,10 @@ public class GravitationCreativeTab {
     );
 
     public static RegistryObject<CreativeModeTab> MISC = CREATIVE_TABS.register("misc", () -> CreativeModeTab.builder()
-            .icon(() -> new ItemStack(GravitationItems.AECHOR_STRING.get()))
+            .icon(() -> new ItemStack(GravitationItems.BRONZITE_INGOT.get()))
             .title(Component.translatable("itemGroup.gravitation.misc"))
             .withTabsBefore(new ResourceLocation(Gravitation.MOD_ID, "tools"))
             .displayItems((parameters, output) -> {
-                output.accept(GravitationItems.AECHOR_STRING.get());
                 output.accept(GravitationItems.DIG_STONE.get());
                 output.accept(GravitationItems.DENSE_STONE.get());
                 output.accept(GravitationItems.POWER_STONE.get());

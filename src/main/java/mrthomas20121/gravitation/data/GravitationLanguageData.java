@@ -48,11 +48,10 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         add("item.gravitation.smithing_template.bronzite_upgrade.ingredients", "Zanite Gemstone");
 
         addItem(GravitationItems.GREATER_HEALING_STONE, "Greater Healing Stone");
-        addItem(GravitationItems.POWER_STONE, "Power Stone");
+        addItem(GravitationItems.POWER_STONE, "Powering Stone");
         addItem(GravitationItems.DENSE_STONE, "Dense Stone");
-        addItem(GravitationItems.DIG_STONE, "Dig Stone");
+        addItem(GravitationItems.DIG_STONE, "Digging Stone");
         addItem(GravitationItems.RAINBOW_STONE, "Rainbow Stone");
-        addItem(GravitationItems.AECHOR_STRING, "Aechor String");
         addItem(GravitationItems.NEPTUNE_RING, "Neptune Ring");
         addItem(GravitationItems.NEPTUNE_PENDANT, "Neptune Pendant");
         addItem(GravitationItems.NEPTUNE_AXE, "Neptune Axe");
@@ -209,7 +208,7 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addLore(GravitationItems.NEPTUNE_AXE, "The Axe of Neptune.");
         addLore(GravitationItems.NEPTUNE_CUTLASS, "The Sharp Cutlass of Neptune.");
 
-        addLoreUnique("gravitation.neptune_wrath", "Neptune's Wrath deal more damage to Water Mobs.");
-        addLoreUnique("gravitation.hercules_strength", "Hercules's Strength deal more damage to Aether Bosses(Sun Spirit Excluded).");
+        // addLoreUnique("gravitation.neptune_wrath", "Neptune's Wrath deal more damage to Water Mobs.");
+        // addLoreUnique("gravitation.hercules_strength", "Hercules's Strength deal more damage to Aether Bosses(Sun Spirit Excluded).");
     }
 }

@@ -71,8 +71,6 @@ public class GravitationItemTags extends ItemTagsProvider {
 
         this.tag(GraviTags.Items.CAN_CREATE_ENCHANTING_TABLE).add(AetherItems.GOLDEN_AMBER.get());
 
-        this.tag(Tags.Items.STRING).add(GravitationItems.AECHOR_STRING.get());
-
         this.tag(AetherTags.Items.FREEZABLE_RINGS).add(GravitationItems.BRONZITE_RING.get());
         this.tag(AetherTags.Items.FREEZABLE_PENDANTS).add(GravitationItems.BRONZITE_PENDANT.get());
 

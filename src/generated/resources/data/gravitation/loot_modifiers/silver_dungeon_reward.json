@@ -1,6 +1,6 @@
 {
   "type": "gravitation:aether_dungeon_loot",
-  "chanceToSpawn": 0.7,
+  "chanceToSpawn": 0.5,
   "conditions": [
     {
       "condition": "forge:loot_table_id",
@@ -11,88 +11,70 @@
     {
       "data": {
         "Count": 1,
-        "id": "gravitation:neptune_axe",
-        "tag": {
-          "Damage": 0
-        }
+        "item": "gravitation:neptune_axe"
       },
       "weight": 30
     },
     {
       "data": {
         "Count": 1,
-        "id": "gravitation:neptune_battleaxe",
-        "tag": {
-          "Damage": 0
-        }
+        "item": "gravitation:neptune_battleaxe"
       },
       "weight": 30
     },
     {
       "data": {
         "Count": 1,
-        "id": "gravitation:neptune_cutlass",
-        "tag": {
-          "Damage": 0
-        }
+        "item": "gravitation:neptune_cutlass"
       },
       "weight": 30
     },
     {
       "data": {
         "Count": 1,
-        "id": "gravitation:neptune_pickaxe",
-        "tag": {
-          "Damage": 0
-        }
+        "item": "gravitation:neptune_pickaxe"
       },
       "weight": 30
     },
     {
       "data": {
         "Count": 1,
-        "id": "gravitation:neptune_shovel",
-        "tag": {
-          "Damage": 0
-        }
+        "item": "gravitation:neptune_shovel"
       },
       "weight": 30
     },
     {
       "data": {
         "Count": 1,
-        "id": "gravitation:neptune_ring"
+        "item": "gravitation:neptune_ring"
       },
       "weight": 10
     },
     {
       "data": {
         "Count": 1,
-        "id": "gravitation:neptune_pendant"
+        "item": "gravitation:neptune_pendant"
       },
       "weight": 10
     },
     {
       "data": {
         "Count": 1,
-        "id": "gravitation:valkyrie_battleaxe",
-        "tag": {
-          "Damage": 0
-        }
+        "item": "gravitation:valkyrie_battleaxe"
       },
       "weight": 50
     },
     {
       "data": {
         "Count": 1,
-        "id": "gravitation:greater_healing_stone"
+        "item": "gravitation:greater_healing_stone"
       },
       "weight": 40
     },
     {
       "data": {
         "Count": 1,
-        "id": "gravitation:dense_stone"
+        "item": "gravitation:dense_stone"
       },
       "weight": 40
     }

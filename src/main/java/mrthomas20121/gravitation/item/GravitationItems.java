@@ -30,8 +30,6 @@ public class GravitationItems {
 
     public static Rarity SALMON_ROSE = Rarity.create("salmon_rose", style -> style.withColor(0xff9fb2));
 
-    public static RegistryObject<Item> AECHOR_STRING = ITEMS.register("aechor_string", () -> new Item(new Item.Properties()));
-
     public static RegistryObject<Item> GREATER_HEALING_STONE = ITEMS.register("greater_healing_stone", GreaterHealingStoneItem::new);
     public static RegistryObject<Item> POWER_STONE = ITEMS.register("power_stone", PowerStoneItem::new);
     public static RegistryObject<Item> DENSE_STONE = ITEMS.register("dense_stone", DenseStoneItem::new);

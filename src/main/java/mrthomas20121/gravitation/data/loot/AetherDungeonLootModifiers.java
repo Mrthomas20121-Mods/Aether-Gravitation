@@ -4,6 +4,7 @@ import com.google.common.base.Suppliers;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import mrthomas20121.gravitation.util.ItemData;
 import net.minecraft.util.random.WeightedEntry;
 import net.minecraft.util.random.WeightedRandom;
 import net.minecraft.world.item.ItemStack;
@@ -22,18 +23,18 @@ import java.util.function.Supplier;
 public class AetherDungeonLootModifiers extends LootModifier {
 
     public static final Supplier<Codec<AetherDungeonLootModifiers>> CODEC = Suppliers.memoize(() -> RecordCodecBuilder.create(inst -> codecStart(inst)
-            .and(WeightedEntry.Wrapper.codec(ItemStack.CODEC).listOf().fieldOf("items").forGetter(m -> m.items))
+            .and(WeightedEntry.Wrapper.codec(ItemData.CODEC).listOf().fieldOf("items").forGetter(m -> m.items))
             .and(Codec.INT.fieldOf("totalWeight").forGetter(m -> m.totalWeight))
             .and(Codec.FLOAT.fieldOf("chanceToSpawn").forGetter(m -> m.chance))
             .apply(inst, AetherDungeonLootModifiers::new)));
 
-    public final List<WeightedEntry.Wrapper<ItemStack>> items;
+    public final List<WeightedEntry.Wrapper<ItemData>> items;
     public final int totalWeight;
     public final float chance;
 
-    public AetherDungeonLootModifiers(final LootItemCondition[] conditionsIn, List<WeightedEntry.Wrapper<ItemStack>> items, int totalWeight, float chance) {
+    public AetherDungeonLootModifiers(final LootItemCondition[] conditionsIn, List<WeightedEntry.Wrapper<ItemData>> items, int totalWeight, float chance) {
         super(conditionsIn);
-        this.items = items.stream().map(wrapper -> WeightedEntry.wrap(wrapper.getData().copy(), wrapper.getWeight().asInt())).toList();
+        this.items = items;
         this.totalWeight = totalWeight;
         this.chance = chance;
     }
@@ -49,30 +50,19 @@ public class AetherDungeonLootModifiers extends LootModifier {
         // is the loot full?
         boolean isFull = size == 27;
 
-        // size diff for when it's not full
-        int sizeDiff = 27-size;
-
-        for(ItemStack stack: generatedLoot) {
+        for(int i = 0; i< size; i++) {
             // chest is full => x chance to replace the item by one of my item
             // chest is not full => we don't replace any loot
-            if(isFull) {
+            if(!isFull) {
                 if(context.getRandom().nextFloat() > chance) {
-                    WeightedRandom.getRandomItem(context.getRandom(), this.items, totalWeight).ifPresent(e -> list.add(e.getData()));
-                }
-            }
-            else {
-                list.add(stack);
-            }
-        }
-
-        // if the loot is not full, for each slot remaining, have x chance to add one of our item in the empty slots
-        if(!isFull) {
-            for(int i = 0; i<= sizeDiff; i++) {
-                if(context.getRandom().nextFloat() > chance) {
-                    WeightedRandom.getRandomItem(context.getRandom(), this.items, totalWeight).ifPresent(e -> list.add(e.getData()));
+                    WeightedRandom.getRandomItem(context.getRandom(), this.items, totalWeight).ifPresent(e -> {
+                        ItemData data = e.getData();
+                        list.add(new ItemStack(data.item(), data.count()));
+                    });
                 }
             }
         }
+        list.addAll(list.size()-1, generatedLoot);
 
         return list;
     }

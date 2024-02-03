@@ -22,8 +22,6 @@ public class GravitationItemData extends AetherItemModelProvider {
         this.item(GravitationItems.DIG_STONE.get(), "");
         this.item(GravitationItems.RAINBOW_STONE.get(), "");
 
-        this.item(GravitationItems.AECHOR_STRING.get(), "");
-
         this.item(GravitationItems.BRONZITE_UPGRADE.get(), "");
         this.itemBlock(GravitationBlocks.BRONZITE_BLOCK.get());
         this.itemBlock(GravitationBlocks.BRONZITE_ORE.get());

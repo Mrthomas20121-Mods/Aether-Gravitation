@@ -1,6 +1,6 @@
 {
   "type": "gravitation:aether_dungeon_loot",
-  "chanceToSpawn": 0.1,
+  "chanceToSpawn": 0.5,
   "conditions": [
     {
       "condition": "forge:loot_table_id",
@@ -11,16 +11,9 @@
     {
       "data": {
         "Count": 1,
-        "id": "gravitation:aechor_string"
+        "item": "gravitation:bronzite_rock"
       },
-      "weight": 60
-    },
-    {
-      "data": {
-        "Count": 1,
-        "id": "gravitation:bronzite_rock"
-      },
-      "weight": 40
+      "weight": 100
     }
   ],
   "totalWeight": 100

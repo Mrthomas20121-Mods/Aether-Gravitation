@@ -32,9 +32,6 @@ public class GravitationRecipes extends AetherRecipeProvider {
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
 
-        freezingRecipe(RecipeCategory.MISC, GravitationItems.AECHOR_STRING.get(), AetherItems.AECHOR_PETAL.get(), 0.5f, 10)
-                .save(consumer, new ResourceLocation("gravitation:freezing/aechor_string"));
-
         woodRecipes(
                 "aerfin",
                 GravitationBlocks.AERFIN_PLANKS,

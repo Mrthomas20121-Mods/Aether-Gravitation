@@ -11,71 +11,56 @@
     {
       "data": {
         "Count": 1,
-        "id": "gravitation:neptune_axe",
-        "tag": {
-          "Damage": 0
-        }
+        "item": "gravitation:neptune_axe"
       },
       "weight": 10
     },
     {
       "data": {
         "Count": 1,
-        "id": "gravitation:neptune_battleaxe",
-        "tag": {
-          "Damage": 0
-        }
+        "item": "gravitation:neptune_battleaxe"
       },
       "weight": 10
     },
     {
       "data": {
         "Count": 1,
-        "id": "gravitation:neptune_cutlass",
-        "tag": {
-          "Damage": 0
-        }
+        "item": "gravitation:neptune_cutlass"
       },
       "weight": 10
     },
     {
       "data": {
         "Count": 1,
-        "id": "gravitation:neptune_pickaxe",
-        "tag": {
-          "Damage": 0
-        }
+        "item": "gravitation:neptune_pickaxe"
       },
       "weight": 10
     },
     {
       "data": {
         "Count": 1,
-        "id": "gravitation:neptune_shovel",
-        "tag": {
-          "Damage": 0
-        }
+        "item": "gravitation:neptune_shovel"
       },
       "weight": 10
     },
     {
       "data": {
         "Count": 1,
-        "id": "gravitation:neptune_ring"
+        "item": "gravitation:neptune_ring"
       },
       "weight": 10
     },
     {
       "data": {
         "Count": 1,
-        "id": "gravitation:neptune_pendant"
+        "item": "gravitation:neptune_pendant"
       },
       "weight": 10
     },
     {
       "data": {
         "Count": 1,
-        "id": "gravitation:dig_stone"
+        "item": "gravitation:dig_stone"
       },
       "weight": 80
     }

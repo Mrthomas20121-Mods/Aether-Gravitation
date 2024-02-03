@@ -28,8 +28,8 @@ public class GravitationClient {
             Sheets.addWoodType(GraviWoodType.ENCHANTED);
         });
 
-        LoreBookMenu.addLoreEntryOverride(stack -> stack.getEnchantmentLevel(GravitationEnchantments.HERCULES_STRENGTH.get()) > 0, "lore.gravitation.hercules_strength");
-        LoreBookMenu.addLoreEntryOverride(stack -> stack.getEnchantmentLevel(GravitationEnchantments.NEPTUNE_WRATH.get()) > 0, "lore.gravitation.neptune_wrath");
+        // LoreBookMenu.addLoreEntryOverride(stack -> stack.getEnchantmentLevel(GravitationEnchantments.HERCULES_STRENGTH.get()) > 0, "lore.gravitation.hercules_strength");
+        // LoreBookMenu.addLoreEntryOverride(stack -> stack.getEnchantmentLevel(GravitationEnchantments.NEPTUNE_WRATH.get()) > 0, "lore.gravitation.neptune_wrath");
     }
 
     @SubscribeEvent
