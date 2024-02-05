@@ -10,6 +10,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -39,7 +40,8 @@ public class GravitationRegistrySets extends DatapackBuiltinEntriesProvider {
     }
             .add(Registries.CONFIGURED_FEATURE, GravitationConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, GravitationPlacedFeatures::bootstrap)
-            .add(Registries.BIOME, GravitationBiomes::bootstrap);
+            .add(Registries.BIOME, GravitationBiomes::bootstrap)
+            .add(ForgeRegistries.Keys.BIOME_MODIFIERS, GravitationBiomeModifiers::bootstrap);
 
     public GravitationRegistrySets(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, BUILDER, Collections.singleton(Gravitation.MOD_ID));

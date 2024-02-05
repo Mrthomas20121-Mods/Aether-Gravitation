@@ -38,6 +38,8 @@ public class GravitationPlacedFeatures {
     public static final ResourceKey<PlacedFeature> LARGE_BRONZITE_ORE_PLACEMENT = createKey("large_bronzite_ore");
     public static final ResourceKey<PlacedFeature> LARGE_BLUE_AERCLOUD_PLACEMENT = createKey("large_blue_aercloud");
 
+    public static final ResourceKey<PlacedFeature> CONGLOMERATE_PLACEMENT = createKey("conglomerate_placement");
+
     private static ResourceKey<PlacedFeature> createKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(Gravitation.MOD_ID, name));
     }
@@ -47,22 +49,22 @@ public class GravitationPlacedFeatures {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, AERFIN_FOREST_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.AERFIN_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(3, 0.1F, 2)));
+                treePlacement(PlacementUtils.countExtra(4, 0.1F, 2)));
 
         register(context, BLUE_AERFIN_FOREST_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.BLUE_AERFIN_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(2, 0.1F, 1)));
+                treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
 
         register(context, GOLDEN_AERFIN_FOREST_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.GOLDEN_AERFIN_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(2, 0.1F, 1)));
+                treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
 
         register(context, BELADON_FOREST_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.BELADON_TREE_CONFIGURATION),
                 treePlacement(PlacementUtils.countExtra(2, 0.1F, 2)));
 
         register(context, BELADON_PLAINS_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.BELADON_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
+                treePlacement(PlacementUtils.countExtra(1, 0.01F, 0)));
 
         register(context, ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.ENCHANTED_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(4, 0.01F, 3)));
+                treePlacement(PlacementUtils.countExtra(4, 0.1F, 3)));
 
         register(context, GOLDEN_ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(AetherConfiguredFeatures.GOLDEN_OAK_TREE_CONFIGURATION),
                 treePlacement(PlacementUtils.countExtra(2, 0.1F, 1)));
@@ -72,6 +74,9 @@ public class GravitationPlacedFeatures {
 
         register(context, LARGE_BLUE_AERCLOUD_PLACEMENT, configuredFeatures.getOrThrow(AetherConfiguredFeatures.BLUE_AERCLOUD_CONFIGURATION),
                 treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
+
+        register(context, CONGLOMERATE_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.CONGLOMERATE_ORE),
+                NitrogenPlacedFeatureBuilders.commonOrePlacement(10, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(90))));
 
         register(context, BRONZITE_ORE_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.BRONZITE_ORE),
                 NitrogenPlacedFeatureBuilders.commonOrePlacement(12, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(75))));

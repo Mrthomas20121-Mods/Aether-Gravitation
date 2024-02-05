@@ -10,17 +10,17 @@
   "items": [
     {
       "data": {
-        "Count": 1,
+        "count": 1,
         "item": "gravitation:bronzite_upgrade_smithing_template"
       },
-      "weight": 20
+      "weight": 50
     },
     {
       "data": {
-        "Count": 1,
+        "count": 1,
         "item": "gravitation:bronzite_rock"
       },
-      "weight": 80
+      "weight": 5
     }
   ],
   "totalWeight": 100

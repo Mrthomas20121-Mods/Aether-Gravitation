@@ -10,74 +10,74 @@
   "items": [
     {
       "data": {
-        "Count": 1,
+        "count": 1,
         "item": "gravitation:neptune_axe"
       },
-      "weight": 30
+      "weight": 50
     },
     {
       "data": {
-        "Count": 1,
+        "count": 1,
         "item": "gravitation:neptune_battleaxe"
       },
-      "weight": 30
+      "weight": 50
     },
     {
       "data": {
-        "Count": 1,
+        "count": 1,
         "item": "gravitation:neptune_cutlass"
       },
-      "weight": 30
+      "weight": 50
     },
     {
       "data": {
-        "Count": 1,
+        "count": 1,
         "item": "gravitation:neptune_pickaxe"
       },
-      "weight": 30
+      "weight": 50
     },
     {
       "data": {
-        "Count": 1,
+        "count": 1,
         "item": "gravitation:neptune_shovel"
       },
-      "weight": 30
+      "weight": 50
     },
     {
       "data": {
-        "Count": 1,
+        "count": 1,
         "item": "gravitation:neptune_ring"
       },
       "weight": 10
     },
     {
       "data": {
-        "Count": 1,
+        "count": 1,
         "item": "gravitation:neptune_pendant"
       },
       "weight": 10
     },
     {
       "data": {
-        "Count": 1,
+        "count": 1,
         "item": "gravitation:valkyrie_battleaxe"
       },
       "weight": 50
     },
     {
       "data": {
-        "Count": 1,
+        "count": 1,
         "item": "gravitation:greater_healing_stone"
       },
       "weight": 40
     },
     {
       "data": {
-        "Count": 1,
+        "count": 1,
         "item": "gravitation:dense_stone"
       },
       "weight": 40
     }
   ],
-  "totalWeight": 360
+  "totalWeight": 500
 }

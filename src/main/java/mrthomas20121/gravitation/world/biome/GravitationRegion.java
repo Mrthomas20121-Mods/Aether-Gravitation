@@ -47,7 +47,7 @@ public class GravitationRegion extends Region {
         Climate.Parameter depth = Climate.Parameter.span(0F, 1F);
         Climate.Parameter depth2 = Climate.Parameter.span(-1F, 0F);
 
-        this.addBiome(mapper, temperatures[4], Climate.Parameter.span(-0.5F, 0.8F), Climate.Parameter.span(-1F, -0.45F), erosions[0], fullRange, depth2, 0,
+        this.addBiome(mapper, temperatures[3], Climate.Parameter.span(-0.5F, 0.8F), Climate.Parameter.span(-1F, -0.45F), erosions[0], fullRange, depth2, 0,
                 GravitationBiomes.BELADON_PLAINS);
         this.addBiome(mapper, temperatures[2], Climate.Parameter.span(0.0F, 0.8F), Climate.Parameter.span(-1F, 0F), fullRange, fullRange, depth, 0,
                 GravitationBiomes.BELADON_FOREST);

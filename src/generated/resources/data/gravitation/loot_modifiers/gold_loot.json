@@ -10,25 +10,25 @@
   "items": [
     {
       "data": {
-        "Count": 1,
+        "count": 1,
         "item": "gravitation:power_stone"
       },
-      "weight": 50
+      "weight": 200
     },
     {
       "data": {
-        "Count": 2,
+        "count": 2,
         "item": "gravitation:dense_stone"
       },
-      "weight": 30
+      "weight": 200
     },
     {
       "data": {
-        "Count": 1,
+        "count": 1,
         "item": "gravitation:rainbow_stone"
       },
-      "weight": 20
+      "weight": 200
     }
   ],
-  "totalWeight": 10
+  "totalWeight": 600
 }

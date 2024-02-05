@@ -33,14 +33,26 @@
     "gravitation:enchanted_button",
     "gravitation:enchanted_preasure_plate",
     "gravitation:enchanted_stairs",
-    "gravitation:enchanted_sign",
     "gravitation:enchanted_hanging_sign",
+    "gravitation:enchanted_sign",
     "gravitation:enchanted_slab",
     "gravitation:enchanted_fence_gate",
     "gravitation:enchanted_fence",
     "gravitation:enchanted_bookshelf",
     "gravitation:bronzite_icestone_ore",
     "gravitation:bronzite_ore",
-    "gravitation:bronzite_block"
+    "gravitation:bronzite_block",
+    "gravitation:conglomerate",
+    "gravitation:conglomerate_bricks",
+    "gravitation:polished_conglomerate",
+    "gravitation:conglomerate_wall",
+    "gravitation:conglomerate_brick_wall",
+    "gravitation:polished_conglomerate_wall",
+    "gravitation:conglomerate_slab",
+    "gravitation:conglomerate_brick_slab",
+    "gravitation:polished_conglomerate_slab",
+    "gravitation:conglomerate_stairs",
+    "gravitation:conglomerate_brick_stairs",
+    "gravitation:polished_conglomerate_stairs"
   ]
 }

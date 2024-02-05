@@ -166,15 +166,27 @@ public class GravitationBlockTags extends BlockTagsProvider {
                 GravitationBlocks.ENCHANTED_BUTTON.get(),
                 GravitationBlocks.ENCHANTED_PREASURE_PLATE.get(),
                 GravitationBlocks.ENCHANTED_STAIRS.get(),
-                GravitationBlocks.ENCHANTED_SIGN.get(),
                 GravitationBlocks.ENCHANTED_HANGING_SIGN.get(),
+                GravitationBlocks.ENCHANTED_SIGN.get(),
                 GravitationBlocks.ENCHANTED_SLAB.get(),
                 GravitationBlocks.ENCHANTED_FENCE_GATE.get(),
                 GravitationBlocks.ENCHANTED_FENCE.get(),
                 GravitationBlocks.ENCHANTED_BOOKSHELF.get(),
                 GravitationBlocks.BRONZITE_ICESTONE_ORE.get(),
                 GravitationBlocks.BRONZITE_ORE.get(),
-                GravitationBlocks.BRONZITE_BLOCK.get()
+                GravitationBlocks.BRONZITE_BLOCK.get(),
+                GravitationBlocks.CONGLOMERATE.get(),
+                GravitationBlocks.CONGLOMERATE_BRICKS.get(),
+                GravitationBlocks.POLISHED_CONGLOMERATE.get(),
+                GravitationBlocks.CONGLOMERATE_WALLS.get(),
+                GravitationBlocks.CONGLOMERATE_BRICK_WALLS.get(),
+                GravitationBlocks.POLISHED_CONGLOMERATE_WALLS.get(),
+                GravitationBlocks.CONGLOMERATE_SLAB.get(),
+                GravitationBlocks.CONGLOMERATE_BRICK_SLAB.get(),
+                GravitationBlocks.POLISHED_CONGLOMERATE_SLAB.get(),
+                GravitationBlocks.CONGLOMERATE_STAIRS.get(),
+                GravitationBlocks.CONGLOMERATE_BRICK_STAIRS.get(),
+                GravitationBlocks.POLISHED_CONGLOMERATE_STAIRS.get()
         );
 
         this.tag(Tags.Blocks.ORES).add(GravitationBlocks.BRONZITE_ICESTONE_ORE.get(), GravitationBlocks.BRONZITE_ORE.get());
