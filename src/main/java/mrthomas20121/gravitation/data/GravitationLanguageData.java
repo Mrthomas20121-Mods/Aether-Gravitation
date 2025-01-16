@@ -17,7 +17,7 @@ public class GravitationLanguageData extends AetherLanguageProvider {
     protected void addTranslations() {
         add("gravitation.curio.pendant", "When in Pendant Slot:");
         add("gravitation.curio.bronzite_pendant", "+2 Armor Toughness");
-        add("gravitation.curio.neptune_pendant", "Gain water breathing underwater.");
+        add("gravitation.curio.neptune_pendant", "gives water breathing underwater.");
         add("gravitation.curio.ring", "When in Ring Slot:");
         add("gravitation.curio.bronzite_ring", "+2 Armor");
         add("gravitation.curio.neptune_ring", "+1.5 Swim Speed");
@@ -66,7 +66,7 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addItem(GravitationItems.BRONZITE_AXE, "Bronzite Axe");
         addItem(GravitationItems.BRONZITE_HOE, "Bronzite Hoe");
         addItem(GravitationItems.BRONZITE_PICKAXE, "Bronzite Pickaxe");
-        addItem(GravitationItems.BRONZITE_Shovel, "Bronzite Shovel");
+        addItem(GravitationItems.BRONZITE_SHOVEL, "Bronzite Shovel");
         addItem(GravitationItems.BRONZITE_SWORD, "Bronzite Sword");
         addItem(GravitationItems.BRONZITE_SHIELD, "Bronzite Shield");
         addItem(GravitationItems.BRONZITE_RING, "Bronzite Ring");
@@ -77,6 +77,21 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addItem(GravitationItems.BRONZITE_BOOTS, "Bronzite Boots");
         addItem(GravitationItems.BRONZITE_GLOVES, "Bronzite Gloves");
         addItem(GravitationItems.BRONZITE_CAPE, "Bronzite Cape");
+
+        addItem(GravitationItems.ADAMANTITE_GEM, "Adamantite");
+        addItem(GravitationItems.ADAMANTITE_BATTLEAXE, "Adamantite Battleaxe");
+        addItem(GravitationItems.ADAMANTITE_AXE, "Adamantite Axe");
+        addItem(GravitationItems.ADAMANTITE_HOE, "Adamantite Hoe");
+        addItem(GravitationItems.ADAMANTITE_PICKAXE, "Adamantite Pickaxe");
+        addItem(GravitationItems.ADAMANTITE_SHOVEL, "Adamantite Shovel");
+        addItem(GravitationItems.ADAMANTITE_SWORD, "Adamantite Sword");
+        addItem(GravitationItems.ADAMANTITE_HELMET, "Adamantite Helmet");
+        addItem(GravitationItems.ADAMANTITE_CHESTPLATE, "Adamantite Chestplate");
+        addItem(GravitationItems.ADAMANTITE_LEGGING, "Adamantite Leggings");
+        addItem(GravitationItems.ADAMANTITE_BOOTS, "Adamantite Boots");
+        addItem(GravitationItems.ADAMANTITE_GLOVES, "Adamantite Gloves");
+        addItem(GravitationItems.ADAMANTITE_CAPE, "Adamantite Cape");
+
         addItem(GravitationItems.GRAVITITE_BATTLEAXE, "Gravitite Battleaxe");
         addItem(GravitationItems.ZANITE_BATTLEAXE, "Zanite Battleaxe");
         addItem(GravitationItems.VALKYRIE_BATTLEAXE, "Valkyrie Battleaxe");
@@ -191,7 +206,7 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addLore(GravitationItems.BRONZITE_SWORD, "This sword last longer most of the time.");
         addLore(GravitationItems.BRONZITE_AXE, "This axe last longer most of the time.");
         addLore(GravitationItems.BRONZITE_PICKAXE, "This pickaxe last longer most of the time.");
-        addLore(GravitationItems.BRONZITE_Shovel, "This shovel last longer most of the time.");
+        addLore(GravitationItems.BRONZITE_SHOVEL, "This shovel last longer most of the time.");
         addLore(GravitationItems.BRONZITE_BATTLEAXE, "This axe has a good swing to it, you should try using it like a sword.");
         addLore(GravitationItems.BRONZITE_PENDANT, "This pendant has defensive properties.");
         addLore(GravitationItems.BRONZITE_RING, "This ring has defensive properties.");

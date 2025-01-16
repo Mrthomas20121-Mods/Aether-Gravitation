@@ -27,7 +27,7 @@ public class GravitationCreativeTab {
                 output.accept(GravitationItems.BRONZITE_BATTLEAXE.get());
                 output.accept(GravitationItems.BRONZITE_HOE.get());
                 output.accept(GravitationItems.BRONZITE_PICKAXE.get());
-                output.accept(GravitationItems.BRONZITE_Shovel.get());
+                output.accept(GravitationItems.BRONZITE_SHOVEL.get());
                 output.accept(GravitationItems.BRONZITE_SWORD.get());
                 output.accept(GravitationItems.BRONZITE_SHIELD.get());
                 output.accept(GravitationItems.BRONZITE_HELMET.get());
@@ -38,6 +38,20 @@ public class GravitationCreativeTab {
                 output.accept(GravitationItems.BRONZITE_CAPE.get());
                 output.accept(GravitationItems.BRONZITE_RING.get());
                 output.accept(GravitationItems.BRONZITE_PENDANT.get());
+
+                output.accept(GravitationItems.ADAMANTITE_AXE.get());
+                output.accept(GravitationItems.ADAMANTITE_BATTLEAXE.get());
+                output.accept(GravitationItems.ADAMANTITE_HOE.get());
+                output.accept(GravitationItems.ADAMANTITE_PICKAXE.get());
+                output.accept(GravitationItems.ADAMANTITE_SHOVEL.get());
+                output.accept(GravitationItems.ADAMANTITE_SWORD.get());
+                output.accept(GravitationItems.ADAMANTITE_HELMET.get());
+                output.accept(GravitationItems.ADAMANTITE_CHESTPLATE.get());
+                output.accept(GravitationItems.ADAMANTITE_LEGGING.get());
+                output.accept(GravitationItems.ADAMANTITE_BOOTS.get());
+                output.accept(GravitationItems.ADAMANTITE_GLOVES.get());
+                output.accept(GravitationItems.ADAMANTITE_CAPE.get());
+
                 output.accept(GravitationItems.NEPTUNE_AXE.get());
                 output.accept(GravitationItems.NEPTUNE_BATTLEAXE.get());
                 output.accept(GravitationItems.NEPTUNE_CUTLASS.get());
@@ -65,6 +79,7 @@ public class GravitationCreativeTab {
                 output.accept(GravitationItems.POWER_STONE.get());
                 output.accept(GravitationItems.RAINBOW_STONE.get());
                 output.accept(GravitationItems.GREATER_HEALING_STONE.get());
+                output.accept(GravitationItems.ADAMANTITE_GEM.get());
                 output.accept(GravitationItems.BRONZITE_ROCK.get());
                 output.accept(GravitationItems.BRONZITE_INGOT.get());
                 output.accept(GravitationItems.BRONZITE_NUGGET.get());

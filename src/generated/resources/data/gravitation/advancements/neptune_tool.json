@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "gravitation:neptune_tools"
+            "tag": "forge:tools/neptune"
           }
         ]
       },

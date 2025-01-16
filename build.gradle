@@ -102,6 +102,14 @@ repositories {
     }
 
     maven {
+        // Shadows
+        url "https://maven.shadowsoffire.dev/releases"
+        content {
+            includeGroup "dev.shadowsoffire"
+        }
+    }
+
+    maven {
         name 'ModdingLegacyMaven'
         url 'https://maven.moddinglegacy.com/maven'
     }
@@ -126,8 +134,11 @@ dependencies {
     runtimeOnly fg.deobf("com.aetherteam.aether:aether:${mc_version}-${aether_version}")
 
     // curio
-    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curio_version}")
-    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curio_version}:api")
+    implementation fg.deobf("top.theillusivec4.curios:curios-forge:${curio_version}")
+    implementation fg.deobf("top.theillusivec4.curios:curios-forge:${curio_version}:api")
+
+    implementation fg.deobf("dev.shadowsoffire:Placebo:${mc_version}-${placeboVersion}")
+    implementation fg.deobf("dev.shadowsoffire:ApothicAttributes:${mc_version}-${attributeslibVersion}")
 
     //implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19.4:4.1.3')
 

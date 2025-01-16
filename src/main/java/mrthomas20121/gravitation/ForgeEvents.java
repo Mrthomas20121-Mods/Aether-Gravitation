@@ -1,31 +1,92 @@
 package mrthomas20121.gravitation;
 
+import com.aetherteam.aether.AetherTags;
 import com.aetherteam.aether.block.AetherBlocks;
-import com.aetherteam.aether.item.AetherItems;
+import dev.shadowsoffire.attributeslib.api.ALObjects;
+import mrthomas20121.gravitation.effect.GravitationEffects;
 import mrthomas20121.gravitation.enchanting.GravitationEnchantments;
 import mrthomas20121.gravitation.item.tools.neptune.NeptuneTool;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ItemParticleOption;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.event.ItemAttributeModifierEvent;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.event.entity.player.CriticalHitEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.SlotResult;
+import top.theillusivec4.curios.api.event.CurioAttributeModifierEvent;
+import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
+
+import java.util.Optional;
+import java.util.UUID;
 
 import static net.minecraft.world.item.enchantment.EnchantmentHelper.getEnchantmentLevel;
 
 @Mod.EventBusSubscriber(modid = Gravitation.MOD_ID)
 public class ForgeEvents {
+
+    @SubscribeEvent
+    public static void livingDamage(LivingDamageEvent event) {
+        LivingEntity entity = event.getEntity();
+        if(event.getAmount() > 0 && entity != null) {
+            if(hasArmor(GraviTags.Items.ARMORS_ADAMANTITE, entity) && !event.getSource().is(DamageTypeTags.IS_FALL)) {
+                if(!entity.hasEffect(GravitationEffects.SHIELDED.get())) {
+                    entity.addEffect(new MobEffectInstance(GravitationEffects.SHIELDED.get(), 140, 1));
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void modifyItemEvent(ItemAttributeModifierEvent event) {
+        ItemStack stack = event.getItemStack();
+        if(event.getSlotType().equals(EquipmentSlot.MAINHAND) && stack.is(GraviTags.Items.TOOLS_ADAMANTITE)) {
+            event.addModifier(ALObjects.Attributes.ARMOR_SHRED.get(), new AttributeModifier("gravitation:crit_chance_adamantite", 0.3f, AttributeModifier.Operation.ADDITION));
+        }
+    }
+
+    @SubscribeEvent
+    public static void modifyCurioEvent(CurioAttributeModifierEvent event) {
+        if(event.getSlotContext().identifier().equals("aether_gloves") && event.getItemStack().is(AetherTags.Items.AETHER_GLOVES)) {
+            event.addModifier(ALObjects.Attributes.CRIT_CHANCE.get(), new AttributeModifier(event.getUuid(), "gravitation:crit_chance_gloves", 0.3f, AttributeModifier.Operation.ADDITION));
+        }
+    }
+
+    @SubscribeEvent
+    public static void crit(CriticalHitEvent event) {
+        if(event.getEntity().getMainHandItem().is(GraviTags.Items.TOOLS_ADAMANTITE)) {
+
+            // check if the player is not null just in case
+            if(event.getEntity() != null) {
+                RandomSource source = event.getEntity().getRandom();
+
+                if(source.nextBoolean()) {
+                    event.setResult(Event.Result.ALLOW);
+                    event.setDamageModifier(2f);
+                }
+            }
+        }
+    }
 
     @SubscribeEvent
     public static void getEntityDamage(LivingHurtEvent event) {
@@ -75,5 +136,28 @@ public class ForgeEvents {
             event.setUseBlock(Event.Result.ALLOW);
             level.setBlockAndUpdate(blockpos, Blocks.ENCHANTING_TABLE.defaultBlockState());
         }
+    }
+
+    private static boolean hasArmor(TagKey<Item> armor, LivingEntity entity) {
+        Optional<ICuriosItemHandler> inv = CuriosApi.getCuriosInventory(entity).resolve();
+        int i = 0;
+
+        if(inv.isPresent()) {
+            ICuriosItemHandler handler = inv.get();
+            Optional<SlotResult> result = handler.findFirstCurio(stack -> stack.is(armor));
+            if(result.isPresent()) {
+                i++;
+            }
+        }
+
+        for(ItemStack stack : entity.getArmorSlots()) {
+
+            // set bool to true if any of the stack match
+            if(!stack.isEmpty() && stack.is(armor)) {
+                i++;
+            }
+        }
+
+        return i == 5;
     }
 }

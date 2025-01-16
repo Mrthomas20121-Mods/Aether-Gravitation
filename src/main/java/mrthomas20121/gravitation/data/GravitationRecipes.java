@@ -212,7 +212,7 @@ public class GravitationRecipes extends AetherRecipeProvider {
         makeSword(GravitationItems.BRONZITE_SWORD, GravitationItems.BRONZITE_INGOT).save(consumer, new ResourceLocation("gravitation:crafting/bronzite_sword"));
         makeAxe(GravitationItems.BRONZITE_AXE, GravitationItems.BRONZITE_INGOT).save(consumer, new ResourceLocation("gravitation:crafting/bronzite_axe"));
         makeRing(GravitationItems.BRONZITE_RING, GravitationItems.BRONZITE_INGOT.get()).save(consumer, new ResourceLocation("gravitation:crafting/bronzite_ring"));
-        makeShovel(GravitationItems.BRONZITE_Shovel, GravitationItems.BRONZITE_INGOT).save(consumer, new ResourceLocation("gravitation:crafting/bronzite_shovel"));
+        makeShovel(GravitationItems.BRONZITE_SHOVEL, GravitationItems.BRONZITE_INGOT).save(consumer, new ResourceLocation("gravitation:crafting/bronzite_shovel"));
 
         repairingRecipe(RecipeCategory.TOOLS, GravitationItems.GRAVITITE_BATTLEAXE.get(), 1500).save(consumer, new ResourceLocation("gravitation:repairing/gravitite_battleaxe"));
         repairingRecipe(RecipeCategory.TOOLS, GravitationItems.ZANITE_BATTLEAXE.get(), 750).save(consumer, new ResourceLocation("gravitation:repairing/zanite_battleaxe"));

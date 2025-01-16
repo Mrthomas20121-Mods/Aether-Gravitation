@@ -54,7 +54,7 @@ public class GravitationConfiguredFeatures {
                 List.of(
                         OreConfiguration.target(ICESTONE, GravitationBlocks.BRONZITE_ICESTONE_ORE.get().defaultBlockState()),
                         OreConfiguration.target(HOLYSTONE, GravitationBlocks.BRONZITE_ORE.get().defaultBlockState())), 8));
-        register(context, CONGLOMERATE_ORE, Feature.ORE, new OreConfiguration(new TagMatchTest(AetherTags.Blocks.HOLYSTONE), GravitationBlocks.CONGLOMERATE.get().defaultBlockState(), 64));
+        register(context, CONGLOMERATE_ORE, Feature.ORE, new OreConfiguration(new TagMatchTest(AetherTags.Blocks.HOLYSTONE), GravitationBlocks.CONGLOMERATE.get().defaultBlockState(), 32));
         register(context, AERFIN_TREE_CONFIGURATION, Feature.TREE, createAerfin().dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
         register(context, BLUE_AERFIN_TREE_CONFIGURATION, Feature.TREE, createBlueAerfin().dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get()))
                 .decorators(ImmutableList.of(new GraviAlterGroundDecorator(BlockStateProvider.simple(GravitationBlocks.AER_GRASS.get())))).build());

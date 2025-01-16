@@ -2,6 +2,7 @@ package mrthomas20121.gravitation.data;
 
 import com.aetherteam.aether.block.AetherBlocks;
 import com.aetherteam.aether.data.providers.AetherBlockStateProvider;
+import com.aetherteam.nitrogen.data.providers.NitrogenBlockStateProvider;
 import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.block.GravitationBlocks;
 import net.minecraft.data.PackOutput;

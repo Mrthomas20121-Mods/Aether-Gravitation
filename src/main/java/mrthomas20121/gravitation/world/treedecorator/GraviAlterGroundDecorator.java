@@ -39,20 +39,20 @@ public class GraviAlterGroundDecorator extends TreeDecorator {
         }
 
         if (!list.isEmpty()) {
-            var eventProvider = net.minecraftforge.event.ForgeEventFactory.alterGround(p_225969_, list, this.provider::getState);
+            // var eventProvider = net.minecraftforge.event.ForgeEventFactory.alterGround(p_225969_, list, this.provider::getState);
             int i = list.get(0).getY();
             list.stream().filter((p_69310_) -> p_69310_.getY() == i).forEach((p_225978_) -> {
-                this.placeCircle(p_225969_, p_225978_.west().north(), eventProvider);
-                this.placeCircle(p_225969_, p_225978_.east(2).north(), eventProvider);
-                this.placeCircle(p_225969_, p_225978_.west().south(2), eventProvider);
-                this.placeCircle(p_225969_, p_225978_.east(2).south(2), eventProvider);
+                this.placeCircle(p_225969_, p_225978_.west().north());
+                this.placeCircle(p_225969_, p_225978_.east(2).north());
+                this.placeCircle(p_225969_, p_225978_.west().south(2));
+                this.placeCircle(p_225969_, p_225978_.east(2).south(2));
 
                 for(int j = 0; j < 5; ++j) {
                     int k = p_225969_.random().nextInt(48);
                     int l = k % 8;
                     int i1 = k / 8;
                     if (l == 0 || l == 7 || i1 == 0 || i1 == 7) {
-                        this.placeCircle(p_225969_, p_225978_.offset(-3 + l, 0, -3 + i1), eventProvider);
+                        this.placeCircle(p_225969_, p_225978_.offset(-3 + l, 0, -3 + i1));
                     }
                 }
 
@@ -60,30 +60,25 @@ public class GraviAlterGroundDecorator extends TreeDecorator {
         }
     }
 
-    private void placeCircle(TreeDecorator.Context p_225971_, BlockPos p_225972_) {
-        placeCircle(p_225971_, p_225972_, this.provider::getState);
-    }
+    // private void placeCircle(TreeDecorator.Context p_225971_, BlockPos p_225972_) {
+    //    placeCircle(p_225971_, p_225972_);
+    // }
 
-    private void placeCircle(TreeDecorator.Context p_225971_, BlockPos p_225972_, net.minecraftforge.event.level.AlterGroundEvent.StateProvider eventProvider) {
+    private void placeCircle(TreeDecorator.Context p_225971_, BlockPos p_225972_) {
         for(int i = -2; i <= 2; ++i) {
             for(int j = -2; j <= 2; ++j) {
                 if (Math.abs(i) != 2 || Math.abs(j) != 2) {
-                    this.placeBlockAt(p_225971_, p_225972_.offset(i, 0, j), eventProvider);
+                    this.placeBlockAt(p_225971_, p_225972_.offset(i, 0, j));
                 }
             }
         }
-
     }
 
     private void placeBlockAt(TreeDecorator.Context p_225974_, BlockPos p_225975_) {
-        placeCircle(p_225974_, p_225975_, this.provider::getState);
-    }
-
-    private void placeBlockAt(TreeDecorator.Context p_225974_, BlockPos p_225975_, net.minecraftforge.event.level.AlterGroundEvent.StateProvider eventProvider) {
         for(int i = 2; i >= -3; --i) {
             BlockPos blockpos = p_225975_.above(i);
             if (this.isGrassOrDirt(p_225974_.level(), blockpos)) {
-                p_225974_.setBlock(blockpos, eventProvider.getState(p_225974_.random(), p_225975_));
+                p_225974_.setBlock(blockpos, this.provider.getState(p_225974_.random(), p_225975_));
                 break;
             }
 

@@ -2,9 +2,12 @@ package mrthomas20121.gravitation.item.tools.bronzite;
 
 import com.aetherteam.aether.client.AetherSoundEvents;
 import com.aetherteam.aether.item.accessories.pendant.PendantItem;
+import com.google.common.collect.LinkedHashMultimap;
+import com.google.common.collect.Multimap;
 import mrthomas20121.gravitation.Gravitation;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -19,46 +22,19 @@ import static mrthomas20121.gravitation.item.GravitationItems.SALMON_ROSE;
 
 public class BronzitePendantItem extends PendantItem {
 
-    private final UUID ID = UUID.fromString("824475d0-ac60-448f-8d2e-242d5914cf3e");
-    private final String NAME = "bronzite_pendant_modifier";
-
     public BronzitePendantItem() {
         super("neptune_pendant", AetherSoundEvents.ITEM_ACCESSORY_EQUIP_ZANITE_RING, new Properties().rarity(SALMON_ROSE).stacksTo(1));
         this.setRenderTexture(Gravitation.MOD_ID, "bronzite_pendant");
     }
 
-    private AttributeModifier createModifier() {
-        return new AttributeModifier(ID, NAME, 2, AttributeModifier.Operation.ADDITION);
-    }
-
     @Override
-    public List<Component> getAttributesTooltip(List<Component> tooltips, ItemStack stack) {
-        tooltips.add(Component.translatable("gravitation.curio.pendant").withStyle(ChatFormatting.GOLD));
-        tooltips.add(Component.translatable("gravitation.curio.bronzite_pendant").withStyle(ChatFormatting.AQUA));
-        return super.getAttributesTooltip(tooltips, stack);
-    }
+    public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
+        Multimap<Attribute, AttributeModifier> atts = LinkedHashMultimap.create();
 
-    @Override
-    public void onEquip(SlotContext slotContext, ItemStack prevStack, ItemStack stack) {
-        if (!slotContext.entity().level().isClientSide()) {
-            AttributeInstance attributeInstance = slotContext.entity().getAttribute(Attributes.ARMOR_TOUGHNESS);
+        atts.put(Attributes.ARMOR_TOUGHNESS,
+                new AttributeModifier(uuid, Gravitation.MOD_ID + ":armor_toughness_pendant", 2,
+                        AttributeModifier.Operation.ADDITION));
 
-            if(attributeInstance != null) {
-                attributeInstance.removeModifier(ID);
-                AttributeModifier modifier = createModifier();
-                attributeInstance.addPermanentModifier(modifier);
-            }
-        }
-    }
-
-    @Override
-    public void onUnequip(SlotContext slotContext, ItemStack newStack, ItemStack stack) {
-        if (!slotContext.entity().level().isClientSide()) {
-            AttributeInstance attributeInstance = slotContext.entity().getAttribute(ForgeMod.SWIM_SPEED.get());
-
-            if(attributeInstance != null) {
-                attributeInstance.removeModifier(ID);
-            }
-        }
+        return atts;
     }
 }

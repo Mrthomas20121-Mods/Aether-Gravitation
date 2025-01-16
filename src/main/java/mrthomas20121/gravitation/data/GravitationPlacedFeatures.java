@@ -76,7 +76,7 @@ public class GravitationPlacedFeatures {
                 treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
 
         register(context, CONGLOMERATE_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.CONGLOMERATE_ORE),
-                NitrogenPlacedFeatureBuilders.commonOrePlacement(10, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(90))));
+                NitrogenPlacedFeatureBuilders.commonOrePlacement(8, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(90))));
 
         register(context, BRONZITE_ORE_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.BRONZITE_ORE),
                 NitrogenPlacedFeatureBuilders.commonOrePlacement(12, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(75))));

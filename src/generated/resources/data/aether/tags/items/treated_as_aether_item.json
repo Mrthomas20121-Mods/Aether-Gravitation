@@ -1,10 +1,16 @@
 {
   "values": [
-    "gravitation:bronzite_pickaxe",
-    "gravitation:neptune_pickaxe",
-    "gravitation:neptune_axe",
-    "gravitation:neptune_cutlass",
-    "gravitation:neptune_shovel",
-    "#forge:battleaxes"
+    "#forge:tools/adamantite",
+    "#forge:tools/bronzite",
+    "#forge:armors/adamantite",
+    "#forge:armors/bronzite",
+    "#forge:tools/neptune",
+    "gravitation:valkyrie_battleaxe",
+    "gravitation:gravitite_battleaxe",
+    "gravitation:zanite_battleaxe",
+    "gravitation:netherite_battleaxe",
+    "gravitation:diamond_battleaxe",
+    "gravitation:iron_battleaxe",
+    "gravitation:gold_battleaxe"
   ]
 }

@@ -3,6 +3,7 @@ package mrthomas20121.gravitation.util;
 import com.aetherteam.aether.AetherTags;
 import mrthomas20121.gravitation.GraviTags;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
@@ -13,7 +14,8 @@ import java.util.function.Supplier;
 
 public enum GravitationItemTiers implements Tier {
     NEPTUNE(3, 1561, 8.0f, 3.0f, 15, () -> Ingredient.of(AetherTags.Items.NEPTUNE_REPAIRING)),
-    BRONZITE(2, 1500, 7.0f, 2.5f, 50, () -> Ingredient.of(GraviTags.Items.BRONZITE_REPAIRING));
+    BRONZITE(2, 1500, 7.0f, 2.5f, 50, () -> Ingredient.of(GraviTags.Items.BRONZITE_REPAIRING)),
+    ADAMANTITE(5, 2031, 10.0F, 5.0F, 17, () -> Ingredient.of(GraviTags.Items.ADAMANTITE_REPAIRING));
 
     private final int level;
     private final int uses;

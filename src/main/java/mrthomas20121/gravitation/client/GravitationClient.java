@@ -11,9 +11,11 @@ import net.minecraft.client.particle.CherryParticle;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import top.theillusivec4.curios.client.ClientEventHandler;
 
 @Mod.EventBusSubscriber(modid = Gravitation.MOD_ID, value = Dist.CLIENT, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class GravitationClient {
@@ -27,6 +29,9 @@ public class GravitationClient {
             Sheets.addWoodType(GraviWoodType.BELADON);
             Sheets.addWoodType(GraviWoodType.ENCHANTED);
         });
+
+        MinecraftForge.EVENT_BUS.unregister(ClientEventHandler.class);
+        MinecraftForge.EVENT_BUS.register(new CuriosClientEventHandler());
 
         // LoreBookMenu.addLoreEntryOverride(stack -> stack.getEnchantmentLevel(GravitationEnchantments.HERCULES_STRENGTH.get()) > 0, "lore.gravitation.hercules_strength");
         // LoreBookMenu.addLoreEntryOverride(stack -> stack.getEnchantmentLevel(GravitationEnchantments.NEPTUNE_WRATH.get()) > 0, "lore.gravitation.neptune_wrath");

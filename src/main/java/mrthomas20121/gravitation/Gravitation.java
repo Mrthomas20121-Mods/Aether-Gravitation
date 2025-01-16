@@ -6,6 +6,7 @@ import mrthomas20121.gravitation.block_entity.GraviBlockEntityTypes;
 import mrthomas20121.gravitation.data.*;
 import mrthomas20121.gravitation.data.loot.GlobalLootModifiers;
 import mrthomas20121.gravitation.data.loot.LootDataProvider;
+import mrthomas20121.gravitation.effect.GravitationEffects;
 import mrthomas20121.gravitation.enchanting.GravitationEnchantments;
 import mrthomas20121.gravitation.entity.GraviEntityTypes;
 import mrthomas20121.gravitation.item.GravitationCreativeTab;
@@ -48,6 +49,7 @@ public class Gravitation {
 		GravitationBlocks.BLOCKS.register(bus);
 		GravitationItems.ITEMS.register(bus);
 		GraviEntityTypes.ENTITY_TYPES.register(bus);
+		GravitationEffects.EFFECTS.register(bus);
 		GlobalLootModifiers.LOOT_MODIFIERS.register(bus);
 		GravitationEnchantments.ENCHANTING.register(bus);
 		GravitationCreativeTab.CREATIVE_TABS.register(bus);

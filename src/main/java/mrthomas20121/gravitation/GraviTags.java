@@ -59,15 +59,23 @@ public class GraviTags {
 
         public static TagKey<Item> CAN_CREATE_ENCHANTING_TABLE = tag("can_create_enchanting_table");
 
+        public static TagKey<Item> ADAMANTITE_REPAIRING = tag("adamantite_repairing");
+        public static TagKey<Item> TOOLS_ADAMANTITE = forgeTag("tools/adamantite");
+        public static TagKey<Item> ARMORS_ADAMANTITE = forgeTag("armors/adamantite");
+        public static TagKey<Item> GEM_ADAMANTITE = forgeTag("gems/adamantite");
+
         public static TagKey<Item> BRONZITE_REPAIRING = tag("bronzite_repairing");
 
         public static TagKey<Item> INGOT_BRONZITE = forgeTag("ingots/bronzite");
 
-        public static TagKey<Item> NUGGET_BRONZITE = forgeTag("nuggest/bronzite");
+        public static TagKey<Item> NUGGET_BRONZITE = forgeTag("nuggets/bronzite");
 
         public static TagKey<Item> BRONZITE_ORE = forgeTag("ores/bronzite");
 
-        public static TagKey<Item> NEPTUNE_TOOLS = tag("neptune_tools");
+        public static TagKey<Item> ARMORS_BRONZITE = forgeTag("armors/bronzite");
+        public static TagKey<Item> TOOLS_BRONZITE = forgeTag("tools/bronzite");
+
+        public static TagKey<Item> NEPTUNE_TOOLS = forgeTag("tools/neptune");
 
         private static TagKey<Item> tag(String name) {
             return TagKey.create(Registries.ITEM, new ResourceLocation(Gravitation.MOD_ID, name));

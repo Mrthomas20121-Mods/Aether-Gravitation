@@ -112,7 +112,7 @@ public class GravitationItemData extends AetherItemModelProvider {
         this.handheldItem(GravitationItems.BRONZITE_BATTLEAXE.get(), "");
         this.handheldItem(GravitationItems.BRONZITE_PICKAXE.get(), "");
         this.handheldItem(GravitationItems.BRONZITE_HOE.get(), "");
-        this.handheldItem(GravitationItems.BRONZITE_Shovel.get(), "");
+        this.handheldItem(GravitationItems.BRONZITE_SHOVEL.get(), "");
         this.handheldItem(GravitationItems.BRONZITE_SWORD.get(), "");
         this.item(GravitationItems.BRONZITE_RING.get(), "");
         this.item(GravitationItems.BRONZITE_PENDANT.get(), "");
@@ -123,6 +123,21 @@ public class GravitationItemData extends AetherItemModelProvider {
         this.item(GravitationItems.BRONZITE_BOOTS.get(), "");
         this.item(GravitationItems.BRONZITE_GLOVES.get(), "");
         this.item(GravitationItems.BRONZITE_CAPE.get(), "");
+
+        this.item(GravitationItems.ADAMANTITE_GEM.get(), "");
+        this.handheldItem(GravitationItems.ADAMANTITE_AXE.get(), "");
+        this.handheldItem(GravitationItems.ADAMANTITE_BATTLEAXE.get(), "");
+        this.handheldItem(GravitationItems.ADAMANTITE_PICKAXE.get(), "");
+        this.handheldItem(GravitationItems.ADAMANTITE_HOE.get(), "");
+        this.handheldItem(GravitationItems.ADAMANTITE_SHOVEL.get(), "");
+        this.handheldItem(GravitationItems.ADAMANTITE_SWORD.get(), "");
+        this.item(GravitationItems.ADAMANTITE_HELMET.get(), "");
+        this.item(GravitationItems.ADAMANTITE_CHESTPLATE.get(), "");
+        this.item(GravitationItems.ADAMANTITE_LEGGING.get(), "");
+        this.item(GravitationItems.ADAMANTITE_BOOTS.get(), "");
+        this.item(GravitationItems.ADAMANTITE_GLOVES.get(), "");
+        this.item(GravitationItems.ADAMANTITE_CAPE.get(), "");
+
         this.handheldItem(GravitationItems.GRAVITITE_BATTLEAXE.get(), "");
         this.handheldItem(GravitationItems.ZANITE_BATTLEAXE.get(), "");
         this.handheldItem(GravitationItems.VALKYRIE_BATTLEAXE.get(), "");
