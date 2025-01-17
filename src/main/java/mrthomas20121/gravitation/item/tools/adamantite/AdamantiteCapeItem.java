@@ -35,8 +35,8 @@ public class AdamantiteCapeItem extends GravitationCapeItem {
     public Multimap<Attribute, AttributeModifier> getAttributeModifiers(SlotContext slotContext, UUID uuid, ItemStack stack) {
         Multimap<Attribute, AttributeModifier> atts = LinkedHashMultimap.create();
 
-        atts.put(ALObjects.Attributes.DODGE_CHANCE.get(),
-                new AttributeModifier(uuid, Gravitation.MOD_ID + ":adamantite_cape_overheal", 0.1f,
+        atts.put(Attributes.ARMOR_TOUGHNESS,
+                new AttributeModifier(uuid, Gravitation.MOD_ID + ":adamantite_armor_toughness", 0.1f,
                         AttributeModifier.Operation.ADDITION));
 
         return atts;

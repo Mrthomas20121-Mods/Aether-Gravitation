@@ -15,7 +15,7 @@ import java.util.function.Supplier;
 public enum GravitationItemTiers implements Tier {
     NEPTUNE(3, 1561, 8.0f, 3.0f, 15, () -> Ingredient.of(AetherTags.Items.NEPTUNE_REPAIRING)),
     BRONZITE(2, 1500, 7.0f, 2.5f, 50, () -> Ingredient.of(GraviTags.Items.BRONZITE_REPAIRING)),
-    ADAMANTITE(5, 2031, 10.0F, 5.0F, 17, () -> Ingredient.of(GraviTags.Items.ADAMANTITE_REPAIRING));
+    ADAMANTITE(5, 2031, 8.0F, 3.0F, 15, () -> Ingredient.of(GraviTags.Items.ADAMANTITE_REPAIRING));
 
     private final int level;
     private final int uses;

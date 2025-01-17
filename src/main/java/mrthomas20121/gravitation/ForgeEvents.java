@@ -3,15 +3,11 @@ package mrthomas20121.gravitation;
 import com.aetherteam.aether.AetherTags;
 import com.aetherteam.aether.block.AetherBlocks;
 import dev.shadowsoffire.attributeslib.api.ALObjects;
-import mrthomas20121.gravitation.effect.GravitationEffects;
 import mrthomas20121.gravitation.enchanting.GravitationEnchantments;
 import mrthomas20121.gravitation.item.tools.neptune.NeptuneTool;
 import net.minecraft.core.BlockPos;
-import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.damagesource.DamageTypes;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -21,9 +17,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.event.ItemAttributeModifierEvent;
-import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.CriticalHitEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -38,7 +32,6 @@ import top.theillusivec4.curios.api.event.CurioAttributeModifierEvent;
 import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
 
 import java.util.Optional;
-import java.util.UUID;
 
 import static net.minecraft.world.item.enchantment.EnchantmentHelper.getEnchantmentLevel;
 
@@ -46,22 +39,11 @@ import static net.minecraft.world.item.enchantment.EnchantmentHelper.getEnchantm
 public class ForgeEvents {
 
     @SubscribeEvent
-    public static void livingDamage(LivingDamageEvent event) {
-        LivingEntity entity = event.getEntity();
-        if(event.getAmount() > 0 && entity != null) {
-            if(hasArmor(GraviTags.Items.ARMORS_ADAMANTITE, entity) && !event.getSource().is(DamageTypeTags.IS_FALL)) {
-                if(!entity.hasEffect(GravitationEffects.SHIELDED.get())) {
-                    entity.addEffect(new MobEffectInstance(GravitationEffects.SHIELDED.get(), 140, 1));
-                }
-            }
-        }
-    }
-
-    @SubscribeEvent
     public static void modifyItemEvent(ItemAttributeModifierEvent event) {
         ItemStack stack = event.getItemStack();
+
         if(event.getSlotType().equals(EquipmentSlot.MAINHAND) && stack.is(GraviTags.Items.TOOLS_ADAMANTITE)) {
-            event.addModifier(ALObjects.Attributes.ARMOR_SHRED.get(), new AttributeModifier("gravitation:crit_chance_adamantite", 0.3f, AttributeModifier.Operation.ADDITION));
+            event.addModifier(ALObjects.Attributes.ARMOR_SHRED.get(), new AttributeModifier("gravitation:armor_shred_adamantite", 0.3f, AttributeModifier.Operation.ADDITION));
         }
     }
 

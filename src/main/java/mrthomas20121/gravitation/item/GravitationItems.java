@@ -69,7 +69,7 @@ public class GravitationItems {
     public static RegistryObject<Item> ADAMANTITE_CHESTPLATE = ITEMS.register("adamantite_chestplate", () -> new AdamantiteArmorItem(GravitationArmorMaterials.ADAMANTITE, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
     public static RegistryObject<Item> ADAMANTITE_LEGGING = ITEMS.register("adamantite_leggings", () -> new AdamantiteArmorItem(GravitationArmorMaterials.ADAMANTITE, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
     public static RegistryObject<Item> ADAMANTITE_BOOTS = ITEMS.register("adamantite_boots", () -> new AdamantiteArmorItem(GravitationArmorMaterials.ADAMANTITE, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
-    public static RegistryObject<Item> ADAMANTITE_GLOVES = ITEMS.register("adamantite_gloves", () -> new BronziteGlovesItem(0.80d, "adamantite_gloves", () -> SoundEvents.ARMOR_EQUIP_NETHERITE, new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
+    public static RegistryObject<Item> ADAMANTITE_GLOVES = ITEMS.register("adamantite_gloves", () -> new AdamantiteGlovesItem(0.80d, "adamantite_gloves", () -> SoundEvents.ARMOR_EQUIP_NETHERITE, new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
     public static RegistryObject<Item> ADAMANTITE_CAPE = ITEMS.register("adamantite_cape", () -> new AdamantiteCapeItem("adamantite_cape", new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
 
     public static RegistryObject<Item> NEPTUNE_AXE = ITEMS.register("neptune_axe", NeptuneAxeItem::new);

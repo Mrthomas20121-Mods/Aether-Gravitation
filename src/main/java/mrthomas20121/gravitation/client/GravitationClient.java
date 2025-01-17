@@ -30,8 +30,7 @@ public class GravitationClient {
             Sheets.addWoodType(GraviWoodType.ENCHANTED);
         });
 
-        MinecraftForge.EVENT_BUS.unregister(ClientEventHandler.class);
-        MinecraftForge.EVENT_BUS.register(new CuriosClientEventHandler());
+        //MinecraftForge.EVENT_BUS.register(new CuriosClientEventHandler());
 
         // LoreBookMenu.addLoreEntryOverride(stack -> stack.getEnchantmentLevel(GravitationEnchantments.HERCULES_STRENGTH.get()) > 0, "lore.gravitation.hercules_strength");
         // LoreBookMenu.addLoreEntryOverride(stack -> stack.getEnchantmentLevel(GravitationEnchantments.NEPTUNE_WRATH.get()) > 0, "lore.gravitation.neptune_wrath");

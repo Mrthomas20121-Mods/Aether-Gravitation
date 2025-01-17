@@ -26,6 +26,9 @@ public class GraviRenderer {
             CuriosRendererRegistry.register(GravitationItems.BRONZITE_GLOVES.get(), GlovesRenderer::new);
             CuriosRendererRegistry.register(GravitationItems.BRONZITE_PENDANT.get(), PendantRenderer::new);
             CuriosRendererRegistry.register(GravitationItems.NEPTUNE_PENDANT.get(), PendantRenderer::new);
+
+            CuriosRendererRegistry.register(GravitationItems.BRONZITE_GLOVES.get(), GlovesRenderer::new);
+            CuriosRendererRegistry.register(GravitationItems.ADAMANTITE_GLOVES.get(), GlovesRenderer::new);
         });
     }
 

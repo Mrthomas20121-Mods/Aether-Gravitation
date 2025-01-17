@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "aether:zanite_gemstone"
+    },
+    {
+      "item": "aether:enchanted_gravitite"
+    },
+    {
+      "item": "aether:hellfire_stone"
+    }
+  ],
+  "result": {
+    "item": "gravitation:adamantite_gem"
+  }
+}

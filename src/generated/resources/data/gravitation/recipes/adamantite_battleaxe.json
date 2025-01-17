@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "battleaxe",
+  "key": {
+    "#": {
+      "item": "gravitation:adamantite_gem"
+    },
+    "X": {
+      "tag": "aether:skyroot_stick"
+    }
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    " X "
+  ],
+  "result": {
+    "item": "gravitation:adamantite_battleaxe"
+  },
+  "show_notification": true
+}

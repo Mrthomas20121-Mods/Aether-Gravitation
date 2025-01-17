@@ -67,6 +67,8 @@ public class GravitationItemTags extends ItemTagsProvider {
                 .add(GravitationItems.ADAMANTITE_BOOTS.get())
                 .add(GravitationItems.ADAMANTITE_GLOVES.get());
 
+        this.tag(ItemTags.TRIMMABLE_ARMOR).addTags(GraviTags.Items.ARMORS_ADAMANTITE, GraviTags.Items.ARMORS_BRONZITE);
+
         this.tag(GraviTags.Items.GEM_ADAMANTITE).add(GravitationItems.ADAMANTITE_GEM.get());
 
         this.tag(Tags.Items.GEMS).addTag(GraviTags.Items.GEM_ADAMANTITE);
@@ -123,6 +125,11 @@ public class GravitationItemTags extends ItemTagsProvider {
         );
 
         this.tag(AetherTags.Items.SKYROOT_TOOL_CRAFTING).add(
+                GravitationBlocks.ENCHANTED_PLANKS.get().asItem(),
+                GravitationBlocks.BELADON_PLANKS.get().asItem(),
+                GravitationBlocks.AERFIN_PLANKS.get().asItem());
+
+        this.tag(AetherTags.Items.PLANKS_CRAFTING).add(
                 GravitationBlocks.ENCHANTED_PLANKS.get().asItem(),
                 GravitationBlocks.BELADON_PLANKS.get().asItem(),
                 GravitationBlocks.AERFIN_PLANKS.get().asItem());

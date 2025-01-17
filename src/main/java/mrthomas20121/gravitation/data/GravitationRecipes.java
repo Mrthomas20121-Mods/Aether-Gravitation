@@ -128,6 +128,26 @@ public class GravitationRecipes extends AetherRecipeProvider {
         slab(consumer, new ResourceLocation("gravitation:crafting/polished_conglomerate_slab"),RecipeCategory.BUILDING_BLOCKS,
                 GravitationBlocks.POLISHED_CONGLOMERATE_SLAB.get(), GravitationBlocks.POLISHED_CONGLOMERATE.get());
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, GravitationItems.ADAMANTITE_GEM.get(), 1)
+                .requires(AetherItems.ZANITE_GEMSTONE.get())
+                .requires(AetherBlocks.ENCHANTED_GRAVITITE.get())
+                .requires(AetherBlocks.HELLFIRE_STONE.get())
+                .unlockedBy(getHasName(AetherBlocks.HELLFIRE_STONE.get()), has(AetherBlocks.HELLFIRE_STONE.get()))
+                .save(consumer, new ResourceLocation("gravitation:crafting/adamantite_gem"));
+
+        makeAxe(GravitationItems.ADAMANTITE_AXE, GravitationItems.ADAMANTITE_GEM).save(consumer, new ResourceLocation("gravitation:crafting/adamantite_axe"));
+        makeShovel(GravitationItems.ADAMANTITE_SHOVEL, GravitationItems.ADAMANTITE_GEM).save(consumer, new ResourceLocation("gravitation:crafting/adamantite_shovel"));
+        makeSword(GravitationItems.ADAMANTITE_SWORD, GravitationItems.ADAMANTITE_GEM).save(consumer, new ResourceLocation("gravitation:crafting/adamantite_sword"));
+        makePickaxe(GravitationItems.ADAMANTITE_PICKAXE, GravitationItems.ADAMANTITE_GEM).save(consumer, new ResourceLocation("gravitation:crafting/adamantite_pickaxe"));
+        makeHoe(GravitationItems.ADAMANTITE_HOE, GravitationItems.ADAMANTITE_GEM).save(consumer, new ResourceLocation("gravitation:crafting/adamantite_hoe"));
+        battleaxeRecipe(consumer, GravitationItems.ADAMANTITE_GEM.get(), Ingredient.of(AetherTags.Items.SKYROOT_STICKS), GravitationItems.ADAMANTITE_BATTLEAXE.get());
+        makeHelmet(GravitationItems.ADAMANTITE_HELMET, GravitationItems.ADAMANTITE_GEM).save(consumer, new ResourceLocation("gravitation:crafting/adamantite_helmet"));
+        makeChestplate(GravitationItems.ADAMANTITE_CHESTPLATE, GravitationItems.ADAMANTITE_GEM).save(consumer, new ResourceLocation("gravitation:crafting/adamantite_chestplate"));
+        makeLeggings(GravitationItems.ADAMANTITE_LEGGING, GravitationItems.ADAMANTITE_GEM).save(consumer, new ResourceLocation("gravitation:crafting/adamantite_leggings"));
+        makeBoots(GravitationItems.ADAMANTITE_BOOTS, GravitationItems.ADAMANTITE_GEM).save(consumer, new ResourceLocation("gravitation:crafting/adamantite_boots"));
+        makeCape(GravitationItems.ADAMANTITE_CAPE, GravitationItems.ADAMANTITE_GEM.get()).save(consumer, new ResourceLocation("gravitation:crafting/adamantite_cape"));
+        makeGloves(GravitationItems.ADAMANTITE_GLOVES, GravitationItems.ADAMANTITE_GEM).save(consumer, new ResourceLocation("gravitation:crafting/adamantite_gloves"));
+
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GravitationBlocks.BRONZITE_BLOCK.get())
                 .define('X', GravitationItems.BRONZITE_INGOT.get())
                 .pattern("XXX")
@@ -262,6 +282,10 @@ public class GravitationRecipes extends AetherRecipeProvider {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, output).group("battleaxe").define('#', material).define('X', stick).pattern("###").pattern("#X#").pattern(" X ").unlockedBy("has", has(material)).save(consumer);
     }
 
+    protected static void battleaxeRecipe(Consumer<FinishedRecipe> consumer, ItemLike material, Ingredient stick, Item output) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, output).group("battleaxe").define('#', material).define('X', stick).pattern("###").pattern("#X#").pattern(" X ").unlockedBy("has", has(material)).save(consumer);
+    }
+
     protected void woodRecipes(String woodName, Supplier<Block> planks, DoorBlock door, TrapDoorBlock trapDoorBlock, ButtonBlock buttonBlock, Supplier<FenceBlock> fenceBlock, Supplier<FenceGateBlock> fenceGateBlock, Supplier<StairBlock> stairBlock, SlabBlock slabBlock, Block strippedLog, Block strippedWood, Block wood, Block log, TagKey<Item> woodType, Block bookshelf, SignBlock signBlock, Item boat, Item chestBoat, Consumer<FinishedRecipe> consumer) {
         Block plank = planks.get();
         Ingredient ingredient = Ingredient.of(plank);
@@ -280,13 +304,6 @@ public class GravitationRecipes extends AetherRecipeProvider {
         chestBoat(consumer, chestBoat, plank);
         signBuilder(signBlock, ingredient, AetherItems.SKYROOT_STICK.get()).group("sign").unlockedBy("has_"+ woodName +"_planks", has(plank)).save(consumer);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Blocks.CRAFTING_TABLE)
-                .define('X', ingredient)
-                .pattern("XX")
-                .pattern("XX")
-                .unlockedBy("has_"+ woodName +"_planks", has(plank))
-                .save(consumer, new ResourceLocation("gravitation:crafting/"+ woodName +"_crafting_table"));
-
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, bookshelf, 1)
                 .define('P', ingredient)
                 .define('B', Items.BOOK)
@@ -299,7 +316,7 @@ public class GravitationRecipes extends AetherRecipeProvider {
     }
 
     protected static void zaniteSmithing(Consumer<FinishedRecipe> p_251614_, Item p_250046_, RecipeCategory p_248986_, Item p_250389_) {
-        SmithingTransformRecipeBuilder.smithing(Ingredient.of(GravitationItems.BRONZITE_UPGRADE.get()), Ingredient.of(p_250046_), Ingredient.of(AetherItems.ZANITE_GEMSTONE.get()), p_248986_, p_250389_).unlocks("has_zanite_gemstone", has(AetherItems.ZANITE_GEMSTONE.get())).save(p_251614_, getItemName(p_250389_) + "_zanite_smithing");
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(GravitationItems.BRONZITE_UPGRADE.get()), Ingredient.of(p_250046_), Ingredient.of(AetherItems.ZANITE_GEMSTONE.get()), p_248986_, p_250389_).unlocks("has_zanite_gemstone", has(AetherItems.ZANITE_GEMSTONE.get())).save(p_251614_, "gravitation:"+getItemName(p_250389_) + "_zanite_smithing");
     }
 
     protected void stairs(Consumer<FinishedRecipe> consumer, ResourceLocation name, Supplier<? extends Block> stairs, Supplier<? extends Block> material) {

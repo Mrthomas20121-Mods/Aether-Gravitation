@@ -16,15 +16,15 @@ import java.util.function.Supplier;
 public enum GravitationArmorMaterials implements ArmorMaterial {
 
     BRONZITE("bronzite", 33, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-        map.put(ArmorItem.Type.BOOTS, 3);
+        map.put(ArmorItem.Type.BOOTS, 2);
         map.put(ArmorItem.Type.LEGGINGS, 6);
         map.put(ArmorItem.Type.CHESTPLATE, 7);
         map.put(ArmorItem.Type.HELMET, 3);
     }), 30, () -> SoundEvents.ARMOR_EQUIP_CHAIN, 2.0F, () -> Ingredient.of(GraviTags.Items.BRONZITE_REPAIRING)),
     ADAMANTITE("adamantite", 40, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-        map.put(ArmorItem.Type.BOOTS, 4);
-        map.put(ArmorItem.Type.LEGGINGS, 7);
-        map.put(ArmorItem.Type.CHESTPLATE, 9);
+        map.put(ArmorItem.Type.BOOTS, 3);
+        map.put(ArmorItem.Type.LEGGINGS, 6);
+        map.put(ArmorItem.Type.CHESTPLATE, 7);
         map.put(ArmorItem.Type.HELMET, 4);
     }), 17, () -> SoundEvents.ARMOR_EQUIP_NETHERITE, 2.0F, () -> Ingredient.of(GraviTags.Items.ADAMANTITE_REPAIRING));
 

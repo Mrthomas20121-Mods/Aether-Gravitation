@@ -1,11 +1,17 @@
 package mrthomas20121.gravitation.data;
 
+import com.aetherteam.aether.Aether;
 import com.aetherteam.aether.data.providers.AetherItemModelProvider;
+import com.aetherteam.nitrogen.data.providers.NitrogenItemModelProvider;
 import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.block.GravitationBlocks;
 import mrthomas20121.gravitation.item.GravitationItems;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.armortrim.TrimMaterial;
+import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class GravitationItemData extends AetherItemModelProvider {
@@ -117,11 +123,11 @@ public class GravitationItemData extends AetherItemModelProvider {
         this.item(GravitationItems.BRONZITE_RING.get(), "");
         this.item(GravitationItems.BRONZITE_PENDANT.get(), "");
         this.item(GravitationItems.BRONZITE_ROCK.get(), "");
-        this.item(GravitationItems.BRONZITE_HELMET.get(), "");
-        this.item(GravitationItems.BRONZITE_CHESTPLATE.get(), "");
-        this.item(GravitationItems.BRONZITE_LEGGING.get(), "");
-        this.item(GravitationItems.BRONZITE_BOOTS.get(), "");
-        this.item(GravitationItems.BRONZITE_GLOVES.get(), "");
+        this.helmetItem(GravitationItems.BRONZITE_HELMET.get(), "");
+        this.chestplateItem(GravitationItems.BRONZITE_CHESTPLATE.get(), "");
+        this.leggingsItem(GravitationItems.BRONZITE_LEGGING.get(), "");
+        this.bootsItem(GravitationItems.BRONZITE_BOOTS.get(), "");
+        this.glovesItem(GravitationItems.BRONZITE_GLOVES.get(), "");
         this.item(GravitationItems.BRONZITE_CAPE.get(), "");
 
         this.item(GravitationItems.ADAMANTITE_GEM.get(), "");
@@ -131,11 +137,11 @@ public class GravitationItemData extends AetherItemModelProvider {
         this.handheldItem(GravitationItems.ADAMANTITE_HOE.get(), "");
         this.handheldItem(GravitationItems.ADAMANTITE_SHOVEL.get(), "");
         this.handheldItem(GravitationItems.ADAMANTITE_SWORD.get(), "");
-        this.item(GravitationItems.ADAMANTITE_HELMET.get(), "");
-        this.item(GravitationItems.ADAMANTITE_CHESTPLATE.get(), "");
-        this.item(GravitationItems.ADAMANTITE_LEGGING.get(), "");
-        this.item(GravitationItems.ADAMANTITE_BOOTS.get(), "");
-        this.item(GravitationItems.ADAMANTITE_GLOVES.get(), "");
+        this.helmetItem(GravitationItems.ADAMANTITE_HELMET.get(), "");
+        this.chestplateItem(GravitationItems.ADAMANTITE_CHESTPLATE.get(), "");
+        this.leggingsItem(GravitationItems.ADAMANTITE_LEGGING.get(), "");
+        this.bootsItem(GravitationItems.ADAMANTITE_BOOTS.get(), "");
+        this.glovesItem(GravitationItems.ADAMANTITE_GLOVES.get(), "");
         this.item(GravitationItems.ADAMANTITE_CAPE.get(), "");
 
         this.handheldItem(GravitationItems.GRAVITITE_BATTLEAXE.get(), "");
@@ -164,4 +170,21 @@ public class GravitationItemData extends AetherItemModelProvider {
         this.itemBlock(GravitationBlocks.POLISHED_CONGLOMERATE_SLAB.get());
     }
 
+    public void glovesItem(Item item, String location) {
+        ItemModelBuilder builder = this.withExistingParent(this.itemName(item), this.mcLoc("item/generated")).texture("layer0", this.modLoc("item/" + location + this.itemName(item)));
+        double index = 0.1;
+        for (ResourceKey<TrimMaterial> trimMaterial : NitrogenItemModelProvider.VANILLA_TRIM_MATERIALS) {
+            String material = trimMaterial.location().getPath();
+            String name = this.itemName(item) + "_" + material + "_trim";
+            this.withExistingParent(name, this.mcLoc("item/generated"))
+                    .texture("layer0", this.modLoc("item/" + location + this.itemName(item)))
+                    .texture("layer1", this.aetherLoc("trims/items/gloves_trim_" + material));
+            builder.override().predicate(new ResourceLocation("trim_type"), (float) index).model(this.getExistingFile(this.modLoc("item/" + name))).end();
+            index += 0.1;
+        }
+    }
+
+    private ResourceLocation aetherLoc(String loc) {
+        return new ResourceLocation(Aether.MODID, loc);
+    }
 }
