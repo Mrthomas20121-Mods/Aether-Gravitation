@@ -1,0 +1,23 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether_treasure_reforging"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:smelting",
+        "category": "misc",
+        "cookingtime": 200,
+        "experience": 0.35,
+        "ingredient": {
+          "tag": "forge:tools/neptune"
+        },
+        "result": "aether_treasure_reforging:neptune_mesh"
+      }
+    }
+  ]
+}

@@ -3,6 +3,7 @@ package mrthomas20121.gravitation.item.tools.neptune;
 import com.aetherteam.aether.item.AetherItems;
 import mrthomas20121.gravitation.util.GravitationItemTiers;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.TooltipFlag;
@@ -11,10 +12,10 @@ import net.minecraft.world.level.Level;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class NeptunePickaxeItem extends PickaxeItem implements NeptuneTool {
+public class NeptuneHoeItem extends HoeItem implements NeptuneTool {
 
-    public NeptunePickaxeItem() {
-        super(GravitationItemTiers.NEPTUNE, 1, 0f, new Properties().rarity(AetherItems.AETHER_LOOT));
+    public NeptuneHoeItem() {
+        super(GravitationItemTiers.NEPTUNE, 1, -2.8f, new Properties().rarity(AetherItems.AETHER_LOOT));
     }
 
     public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {

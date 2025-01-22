@@ -3,6 +3,7 @@ package mrthomas20121.gravitation.item.tools.neptune;
 import com.aetherteam.aether.client.AetherSoundEvents;
 import com.aetherteam.aether.item.AetherItems;
 import com.aetherteam.aether.item.accessories.pendant.PendantItem;
+import dev.shadowsoffire.attributeslib.api.ALObjects;
 import mrthomas20121.gravitation.Gravitation;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -33,7 +34,7 @@ public class NeptunePendantItem extends PendantItem {
     @Override
     public void curioTick(SlotContext slotContext, ItemStack stack) {
         if (slotContext.entity().isInWaterRainOrBubble()) {
-            slotContext.entity().addEffect(new MobEffectInstance(MobEffects.WATER_BREATHING, 200, 0, false, false));
+            slotContext.entity().addEffect(new MobEffectInstance(MobEffects.CONDUIT_POWER, 200, 0, false, false));
         }
     }
 

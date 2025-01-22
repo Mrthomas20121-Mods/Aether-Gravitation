@@ -1,0 +1,28 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "aether_treasure_reforging"
+        }
+      ],
+      "recipe": {
+        "type": "minecraft:smithing_transform",
+        "addition": {
+          "item": "aether_treasure_reforging:neptune_mesh"
+        },
+        "base": {
+          "item": "aether:zanite_sword"
+        },
+        "result": {
+          "item": "gravitation:neptune_cutlass"
+        },
+        "template": {
+          "item": "aether_treasure_reforging:neptune_upgrade_smithing_template"
+        }
+      }
+    }
+  ]
+}

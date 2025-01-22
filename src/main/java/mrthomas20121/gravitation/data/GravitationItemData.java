@@ -108,6 +108,7 @@ public class GravitationItemData extends AetherItemModelProvider {
         this.handheldItem(GravitationItems.NEPTUNE_BATTLEAXE.get(), "");
         this.handheldItem(GravitationItems.NEPTUNE_CUTLASS.get(), "");
         this.handheldItem(GravitationItems.NEPTUNE_PICKAXE.get(), "");
+        this.handheldItem(GravitationItems.NEPTUNE_HOE.get(), "");
         this.handheldItem(GravitationItems.NEPTUNE_SHOVEL.get(), "");
         this.item(GravitationItems.NEPTUNE_RING.get(), "");
         this.item(GravitationItems.NEPTUNE_PENDANT.get(), "");

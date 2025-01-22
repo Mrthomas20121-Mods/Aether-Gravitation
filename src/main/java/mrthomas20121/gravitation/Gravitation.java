@@ -3,6 +3,7 @@ package mrthomas20121.gravitation;
 import mrthomas20121.gravitation.block.GravitationBlocks;
 import mrthomas20121.gravitation.block.wood.GraviWoodType;
 import mrthomas20121.gravitation.block_entity.GraviBlockEntityTypes;
+import mrthomas20121.gravitation.compat.ModCompat;
 import mrthomas20121.gravitation.data.*;
 import mrthomas20121.gravitation.data.loot.GlobalLootModifiers;
 import mrthomas20121.gravitation.data.loot.LootDataProvider;
@@ -56,6 +57,9 @@ public class Gravitation {
 		GravitationFoliagePlacerType.FOLIAGE_PLACERS.register(bus);
 		GravitationDecoratorTypes.TREE_DECORATORS.register(bus);
 		GraviParticleTypes.PARTICLES.register(bus);
+
+		// init mod compat
+		ModCompat.init();
 
 		GraviWoodType.registerWoodTypes();
 	}

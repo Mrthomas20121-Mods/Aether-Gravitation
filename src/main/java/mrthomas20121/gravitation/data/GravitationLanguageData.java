@@ -17,10 +17,7 @@ public class GravitationLanguageData extends AetherLanguageProvider {
     protected void addTranslations() {
         add("gravitation.curio.pendant", "When in Pendant Slot:");
         add("gravitation.curio.bronzite_pendant", "+2 Armor Toughness");
-        add("gravitation.curio.neptune_pendant", "gives water breathing underwater.");
-        add("gravitation.curio.ring", "When in Ring Slot:");
-        add("gravitation.curio.bronzite_ring", "+2 Armor");
-        add("gravitation.curio.neptune_ring", "+1.5 Swim Speed");
+        add("gravitation.curio.neptune_pendant", "wearer has conduit power underwater");
         add("itemGroup.gravitation.misc", "Gravitation Misc");
         add("itemGroup.gravitation.equipments", "Gravitation Equipments & Utilities");
         add("itemGroup.gravitation.building_blocks", "Gravitation Building Blocks");

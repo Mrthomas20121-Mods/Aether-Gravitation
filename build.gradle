@@ -76,6 +76,8 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 repositories {
     maven githubPackage.invoke("The-Aether-Team/The-Aether")
     maven githubPackage.invoke("The-Aether-Team/Nitrogen")
+    //maven githubPackage.invoke("The-Aether-Team/Treasure-Reforging")
+    maven githubPackage.invoke("The-Aether-Team/Cumulus")
     maven { url = 'https://maven.minecraftforge.net/' }
     maven {
         name 'Thermal Maven'
@@ -152,6 +154,9 @@ dependencies {
     // terrablender and aeroblender
     implementation fg.deobf("curse.maven:aeroblender-879879:4789008")
     implementation fg.deobf('com.github.glitchfiend:TerraBlender-forge:1.20.1-3.0.0.169')
+
+    implementation fg.deobf("curse.maven:aether-treasure-reforging-1016302:5759738")
+    //implementation fg.deobf("com.aetherteam.treasure_reforging:aether_treasure_reforging:${treasure_reforging_version}")
     implementation fg.deobf("com.aetherteam.nitrogen:nitrogen_internals:${nitrogen_version}")
     implementation fg.deobf("com.aetherteam.cumulus:cumulus_menus:${cumulus_version}")
 }

@@ -108,9 +108,6 @@ public class GravitationItemTags extends ItemTagsProvider {
 
         this.tag(GraviTags.Items.CAN_CREATE_ENCHANTING_TABLE).add(AetherItems.GOLDEN_AMBER.get());
 
-        this.tag(AetherTags.Items.FREEZABLE_RINGS).add(GravitationItems.BRONZITE_RING.get());
-        this.tag(AetherTags.Items.FREEZABLE_PENDANTS).add(GravitationItems.BRONZITE_PENDANT.get());
-
         this.tag(GraviTags.Items.BATTLEAXES).add(
                 GravitationItems.NEPTUNE_BATTLEAXE.get(),
                 GravitationItems.VALKYRIE_BATTLEAXE.get(),
@@ -135,6 +132,9 @@ public class GravitationItemTags extends ItemTagsProvider {
                 GravitationBlocks.AERFIN_PLANKS.get().asItem());
 
         this.tag(ItemTags.PICKAXES).add(GravitationItems.BRONZITE_PICKAXE.get(), GravitationItems.ADAMANTITE_PICKAXE.get(), GravitationItems.NEPTUNE_PICKAXE.get());
+        this.tag(ItemTags.AXES).add(GravitationItems.BRONZITE_AXE.get(), GravitationItems.ADAMANTITE_AXE.get(), GravitationItems.NEPTUNE_AXE.get());
+        this.tag(ItemTags.HOES).add(GravitationItems.BRONZITE_HOE.get(), GravitationItems.ADAMANTITE_HOE.get(), GravitationItems.NEPTUNE_HOE.get());
+        this.tag(ItemTags.SHOVELS).add(GravitationItems.BRONZITE_SHOVEL.get(), GravitationItems.ADAMANTITE_SHOVEL.get(), GravitationItems.NEPTUNE_SHOVEL.get());
 
         this.tag(AetherTags.Items.TREATED_AS_AETHER_ITEM).addTags(
                 GraviTags.Items.TOOLS_ADAMANTITE,

@@ -77,6 +77,7 @@ public class GravitationItems {
     public static RegistryObject<Item> NEPTUNE_CUTLASS = ITEMS.register("neptune_cutlass", NeptuneCutlassItem::new);
     public static RegistryObject<Item> NEPTUNE_PICKAXE = ITEMS.register("neptune_pickaxe", NeptunePickaxeItem::new);
     public static RegistryObject<Item> NEPTUNE_SHOVEL = ITEMS.register("neptune_shovel", NeptuneShovelItem::new);
+    public static RegistryObject<Item> NEPTUNE_HOE = ITEMS.register("neptune_hoe", NeptunePickaxeItem::new);
     public static RegistryObject<Item> NEPTUNE_RING = ITEMS.register("neptune_ring", NeptuneRingItem::new);
     public static RegistryObject<Item> NEPTUNE_PENDANT = ITEMS.register("neptune_pendant", NeptunePendantItem::new);
 

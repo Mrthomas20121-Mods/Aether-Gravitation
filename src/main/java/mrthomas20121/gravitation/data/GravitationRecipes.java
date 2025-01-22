@@ -6,6 +6,7 @@ import com.aetherteam.aether.data.providers.AetherRecipeProvider;
 import com.aetherteam.aether.item.AetherItems;
 import mrthomas20121.gravitation.GraviTags;
 import mrthomas20121.gravitation.block.GravitationBlocks;
+import mrthomas20121.gravitation.compat.ModCompat;
 import mrthomas20121.gravitation.item.GravitationItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -31,6 +32,10 @@ public class GravitationRecipes extends AetherRecipeProvider {
 
     @Override
     protected void buildRecipes(@NotNull Consumer<FinishedRecipe> consumer) {
+
+        ModCompat.getModCompatList().forEach(mod -> {
+            mod.addRecipes(consumer);
+        });
 
         woodRecipes(
                 "aerfin",
