@@ -27,7 +27,7 @@ public class NeptunePendantItem extends PendantItem {
     @Override
     public List<Component> getAttributesTooltip(List<Component> tooltips, ItemStack stack) {
         tooltips.add(Component.translatable("gravitation.curio.pendant").withStyle(ChatFormatting.GOLD));
-        tooltips.add(Component.translatable("gravitation.curio.neptune_pendant").withStyle(ChatFormatting.AQUA));
+        tooltips.add(Component.translatable("gravitation.curio.neptune_pendant").withStyle(ChatFormatting.BLUE));
         return super.getAttributesTooltip(tooltips, stack);
     }
 
