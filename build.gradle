@@ -98,9 +98,6 @@ repositories {
     maven {
         name "cf"
         url "https://cursemaven.com/"
-        content {
-            includeGroup "curse.maven"
-        }
     }
 
     maven {
@@ -142,18 +139,9 @@ dependencies {
     implementation fg.deobf("dev.shadowsoffire:Placebo:${mc_version}-${placeboVersion}")
     implementation fg.deobf("dev.shadowsoffire:ApothicAttributes:${mc_version}-${attributeslibVersion}")
 
-    //implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.19.4:4.1.3')
-
-    // addons
-    //implementation fg.deobf("curse.maven:deep-${deep_aether_id}:${deep_aether_version}")
-
-    // aether lost content
-    //implementation fg.deobf("curse.maven:aether-lost-content-${aether_lost_content_id}:${aether_lost_content_version}")
-    //implementation fg.deobf("com.legacy:structure-gel:${structure_gel_version}")
-
     // terrablender and aeroblender
     implementation fg.deobf("curse.maven:aeroblender-879879:4789008")
-    implementation fg.deobf('com.github.glitchfiend:TerraBlender-forge:1.20.1-3.0.0.169')
+    implementation fg.deobf('com.github.glitchfiend:TerraBlender-forge:1.20.1-3.0.1.7')
 
     implementation fg.deobf("curse.maven:aether-treasure-reforging-1016302:5759738")
     //implementation fg.deobf("com.aetherteam.treasure_reforging:aether_treasure_reforging:${treasure_reforging_version}")
