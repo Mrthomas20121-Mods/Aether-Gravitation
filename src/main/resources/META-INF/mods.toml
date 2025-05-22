@@ -33,3 +33,9 @@ Add more content to the Aether.
     versionRange = "[0,)"
     ordering = "AFTER"
     side = "BOTH"
+[[dependencies.gravitation]]
+    modId = "attributeslib"
+    mandatory = true
+    versionRange = "[0,)"
+    ordering = "AFTER"
+    side = "BOTH"
