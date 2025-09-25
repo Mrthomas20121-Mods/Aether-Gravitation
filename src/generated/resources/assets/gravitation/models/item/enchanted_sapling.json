@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gravitation:item/enchanted_sapling"
+    "layer0": "gravitation:block/naturalenchanted_sapling"
   }
 }

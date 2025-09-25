@@ -38,9 +38,9 @@ public class GravitationItemData extends AetherItemModelProvider {
         // aerfin set
         this.item(GravitationItems.AERFIN_BOAT.get(), "");
         this.item(GravitationItems.AERFIN_CHEST_BOAT.get(), "");
-        this.item(GravitationBlocks.AERFIN_SAPLING.get().asItem(), "");
-        this.item(GravitationBlocks.BLUE_AERFIN_SAPLING.get().asItem(), "");
-        this.item(GravitationBlocks.GOLDEN_AERFIN_SAPLING.get().asItem(), "");
+        this.itemBlockFlat(GravitationBlocks.AERFIN_SAPLING.get(), "natural");
+        this.itemBlockFlat(GravitationBlocks.BLUE_AERFIN_SAPLING.get(), "natural");
+        this.itemBlockFlat(GravitationBlocks.GOLDEN_AERFIN_SAPLING.get(), "natural");
         this.itemBlock(GravitationBlocks.AERFIN_LEAVES.get());
         this.itemBlock(GravitationBlocks.BLUE_AERFIN_LEAVES.get());
         this.itemBlock(GravitationBlocks.GOLDEN_AERFIN_LEAVES.get());
@@ -64,7 +64,7 @@ public class GravitationItemData extends AetherItemModelProvider {
         // beladon set
         this.item(GravitationItems.BELADON_CHEST_BOAT.get(),  "");
         this.item(GravitationItems.BELADON_BOAT.get(),  "");
-        this.item(GravitationBlocks.BELADON_SAPLING.get().asItem(), "");
+        this.itemBlockFlat(GravitationBlocks.BELADON_SAPLING.get(), "natural");
         this.itemBlock(GravitationBlocks.BELADON_LEAVES.get());
         this.itemBlock(GravitationBlocks.BELADON_PLANKS.get());
         this.itemBlock(GravitationBlocks.BELADON_LOG.get());
@@ -86,7 +86,7 @@ public class GravitationItemData extends AetherItemModelProvider {
         // enchanted set
         this.item(GravitationItems.ENCHANTED_CHEST_BOAT.get(),  "");
         this.item(GravitationItems.ENCHANTED_BOAT.get(),  "");
-        this.item(GravitationBlocks.ENCHANTED_SAPLING.get().asItem(), "");
+        this.itemBlockFlat(GravitationBlocks.ENCHANTED_SAPLING.get(), "natural");
         this.itemBlock(GravitationBlocks.ENCHANTED_LEAVES.get());
         this.itemBlock(GravitationBlocks.ENCHANTED_PLANKS.get());
         this.itemBlock(GravitationBlocks.ENCHANTED_LOG.get());

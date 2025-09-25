@@ -12,4 +12,5 @@ public class GlobalLootModifiers {
     public static DeferredRegister<Codec<? extends IGlobalLootModifier>> LOOT_MODIFIERS = DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, Gravitation.MOD_ID);
 
     public static RegistryObject<Codec<? extends IGlobalLootModifier>> AETHER_DUNGEON_LOOT_CODEC = LOOT_MODIFIERS.register("aether_dungeon_loot", AetherDungeonLootModifiers.CODEC);
+    public static RegistryObject<Codec<? extends IGlobalLootModifier>> ENCHANTMENT_DUNGEON_LOOT_CODEC = LOOT_MODIFIERS.register("enchantment_dungeon_loot", EnchantmentDungeonLootModifiers.CODEC);
 }

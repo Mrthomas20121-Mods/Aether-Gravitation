@@ -29,6 +29,13 @@ public class GravitationItemTags extends ItemTagsProvider {
 
         this.tag(AetherTags.Items.AETHER_DIRT).add(GravitationBlocks.AER_GRASS.get().asItem());
 
+        this.tag(GraviTags.Items.ARMORS_PHOENIX).add(
+                AetherItems.PHOENIX_HELMET.get(),
+                AetherItems.PHOENIX_CHESTPLATE.get(),
+                AetherItems.PHOENIX_LEGGINGS.get(),
+                AetherItems.PHOENIX_BOOTS.get()
+        );
+
         this.tag(GraviTags.Items.NEPTUNE_TOOLS).add(
                 GravitationItems.NEPTUNE_CUTLASS.get(),
                 GravitationItems.NEPTUNE_PICKAXE.get(),

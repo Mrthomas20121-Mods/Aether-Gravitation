@@ -8,9 +8,11 @@ import mrthomas20121.gravitation.item.tools.neptune.NeptuneTool;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -18,6 +20,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.ItemAttributeModifierEvent;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.CriticalHitEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -44,6 +48,12 @@ public class ForgeEvents {
 
         if(event.getSlotType().equals(EquipmentSlot.MAINHAND) && stack.is(GraviTags.Items.TOOLS_ADAMANTITE)) {
             event.addModifier(ALObjects.Attributes.ARMOR_SHRED.get(), new AttributeModifier("gravitation:armor_shred_adamantite", 0.3f, AttributeModifier.Operation.ADDITION));
+        }
+
+        int level = event.getItemStack().getEnchantmentLevel(GravitationEnchantments.SUN_SPIRIT_BLESSING.get());
+
+        if(event.getSlotType().isArmor() && level > 0) {
+            event.addModifier(Attributes.MAX_HEALTH, new AttributeModifier("gravitation:sun_spirit_blessing_max_health", 1f*level, AttributeModifier.Operation.ADDITION));
         }
     }
 

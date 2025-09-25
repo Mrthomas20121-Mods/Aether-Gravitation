@@ -24,9 +24,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class GravitationRecipes extends AetherRecipeProvider {
+public class GravitationRecipeData extends AetherRecipeProvider {
 
-    public GravitationRecipes(PackOutput output) {
+    public GravitationRecipeData(PackOutput output) {
         super(output, "gravitation");
     }
 
@@ -54,6 +54,7 @@ public class GravitationRecipes extends AetherRecipeProvider {
                 GraviTags.Items.AERFIN_LOGS,
                 GravitationBlocks.AERFIN_BOOKSHELF.get(),
                 GravitationBlocks.AERFIN_SIGN.get(),
+                GravitationBlocks.AERFIN_HANGING_SIGN.get(),
                 GravitationItems.AERFIN_BOAT.get(),
                 GravitationItems.AERFIN_CHEST_BOAT.get(),
                 consumer);
@@ -75,6 +76,7 @@ public class GravitationRecipes extends AetherRecipeProvider {
                 GraviTags.Items.ENCHANTED_LOGS,
                 GravitationBlocks.ENCHANTED_BOOKSHELF.get(),
                 GravitationBlocks.ENCHANTED_SIGN.get(),
+                GravitationBlocks.ENCHANTED_HANGING_SIGN.get(),
                 GravitationItems.ENCHANTED_BOAT.get(),
                 GravitationItems.ENCHANTED_CHEST_BOAT.get(),
                 consumer);
@@ -96,6 +98,7 @@ public class GravitationRecipes extends AetherRecipeProvider {
                 GraviTags.Items.BELADON_LOGS,
                 GravitationBlocks.BELADON_BOOKSHELF.get(),
                 GravitationBlocks.BELADON_SIGN.get(),
+                GravitationBlocks.BELADON_HANGING_SIGN.get(),
                 GravitationItems.BELADON_BOAT.get(),
                 GravitationItems.BELADON_CHEST_BOAT.get(),
                 consumer);
@@ -291,7 +294,7 @@ public class GravitationRecipes extends AetherRecipeProvider {
         ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, output).group("battleaxe").define('#', material).define('X', stick).pattern("###").pattern("#X#").pattern(" X ").unlockedBy("has", has(material)).save(consumer);
     }
 
-    protected void woodRecipes(String woodName, Supplier<Block> planks, DoorBlock door, TrapDoorBlock trapDoorBlock, ButtonBlock buttonBlock, Supplier<FenceBlock> fenceBlock, Supplier<FenceGateBlock> fenceGateBlock, Supplier<StairBlock> stairBlock, SlabBlock slabBlock, Block strippedLog, Block strippedWood, Block wood, Block log, TagKey<Item> woodType, Block bookshelf, SignBlock signBlock, Item boat, Item chestBoat, Consumer<FinishedRecipe> consumer) {
+    protected void woodRecipes(String woodName, Supplier<Block> planks, DoorBlock door, TrapDoorBlock trapDoorBlock, ButtonBlock buttonBlock, Supplier<FenceBlock> fenceBlock, Supplier<FenceGateBlock> fenceGateBlock, Supplier<StairBlock> stairBlock, SlabBlock slabBlock, Block strippedLog, Block strippedWood, Block wood, Block log, TagKey<Item> woodType, Block bookshelf, SignBlock signBlock, SignBlock hangingSign, Item boat, Item chestBoat, Consumer<FinishedRecipe> consumer) {
         Block plank = planks.get();
         Ingredient ingredient = Ingredient.of(plank);
         doorBuilder(door, ingredient).group("door").unlockedBy("has_"+ woodName +"_planks", has(plank)).save(consumer);
@@ -316,6 +319,16 @@ public class GravitationRecipes extends AetherRecipeProvider {
                 .pattern("BBB")
                 .pattern("PPP")
                 .unlockedBy(getHasName(Items.BOOK), has(Items.BOOK))
+                .save(consumer);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, hangingSign, 6)
+                .group("hanging_sign")
+                .define('#', strippedLog)
+                .define('X', Items.CHAIN)
+                .pattern("X X")
+                .pattern("###")
+                .pattern("###")
+                .unlockedBy("has_stripped_logs", has(strippedLog))
                 .save(consumer);
 
     }

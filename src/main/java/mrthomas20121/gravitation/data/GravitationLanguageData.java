@@ -40,9 +40,14 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addAdvancement("hercules_strength", "The Strength of Hercules");
         addAdvancementDesc("hercules_strength", "Enchant a tool with the Hercules Strength enchantment");
 
+        addAdvancement("sun_spirit_blessing", "Blessing of the spirit");
+        addAdvancementDesc("sun_spirit_blessing", "Find a piece of armor enchanted with Sun Spirit Blessing in a gold chest");
+
         add("upgrade.gravitation.bronzite_upgrade", "Bronzite Upgrade");
         add("item.gravitation.smithing_template.bronzite_upgrade.applies_to", "Bronzite Rock");
         add("item.gravitation.smithing_template.bronzite_upgrade.ingredients", "Zanite Gemstone");
+
+
 
         addItem(GravitationItems.GREATER_HEALING_STONE, "Greater Healing Stone");
         addItem(GravitationItems.POWER_STONE, "Powering Stone");
@@ -138,10 +143,10 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addBlock(GravitationBlocks.ENCHANTED_FENCE_GATE, "Enchanted Fence Gate");
         addBlock(GravitationBlocks.ENCHANTED_MOSS, "Enchanted Moss");
         addEntityType(GraviEntityTypes.ENCHANTED_BOAT, "Enchanted Boat");
-        addEntityType(GraviEntityTypes.ENCHANTED_CHEST_BOAT, "Enchanted Chest Boat");
+        addEntityType(GraviEntityTypes.ENCHANTED_CHEST_BOAT, "Enchanted Chest with Boat");
 
         // aerfin
-        addItem(GravitationItems.AERFIN_CHEST_BOAT, "Aerfin Chest Boat");
+        addItem(GravitationItems.AERFIN_CHEST_BOAT, "Aerfin Chest with Boat");
         addItem(GravitationItems.AERFIN_BOAT, "Aerfin Boat");
         addBlock(GravitationBlocks.AERFIN_SIGN, "Aerfin Sign");
         addBlock(GravitationBlocks.AERFIN_HANGING_SIGN, "Aerfin Hanging Sign");
@@ -166,10 +171,10 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addBlock(GravitationBlocks.AERFIN_FENCE, "Aerfin Fence");
         addBlock(GravitationBlocks.AERFIN_FENCE_GATE, "Aerfin Fence Gate");
         addEntityType(GraviEntityTypes.AERFIN_BOAT, "Aerfin Boat");
-        addEntityType(GraviEntityTypes.AERFIN_CHEST_BOAT, "Aerfin Chest Boat");
+        addEntityType(GraviEntityTypes.AERFIN_CHEST_BOAT, "Aerfin Chest with Boat");
 
         // beladon
-        addItem(GravitationItems.BELADON_CHEST_BOAT, "Beladon Chest Boat");
+        addItem(GravitationItems.BELADON_CHEST_BOAT, "Beladon Chest with Boat");
         addItem(GravitationItems.BELADON_BOAT, "Beladon Boat");
         addBlock(GravitationBlocks.BELADON_SIGN, "Beladon Sign");
         addBlock(GravitationBlocks.BELADON_HANGING_SIGN, "Beladon Hanging Sign");
@@ -190,12 +195,14 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addBlock(GravitationBlocks.BELADON_FENCE, "Beladon Fence");
         addBlock(GravitationBlocks.BELADON_FENCE_GATE, "Beladon Fence Gate");
         addEntityType(GraviEntityTypes.BELADON_BOAT, "Beladon Boat");
-        addEntityType(GraviEntityTypes.BELADON_CHEST_BOAT, "Beladon Chest Boat");
+        addEntityType(GraviEntityTypes.BELADON_CHEST_BOAT, "Beladon Chest with Boat");
 
         addEnchantment(GravitationEnchantments.NEPTUNE_WRATH, "Neptune's Wrath");
         add("enchantment.gravitation.neptune_wrath.desc", "Deal more damage to water mobs.");
         addEnchantment(GravitationEnchantments.HERCULES_STRENGTH, "Hercules's Strength");
         add("enchantment.gravitation.hercules_strength.desc", "Deal more damage to Aether Bosses(Sun Spirit not included).");
+        addEnchantment(GravitationEnchantments.SUN_SPIRIT_BLESSING, "Sun Spirit's Blessing");
+        add("enchantment.gravitation.sun_spirit_blessing.desc", "Increases protection against fire and incineration damage types.");
         add("gravitation.tooltip.can_create_enchanting_table", "Right click on a Enchanted Gravitite Block to create an Enchanting Table.");
 
         addLore(GravitationItems.BRONZITE_ROCK, "This rock was created from the fire of the sun spirit.");

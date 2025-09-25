@@ -1,6 +1,9 @@
 package mrthomas20121.gravitation.data.loot;
 
+import com.aetherteam.aether.AetherTags;
+import mrthomas20121.gravitation.GraviTags;
 import mrthomas20121.gravitation.Gravitation;
+import mrthomas20121.gravitation.enchanting.GravitationEnchantments;
 import mrthomas20121.gravitation.item.GravitationItems;
 import mrthomas20121.gravitation.util.ItemData;
 import net.minecraft.data.PackOutput;
@@ -24,6 +27,11 @@ public class LootDataProvider extends GlobalLootModifierProvider {
 
     @Override
     protected void start() {
+
+        add("gold_dungeon_enchantment", new EnchantmentDungeonLootModifiers(
+                new LootItemCondition[] { LootTableIdCondition.builder(new ResourceLocation("aether:chests/dungeon/gold/gold_dungeon_reward")).build() },
+                GravitationEnchantments.SUN_SPIRIT_BLESSING.get()
+        ));
 
         add("bronze_dungeon_reward", new AetherDungeonLootModifiers(
                 new LootItemCondition[] { LootTableIdCondition.builder(new ResourceLocation("aether:chests/dungeon/bronze/bronze_dungeon_reward")).build() },

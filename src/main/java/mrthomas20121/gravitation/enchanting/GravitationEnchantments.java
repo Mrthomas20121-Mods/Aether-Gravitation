@@ -14,7 +14,7 @@ public class GravitationEnchantments {
 
     public static RegistryObject<Enchantment> HERCULES_STRENGTH = ENCHANTING.register("hercules_strength", EnchantmentHerculesStrength::new);
 
-    public static RegistryObject<Enchantment> SUN_POWER = ENCHANTING.register("sun_power", EnchantmentSunPower::new);
+    public static RegistryObject<Enchantment> SUN_SPIRIT_BLESSING = ENCHANTING.register("sun_spirit_blessing", EnchantmentSunSpiritBlessing::new);
 
     public static RegistryObject<Enchantment> ETHEREAL_PROTECTION = ENCHANTING.register("ethereal_protection", EnchantmentEtherealProtection::new);
 }

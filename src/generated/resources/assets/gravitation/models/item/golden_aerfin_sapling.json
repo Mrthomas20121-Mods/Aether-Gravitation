@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "gravitation:item/golden_aerfin_sapling"
+    "layer0": "gravitation:block/naturalgolden_aerfin_sapling"
   }
 }

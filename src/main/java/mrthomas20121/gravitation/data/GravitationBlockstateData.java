@@ -45,8 +45,8 @@ public class GravitationBlockstateData extends AetherBlockStateProvider {
         this.buttonBlock(GravitationBlocks.AERFIN_BUTTON.get(), new ResourceLocation("gravitation:block/natural/aerfin_planks"));
         this.pressurePlateBlock(GravitationBlocks.AERFIN_PREASURE_PLATE.get(), new ResourceLocation("gravitation:block/natural/aerfin_planks"));
         this.bookshelf(GravitationBlocks.AERFIN_BOOKSHELF.get(), GravitationBlocks.AERFIN_PLANKS.get());
-        this.signBlock(GravitationBlocks.AERFIN_SIGN.get(), GravitationBlocks.AERFIN_WALL_SIGN.get(), this.texture(this.name(GravitationBlocks.AERFIN_PLANKS.get()), "natural/"));
-        this.hangingSignBlock(GravitationBlocks.AERFIN_HANGING_SIGN.get(), GravitationBlocks.AERFIN_WALL_HANGING_SIGN.get(), this.texture(this.name(GravitationBlocks.AERFIN_PLANKS.get()), "natural/"));
+        this.signBlock(GravitationBlocks.AERFIN_SIGN.get(), GravitationBlocks.AERFIN_WALL_SIGN.get(), this.texture(this.name(GravitationBlocks.STRIPPED_AERFIN_LOG.get()), "natural/"));
+        this.hangingSignBlock(GravitationBlocks.AERFIN_HANGING_SIGN.get(), GravitationBlocks.AERFIN_WALL_HANGING_SIGN.get(), this.texture(this.name(GravitationBlocks.STRIPPED_AERFIN_LOG.get()), "natural/"));
         this.saplingBlock(GravitationBlocks.AERFIN_SAPLING.get(), "natural/");
         this.saplingBlock(GravitationBlocks.BLUE_AERFIN_SAPLING.get(), "natural/");
         this.saplingBlock(GravitationBlocks.GOLDEN_AERFIN_SAPLING.get(), "natural/");
@@ -68,8 +68,8 @@ public class GravitationBlockstateData extends AetherBlockStateProvider {
         this.buttonBlock(GravitationBlocks.BELADON_BUTTON.get(), new ResourceLocation("gravitation:block/natural/beladon_planks"));
         this.pressurePlateBlock(GravitationBlocks.BELADON_PREASURE_PLATE.get(), new ResourceLocation("gravitation:block/natural/beladon_planks"));
         this.bookshelf(GravitationBlocks.BELADON_BOOKSHELF.get(), GravitationBlocks.BELADON_PLANKS.get());
-        this.signBlock(GravitationBlocks.BELADON_SIGN.get(), GravitationBlocks.BELADON_WALL_SIGN.get(), this.texture(this.name(GravitationBlocks.BELADON_PLANKS.get()), "natural/"));
-        this.hangingSignBlock(GravitationBlocks.BELADON_HANGING_SIGN.get(), GravitationBlocks.BELADON_WALL_HANGING_SIGN.get(), this.texture(this.name(GravitationBlocks.BELADON_PLANKS.get()), "natural/"));
+        this.signBlock(GravitationBlocks.BELADON_SIGN.get(), GravitationBlocks.BELADON_WALL_SIGN.get(), this.texture(this.name(GravitationBlocks.STRIPPED_BELADON_LOG.get()), "natural/"));
+        this.hangingSignBlock(GravitationBlocks.BELADON_HANGING_SIGN.get(), GravitationBlocks.BELADON_WALL_HANGING_SIGN.get(), this.texture(this.name(GravitationBlocks.STRIPPED_BELADON_LOG.get()), "natural/"));
         this.saplingBlock(GravitationBlocks.BELADON_SAPLING.get(), "natural/");
 
         // enchanted set
@@ -80,8 +80,8 @@ public class GravitationBlockstateData extends AetherBlockStateProvider {
         this.log(GravitationBlocks.STRIPPED_ENCHANTED_LOG.get());
         this.wood(GravitationBlocks.ENCHANTED_WOOD.get(), GravitationBlocks.ENCHANTED_LOG.get());
         this.wood(GravitationBlocks.STRIPPED_ENCHANTED_WOOD.get(), GravitationBlocks.STRIPPED_ENCHANTED_LOG.get());
-        this.signBlock(GravitationBlocks.ENCHANTED_SIGN.get(), GravitationBlocks.ENCHANTED_WALL_SIGN.get(), this.texture(this.name(GravitationBlocks.ENCHANTED_PLANKS.get()), "natural/"));
-        this.hangingSignBlock(GravitationBlocks.ENCHANTED_HANGING_SIGN.get(), GravitationBlocks.ENCHANTED_WALL_HANGING_SIGN.get(), this.texture(this.name(GravitationBlocks.ENCHANTED_PLANKS.get()), "natural/"));
+        this.signBlock(GravitationBlocks.ENCHANTED_SIGN.get(), GravitationBlocks.ENCHANTED_WALL_SIGN.get(), this.texture(this.name(GravitationBlocks.STRIPPED_ENCHANTED_LOG.get()), "natural/"));
+        this.hangingSignBlock(GravitationBlocks.ENCHANTED_HANGING_SIGN.get(), GravitationBlocks.ENCHANTED_WALL_HANGING_SIGN.get(), this.texture(this.name(GravitationBlocks.STRIPPED_ENCHANTED_LOG.get()), "natural/"));
         this.saplingBlock(GravitationBlocks.ENCHANTED_SAPLING.get(), "natural/");
         this.doorBlock(GravitationBlocks.ENCHANTED_DOOR.get(), new ResourceLocation("gravitation:block/natural/enchanted_door_bottom"), new ResourceLocation("gravitation:block/natural/enchanted_door_top"));
         this.trapdoorBlock(GravitationBlocks.ENCHANTED_TRAPDOOR.get(), new ResourceLocation("gravitation:block/natural/enchanted_trapdoor"), true);

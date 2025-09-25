@@ -1,5 +1,6 @@
 package mrthomas20121.gravitation;
 
+import mrthomas20121.gravitation.attribute.GravitationAttributes;
 import mrthomas20121.gravitation.block.GravitationBlocks;
 import mrthomas20121.gravitation.block.wood.GraviWoodType;
 import mrthomas20121.gravitation.block_entity.GraviBlockEntityTypes;
@@ -46,6 +47,7 @@ public class Gravitation {
 		bus.addListener(this::setup);
 		bus.addListener(this::datagen);
 
+		GravitationAttributes.ATTRIBUTES.register(bus);
 		GraviBlockEntityTypes.BLOCK_ENTITY_TYPES.register(bus);
 		GravitationBlocks.BLOCKS.register(bus);
 		GravitationItems.ITEMS.register(bus);
@@ -93,7 +95,7 @@ public class Gravitation {
 		GravitationBlockTags blockTags = new GravitationBlockTags(packOutput, lookupProvider, existingFileHelper);
 		event.getGenerator().addProvider(event.includeServer(), blockTags);
 		event.getGenerator().addProvider(event.includeServer(), GravitationLoot.create(packOutput));
-		event.getGenerator().addProvider(event.includeServer(), new GravitationRecipes(packOutput));
+		event.getGenerator().addProvider(event.includeServer(), new GravitationRecipeData(packOutput));
 		event.getGenerator().addProvider(event.includeServer(), new GravitationEntityTagsData(packOutput, lookupProvider, existingFileHelper));
 		event.getGenerator().addProvider(event.includeServer(), new GravitationItemTags(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
 		//event.getGenerator().addProvider(event.includeServer(), new GravitationBiomeTagsData(packOutput, lookupProvider, existingFileHelper));

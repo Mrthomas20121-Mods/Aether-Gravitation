@@ -3,6 +3,7 @@ package mrthomas20121.gravitation.data;
 import com.aetherteam.aether.AetherTags;
 import com.aetherteam.aether.block.AetherBlocks;
 import com.aetherteam.aether.data.resources.AetherFeatureStates;
+import com.aetherteam.aether.world.foliageplacer.HolidayFoliagePlacer;
 import com.google.common.collect.ImmutableList;
 import mrthomas20121.gravitation.block.GravitationBlocks;
 import mrthomas20121.gravitation.item.GravitationItems;
@@ -50,8 +51,7 @@ public class GravitationConfiguredFeatures {
     }
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
-        register(context, BRONZITE_ORE, Feature.ORE, new OreConfiguration(
-                List.of(
+        register(context, BRONZITE_ORE, Feature.ORE, new OreConfiguration(List.of(
                         OreConfiguration.target(ICESTONE, GravitationBlocks.BRONZITE_ICESTONE_ORE.get().defaultBlockState()),
                         OreConfiguration.target(HOLYSTONE, GravitationBlocks.BRONZITE_ORE.get().defaultBlockState())), 8));
         register(context, CONGLOMERATE_ORE, Feature.ORE, new OreConfiguration(new TagMatchTest(AetherTags.Blocks.HOLYSTONE), GravitationBlocks.CONGLOMERATE.get().defaultBlockState(), 32));
@@ -60,8 +60,14 @@ public class GravitationConfiguredFeatures {
                 .decorators(ImmutableList.of(new GraviAlterGroundDecorator(BlockStateProvider.simple(GravitationBlocks.AER_GRASS.get())))).build());
         register(context, GOLDEN_AERFIN_TREE_CONFIGURATION, Feature.TREE, createGoldenAerfin().dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get()))
                 .decorators(ImmutableList.of(new GraviAlterGroundDecorator(BlockStateProvider.simple(GravitationBlocks.ENCHANTED_MOSS.get())))).build());
-        register(context, BELADON_TREE_CONFIGURATION, Feature.TREE, createStraightBlobTree(GravitationBlocks.BELADON_LOG.get(), GravitationBlocks.BELADON_LEAVES.get(), 5, 3, 0, 3).dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
-        register(context, ENCHANTED_TREE_CONFIGURATION, Feature.TREE, createEnchanted().dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
+        register(context, BELADON_TREE_CONFIGURATION, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
+                BlockStateProvider.simple(GravitationBlocks.BELADON_LOG.get().defaultBlockState()),
+                new StraightTrunkPlacer(5, 2, 0),
+                BlockStateProvider.simple(GravitationBlocks.BELADON_LEAVES.get().defaultBlockState()),
+                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(0), 3),
+                new TwoLayersFeatureSize(1, 0, 1)).ignoreVines().build());
+        register(context, ENCHANTED_TREE_CONFIGURATION, Feature.TREE, createEnchanted().dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get()))
+                .decorators(ImmutableList.of(new GraviAlterGroundDecorator(BlockStateProvider.simple(AetherBlocks.ENCHANTED_AETHER_GRASS_BLOCK.get())))).build());
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createEnchanted() {

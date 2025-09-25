@@ -52,7 +52,7 @@ public class GraviAlterGroundDecorator extends TreeDecorator {
                     int l = k % 8;
                     int i1 = k / 8;
                     if (l == 0 || l == 7 || i1 == 0 || i1 == 7) {
-                        this.placeCircle(p_225969_, p_225978_.offset(-3 + l, 0, -3 + i1));
+                        this.placeCircle(p_225969_, p_225978_.offset(-2 + l, 0, -2 + i1));
                     }
                 }
 

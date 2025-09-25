@@ -63,6 +63,7 @@ public class GraviTags {
         public static TagKey<Item> TOOLS_ADAMANTITE = forgeTag("tools/adamantite");
         public static TagKey<Item> ARMORS_ADAMANTITE = forgeTag("armors/adamantite");
         public static TagKey<Item> GEM_ADAMANTITE = forgeTag("gems/adamantite");
+        public static TagKey<Item> ARMORS_PHOENIX = forgeTag("armors/phoenix");
 
         public static TagKey<Item> BRONZITE_REPAIRING = tag("bronzite_repairing");
 
