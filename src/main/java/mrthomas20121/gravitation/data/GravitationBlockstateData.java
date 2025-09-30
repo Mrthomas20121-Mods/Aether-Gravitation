@@ -2,7 +2,6 @@ package mrthomas20121.gravitation.data;
 
 import com.aetherteam.aether.block.AetherBlocks;
 import com.aetherteam.aether.data.providers.AetherBlockStateProvider;
-import com.aetherteam.nitrogen.data.providers.NitrogenBlockStateProvider;
 import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.block.GravitationBlocks;
 import net.minecraft.data.PackOutput;
@@ -20,18 +19,16 @@ public class GravitationBlockstateData extends AetherBlockStateProvider {
 
         this.block(GravitationBlocks.ENCHANTED_MOSS.get(), "natural/");
         this.block(GravitationBlocks.BRONZITE_ORE.get(), "natural/");
-        this.block(GravitationBlocks.BRONZITE_ICESTONE_ORE.get(), "natural/");
         this.block(GravitationBlocks.BRONZITE_BLOCK.get(), "construction/");
-        this.grass(GravitationBlocks.AER_GRASS.get(), AetherBlocks.AETHER_DIRT.get());
+        this.grass(GravitationBlocks.FROZEN_AETHER_GRASS_BLOCK.get(), AetherBlocks.AETHER_DIRT.get());
+        this.aercloudAll(GravitationBlocks.ICY_AERCLOUD.get(), "natural/");
 
         // aerfin set
         this.pottedPlant(GravitationBlocks.POTTED_AERFIN_SAPLING.get(), GravitationBlocks.AERFIN_SAPLING.get(), "natural/");
-        this.pottedPlant(GravitationBlocks.POTTED_BLUE_AERFIN_SAPLING.get(), GravitationBlocks.BLUE_AERFIN_SAPLING.get(), "natural/");
-        this.pottedPlant(GravitationBlocks.POTTED_GOLDEN_AERFIN_SAPLING.get(), GravitationBlocks.GOLDEN_AERFIN_SAPLING.get(), "natural/");
+        this.pottedPlant(GravitationBlocks.POTTED_ORANGE_AERFIN_SAPLING.get(), GravitationBlocks.ORANGE_AERFIN_SAPLING.get(), "natural/");
         this.block(GravitationBlocks.AERFIN_PLANKS.get(), "natural/");
         this.block(GravitationBlocks.AERFIN_LEAVES.get(), "natural/");
-        this.block(GravitationBlocks.BLUE_AERFIN_LEAVES.get(), "natural/");
-        this.block(GravitationBlocks.GOLDEN_AERFIN_LEAVES.get(), "natural/");
+        this.block(GravitationBlocks.ORANGE_AERFIN_LEAVES.get(), "natural/");
         this.log(GravitationBlocks.AERFIN_LOG.get());
         this.log(GravitationBlocks.STRIPPED_AERFIN_LOG.get());
         this.wood(GravitationBlocks.AERFIN_WOOD.get(), GravitationBlocks.AERFIN_LOG.get());
@@ -48,8 +45,7 @@ public class GravitationBlockstateData extends AetherBlockStateProvider {
         this.signBlock(GravitationBlocks.AERFIN_SIGN.get(), GravitationBlocks.AERFIN_WALL_SIGN.get(), this.texture(this.name(GravitationBlocks.STRIPPED_AERFIN_LOG.get()), "natural/"));
         this.hangingSignBlock(GravitationBlocks.AERFIN_HANGING_SIGN.get(), GravitationBlocks.AERFIN_WALL_HANGING_SIGN.get(), this.texture(this.name(GravitationBlocks.STRIPPED_AERFIN_LOG.get()), "natural/"));
         this.saplingBlock(GravitationBlocks.AERFIN_SAPLING.get(), "natural/");
-        this.saplingBlock(GravitationBlocks.BLUE_AERFIN_SAPLING.get(), "natural/");
-        this.saplingBlock(GravitationBlocks.GOLDEN_AERFIN_SAPLING.get(), "natural/");
+        this.saplingBlock(GravitationBlocks.ORANGE_AERFIN_SAPLING.get(), "natural/");
 
         // beladon set
         this.pottedPlant(GravitationBlocks.POTTED_BELADON_SAPLING.get(), GravitationBlocks.BELADON_SAPLING.get(), "natural/");

@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 public class AerfinFoliagePlacer extends FoliagePlacer {
 
     public static final Codec<AerfinFoliagePlacer> CODEC = RecordCodecBuilder.create((instance) -> foliagePlacerParts(instance)
-            .and(IntProvider.codec(0, 24).fieldOf("trunk_height").forGetter((placer) -> placer.trunkHeight))
+            .and(IntProvider.codec(0, 16).fieldOf("trunk_height").forGetter((placer) -> placer.trunkHeight))
             .apply(instance, AerfinFoliagePlacer::new));
     private final IntProvider trunkHeight;
 
@@ -30,23 +30,12 @@ public class AerfinFoliagePlacer extends FoliagePlacer {
 
     @Override
     protected void createFoliage(LevelSimulatedReader level, FoliageSetter foliageSetter, RandomSource random, TreeConfiguration config, int maxFreeTreeHeight, FoliagePlacer.FoliageAttachment attachment, int foliageHeight, int foliageRadius, int offset) {
-        BlockPos blockPos = attachment.pos();
+        boolean flag = attachment.doubleTrunk();
+        BlockPos blockPos = attachment.pos().above();
 
-        int i;
-
-        for(int l = offset-4; l > -offset; --l) {
-            if(!isOdd(l)) {
-                i = 1;
-            }
-            else {
-                i = 2;
-            }
-            this.placeLeavesRow(level, foliageSetter, random, config, blockPos, i, l, attachment.doubleTrunk());
-        }
-    }
-
-    public static boolean isOdd(int i) {
-        return (i & 1) != 0;
+        this.placeLeavesRow(level, foliageSetter, random, config, blockPos, foliageRadius, 1 - foliageHeight, flag);
+        this.placeLeavesRow(level, foliageSetter, random, config, blockPos, foliageRadius - 1, 2 - foliageHeight, flag);
+        this.placeLeavesRow(level, foliageSetter, random, config, blockPos, foliageRadius - 2, 3 - foliageHeight, flag);
     }
 
     @Override

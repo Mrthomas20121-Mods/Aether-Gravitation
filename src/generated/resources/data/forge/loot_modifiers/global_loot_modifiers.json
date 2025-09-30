@@ -1,10 +1,5 @@
 {
   "entries": [
-    "gravitation:bronze_dungeon_loot",
-    "gravitation:bronze_dungeon_reward",
-    "gravitation:silver_dungeon_reward",
-    "gravitation:silver_dungeon_loot",
-    "gravitation:gold_loot",
     "gravitation:gold_dungeon_enchantment"
   ],
   "replace": false

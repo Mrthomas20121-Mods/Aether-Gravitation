@@ -1,0 +1,26 @@
+{
+  "name": "aether:chests/dungeon/silver/silver_dungeon_loot",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 3.0,
+                "min": 0.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "gravitation:bronzite_ingot",
+          "weight": 3
+        }
+      ],
+      "name": "pool1"
+    }
+  ]
+}

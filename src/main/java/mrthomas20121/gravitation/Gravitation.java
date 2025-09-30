@@ -1,6 +1,5 @@
 package mrthomas20121.gravitation;
 
-import mrthomas20121.gravitation.attribute.GravitationAttributes;
 import mrthomas20121.gravitation.block.GravitationBlocks;
 import mrthomas20121.gravitation.block.wood.GraviWoodType;
 import mrthomas20121.gravitation.block_entity.GraviBlockEntityTypes;
@@ -8,6 +7,7 @@ import mrthomas20121.gravitation.compat.ModCompat;
 import mrthomas20121.gravitation.data.*;
 import mrthomas20121.gravitation.data.loot.GlobalLootModifiers;
 import mrthomas20121.gravitation.data.loot.LootDataProvider;
+import mrthomas20121.gravitation.data.loot.LootTableInjectionProvider;
 import mrthomas20121.gravitation.effect.GravitationEffects;
 import mrthomas20121.gravitation.enchanting.GravitationEnchantments;
 import mrthomas20121.gravitation.entity.GraviEntityTypes;
@@ -19,6 +19,7 @@ import mrthomas20121.gravitation.world.biome.GravitationSurfaceData;
 import mrthomas20121.gravitation.world.foliageplacer.GravitationFoliagePlacerType;
 import mrthomas20121.gravitation.world.treedecorator.GravitationDecoratorTypes;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -47,7 +48,6 @@ public class Gravitation {
 		bus.addListener(this::setup);
 		bus.addListener(this::datagen);
 
-		GravitationAttributes.ATTRIBUTES.register(bus);
 		GraviBlockEntityTypes.BLOCK_ENTITY_TYPES.register(bus);
 		GravitationBlocks.BLOCKS.register(bus);
 		GravitationItems.ITEMS.register(bus);
@@ -79,25 +79,27 @@ public class Gravitation {
 	}
 
 	public void datagen(GatherDataEvent event) {
-		PackOutput packOutput = event.getGenerator().getPackOutput();
+		DataGenerator generator = event.getGenerator();
+		PackOutput packOutput = generator.getPackOutput();
 		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 		CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
 		// client
-		event.getGenerator().addProvider(event.includeClient(), new GravitationBlockstateData(packOutput, existingFileHelper));
-		event.getGenerator().addProvider(event.includeClient(), new GravitationItemData(packOutput, existingFileHelper));
-		event.getGenerator().addProvider(event.includeClient(), new GravitationLanguageData(packOutput));
+		generator.addProvider(event.includeClient(), new GravitationBlockstateData(packOutput, existingFileHelper));
+		generator.addProvider(event.includeClient(), new GravitationItemData(packOutput, existingFileHelper));
+		generator.addProvider(event.includeClient(), new GravitationLanguageData(packOutput));
 
 		// server
-		event.getGenerator().addProvider(event.includeServer(), new GravitationAdvancementsData(packOutput, lookupProvider, existingFileHelper));
-		event.getGenerator().addProvider(event.includeServer(), new GravitationRegistrySets(packOutput, lookupProvider));
-		event.getGenerator().addProvider(event.includeServer(), new LootDataProvider(packOutput));
+		generator.addProvider(event.includeServer(), new LootTableInjectionProvider(packOutput));
+		generator.addProvider(event.includeServer(), new GravitationAdvancementsData(packOutput, lookupProvider, existingFileHelper));
+		generator.addProvider(event.includeServer(), new GravitationRegistrySets(packOutput, lookupProvider));
+		generator.addProvider(event.includeServer(), new LootDataProvider(packOutput));
 		GravitationBlockTags blockTags = new GravitationBlockTags(packOutput, lookupProvider, existingFileHelper);
-		event.getGenerator().addProvider(event.includeServer(), blockTags);
-		event.getGenerator().addProvider(event.includeServer(), GravitationLoot.create(packOutput));
-		event.getGenerator().addProvider(event.includeServer(), new GravitationRecipeData(packOutput));
-		event.getGenerator().addProvider(event.includeServer(), new GravitationEntityTagsData(packOutput, lookupProvider, existingFileHelper));
-		event.getGenerator().addProvider(event.includeServer(), new GravitationItemTags(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
+		generator.addProvider(event.includeServer(), blockTags);
+		generator.addProvider(event.includeServer(), GravitationLoot.create(packOutput));
+		generator.addProvider(event.includeServer(), new GravitationRecipeData(packOutput));
+		generator.addProvider(event.includeServer(), new GravitationEntityTagsData(packOutput, lookupProvider, existingFileHelper));
+		generator.addProvider(event.includeServer(), new GravitationItemTags(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
 		//event.getGenerator().addProvider(event.includeServer(), new GravitationBiomeTagsData(packOutput, lookupProvider, existingFileHelper));
 	}
 }

@@ -6,17 +6,6 @@
     "targets": [
       {
         "state": {
-          "Name": "gravitation:bronzite_icestone_ore"
-        },
-        "target": {
-          "block_state": {
-            "Name": "aether:icestone"
-          },
-          "predicate_type": "minecraft:blockstate_match"
-        }
-      },
-      {
-        "state": {
           "Name": "gravitation:bronzite_ore"
         },
         "target": {

@@ -8,7 +8,8 @@ import mrthomas20121.gravitation.item.tools.neptune.NeptuneTool;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -19,8 +20,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.ItemAttributeModifierEvent;
-import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.CriticalHitEvent;
@@ -35,12 +36,19 @@ import top.theillusivec4.curios.api.SlotResult;
 import top.theillusivec4.curios.api.event.CurioAttributeModifierEvent;
 import top.theillusivec4.curios.api.type.capability.ICuriosItemHandler;
 
+import java.util.Objects;
 import java.util.Optional;
+import java.util.UUID;
 
 import static net.minecraft.world.item.enchantment.EnchantmentHelper.getEnchantmentLevel;
 
 @Mod.EventBusSubscriber(modid = Gravitation.MOD_ID)
 public class ForgeEvents {
+
+    private static final UUID HELMET_UUID = UUID.fromString("1137ca50-652c-4227-9adb-81bffd379687");
+    private static final UUID CHESTPLATE_UUID = UUID.fromString("7077e71f-1ca2-4d27-8cad-d3d1539384ee");
+    private static final UUID LEGGINGS_UUID = UUID.fromString("9039b4ff-4127-4d8f-895a-c510e6fcd49f");
+    private static final UUID BOOTS_UUID = UUID.fromString("5f209dc2-f8ad-4499-a109-eaba300b2ba4");
 
     @SubscribeEvent
     public static void modifyItemEvent(ItemAttributeModifierEvent event) {
@@ -50,10 +58,51 @@ public class ForgeEvents {
             event.addModifier(ALObjects.Attributes.ARMOR_SHRED.get(), new AttributeModifier("gravitation:armor_shred_adamantite", 0.3f, AttributeModifier.Operation.ADDITION));
         }
 
-        int level = event.getItemStack().getEnchantmentLevel(GravitationEnchantments.SUN_SPIRIT_BLESSING.get());
+        int level = stack.getEnchantmentLevel(GravitationEnchantments.SUN_SPIRIT_BLESSING.get());
 
         if(event.getSlotType().isArmor() && level > 0) {
-            event.addModifier(Attributes.MAX_HEALTH, new AttributeModifier("gravitation:sun_spirit_blessing_max_health", 1f*level, AttributeModifier.Operation.ADDITION));
+            if(event.getSlotType().equals(EquipmentSlot.HEAD) && stack.is(Tags.Items.ARMORS_HELMETS)) {
+                event.addModifier(Attributes.MAX_HEALTH, new AttributeModifier(HELMET_UUID, "gravitation:sun_spirit_blessing_max_health", level, AttributeModifier.Operation.ADDITION));
+            }
+            else if(event.getSlotType().equals(EquipmentSlot.CHEST) && stack.is(Tags.Items.ARMORS_CHESTPLATES)) {
+                event.addModifier(Attributes.MAX_HEALTH, new AttributeModifier(CHESTPLATE_UUID, "gravitation:sun_spirit_blessing_max_health", level, AttributeModifier.Operation.ADDITION));
+            }
+            else if(event.getSlotType().equals(EquipmentSlot.LEGS) && stack.is(Tags.Items.ARMORS_LEGGINGS)) {
+                event.addModifier(Attributes.MAX_HEALTH, new AttributeModifier(LEGGINGS_UUID, "gravitation:sun_spirit_blessing_max_health", level, AttributeModifier.Operation.ADDITION));
+            }
+            else if(event.getSlotType().equals(EquipmentSlot.FEET) && stack.is(Tags.Items.ARMORS_BOOTS)) {
+                event.addModifier(Attributes.MAX_HEALTH, new AttributeModifier(BOOTS_UUID, "gravitation:sun_spirit_blessing_max_health", level, AttributeModifier.Operation.ADDITION));
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void unequipEvent(LivingEquipmentChangeEvent event) {
+        ItemStack from = event.getFrom();
+        ItemStack to = event.getTo();
+        if(!from.isEmpty() && event.getSlot().isArmor()) {
+            int level = from.getEnchantmentLevel(GravitationEnchantments.SUN_SPIRIT_BLESSING.get());
+            int toLevel = event.getTo().getEnchantmentLevel(GravitationEnchantments.SUN_SPIRIT_BLESSING.get());
+            if(level > 0 && toLevel == 0) {
+                LivingEntity entity = event.getEntity();
+                if(entity.getAttribute(Attributes.MAX_HEALTH) != null) {
+                    UUID uuid = HELMET_UUID;
+
+                    if(from.is(Tags.Items.ARMORS_CHESTPLATES)) {
+                        uuid = CHESTPLATE_UUID;
+                    }
+                    else if(from.is(Tags.Items.ARMORS_LEGGINGS)) {
+                        uuid = LEGGINGS_UUID;
+                    }
+                    else if(from.is(Tags.Items.ARMORS_BOOTS)) {
+                        uuid = LEGGINGS_UUID;
+                    }
+
+                    Objects.requireNonNull(entity.getAttribute(Attributes.MAX_HEALTH)).removePermanentModifier(uuid);
+                    entity.hurt(entity.damageSources().genericKill(), level);
+                    //entity.setHealth(entity.getMaxHealth());
+                }
+            }
         }
     }
 

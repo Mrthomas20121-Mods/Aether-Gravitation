@@ -16,6 +16,7 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public class GravitationBiomes {
 
+    public static ResourceKey<Biome> FROSTED_FOREST = createKey("frosted_forest");
     public static ResourceKey<Biome> ENCHANTED_FOREST = createKey("enchanted_forest");
     public static ResourceKey<Biome> GOLDEN_MOUNTAIN = createKey("golden_mountain");
     public static ResourceKey<Biome> BELADON_PLAINS = createKey("beladon_plains");
@@ -30,11 +31,19 @@ public class GravitationBiomes {
     public static void bootstrap(BootstapContext<Biome> context) {
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         HolderGetter<ConfiguredWorldCarver<?>> vanillaConfiguredCarvers = context.lookup(Registries.CONFIGURED_CARVER);
-        context.register(ENCHANTED_FOREST, enchantedForestBiome(placedFeatures, vanillaConfiguredCarvers));
-        context.register(GOLDEN_MOUNTAIN, goldenMountainBiome(placedFeatures, vanillaConfiguredCarvers));
-        context.register(BELADON_PLAINS, beladonMireBiome(placedFeatures, vanillaConfiguredCarvers));
-        context.register(AERFIN_FOREST, aerfinForestBiome(placedFeatures, vanillaConfiguredCarvers));
-        context.register(BELADON_FOREST, beladonForest(placedFeatures, vanillaConfiguredCarvers));
+        //context.register(ENCHANTED_FOREST, enchantedForestBiome(placedFeatures, vanillaConfiguredCarvers));
+        //context.register(GOLDEN_MOUNTAIN, goldenMountainBiome(placedFeatures, vanillaConfiguredCarvers));
+        //context.register(BELADON_PLAINS, beladonMireBiome(placedFeatures, vanillaConfiguredCarvers));
+        //context.register(AERFIN_FOREST, aerfinForestBiome(placedFeatures, vanillaConfiguredCarvers));
+        //context.register(BELADON_FOREST, beladonForest(placedFeatures, vanillaConfiguredCarvers));
+        context.register(FROSTED_FOREST, frostedForest(placedFeatures, vanillaConfiguredCarvers));
+    }
+
+    public static Biome frostedForest(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
+        return makeAetherDefaultBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers)
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GravitationPlacedFeatures.AERFIN_FOREST_PLACEMENT)
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GravitationPlacedFeatures.ORANGE_AERFIN_FOREST_PLACEMENT)
+                .addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, GravitationPlacedFeatures.ICY_AERCLOUD_PLACEMENT));
     }
 
     public static Biome beladonForest(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
@@ -44,7 +53,7 @@ public class GravitationBiomes {
 
     public static Biome goldenMountainBiome(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
         return makeAetherDefaultBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers)
-                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GravitationPlacedFeatures.GOLDEN_AERFIN_FOREST_PLACEMENT));
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GravitationPlacedFeatures.ORANGE_AERFIN_FOREST_PLACEMENT));
     }
 
     public static Biome beladonMireBiome(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
@@ -55,8 +64,7 @@ public class GravitationBiomes {
     public static Biome aerfinForestBiome(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
         return makeAetherDefaultBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers)
                 .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GravitationPlacedFeatures.AERFIN_FOREST_PLACEMENT)
-                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GravitationPlacedFeatures.BLUE_AERFIN_FOREST_PLACEMENT)
-                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GravitationPlacedFeatures.GOLDEN_AERFIN_FOREST_PLACEMENT));
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GravitationPlacedFeatures.ORANGE_AERFIN_FOREST_PLACEMENT));
     }
 
     public static Biome enchantedForestBiome(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {

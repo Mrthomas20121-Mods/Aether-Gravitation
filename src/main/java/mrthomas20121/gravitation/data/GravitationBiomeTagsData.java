@@ -20,11 +20,7 @@ public class GravitationBiomeTagsData extends BiomeTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider provider) {
         this.tag(AetherTags.Biomes.IS_AETHER).add(
-                GravitationBiomes.ENCHANTED_FOREST,
-                GravitationBiomes.BELADON_FOREST,
-                GravitationBiomes.BELADON_PLAINS,
-                GravitationBiomes.AERFIN_FOREST,
-                GravitationBiomes.GOLDEN_MOUNTAIN
+                GravitationBiomes.FROSTED_FOREST
         );
     }
 }

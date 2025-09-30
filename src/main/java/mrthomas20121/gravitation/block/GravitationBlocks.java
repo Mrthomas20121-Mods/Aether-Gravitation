@@ -3,10 +3,11 @@ package mrthomas20121.gravitation.block;
 import com.aetherteam.aether.block.AetherBlocks;
 import com.aetherteam.aether.block.construction.BookshelfBlock;
 import com.aetherteam.aether.block.natural.AetherDoubleDropsLeaves;
-import com.aetherteam.aether.block.natural.AetherGrassBlock;
 import com.aetherteam.aether.block.natural.AetherLogBlock;
 import com.aetherteam.aether.mixin.mixins.common.accessor.FireBlockAccessor;
 import mrthomas20121.gravitation.Gravitation;
+import mrthomas20121.gravitation.block.natural.FrozenAetherGrassBlock;
+import mrthomas20121.gravitation.block.natural.IcyAercloud;
 import mrthomas20121.gravitation.block.wood.*;
 import mrthomas20121.gravitation.block_entity.EnchantedHangingSignBlockEntity;
 import mrthomas20121.gravitation.item.GravitationItems;
@@ -36,19 +37,17 @@ public class GravitationBlocks {
 
     public static DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Gravitation.MOD_ID);
 
-    public static final RegistryObject<AetherGrassBlock> AER_GRASS = register("aer_grass", () -> new AetherGrassBlock(Block.Properties.copy(AetherBlocks.AETHER_GRASS_BLOCK.get())));
+    public static final RegistryObject<FrozenAetherGrassBlock> FROZEN_AETHER_GRASS_BLOCK = register("frozen_aether_grass_block", () -> new FrozenAetherGrassBlock(Block.Properties.copy(AetherBlocks.AETHER_GRASS_BLOCK.get())));
+    public static final RegistryObject<IcyAercloud> ICY_AERCLOUD = register("icy_aercloud", () -> new IcyAercloud(Block.Properties.copy(AetherBlocks.COLD_AERCLOUD.get())));
 
     public static final RegistryObject<Block> AERFIN_LEAVES = register("aerfin_leaves", () -> new AetherDoubleDropsLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.TERRACOTTA_BLUE).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GravitationBlocks::ocelotOrParrot).isSuffocating(GravitationBlocks::never).isViewBlocking(GravitationBlocks::never)));
-    public static final RegistryObject<Block> BLUE_AERFIN_LEAVES = register("blue_aerfin_leaves", () -> new BlueAerfinLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.COLOR_BLUE).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GravitationBlocks::ocelotOrParrot).isSuffocating(GravitationBlocks::never).isViewBlocking(GravitationBlocks::never)));
-    public static final RegistryObject<Block> GOLDEN_AERFIN_LEAVES = register("golden_aerfin_leaves", () -> new GoldenAerfinLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.GOLD).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GravitationBlocks::ocelotOrParrot).isSuffocating(GravitationBlocks::never).isViewBlocking(GravitationBlocks::never)));
+    public static final RegistryObject<Block> ORANGE_AERFIN_LEAVES = register("orange_aerfin_leaves", () -> new OrangeAerfinLeaves(Block.Properties.copy(Blocks.OAK_LEAVES).mapColor(MapColor.GOLD).ignitedByLava().pushReaction(PushReaction.DESTROY).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isValidSpawn(GravitationBlocks::ocelotOrParrot).isSuffocating(GravitationBlocks::never).isViewBlocking(GravitationBlocks::never)));
 
     public static final RegistryObject<SaplingBlock> AERFIN_SAPLING = register("aerfin_sapling", () -> new SaplingBlock(new AerfinTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
-    public static final RegistryObject<SaplingBlock> BLUE_AERFIN_SAPLING = register("blue_aerfin_sapling", () -> new SaplingBlock(new BlueAerfinTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
-    public static final RegistryObject<SaplingBlock> GOLDEN_AERFIN_SAPLING = register("golden_aerfin_sapling", () -> new SaplingBlock(new GoldenAerfinTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
+    public static final RegistryObject<SaplingBlock> ORANGE_AERFIN_SAPLING = register("orange_aerfin_sapling", () -> new SaplingBlock(new OrangeAerfinTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
 
     public static final RegistryObject<FlowerPotBlock> POTTED_AERFIN_SAPLING = BLOCKS.register("potted_aerfin_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, AERFIN_SAPLING, Block.Properties.copy(Blocks.FLOWER_POT)));
-    public static final RegistryObject<FlowerPotBlock> POTTED_BLUE_AERFIN_SAPLING = BLOCKS.register("potted_blue_aerfin_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BLUE_AERFIN_SAPLING, Block.Properties.copy(Blocks.FLOWER_POT)));
-    public static final RegistryObject<FlowerPotBlock> POTTED_GOLDEN_AERFIN_SAPLING = BLOCKS.register("potted_golden_aerfin_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, GOLDEN_AERFIN_SAPLING, Block.Properties.copy(Blocks.FLOWER_POT)));
+    public static final RegistryObject<FlowerPotBlock> POTTED_ORANGE_AERFIN_SAPLING = BLOCKS.register("potted_orange_aerfin_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ORANGE_AERFIN_SAPLING, Block.Properties.copy(Blocks.FLOWER_POT)));
 
     public static final RegistryObject<RotatedPillarBlock> AERFIN_LOG = register("aerfin_log", () -> new AetherLogBlock(Block.Properties.copy(Blocks.OAK_LOG).mapColor(MapColor.COLOR_PURPLE)));
     public static final RegistryObject<RotatedPillarBlock> STRIPPED_AERFIN_LOG = register("stripped_aerfin_log", () -> new RotatedPillarBlock(Block.Properties.copy(Blocks.STRIPPED_OAK_LOG).mapColor(MapColor.COLOR_PURPLE)));
@@ -118,8 +117,6 @@ public class GravitationBlocks {
 
     public static final RegistryObject<Block> BRONZITE_ORE = register("bronzite_ore", () -> new Block(Block.Properties.copy(AetherBlocks.ZANITE_ORE.get())), (b) -> () -> new BlockItem(b.get(), new Item.Properties().rarity(GravitationItems.SALMON_ROSE)));
 
-    public static final RegistryObject<Block> BRONZITE_ICESTONE_ORE = register("bronzite_icestone_ore", () -> new Block(Block.Properties.copy(AetherBlocks.ZANITE_ORE.get())), (b) -> () -> new BlockItem(b.get(), new Item.Properties().rarity(GravitationItems.SALMON_ROSE)));
-
     public static final RegistryObject<Block> ENCHANTED_MOSS = register("enchanted_moss", () -> new Block(Block.Properties.copy(Blocks.MOSS_BLOCK)));
 
     public static final RegistryObject<Block> CONGLOMERATE = register("conglomerate", () -> new Block(Block.Properties.copy(Blocks.STONE)), (b) -> () -> new BlockItem(b.get(), new Item.Properties()));
@@ -140,8 +137,7 @@ public class GravitationBlocks {
     public static void registerPots() {
         FlowerPotBlock pot = (FlowerPotBlock) Blocks.FLOWER_POT;
         pot.addPlant(GravitationBlocks.AERFIN_SAPLING.getId(), GravitationBlocks.POTTED_AERFIN_SAPLING);
-        pot.addPlant(GravitationBlocks.BLUE_AERFIN_SAPLING.getId(), GravitationBlocks.POTTED_BLUE_AERFIN_SAPLING);
-        pot.addPlant(GravitationBlocks.GOLDEN_AERFIN_SAPLING.getId(), GravitationBlocks.POTTED_GOLDEN_AERFIN_SAPLING);
+        pot.addPlant(GravitationBlocks.ORANGE_AERFIN_SAPLING.getId(), GravitationBlocks.POTTED_ORANGE_AERFIN_SAPLING);
         pot.addPlant(GravitationBlocks.BELADON_SAPLING.getId(), GravitationBlocks.POTTED_BELADON_SAPLING);
         pot.addPlant(GravitationBlocks.ENCHANTED_SAPLING.getId(), GravitationBlocks.POTTED_ENCHANTED_SAPLING);
     }
@@ -150,8 +146,7 @@ public class GravitationBlocks {
         FireBlockAccessor fireBlockAccessor = (FireBlockAccessor) Blocks.FIRE;
 
         fireBlockAccessor.callSetFlammable(GravitationBlocks.AERFIN_LEAVES.get(), 30, 60);
-        fireBlockAccessor.callSetFlammable(GravitationBlocks.BLUE_AERFIN_LEAVES.get(), 30, 60);
-        fireBlockAccessor.callSetFlammable(GravitationBlocks.GOLDEN_AERFIN_LEAVES.get(), 30, 60);
+        fireBlockAccessor.callSetFlammable(GravitationBlocks.ORANGE_AERFIN_LEAVES.get(), 30, 60);
         fireBlockAccessor.callSetFlammable(GravitationBlocks.AERFIN_PLANKS.get(), 5, 20);
         fireBlockAccessor.callSetFlammable(GravitationBlocks.AERFIN_LOG.get(), 5, 5);
         fireBlockAccessor.callSetFlammable(GravitationBlocks.STRIPPED_AERFIN_LOG.get(), 5, 5);

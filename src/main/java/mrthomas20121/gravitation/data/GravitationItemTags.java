@@ -27,7 +27,7 @@ public class GravitationItemTags extends ItemTagsProvider {
     @Override
     protected void addTags(@NotNull HolderLookup.Provider provider) {
 
-        this.tag(AetherTags.Items.AETHER_DIRT).add(GravitationBlocks.AER_GRASS.get().asItem());
+        this.tag(AetherTags.Items.AETHER_DIRT).add(GravitationBlocks.FROZEN_AETHER_GRASS_BLOCK.get().asItem());
 
         this.tag(GraviTags.Items.ARMORS_PHOENIX).add(
                 AetherItems.PHOENIX_HELMET.get(),
@@ -35,6 +35,20 @@ public class GravitationItemTags extends ItemTagsProvider {
                 AetherItems.PHOENIX_LEGGINGS.get(),
                 AetherItems.PHOENIX_BOOTS.get()
         );
+
+        this.tag(AetherTags.Items.AERCLOUDS).add(GravitationBlocks.ICY_AERCLOUD.get().asItem());
+
+        this.tag(Tags.Items.ARMORS_HELMETS)
+                .add(GravitationItems.ADAMANTITE_HELMET.get(), GravitationItems.BRONZITE_HELMET.get());
+
+        this.tag(Tags.Items.ARMORS_CHESTPLATES)
+                .add(GravitationItems.ADAMANTITE_CHESTPLATE.get(), GravitationItems.BRONZITE_CHESTPLATE.get());
+
+        this.tag(Tags.Items.ARMORS_LEGGINGS)
+                .add(GravitationItems.ADAMANTITE_LEGGING.get(), GravitationItems.BRONZITE_LEGGING.get());
+
+        this.tag(Tags.Items.ARMORS_BOOTS)
+                .add(GravitationItems.ADAMANTITE_BOOTS.get(), GravitationItems.BRONZITE_BOOTS.get());
 
         this.tag(GraviTags.Items.NEPTUNE_TOOLS).add(
                 GravitationItems.NEPTUNE_CUTLASS.get(),
@@ -107,8 +121,7 @@ public class GravitationItemTags extends ItemTagsProvider {
 
         this.tag(ItemTags.SAPLINGS).add(
                 GravitationBlocks.AERFIN_SAPLING.get().asItem(),
-                GravitationBlocks.BLUE_AERFIN_SAPLING.get().asItem(),
-                GravitationBlocks.GOLDEN_AERFIN_SAPLING.get().asItem(),
+                GravitationBlocks.ORANGE_AERFIN_SAPLING.get().asItem(),
                 GravitationBlocks.ENCHANTED_SAPLING.get().asItem(),
                 GravitationBlocks.BELADON_SAPLING.get().asItem()
         );
@@ -173,6 +186,6 @@ public class GravitationItemTags extends ItemTagsProvider {
 
         this.tag(AetherTags.Items.AETHER_CAPE).add(GravitationItems.BRONZITE_CAPE.get(), GravitationItems.ADAMANTITE_CAPE.get());
 
-        this.tag(GraviTags.Items.BRONZITE_ORE).add(GravitationBlocks.BRONZITE_ORE.get().asItem(), GravitationBlocks.BRONZITE_ICESTONE_ORE.get().asItem());
+        this.tag(GraviTags.Items.BRONZITE_ORE).add(GravitationBlocks.BRONZITE_ORE.get().asItem());
     }
 }

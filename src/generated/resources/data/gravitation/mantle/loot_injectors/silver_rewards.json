@@ -1,0 +1,81 @@
+{
+  "name": "aether:chests/dungeon/silver/silver_dungeon_reward",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "gravitation:neptune_battleaxe",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "gravitation:neptune_axe",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "gravitation:neptune_cutlass",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "gravitation:neptune_hoe"
+        },
+        {
+          "type": "minecraft:item",
+          "name": "gravitation:neptune_pickaxe",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "gravitation:neptune_shovel",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "gravitation:neptune_ring",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "gravitation:neptune_pendant",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 0.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "gravitation:bronzite_upgrade_smithing_template",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 3.0,
+                "min": 0.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "gravitation:bronzite_ingot",
+          "weight": 4
+        }
+      ],
+      "name": "main"
+    }
+  ]
+}

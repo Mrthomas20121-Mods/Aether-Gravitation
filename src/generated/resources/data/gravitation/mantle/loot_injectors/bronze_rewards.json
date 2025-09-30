@@ -1,0 +1,35 @@
+{
+  "name": "aether:chests/dungeon/bronze/bronze_dungeon_reward",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "gravitation:neptune_ring",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "name": "gravitation:neptune_pendant",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 0.0
+              },
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "gravitation:bronzite_upgrade_smithing_template"
+        }
+      ],
+      "name": "main"
+    }
+  ]
+}

@@ -74,10 +74,6 @@ public class GravitationCreativeTab {
             .title(Component.translatable("itemGroup.gravitation.misc"))
             .withTabsBefore(new ResourceLocation(Gravitation.MOD_ID, "tools"))
             .displayItems((parameters, output) -> {
-                output.accept(GravitationItems.DIG_STONE.get());
-                output.accept(GravitationItems.DENSE_STONE.get());
-                output.accept(GravitationItems.POWER_STONE.get());
-                output.accept(GravitationItems.RAINBOW_STONE.get());
                 output.accept(GravitationItems.GREATER_HEALING_STONE.get());
                 output.accept(GravitationItems.ADAMANTITE_GEM.get());
                 output.accept(GravitationItems.BRONZITE_ROCK.get());
@@ -97,8 +93,10 @@ public class GravitationCreativeTab {
             .withTabsBefore(new ResourceLocation(Aether.MODID, "spawn_eggs"))
             .withTabsAfter(new ResourceLocation(Gravitation.MOD_ID, "tools"))
             .displayItems((parameters, output) -> {
+                output.accept(GravitationBlocks.FROZEN_AETHER_GRASS_BLOCK.get());
+                output.accept(GravitationBlocks.ICY_AERCLOUD.get());
+
                 output.accept(GravitationBlocks.BRONZITE_ORE.get());
-                output.accept(GravitationBlocks.BRONZITE_ICESTONE_ORE.get());
                 output.accept(GravitationBlocks.BRONZITE_BLOCK.get());
 
                 output.accept(GravitationBlocks.CONGLOMERATE.get());
@@ -120,8 +118,7 @@ public class GravitationCreativeTab {
                 output.accept(GravitationBlocks.AERFIN_HANGING_SIGN.get());
                 output.accept(GravitationBlocks.AERFIN_BOOKSHELF.get());
                 output.accept(GravitationBlocks.AERFIN_LEAVES.get());
-                output.accept(GravitationBlocks.BLUE_AERFIN_LEAVES.get());
-                output.accept(GravitationBlocks.GOLDEN_AERFIN_LEAVES.get());
+                output.accept(GravitationBlocks.ORANGE_AERFIN_LEAVES.get());
                 output.accept(GravitationBlocks.AERFIN_LOG.get());
                 output.accept(GravitationBlocks.STRIPPED_AERFIN_LOG.get());
                 output.accept(GravitationBlocks.AERFIN_WOOD.get());
@@ -135,8 +132,7 @@ public class GravitationCreativeTab {
                 output.accept(GravitationBlocks.AERFIN_TRAPDOOR.get());
                 output.accept(GravitationBlocks.AERFIN_FENCE.get());
                 output.accept(GravitationBlocks.AERFIN_SAPLING.get());
-                output.accept(GravitationBlocks.BLUE_AERFIN_SAPLING.get());
-                output.accept(GravitationBlocks.GOLDEN_AERFIN_SAPLING.get());
+                output.accept(GravitationBlocks.ORANGE_AERFIN_SAPLING.get());
 
                 output.accept(GravitationBlocks.BELADON_SIGN.get());
                 output.accept(GravitationBlocks.BELADON_HANGING_SIGN.get());

@@ -3,10 +3,10 @@ package mrthomas20121.gravitation.data;
 import com.aetherteam.aether.AetherTags;
 import com.aetherteam.aether.block.AetherBlocks;
 import com.aetherteam.aether.data.resources.AetherFeatureStates;
-import com.aetherteam.aether.world.foliageplacer.HolidayFoliagePlacer;
+import com.aetherteam.aether.data.resources.builders.AetherConfiguredFeatureBuilders;
+import com.aetherteam.aether.world.feature.AetherFeatures;
 import com.google.common.collect.ImmutableList;
 import mrthomas20121.gravitation.block.GravitationBlocks;
-import mrthomas20121.gravitation.item.GravitationItems;
 import mrthomas20121.gravitation.world.foliageplacer.AerfinFoliagePlacer;
 import mrthomas20121.gravitation.world.foliageplacer.EnchantedFoliagePlacer;
 import mrthomas20121.gravitation.world.treedecorator.GraviAlterGroundDecorator;
@@ -17,7 +17,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
@@ -38,9 +37,9 @@ public class GravitationConfiguredFeatures {
     public static final RuleTest ICESTONE = new BlockStateMatchTest(AetherFeatureStates.ICESTONE);
     public static final RuleTest HOLYSTONE = new TagMatchTest(AetherTags.Blocks.HOLYSTONE);
 
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ICY_AERCLOUD_CONFIGURATION = createKey("icy_aercloud");
     public static final ResourceKey<ConfiguredFeature<?, ?>> AERFIN_TREE_CONFIGURATION = createKey("aerfin_tree");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> BLUE_AERFIN_TREE_CONFIGURATION = createKey("blue_aerfin_tree");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> GOLDEN_AERFIN_TREE_CONFIGURATION = createKey("golden_aerfin_tree");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORANGE_AERFIN_TREE_CONFIGURATION = createKey("orange_aerfin_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BELADON_TREE_CONFIGURATION = createKey("beladon_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ENCHANTED_TREE_CONFIGURATION = createKey("enchanted_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> BRONZITE_ORE = createKey("bronzite_ore");
@@ -51,15 +50,16 @@ public class GravitationConfiguredFeatures {
     }
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
+
+        register(context, ICY_AERCLOUD_CONFIGURATION, AetherFeatures.AERCLOUD.get(), AetherConfiguredFeatureBuilders.aercloud(12, GravitationFeatureStates.ICY_AERCLOUD));
+
         register(context, BRONZITE_ORE, Feature.ORE, new OreConfiguration(List.of(
-                        OreConfiguration.target(ICESTONE, GravitationBlocks.BRONZITE_ICESTONE_ORE.get().defaultBlockState()),
                         OreConfiguration.target(HOLYSTONE, GravitationBlocks.BRONZITE_ORE.get().defaultBlockState())), 8));
         register(context, CONGLOMERATE_ORE, Feature.ORE, new OreConfiguration(new TagMatchTest(AetherTags.Blocks.HOLYSTONE), GravitationBlocks.CONGLOMERATE.get().defaultBlockState(), 32));
-        register(context, AERFIN_TREE_CONFIGURATION, Feature.TREE, createAerfin().dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
-        register(context, BLUE_AERFIN_TREE_CONFIGURATION, Feature.TREE, createBlueAerfin().dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get()))
-                .decorators(ImmutableList.of(new GraviAlterGroundDecorator(BlockStateProvider.simple(GravitationBlocks.AER_GRASS.get())))).build());
-        register(context, GOLDEN_AERFIN_TREE_CONFIGURATION, Feature.TREE, createGoldenAerfin().dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get()))
-                .decorators(ImmutableList.of(new GraviAlterGroundDecorator(BlockStateProvider.simple(GravitationBlocks.ENCHANTED_MOSS.get())))).build());
+        register(context, AERFIN_TREE_CONFIGURATION, Feature.TREE,
+                createAerfin(4, GravitationBlocks.AERFIN_LEAVES.get()).dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
+        register(context, ORANGE_AERFIN_TREE_CONFIGURATION, Feature.TREE,
+                createAerfin(5, GravitationBlocks.ORANGE_AERFIN_LEAVES.get()).dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
         register(context, BELADON_TREE_CONFIGURATION, Feature.TREE, new TreeConfiguration.TreeConfigurationBuilder(
                 BlockStateProvider.simple(GravitationBlocks.BELADON_LOG.get().defaultBlockState()),
                 new StraightTrunkPlacer(5, 2, 0),
@@ -74,24 +74,12 @@ public class GravitationConfiguredFeatures {
         return createEnchantedTree(GravitationBlocks.ENCHANTED_LOG.get(), GravitationBlocks.ENCHANTED_LEAVES.get(), 4, 3, 1).ignoreVines();
     }
 
-    private static TreeConfiguration.TreeConfigurationBuilder createBeladon() {
-        return createStraightBlobTree(GravitationBlocks.BELADON_LOG.get(), GravitationBlocks.BELADON_LEAVES.get(), 3, 2, 2, 3).ignoreVines();
-    }
-
-    private static TreeConfiguration.TreeConfigurationBuilder createBlueAerfin() {
-        return createAerfinBase(GravitationBlocks.AERFIN_LOG.get(), GravitationBlocks.BLUE_AERFIN_LEAVES.get(), 6, 0, 2).ignoreVines();
-    }
-
-    private static TreeConfiguration.TreeConfigurationBuilder createGoldenAerfin() {
-        return createAerfinBase(GravitationBlocks.AERFIN_LOG.get(), GravitationBlocks.GOLDEN_AERFIN_LEAVES.get(), 8, 1, 2).ignoreVines();
-    }
-
-    private static TreeConfiguration.TreeConfigurationBuilder createAerfin() {
-        return createAerfinBase(GravitationBlocks.AERFIN_LOG.get(), GravitationBlocks.AERFIN_LEAVES.get(), 4, 2, 2).ignoreVines();
+    private static TreeConfiguration.TreeConfigurationBuilder createAerfin(int height, Block leaves) {
+        return createAerfinBase(GravitationBlocks.AERFIN_LOG.get(), leaves, height, 1, 2).ignoreVines();
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createAerfinBase(Block p_195147_, Block p_195148_, int baseHeight, int heightRandA, int heightRandB) {
-        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(p_195147_), new StraightTrunkPlacer(baseHeight, heightRandA, heightRandB), BlockStateProvider.simple(p_195148_), new AerfinFoliagePlacer(ConstantInt.of(2), ConstantInt.of(4), UniformInt.of(4, 8)), new TwoLayersFeatureSize(2, 0, 2));
+        return new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(p_195147_), new StraightTrunkPlacer(baseHeight, heightRandA, heightRandB), BlockStateProvider.simple(p_195148_), new AerfinFoliagePlacer(ConstantInt.of(2), ConstantInt.of(2), UniformInt.of(3, 4)), new TwoLayersFeatureSize(2, 0, 2));
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createEnchantedTree(Block p_195147_, Block p_195148_, int p_195149_, int p_195150_, int p_195151_) {

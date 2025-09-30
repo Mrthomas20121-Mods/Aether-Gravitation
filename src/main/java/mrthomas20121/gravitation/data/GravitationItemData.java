@@ -22,28 +22,20 @@ public class GravitationItemData extends AetherItemModelProvider {
 
     @Override
     protected void registerModels() {
-        this.item(GravitationItems.GREATER_HEALING_STONE.get(), "");
-        this.item(GravitationItems.POWER_STONE.get(), "");
-        this.item(GravitationItems.DENSE_STONE.get(), "");
-        this.item(GravitationItems.DIG_STONE.get(), "");
-        this.item(GravitationItems.RAINBOW_STONE.get(), "");
-
         this.item(GravitationItems.BRONZITE_UPGRADE.get(), "");
         this.itemBlock(GravitationBlocks.BRONZITE_BLOCK.get());
         this.itemBlock(GravitationBlocks.BRONZITE_ORE.get());
-        this.itemBlock(GravitationBlocks.BRONZITE_ICESTONE_ORE.get());
         this.itemBlock(GravitationBlocks.ENCHANTED_MOSS.get());
-        this.itemBlock(GravitationBlocks.AER_GRASS.get());
+        this.itemBlock(GravitationBlocks.FROZEN_AETHER_GRASS_BLOCK.get());
+        this.aercloudItem(GravitationBlocks.ICY_AERCLOUD.get());
 
         // aerfin set
         this.item(GravitationItems.AERFIN_BOAT.get(), "");
         this.item(GravitationItems.AERFIN_CHEST_BOAT.get(), "");
-        this.itemBlockFlat(GravitationBlocks.AERFIN_SAPLING.get(), "natural");
-        this.itemBlockFlat(GravitationBlocks.BLUE_AERFIN_SAPLING.get(), "natural");
-        this.itemBlockFlat(GravitationBlocks.GOLDEN_AERFIN_SAPLING.get(), "natural");
+        this.itemBlockFlat(GravitationBlocks.AERFIN_SAPLING.get(), "natural/");
+        this.itemBlockFlat(GravitationBlocks.ORANGE_AERFIN_SAPLING.get(), "natural/");
         this.itemBlock(GravitationBlocks.AERFIN_LEAVES.get());
-        this.itemBlock(GravitationBlocks.BLUE_AERFIN_LEAVES.get());
-        this.itemBlock(GravitationBlocks.GOLDEN_AERFIN_LEAVES.get());
+        this.itemBlock(GravitationBlocks.ORANGE_AERFIN_LEAVES.get());
         this.itemBlock(GravitationBlocks.AERFIN_PLANKS.get());
         this.itemBlock(GravitationBlocks.AERFIN_LOG.get());
         this.itemBlock(GravitationBlocks.AERFIN_WOOD.get());
@@ -64,7 +56,7 @@ public class GravitationItemData extends AetherItemModelProvider {
         // beladon set
         this.item(GravitationItems.BELADON_CHEST_BOAT.get(),  "");
         this.item(GravitationItems.BELADON_BOAT.get(),  "");
-        this.itemBlockFlat(GravitationBlocks.BELADON_SAPLING.get(), "natural");
+        this.itemBlockFlat(GravitationBlocks.BELADON_SAPLING.get(), "natural/");
         this.itemBlock(GravitationBlocks.BELADON_LEAVES.get());
         this.itemBlock(GravitationBlocks.BELADON_PLANKS.get());
         this.itemBlock(GravitationBlocks.BELADON_LOG.get());
@@ -86,7 +78,7 @@ public class GravitationItemData extends AetherItemModelProvider {
         // enchanted set
         this.item(GravitationItems.ENCHANTED_CHEST_BOAT.get(),  "");
         this.item(GravitationItems.ENCHANTED_BOAT.get(),  "");
-        this.itemBlockFlat(GravitationBlocks.ENCHANTED_SAPLING.get(), "natural");
+        this.itemBlockFlat(GravitationBlocks.ENCHANTED_SAPLING.get(), "natural/");
         this.itemBlock(GravitationBlocks.ENCHANTED_LEAVES.get());
         this.itemBlock(GravitationBlocks.ENCHANTED_PLANKS.get());
         this.itemBlock(GravitationBlocks.ENCHANTED_LOG.get());

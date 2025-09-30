@@ -1,5 +1,6 @@
 package mrthomas20121.gravitation.data;
 
+import com.aetherteam.aether.data.resources.builders.AetherPlacedFeatureBuilders;
 import com.aetherteam.aether.data.resources.registries.AetherConfiguredFeatures;
 import com.aetherteam.aether.world.placementmodifier.DungeonBlacklistFilter;
 import com.aetherteam.aether.world.placementmodifier.ImprovedLayerPlacementModifier;
@@ -12,6 +13,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
+import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -27,8 +29,7 @@ import java.util.List;
 public class GravitationPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> AERFIN_FOREST_PLACEMENT = createKey("aerfin_forest_placement");
-    public static final ResourceKey<PlacedFeature> BLUE_AERFIN_FOREST_PLACEMENT = createKey("blue_aerfin_forest_placement");
-    public static final ResourceKey<PlacedFeature> GOLDEN_AERFIN_FOREST_PLACEMENT = createKey("golden_aerfin_forest_placement");
+    public static final ResourceKey<PlacedFeature> ORANGE_AERFIN_FOREST_PLACEMENT = createKey("orange_aerfin_forest_placement");
     public static final ResourceKey<PlacedFeature> BELADON_FOREST_PLACEMENT = createKey("beladon_forest_placement");
     public static final ResourceKey<PlacedFeature> BELADON_PLAINS_PLACEMENT = createKey("beladon_plains");
     public static final ResourceKey<PlacedFeature> ENCHANTED_TREES_PLACEMENT = createKey("enchanted_tree");
@@ -37,6 +38,8 @@ public class GravitationPlacedFeatures {
     public static final ResourceKey<PlacedFeature> BRONZITE_ORE_PLACEMENT = createKey("bronzite_ore");
     public static final ResourceKey<PlacedFeature> LARGE_BRONZITE_ORE_PLACEMENT = createKey("large_bronzite_ore");
     public static final ResourceKey<PlacedFeature> LARGE_BLUE_AERCLOUD_PLACEMENT = createKey("large_blue_aercloud");
+    public static final ResourceKey<PlacedFeature> FROZEN_AETHER_GRASS_BONEMEAL = createKey("frozen_aether_grass_bonemeal");
+    public static final ResourceKey<PlacedFeature> ICY_AERCLOUD_PLACEMENT = createKey("icy_aercloud");
 
     public static final ResourceKey<PlacedFeature> CONGLOMERATE_PLACEMENT = createKey("conglomerate_placement");
 
@@ -48,14 +51,15 @@ public class GravitationPlacedFeatures {
 
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
+        register(context, ICY_AERCLOUD_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.ICY_AERCLOUD_CONFIGURATION), AetherPlacedFeatureBuilders.aercloudPlacement(32, 64, 10));
+
+        register(context, FROZEN_AETHER_GRASS_BONEMEAL, configuredFeatures.getOrThrow(VegetationFeatures.SINGLE_PIECE_OF_GRASS),
+                PlacementUtils.isEmpty());
         register(context, AERFIN_FOREST_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.AERFIN_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(4, 0.1F, 2)));
+                treePlacement(PlacementUtils.countExtra(8, 0.1F, 1)));
 
-        register(context, BLUE_AERFIN_FOREST_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.BLUE_AERFIN_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
-
-        register(context, GOLDEN_AERFIN_FOREST_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.GOLDEN_AERFIN_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
+        register(context, ORANGE_AERFIN_FOREST_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.ORANGE_AERFIN_TREE_CONFIGURATION),
+                treePlacement(PlacementUtils.countExtra(2, 0.1F, 1)));
 
         register(context, BELADON_FOREST_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.BELADON_TREE_CONFIGURATION),
                 treePlacement(PlacementUtils.countExtra(2, 0.1F, 2)));
@@ -86,7 +90,7 @@ public class GravitationPlacedFeatures {
     }
 
     public static List<PlacementModifier> treePlacement(PlacementModifier count) {
-        return treePlacementBase(count).add(BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(GravitationBlocks.BELADON_SAPLING.get().defaultBlockState(), BlockPos.ZERO))).add(BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(GravitationBlocks.ENCHANTED_SAPLING.get().defaultBlockState(), BlockPos.ZERO))).build();
+        return treePlacementBase(count).add(BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(GravitationBlocks.AERFIN_SAPLING.get().defaultBlockState(), BlockPos.ZERO))).add(BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(GravitationBlocks.BELADON_SAPLING.get().defaultBlockState(), BlockPos.ZERO))).add(BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(GravitationBlocks.ENCHANTED_SAPLING.get().defaultBlockState(), BlockPos.ZERO))).build();
     }
 
     private static ImmutableList.Builder<PlacementModifier> treePlacementBase(PlacementModifier count) {

@@ -5,6 +5,7 @@ import mrthomas20121.gravitation.block.GravitationBlocks;
 import mrthomas20121.gravitation.enchanting.GravitationEnchantments;
 import mrthomas20121.gravitation.entity.GraviEntityTypes;
 import mrthomas20121.gravitation.item.GravitationItems;
+import mrthomas20121.gravitation.world.biome.GravitationBiomes;
 import net.minecraft.data.PackOutput;
 
 public class GravitationLanguageData extends AetherLanguageProvider {
@@ -47,13 +48,8 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         add("item.gravitation.smithing_template.bronzite_upgrade.applies_to", "Bronzite Rock");
         add("item.gravitation.smithing_template.bronzite_upgrade.ingredients", "Zanite Gemstone");
 
+        addBiome(GravitationBiomes.FROSTED_FOREST, "Frosted Forest");
 
-
-        addItem(GravitationItems.GREATER_HEALING_STONE, "Greater Healing Stone");
-        addItem(GravitationItems.POWER_STONE, "Powering Stone");
-        addItem(GravitationItems.DENSE_STONE, "Dense Stone");
-        addItem(GravitationItems.DIG_STONE, "Digging Stone");
-        addItem(GravitationItems.RAINBOW_STONE, "Rainbow Stone");
         addItem(GravitationItems.NEPTUNE_RING, "Neptune Ring");
         addItem(GravitationItems.NEPTUNE_PENDANT, "Neptune Pendant");
         addItem(GravitationItems.NEPTUNE_AXE, "Neptune Axe");
@@ -104,7 +100,8 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addItem(GravitationItems.ENCHANTED_CHEST_BOAT, "Enchanted Chest Boat");
         addItem(GravitationItems.ENCHANTED_BOAT, "Enchanted Boat");
 
-        addBlock(GravitationBlocks.AER_GRASS, "Aer Grass");
+        addBlock(GravitationBlocks.FROZEN_AETHER_GRASS_BLOCK, "Frozen Aether Grass Block");
+        addBlock(GravitationBlocks.ICY_AERCLOUD, "Icy Aercloud");
         addBlock(GravitationBlocks.CONGLOMERATE, "Conglomerate");
         addBlock(GravitationBlocks.CONGLOMERATE_WALLS, "Conglomerate Wall");
         addBlock(GravitationBlocks.CONGLOMERATE_STAIRS, "Conglomerate Stairs");
@@ -121,7 +118,6 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addBlock(GravitationBlocks.POLISHED_CONGLOMERATE_SLAB, "Polished Conglomerate Slab");
 
         addBlock(GravitationBlocks.BRONZITE_ORE, "Bronzite Ore");
-        addBlock(GravitationBlocks.BRONZITE_ICESTONE_ORE, "Bronzite Icestone Ore");
         addBlock(GravitationBlocks.BRONZITE_BLOCK, "Bronzite Block");
         addBlock(GravitationBlocks.ENCHANTED_SIGN, "Enchanted Sign");
         addBlock(GravitationBlocks.ENCHANTED_HANGING_SIGN, "Enchanted Hanging Sign");
@@ -151,11 +147,9 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addBlock(GravitationBlocks.AERFIN_SIGN, "Aerfin Sign");
         addBlock(GravitationBlocks.AERFIN_HANGING_SIGN, "Aerfin Hanging Sign");
         addBlock(GravitationBlocks.AERFIN_LEAVES, "Aerfin Leaves");
-        addBlock(GravitationBlocks.BLUE_AERFIN_LEAVES, "Blue Aerfin Leaves");
-        addBlock(GravitationBlocks.GOLDEN_AERFIN_LEAVES, "Golden Aerfin Leaves");
+        addBlock(GravitationBlocks.ORANGE_AERFIN_LEAVES, "Orange Aerfin Leaves");
         addBlock(GravitationBlocks.AERFIN_SAPLING, "Aerfin Sapling");
-        addBlock(GravitationBlocks.BLUE_AERFIN_SAPLING, "Blue Aerfin Sapling");
-        addBlock(GravitationBlocks.GOLDEN_AERFIN_SAPLING, "Golden Aerfin Sapling");
+        addBlock(GravitationBlocks.ORANGE_AERFIN_SAPLING, "Orange Aerfin Sapling");
         addBlock(GravitationBlocks.AERFIN_PLANKS, "Aerfin Planks");
         addBlock(GravitationBlocks.AERFIN_STAIRS, "Aerfin Stairs");
         addBlock(GravitationBlocks.AERFIN_SLAB, "Aerfin Slab");

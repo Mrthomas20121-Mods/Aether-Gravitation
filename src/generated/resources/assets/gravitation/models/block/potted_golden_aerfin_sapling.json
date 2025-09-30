@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/flower_pot_cross",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "plant": "gravitation:block/natural/golden_aerfin_sapling"
-  }
-}

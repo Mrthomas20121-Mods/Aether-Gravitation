@@ -35,7 +35,8 @@ public class GravitationLoot extends AetherBlockLootSubProvider {
     @Override
     protected void generate() {
 
-        this.dropSelf(GravitationBlocks.AER_GRASS.get());
+        this.dropSelf(GravitationBlocks.FROZEN_AETHER_GRASS_BLOCK.get());
+        this.dropSelfDouble(GravitationBlocks.ICY_AERCLOUD.get());
         this.dropSelf(GravitationBlocks.ENCHANTED_MOSS.get());
 
         this.dropSelf(GravitationBlocks.CONGLOMERATE.get());
@@ -54,11 +55,9 @@ public class GravitationLoot extends AetherBlockLootSubProvider {
         this.dropSelf(GravitationBlocks.POLISHED_CONGLOMERATE_SLAB.get());
 
         this.add(GravitationBlocks.AERFIN_LEAVES.get(), (leaves) -> this.droppingWithChancesAndSkyrootSticks(leaves, GravitationBlocks.AERFIN_SAPLING.get(), BlockLootAccessor.aether$getNormalLeavesSaplingChances()));
-        this.add(GravitationBlocks.BLUE_AERFIN_LEAVES.get(), (leaves) -> this.droppingWithChancesAndSkyrootSticks(leaves, GravitationBlocks.BLUE_AERFIN_SAPLING.get(), BlockLootAccessor.aether$getNormalLeavesSaplingChances()));
-        this.add(GravitationBlocks.GOLDEN_AERFIN_LEAVES.get(), (leaves) -> this.droppingGoldenAerfinLeaves(leaves, GravitationBlocks.GOLDEN_AERFIN_SAPLING.get(), BlockLootAccessor.aether$getNormalLeavesSaplingChances()));
+        this.add(GravitationBlocks.ORANGE_AERFIN_LEAVES.get(), (leaves) -> this.droppingGoldenAerfinLeaves(leaves, GravitationBlocks.ORANGE_AERFIN_SAPLING.get(), BlockLootAccessor.aether$getNormalLeavesSaplingChances()));
         this.dropSelf(GravitationBlocks.AERFIN_SAPLING.get());
-        this.dropSelf(GravitationBlocks.BLUE_AERFIN_SAPLING.get());
-        this.dropSelf(GravitationBlocks.GOLDEN_AERFIN_SAPLING.get());
+        this.dropSelf(GravitationBlocks.ORANGE_AERFIN_SAPLING.get());
         this.dropSelf(GravitationBlocks.AERFIN_SIGN.get());
         this.dropSelf(GravitationBlocks.AERFIN_HANGING_SIGN.get());
         this.dropSelf(GravitationBlocks.AERFIN_WALL_HANGING_SIGN.get());
@@ -67,7 +66,7 @@ public class GravitationLoot extends AetherBlockLootSubProvider {
         this.dropSelf(GravitationBlocks.STRIPPED_AERFIN_WOOD.get());
         this.dropSelf(GravitationBlocks.STRIPPED_AERFIN_LOG.get());
         this.dropSelf(GravitationBlocks.AERFIN_PLANKS.get());
-        this.dropSelf(GravitationBlocks.AERFIN_DOOR.get());
+        this.add(GravitationBlocks.AERFIN_DOOR.get(), createDoorTable(GravitationBlocks.AERFIN_DOOR.get()));
         this.dropSelf(GravitationBlocks.AERFIN_TRAPDOOR.get());
         this.dropSelf(GravitationBlocks.AERFIN_FENCE_GATE.get());
         this.dropSelf(GravitationBlocks.AERFIN_FENCE.get());
@@ -86,7 +85,7 @@ public class GravitationLoot extends AetherBlockLootSubProvider {
         this.dropSelf(GravitationBlocks.STRIPPED_BELADON_WOOD.get());
         this.dropSelf(GravitationBlocks.STRIPPED_BELADON_LOG.get());
         this.dropSelf(GravitationBlocks.BELADON_PLANKS.get());
-        this.dropSelf(GravitationBlocks.BELADON_DOOR.get());
+        this.add(GravitationBlocks.BELADON_DOOR.get(), createDoorTable(GravitationBlocks.BELADON_DOOR.get()));
         this.dropSelf(GravitationBlocks.BELADON_TRAPDOOR.get());
         this.dropSelf(GravitationBlocks.BELADON_FENCE_GATE.get());
         this.dropSelf(GravitationBlocks.BELADON_FENCE.get());
@@ -105,7 +104,7 @@ public class GravitationLoot extends AetherBlockLootSubProvider {
         this.dropSelf(GravitationBlocks.STRIPPED_ENCHANTED_WOOD.get());
         this.dropSelf(GravitationBlocks.STRIPPED_ENCHANTED_LOG.get());
         this.dropSelf(GravitationBlocks.ENCHANTED_PLANKS.get());
-        this.dropSelf(GravitationBlocks.ENCHANTED_DOOR.get());
+        this.add(GravitationBlocks.ENCHANTED_DOOR.get(), createDoorTable(GravitationBlocks.ENCHANTED_DOOR.get()));
         this.dropSelf(GravitationBlocks.ENCHANTED_TRAPDOOR.get());
         this.dropSelf(GravitationBlocks.ENCHANTED_FENCE_GATE.get());
         this.dropSelf(GravitationBlocks.ENCHANTED_FENCE.get());
@@ -115,13 +114,11 @@ public class GravitationLoot extends AetherBlockLootSubProvider {
         this.dropSelf(GravitationBlocks.ENCHANTED_PREASURE_PLATE.get());
 
         this.dropPottedContents(GravitationBlocks.POTTED_AERFIN_SAPLING.get());
-        this.dropPottedContents(GravitationBlocks.POTTED_BLUE_AERFIN_SAPLING.get());
-        this.dropPottedContents(GravitationBlocks.POTTED_GOLDEN_AERFIN_SAPLING.get());
+        this.dropPottedContents(GravitationBlocks.POTTED_ORANGE_AERFIN_SAPLING.get());
         this.dropPottedContents(GravitationBlocks.POTTED_BELADON_SAPLING.get());
         this.dropPottedContents(GravitationBlocks.POTTED_ENCHANTED_SAPLING.get());
 
-        this.dropWithFortune(GravitationBlocks.BRONZITE_ICESTONE_ORE.get(), GravitationItems.BRONZITE_ROCK.get());
-        this.dropWithFortune(GravitationBlocks.BRONZITE_ORE.get(), GravitationItems.BRONZITE_ROCK.get());
+        this.dropDoubleWithFortune(GravitationBlocks.BRONZITE_ORE.get(), GravitationItems.BRONZITE_ROCK.get());
         this.dropSelf(GravitationBlocks.BRONZITE_BLOCK.get());
         this.add(GravitationBlocks.AERFIN_BOOKSHELF.get(),
                 (bookshelf) -> createSingleItemTableWithSilkTouch(bookshelf, Items.BOOK, ConstantValue.exactly(3)));
