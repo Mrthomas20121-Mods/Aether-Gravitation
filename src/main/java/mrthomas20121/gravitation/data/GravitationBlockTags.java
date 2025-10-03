@@ -26,7 +26,7 @@ public class GravitationBlockTags extends BlockTagsProvider {
     @SuppressWarnings("unchecked")
     protected void addTags(@NotNull HolderLookup.Provider provider) {
 
-        this.tag(AetherTags.Blocks.AETHER_DIRT).add(GravitationBlocks.FROZEN_AETHER_GRASS_BLOCK.get(), GravitationBlocks.ENCHANTED_MOSS.get());
+        this.tag(AetherTags.Blocks.AETHER_DIRT).add(GravitationBlocks.FROZEN_AETHER_GRASS_BLOCK.get());
 
         this.tag(AetherTags.Blocks.AERCLOUDS).add(GravitationBlocks.ICY_AERCLOUD.get());
 
@@ -137,9 +137,6 @@ public class GravitationBlockTags extends BlockTagsProvider {
                 });
 
         this.tag(Tags.Blocks.ORES).add(GravitationBlocks.BRONZITE_ORE.get());
-
-        // vanilla add moss to the tag so i'm doing the same
-        this.tag(BlockTags.DIRT).add(GravitationBlocks.ENCHANTED_MOSS.get());
 
         this.tag(BlockTags.WALLS).add(
                 GravitationBlocks.CONGLOMERATE_WALLS.get(),

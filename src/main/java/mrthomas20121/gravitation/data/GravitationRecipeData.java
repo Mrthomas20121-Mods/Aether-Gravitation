@@ -17,7 +17,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import org.jetbrains.annotations.NotNull;
@@ -277,10 +276,7 @@ public class GravitationRecipeData extends AetherRecipeProvider {
 
         zaniteSmithing(consumer, GravitationItems.BRONZITE_ROCK.get(), RecipeCategory.TOOLS, GravitationItems.BRONZITE_INGOT.get());
 
-        enchantingRecipe(RecipeCategory.MISC, GravitationBlocks.ENCHANTED_SAPLING.get(), AetherBlocks.SKYROOT_SAPLING.get(), 0.20f, 50).save(consumer, new ResourceLocation("gravitation:enchanting/enchanted_sapling"));
-        enchantingRecipe(RecipeCategory.MISC, GravitationBlocks.ENCHANTED_MOSS.get(), Blocks.MOSS_BLOCK, 0.20f, 60).save(consumer, new ResourceLocation("gravitation:enchanting/enchanted_moss"));
-
-        freezingRecipe(RecipeCategory.MISC, Items.LAPIS_LAZULI, AetherItems.GOLDEN_AMBER.get(), 1.0f, 10).save(consumer, "gravitation:golden_amber_to_lapis");
+        freezingRecipe(RecipeCategory.MISC, GravitationItems.ICED_BLACK_BERRY.get(), GravitationItems.BLACK_BERRY.get(), 0.20f, 60).save(consumer, new ResourceLocation("gravitation:freezing/enchanted_black_berry"));
 
         //ModCompat.getCompatList().forEach(compat -> compat.addRecipes(consumer, this));
     }

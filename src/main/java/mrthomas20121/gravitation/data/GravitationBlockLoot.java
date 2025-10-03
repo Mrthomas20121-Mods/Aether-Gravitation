@@ -26,9 +26,9 @@ import java.util.List;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
-public class GravitationLoot extends AetherBlockLootSubProvider {
+public class GravitationBlockLoot extends AetherBlockLootSubProvider {
 
-    public GravitationLoot() {
+    public GravitationBlockLoot() {
         super(new HashSet<>(), FeatureFlags.REGISTRY.allFlags());
     }
 
@@ -37,7 +37,11 @@ public class GravitationLoot extends AetherBlockLootSubProvider {
 
         this.dropSelf(GravitationBlocks.FROZEN_AETHER_GRASS_BLOCK.get());
         this.dropSelfDouble(GravitationBlocks.ICY_AERCLOUD.get());
-        this.dropSelf(GravitationBlocks.ENCHANTED_MOSS.get());
+
+        this.add(GravitationBlocks.BLACK_BERRY_BUSH.get(), (bush) -> droppingBerryBush(bush, GravitationBlocks.BLACK_BERRY_BUSH_STEM.get(), AetherItems.BLUE_BERRY.get()));
+        this.dropSelfDouble(GravitationBlocks.BLACK_BERRY_BUSH_STEM.get());
+        this.dropPottedContents(GravitationBlocks.POTTED_BLACK_BERRY_BUSH.get());
+        this.dropPottedContents(GravitationBlocks.POTTED_BLACK_BERRY_BUSH_STEM.get());
 
         this.dropSelf(GravitationBlocks.CONGLOMERATE.get());
         this.dropSelf(GravitationBlocks.CONGLOMERATE_WALLS.get());
@@ -143,6 +147,6 @@ public class GravitationLoot extends AetherBlockLootSubProvider {
     }
 
     public static LootTableProvider create(PackOutput packOutput) {
-        return new LootTableProvider(packOutput, new HashSet<>(), List.of(new LootTableProvider.SubProviderEntry(GravitationLoot::new, LootContextParamSets.BLOCK)));
+        return new LootTableProvider(packOutput, new HashSet<>(), List.of(new LootTableProvider.SubProviderEntry(GravitationBlockLoot::new, LootContextParamSets.BLOCK)));
     }
 }

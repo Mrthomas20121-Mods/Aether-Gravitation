@@ -1,0 +1,6 @@
+{
+  "type": "forge:remove_features",
+  "biomes": "gravitation:frosted_forest",
+  "features": "aether:berry_bush_patch",
+  "steps": "vegetal_decoration"
+}

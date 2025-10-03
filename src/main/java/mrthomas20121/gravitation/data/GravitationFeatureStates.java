@@ -13,6 +13,7 @@ public class GravitationFeatureStates {
     public static final BlockState BELADON_LEAVES = doubleDrop(GravitationBlocks.BELADON_LEAVES.get());
     public static final BlockState AERFIN_LEAVES = doubleDrop(GravitationBlocks.AERFIN_LEAVES.get());
     public static final BlockState ORANGE_AERFIN_LEAVES = doubleDrop(GravitationBlocks.ORANGE_AERFIN_LEAVES.get());
+    public static final BlockState BLACK_BERRY_BUSH = doubleDrop(GravitationBlocks.BLACK_BERRY_BUSH.get());
 
     private static BlockState doubleDrop(Block state) {
         return state.defaultBlockState().setValue(AetherBlockStateProperties.DOUBLE_DROPS, true);

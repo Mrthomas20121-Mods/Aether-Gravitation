@@ -7,6 +7,8 @@ import com.aetherteam.aether.block.natural.AetherLogBlock;
 import com.aetherteam.aether.mixin.mixins.common.accessor.FireBlockAccessor;
 import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.block.natural.FrozenAetherGrassBlock;
+import mrthomas20121.gravitation.block.natural.GravitationBerryBushBlock;
+import mrthomas20121.gravitation.block.natural.GravitationBerryBushStemBlock;
 import mrthomas20121.gravitation.block.natural.IcyAercloud;
 import mrthomas20121.gravitation.block.wood.*;
 import mrthomas20121.gravitation.block_entity.EnchantedHangingSignBlockEntity;
@@ -114,8 +116,6 @@ public class GravitationBlocks {
 
     public static final RegistryObject<Block> BRONZITE_ORE = register("bronzite_ore", () -> new Block(Block.Properties.copy(AetherBlocks.ZANITE_ORE.get())), (b) -> () -> new BlockItem(b.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));
 
-    public static final RegistryObject<Block> ENCHANTED_MOSS = register("enchanted_moss", () -> new Block(Block.Properties.copy(Blocks.MOSS_BLOCK)));
-
     public static final RegistryObject<Block> CONGLOMERATE = register("conglomerate", () -> new Block(Block.Properties.copy(Blocks.STONE)), (b) -> () -> new BlockItem(b.get(), new Item.Properties()));
     public static final RegistryObject<StairBlock> CONGLOMERATE_STAIRS = register("conglomerate_stairs", () -> new StairBlock(() -> CONGLOMERATE.get().defaultBlockState(), Block.Properties.copy(Blocks.STONE)), (b) -> () -> new BlockItem(b.get(), new Item.Properties()));
     public static final RegistryObject<SlabBlock> CONGLOMERATE_SLAB = register("conglomerate_slab", () -> new SlabBlock(Block.Properties.copy(Blocks.STONE)), (b) -> () -> new BlockItem(b.get(), new Item.Properties()));
@@ -131,12 +131,19 @@ public class GravitationBlocks {
     public static final RegistryObject<SlabBlock> CONGLOMERATE_BRICK_SLAB = register("conglomerate_brick_slab", () -> new SlabBlock(Block.Properties.copy(Blocks.STONE)), (b) -> () -> new BlockItem(b.get(), new Item.Properties()));
     public static final RegistryObject<WallBlock> CONGLOMERATE_BRICK_WALLS = register("conglomerate_brick_wall", () -> new WallBlock(Block.Properties.copy(Blocks.STONE)), (b) -> () -> new BlockItem(b.get(), new Item.Properties()));
 
+    public static final RegistryObject<Block> BLACK_BERRY_BUSH = register("black_berry_bush", () -> new GravitationBerryBushBlock(Block.Properties.of().mapColor(MapColor.GRASS).pushReaction(PushReaction.DESTROY).strength(0.2F).sound(SoundType.GRASS).noOcclusion().isValidSpawn(GravitationBlocks::ocelotOrParrot).isRedstoneConductor(GravitationBlocks::never).isSuffocating(GravitationBlocks::never).isViewBlocking(GravitationBlocks::never)));
+    public static final RegistryObject<Block> BLACK_BERRY_BUSH_STEM = register("black_berry_bush_stem", () -> new GravitationBerryBushStemBlock(Block.Properties.of().mapColor(MapColor.GRASS).pushReaction(PushReaction.DESTROY).strength(0.2F).sound(SoundType.GRASS).noCollission()));
+    public static final RegistryObject<FlowerPotBlock> POTTED_BLACK_BERRY_BUSH = BLOCKS.register("potted_black_berry_bush", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BLACK_BERRY_BUSH, Block.Properties.copy(Blocks.FLOWER_POT)));
+    public static final RegistryObject<FlowerPotBlock> POTTED_BLACK_BERRY_BUSH_STEM = BLOCKS.register("potted_black_berry_bush_stem", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, BLACK_BERRY_BUSH_STEM, Block.Properties.copy(Blocks.FLOWER_POT)));
+
     public static void registerPots() {
         FlowerPotBlock pot = (FlowerPotBlock) Blocks.FLOWER_POT;
-        pot.addPlant(GravitationBlocks.AERFIN_SAPLING.getId(), GravitationBlocks.POTTED_AERFIN_SAPLING);
-        pot.addPlant(GravitationBlocks.ORANGE_AERFIN_SAPLING.getId(), GravitationBlocks.POTTED_ORANGE_AERFIN_SAPLING);
-        pot.addPlant(GravitationBlocks.BELADON_SAPLING.getId(), GravitationBlocks.POTTED_BELADON_SAPLING);
-        pot.addPlant(GravitationBlocks.ENCHANTED_SAPLING.getId(), GravitationBlocks.POTTED_ENCHANTED_SAPLING);
+        pot.addPlant(AERFIN_SAPLING.getId(), POTTED_AERFIN_SAPLING);
+        pot.addPlant(ORANGE_AERFIN_SAPLING.getId(), POTTED_ORANGE_AERFIN_SAPLING);
+        pot.addPlant(BELADON_SAPLING.getId(), POTTED_BELADON_SAPLING);
+        pot.addPlant(ENCHANTED_SAPLING.getId(), POTTED_ENCHANTED_SAPLING);
+        pot.addPlant(BLACK_BERRY_BUSH.getId(), POTTED_BLACK_BERRY_BUSH);
+        pot.addPlant(BLACK_BERRY_BUSH_STEM.getId(), POTTED_BLACK_BERRY_BUSH_STEM);
     }
 
     public static void registerFlammability() {

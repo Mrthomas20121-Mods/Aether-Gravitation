@@ -1,5 +1,10 @@
 {
   "type": "minecraft:block",
+  "functions": [
+    {
+      "function": "aether:double_drops"
+    }
+  ],
   "pools": [
     {
       "bonus_rolls": 0.0,
@@ -11,11 +16,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "gravitation:enchanted_moss"
+          "name": "gravitation:black_berry_bush_stem"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "gravitation:blocks/enchanted_moss"
+  "random_sequence": "gravitation:blocks/black_berry_bush_stem"
 }

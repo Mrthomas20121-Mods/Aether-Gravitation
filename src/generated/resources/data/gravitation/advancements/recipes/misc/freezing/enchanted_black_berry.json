@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_moss_block": {
+    "has_black_berry": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:moss_block"
+              "gravitation:black_berry"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "gravitation:enchanting/enchanted_moss"
+        "recipe": "gravitation:freezing/enchanted_black_berry"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_moss_block",
+      "has_black_berry",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "gravitation:enchanting/enchanted_moss"
+      "gravitation:freezing/enchanted_black_berry"
     ]
   },
   "sends_telemetry_event": true

@@ -36,6 +36,7 @@ public class GravitationPlacedFeatures {
     public static final ResourceKey<PlacedFeature> FROZEN_AETHER_GRASS_BONEMEAL = createKey("frozen_aether_grass_bonemeal");
     public static final ResourceKey<PlacedFeature> ICY_AERCLOUD_PLACEMENT = createKey("icy_aercloud");
     public static final ResourceKey<PlacedFeature> CONGLOMERATE_PLACEMENT = createKey("conglomerate_placement");
+    public static final ResourceKey<PlacedFeature> BLACK_BERRY_BUSH_PATCH_PLACEMENT = createKey("black_berry_bush_patch");
 
     private static ResourceKey<PlacedFeature> createKey(String name) {
         return ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation(Gravitation.MOD_ID, name));
@@ -44,6 +45,11 @@ public class GravitationPlacedFeatures {
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
 
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
+
+        register(context, BLACK_BERRY_BUSH_PATCH_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.BLACK_BERRY_BUSH_PATCH_CONFIGURATION),
+                RarityFilter.onAverageOnceEvery(8),
+                ImprovedLayerPlacementModifier.of(Heightmap.Types.MOTION_BLOCKING, UniformInt.of(0, 1), 4),
+                BiomeFilter.biome());
 
         register(context, ICY_AERCLOUD_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.ICY_AERCLOUD_CONFIGURATION), AetherPlacedFeatureBuilders.aercloudPlacement(32, 64, 10));
 

@@ -1,7 +1,6 @@
 package mrthomas20121.gravitation.item;
 
 import mrthomas20121.gravitation.Gravitation;
-import mrthomas20121.gravitation.item.stone.*;
 import mrthomas20121.gravitation.item.tools.*;
 import mrthomas20121.gravitation.item.tools.adamantite.*;
 import mrthomas20121.gravitation.item.tools.bronzite.*;
@@ -79,6 +78,9 @@ public class GravitationItems {
     public static RegistryObject<Item> DIAMOND_BATTLEAXE = ITEMS.register("diamond_battleaxe", DiamondBattleAxeItem::new);
     public static RegistryObject<Item> IRON_BATTLEAXE = ITEMS.register("iron_battleaxe", IronBattleAxeItem::new);
     public static RegistryObject<Item> GOLD_BATTLEAXE = ITEMS.register("gold_battleaxe", GoldBattleAxeItem::new);
+
+    public static final RegistryObject<Item> BLACK_BERRY = ITEMS.register("black_berry", () -> new Item(new Item.Properties().food(GravitationFood.BLACK_BERRY)));
+    public static final RegistryObject<Item> ICED_BLACK_BERRY = ITEMS.register("iced_black_berry", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON).food(GravitationFood.ICED_BLACK_BERRY)));
 
     public static final RegistryObject<Item> AERFIN_BOAT = ITEMS.register("aerfin_boat", () -> new AerfinBoatItem(false, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> AERFIN_CHEST_BOAT = ITEMS.register("aerfin_chest_boat", () -> new AerfinBoatItem(true, new Item.Properties().stacksTo(1)));

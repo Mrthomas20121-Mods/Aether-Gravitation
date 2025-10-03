@@ -25,9 +25,14 @@ public class GravitationItemData extends AetherItemModelProvider {
         this.item(GravitationItems.BRONZITE_UPGRADE.get(), "");
         this.itemBlock(GravitationBlocks.BRONZITE_BLOCK.get());
         this.itemBlock(GravitationBlocks.BRONZITE_ORE.get());
-        this.itemBlock(GravitationBlocks.ENCHANTED_MOSS.get());
         this.itemBlock(GravitationBlocks.FROZEN_AETHER_GRASS_BLOCK.get());
         this.aercloudItem(GravitationBlocks.ICY_AERCLOUD.get());
+
+        this.item(GravitationItems.BLACK_BERRY.get(), "");
+        this.item(GravitationItems.ICED_BLACK_BERRY.get(), "");
+
+        this.itemBlock(GravitationBlocks.BLACK_BERRY_BUSH.get());
+        this.itemBlockFlat(GravitationBlocks.BLACK_BERRY_BUSH_STEM.get(), "natural/");
 
         // aerfin set
         this.item(GravitationItems.AERFIN_BOAT.get(), "");

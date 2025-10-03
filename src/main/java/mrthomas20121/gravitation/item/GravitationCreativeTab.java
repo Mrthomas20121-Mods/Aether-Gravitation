@@ -74,6 +74,10 @@ public class GravitationCreativeTab {
             .title(Component.translatable("itemGroup.gravitation.misc"))
             .withTabsBefore(new ResourceLocation(Gravitation.MOD_ID, "tools"))
             .displayItems((parameters, output) -> {
+
+                output.accept(GravitationItems.BLACK_BERRY.get());
+                output.accept(GravitationItems.ICED_BLACK_BERRY.get());
+
                 output.accept(GravitationItems.ADAMANTITE_GEM.get());
                 output.accept(GravitationItems.BRONZITE_ROCK.get());
                 output.accept(GravitationItems.BRONZITE_INGOT.get());
@@ -94,6 +98,9 @@ public class GravitationCreativeTab {
             .displayItems((parameters, output) -> {
                 output.accept(GravitationBlocks.FROZEN_AETHER_GRASS_BLOCK.get());
                 output.accept(GravitationBlocks.ICY_AERCLOUD.get());
+
+                output.accept(GravitationBlocks.BLACK_BERRY_BUSH.get());
+                output.accept(GravitationBlocks.BLACK_BERRY_BUSH_STEM.get());
 
                 output.accept(GravitationBlocks.BRONZITE_ORE.get());
                 output.accept(GravitationBlocks.BRONZITE_BLOCK.get());

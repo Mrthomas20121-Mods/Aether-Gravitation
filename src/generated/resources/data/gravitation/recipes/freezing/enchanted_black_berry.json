@@ -1,0 +1,10 @@
+{
+  "type": "aether:freezing",
+  "category": "freezable_misc",
+  "cookingtime": 60,
+  "experience": 0.2,
+  "ingredient": {
+    "item": "gravitation:black_berry"
+  },
+  "result": "gravitation:iced_black_berry"
+}

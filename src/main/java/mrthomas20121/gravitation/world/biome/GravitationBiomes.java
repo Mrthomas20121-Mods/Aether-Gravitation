@@ -1,6 +1,7 @@
 package mrthomas20121.gravitation.world.biome;
 
 import com.aetherteam.aether.data.resources.builders.AetherBiomeBuilders;
+import com.aetherteam.aether.data.resources.registries.AetherPlacedFeatures;
 import mrthomas20121.gravitation.Gravitation;
 import mrthomas20121.gravitation.data.GravitationPlacedFeatures;
 import net.minecraft.core.HolderGetter;
@@ -33,7 +34,8 @@ public class GravitationBiomes {
     public static Biome frostedForest(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {
         return makeAetherDefaultBiome(new BiomeGenerationSettings.Builder(placedFeatures, worldCarvers)
                 .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GravitationPlacedFeatures.AERFIN_FOREST_PLACEMENT)
-                .addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, GravitationPlacedFeatures.ICY_AERCLOUD_PLACEMENT));
+                .addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, GravitationPlacedFeatures.ICY_AERCLOUD_PLACEMENT)
+                .addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, GravitationPlacedFeatures.BLACK_BERRY_BUSH_PATCH_PLACEMENT));
     }
 
     public static Biome undergrowth(HolderGetter<PlacedFeature> placedFeatures, HolderGetter<ConfiguredWorldCarver<?>> worldCarvers) {

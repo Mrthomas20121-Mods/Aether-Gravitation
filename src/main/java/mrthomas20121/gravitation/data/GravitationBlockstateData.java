@@ -16,12 +16,15 @@ public class GravitationBlockstateData extends AetherBlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-
-        this.block(GravitationBlocks.ENCHANTED_MOSS.get(), "natural/");
         this.block(GravitationBlocks.BRONZITE_ORE.get(), "natural/");
         this.block(GravitationBlocks.BRONZITE_BLOCK.get(), "construction/");
         this.grass(GravitationBlocks.FROZEN_AETHER_GRASS_BLOCK.get(), AetherBlocks.AETHER_DIRT.get());
         this.aercloudAll(GravitationBlocks.ICY_AERCLOUD.get(), "natural/");
+
+        this.crossBlock(GravitationBlocks.BLACK_BERRY_BUSH_STEM.get(), "natural/");
+        this.berryBush(GravitationBlocks.BLACK_BERRY_BUSH.get(), GravitationBlocks.BLACK_BERRY_BUSH_STEM.get());
+        this.pottedStem(GravitationBlocks.POTTED_BLACK_BERRY_BUSH.get(), "natural/");
+        this.pottedBush(GravitationBlocks.POTTED_BLACK_BERRY_BUSH.get(), GravitationBlocks.POTTED_BLACK_BERRY_BUSH_STEM.get(), "natural/");
 
         // aerfin set
         this.pottedPlant(GravitationBlocks.POTTED_AERFIN_SAPLING.get(), GravitationBlocks.AERFIN_SAPLING.get(), "natural/");

@@ -51,6 +51,9 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addBiome(GravitationBiomes.FROSTED_FOREST, "Frosted Forest");
         addBiome(GravitationBiomes.UNDERGROWTH, "Undergrowth");
 
+        addItem(GravitationItems.BLACK_BERRY, "Black Berry");
+        addItem(GravitationItems.ICED_BLACK_BERRY, "Iced Black Berry");
+
         addItem(GravitationItems.NEPTUNE_RING, "Neptune Ring");
         addItem(GravitationItems.NEPTUNE_PENDANT, "Neptune Pendant");
         addItem(GravitationItems.NEPTUNE_AXE, "Neptune Axe");
@@ -118,6 +121,9 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addBlock(GravitationBlocks.POLISHED_CONGLOMERATE_STAIRS, "Polished Conglomerate Stairs");
         addBlock(GravitationBlocks.POLISHED_CONGLOMERATE_SLAB, "Polished Conglomerate Slab");
 
+        this.addBlock(GravitationBlocks.BLACK_BERRY_BUSH_STEM, "Black Bush Stem");
+        this.addBlock(GravitationBlocks.BLACK_BERRY_BUSH, "Black Berry Bush");
+
         addBlock(GravitationBlocks.BRONZITE_ORE, "Bronzite Ore");
         addBlock(GravitationBlocks.BRONZITE_BLOCK, "Bronzite Block");
         addBlock(GravitationBlocks.ENCHANTED_SIGN, "Enchanted Sign");
@@ -138,7 +144,6 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addBlock(GravitationBlocks.ENCHANTED_PREASURE_PLATE, "Enchanted Preasure Plate");
         addBlock(GravitationBlocks.ENCHANTED_FENCE, "Enchanted Fence");
         addBlock(GravitationBlocks.ENCHANTED_FENCE_GATE, "Enchanted Fence Gate");
-        addBlock(GravitationBlocks.ENCHANTED_MOSS, "Enchanted Moss");
         addEntityType(GraviEntityTypes.ENCHANTED_BOAT, "Enchanted Boat");
         addEntityType(GraviEntityTypes.ENCHANTED_CHEST_BOAT, "Enchanted Chest with Boat");
 

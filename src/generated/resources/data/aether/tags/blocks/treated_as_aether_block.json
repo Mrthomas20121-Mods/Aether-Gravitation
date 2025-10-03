@@ -70,7 +70,6 @@
     "gravitation:potted_enchanted_sapling",
     "gravitation:bronzite_block",
     "gravitation:bronzite_ore",
-    "gravitation:enchanted_moss",
     "gravitation:conglomerate",
     "gravitation:conglomerate_stairs",
     "gravitation:conglomerate_slab",
@@ -82,6 +81,10 @@
     "gravitation:conglomerate_bricks",
     "gravitation:conglomerate_brick_stairs",
     "gravitation:conglomerate_brick_slab",
-    "gravitation:conglomerate_brick_wall"
+    "gravitation:conglomerate_brick_wall",
+    "gravitation:black_berry_bush",
+    "gravitation:black_berry_bush_stem",
+    "gravitation:potted_black_berry_bush",
+    "gravitation:potted_black_berry_bush_stem"
   ]
 }

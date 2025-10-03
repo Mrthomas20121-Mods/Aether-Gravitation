@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "double_drops=false": {
+      "model": "gravitation:block/black_berry_bush_stem"
+    },
+    "double_drops=true": {
+      "model": "gravitation:block/black_berry_bush_stem"
+    }
+  }
+}

@@ -94,7 +94,7 @@ public class Gravitation {
 		generator.addProvider(event.includeServer(), new LootDataProvider(packOutput));
 		GravitationBlockTags blockTags = new GravitationBlockTags(packOutput, lookupProvider, existingFileHelper);
 		generator.addProvider(event.includeServer(), blockTags);
-		generator.addProvider(event.includeServer(), GravitationLoot.create(packOutput));
+		generator.addProvider(event.includeServer(), GravitationBlockLoot.create(packOutput));
 		generator.addProvider(event.includeServer(), new GravitationRecipeData(packOutput));
 		generator.addProvider(event.includeServer(), new GravitationEntityTagsData(packOutput, lookupProvider, existingFileHelper));
 		generator.addProvider(event.includeServer(), new GravitationItemTags(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));

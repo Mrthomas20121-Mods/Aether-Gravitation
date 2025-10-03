@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "gravitation:block/natural/black_berry_bush_stem"
+  }
+}
