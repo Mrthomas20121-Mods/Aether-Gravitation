@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": {
+      "feature": "gravitation:aerfin_tree",
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:would_survive",
+            "state": {
+              "Name": "gravitation:aerfin_sapling",
+              "Properties": {
+                "stage": "0"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "features": [
+      {
+        "chance": 0.1,
+        "feature": {
+          "feature": "gravitation:orange_aerfin_tree",
+          "placement": [
+            {
+              "type": "minecraft:block_predicate_filter",
+              "predicate": {
+                "type": "minecraft:would_survive",
+                "state": {
+                  "Name": "gravitation:orange_aerfin_sapling",
+                  "Properties": {
+                    "stage": "0"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

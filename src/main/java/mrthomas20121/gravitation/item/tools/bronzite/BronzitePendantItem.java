@@ -5,25 +5,19 @@ import com.aetherteam.aether.item.accessories.pendant.PendantItem;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.Multimap;
 import mrthomas20121.gravitation.Gravitation;
-import net.minecraft.ChatFormatting;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.ai.attributes.Attribute;
-import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.common.ForgeMod;
+import net.minecraft.world.item.Rarity;
 import top.theillusivec4.curios.api.SlotContext;
 
-import java.util.List;
 import java.util.UUID;
-
-import static mrthomas20121.gravitation.item.GravitationItems.SALMON_ROSE;
 
 public class BronzitePendantItem extends PendantItem {
 
     public BronzitePendantItem() {
-        super("neptune_pendant", AetherSoundEvents.ITEM_ACCESSORY_EQUIP_ZANITE_RING, new Properties().rarity(SALMON_ROSE).stacksTo(1));
+        super("neptune_pendant", AetherSoundEvents.ITEM_ACCESSORY_EQUIP_ZANITE_RING, new Properties().rarity(Rarity.UNCOMMON).stacksTo(1));
         this.setRenderTexture(Gravitation.MOD_ID, "bronzite_pendant");
     }
 

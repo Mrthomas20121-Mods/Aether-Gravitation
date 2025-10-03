@@ -3,16 +3,15 @@ package mrthomas20121.gravitation.item.tools.bronzite;
 import mrthomas20121.gravitation.util.GravitationItemTiers;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.SwordItem;
 
 import java.util.function.Consumer;
 
-import static mrthomas20121.gravitation.item.GravitationItems.SALMON_ROSE;
-
 public class BronziteSwordItem extends SwordItem {
 
     public BronziteSwordItem() {
-        super(GravitationItemTiers.BRONZITE, 4, -2.4f, new Properties().rarity(SALMON_ROSE));
+        super(GravitationItemTiers.BRONZITE, 4, -2.4f, new Properties().rarity(Rarity.UNCOMMON));
     }
 
     @Override

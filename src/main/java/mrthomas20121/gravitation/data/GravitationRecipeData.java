@@ -17,6 +17,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import org.jetbrains.annotations.NotNull;
@@ -233,6 +234,17 @@ public class GravitationRecipeData extends AetherRecipeProvider {
                 .unlockedBy("has_bronzite_ingot", has(GravitationItems.BRONZITE_INGOT.get()))
                 .save(consumer, new ResourceLocation("gravitation:crafting/bronzite_cape"));
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, Blocks.ENCHANTING_TABLE)
+                .define('B', Items.BOOK)
+                .define('A', AetherItems.AMBROSIUM_SHARD.get())
+                .define('G', AetherItems.GOLDEN_AMBER.get())
+                .define('O', AetherTags.Items.ANGELIC_BLOCKS)
+                .pattern("GBG")
+                .pattern("AOA")
+                .pattern("OOO")
+                .unlockedBy("has_angelic_blocks", has(AetherTags.Items.ANGELIC_BLOCKS))
+                .save(consumer, new ResourceLocation("gravitation:crafting/enchanting_table"));
+
         makePendant(GravitationItems.BRONZITE_PENDANT, GravitationItems.BRONZITE_INGOT.get()).save(consumer, new ResourceLocation("gravitation:crafting/bronzite_pendant"));
 
         makePickaxe(GravitationItems.BRONZITE_PICKAXE, GravitationItems.BRONZITE_INGOT).save(consumer, new ResourceLocation("gravitation:crafting/bronzite_pickaxe"));
@@ -267,11 +279,6 @@ public class GravitationRecipeData extends AetherRecipeProvider {
 
         enchantingRecipe(RecipeCategory.MISC, GravitationBlocks.ENCHANTED_SAPLING.get(), AetherBlocks.SKYROOT_SAPLING.get(), 0.20f, 50).save(consumer, new ResourceLocation("gravitation:enchanting/enchanted_sapling"));
         enchantingRecipe(RecipeCategory.MISC, GravitationBlocks.ENCHANTED_MOSS.get(), Blocks.MOSS_BLOCK, 0.20f, 60).save(consumer, new ResourceLocation("gravitation:enchanting/enchanted_moss"));
-
-        enchantingRecipe(RecipeCategory.MISC, GravitationItems.DIG_STONE.get(), AetherBlocks.CARVED_STONE.get(), 0.20f, 20).save(consumer, new ResourceLocation("gravitation:enchanting/dig_stone"));
-        enchantingRecipe(RecipeCategory.MISC, GravitationItems.DENSE_STONE.get(), AetherBlocks.ANGELIC_STONE.get(), 0.20f, 30).save(consumer, new ResourceLocation("gravitation:enchanting/dense_stone"));
-        enchantingRecipe(RecipeCategory.MISC, GravitationItems.POWER_STONE.get(), AetherBlocks.HELLFIRE_STONE.get(), 0.20f, 40).save(consumer, new ResourceLocation("gravitation:enchanting/power_stone"));
-        enchantingRecipe(RecipeCategory.MISC, GravitationItems.GREATER_HEALING_STONE.get(), AetherItems.HEALING_STONE.get(), 0.20f, 120).save(consumer, new ResourceLocation("gravitation:enchanting/greater_healing_stone"));
 
         freezingRecipe(RecipeCategory.MISC, Items.LAPIS_LAZULI, AetherItems.GOLDEN_AMBER.get(), 1.0f, 10).save(consumer, "gravitation:golden_amber_to_lapis");
 

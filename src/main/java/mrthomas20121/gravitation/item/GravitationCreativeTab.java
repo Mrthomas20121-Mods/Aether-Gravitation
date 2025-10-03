@@ -74,7 +74,6 @@ public class GravitationCreativeTab {
             .title(Component.translatable("itemGroup.gravitation.misc"))
             .withTabsBefore(new ResourceLocation(Gravitation.MOD_ID, "tools"))
             .displayItems((parameters, output) -> {
-                output.accept(GravitationItems.GREATER_HEALING_STONE.get());
                 output.accept(GravitationItems.ADAMANTITE_GEM.get());
                 output.accept(GravitationItems.BRONZITE_ROCK.get());
                 output.accept(GravitationItems.BRONZITE_INGOT.get());
@@ -169,7 +168,6 @@ public class GravitationCreativeTab {
                 output.accept(GravitationBlocks.ENCHANTED_DOOR.get());
                 output.accept(GravitationBlocks.ENCHANTED_TRAPDOOR.get());
                 output.accept(GravitationBlocks.ENCHANTED_SAPLING.get());
-                output.accept(GravitationBlocks.ENCHANTED_MOSS.get());
 
             }).build()
     );

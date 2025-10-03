@@ -1,0 +1,44 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": {
+      "feature": "gravitation:beladon_tree",
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:would_survive",
+            "state": {
+              "Name": "gravitation:beladon_sapling",
+              "Properties": {
+                "stage": "0"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "features": [
+      {
+        "chance": 0.1,
+        "feature": {
+          "feature": "gravitation:enchanted_tree",
+          "placement": [
+            {
+              "type": "minecraft:block_predicate_filter",
+              "predicate": {
+                "type": "minecraft:would_survive",
+                "state": {
+                  "Name": "gravitation:enchanted_sapling",
+                  "Properties": {
+                    "stage": "0"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

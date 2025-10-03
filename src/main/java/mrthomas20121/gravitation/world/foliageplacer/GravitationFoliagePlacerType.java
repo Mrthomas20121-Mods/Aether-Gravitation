@@ -12,5 +12,6 @@ public class GravitationFoliagePlacerType {
 
     public static final RegistryObject<FoliagePlacerType<AerfinFoliagePlacer>> AERFIN_FOLIAGE_PLACER = FOLIAGE_PLACERS.register("aerfin_foliage_placer", () -> new FoliagePlacerType<>(AerfinFoliagePlacer.CODEC));
     public static final RegistryObject<FoliagePlacerType<EnchantedFoliagePlacer>> ENCHANTED_FOLIAGE_PLACER = FOLIAGE_PLACERS.register("enchanted_foliage_placer", () -> new FoliagePlacerType<>(EnchantedFoliagePlacer.CODEC));
+    public static final RegistryObject<FoliagePlacerType<BeladonFoliagePlacer>> BELADON_FOLIAGE_PLACER = FOLIAGE_PLACERS.register("beladon_foliage_placer", () -> new FoliagePlacerType<>(BeladonFoliagePlacer.CODEC));
 
 }

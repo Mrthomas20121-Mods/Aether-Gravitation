@@ -1,13 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_hellfire_stone": {
+    "has_angelic_blocks": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "aether:hellfire_stone"
-            ]
+            "tag": "aether:angelic_blocks"
           }
         ]
       },
@@ -15,21 +13,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "gravitation:enchanting/power_stone"
+        "recipe": "gravitation:crafting/enchanting_table"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_hellfire_stone",
+      "has_angelic_blocks",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "gravitation:enchanting/power_stone"
+      "gravitation:crafting/enchanting_table"
     ]
   },
-  "sends_telemetry_event": true
+  "sends_telemetry_event": false
 }

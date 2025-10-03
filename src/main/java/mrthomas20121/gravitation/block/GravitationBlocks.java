@@ -15,10 +15,7 @@ import mrthomas20121.gravitation.util.ToolAction;
 import mrthomas20121.gravitation.world.treegrower.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.HangingSignItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SignItem;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -113,9 +110,9 @@ public class GravitationBlocks {
     public static final RegistryObject<SaplingBlock> ENCHANTED_SAPLING = register("enchanted_sapling", () -> new SaplingBlock(new EnchantedTree(), Block.Properties.copy(Blocks.OAK_SAPLING)));
     public static final RegistryObject<FlowerPotBlock> POTTED_ENCHANTED_SAPLING = BLOCKS.register("potted_enchanted_sapling", () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ENCHANTED_SAPLING, Block.Properties.copy(Blocks.FLOWER_POT)));
 
-    public static final RegistryObject<Block> BRONZITE_BLOCK = register("bronzite_block", () -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK)), (b) -> () -> new BlockItem(b.get(), new Item.Properties().rarity(GravitationItems.SALMON_ROSE)));
+    public static final RegistryObject<Block> BRONZITE_BLOCK = register("bronzite_block", () -> new Block(Block.Properties.copy(Blocks.IRON_BLOCK)), (b) -> () -> new BlockItem(b.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));
 
-    public static final RegistryObject<Block> BRONZITE_ORE = register("bronzite_ore", () -> new Block(Block.Properties.copy(AetherBlocks.ZANITE_ORE.get())), (b) -> () -> new BlockItem(b.get(), new Item.Properties().rarity(GravitationItems.SALMON_ROSE)));
+    public static final RegistryObject<Block> BRONZITE_ORE = register("bronzite_ore", () -> new Block(Block.Properties.copy(AetherBlocks.ZANITE_ORE.get())), (b) -> () -> new BlockItem(b.get(), new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<Block> ENCHANTED_MOSS = register("enchanted_moss", () -> new Block(Block.Properties.copy(Blocks.MOSS_BLOCK)));
 

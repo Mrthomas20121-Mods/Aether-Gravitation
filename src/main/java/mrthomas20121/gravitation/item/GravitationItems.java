@@ -29,34 +29,25 @@ public class GravitationItems {
 
     public static DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Gravitation.MOD_ID);
 
-    public static Rarity SALMON_ROSE = Rarity.EPIC;
-
-    public static RegistryObject<Item> GREATER_HEALING_STONE = ITEMS.register("greater_healing_stone", GreaterHealingStoneItem::new);
-    public static RegistryObject<Item> POWER_STONE = ITEMS.register("power_stone", PowerStoneItem::new);
-    public static RegistryObject<Item> DENSE_STONE = ITEMS.register("dense_stone", DenseStoneItem::new);
-    public static RegistryObject<Item> DIG_STONE = ITEMS.register("dig_stone", DigStoneItem::new);
-    public static RegistryObject<Item> RAINBOW_STONE = ITEMS.register("rainbow_stone", RainbowStoneItem::new);
-
     public static RegistryObject<Item> BRONZITE_UPGRADE = ITEMS.register("bronzite_upgrade_smithing_template", GravitationItems::createBronziteUpgradeTemplate);
-    public static RegistryObject<Item> BRONZITE_INGOT = ITEMS.register("bronzite_ingot", () -> new Item(new Item.Properties().rarity(SALMON_ROSE)));
-    public static RegistryObject<Item> BRONZITE_NUGGET = ITEMS.register("bronzite_nugget", () -> new Item(new Item.Properties().rarity(SALMON_ROSE)));
-    public static RegistryObject<Item> BRONZITE_ROCK = ITEMS.register("bronzite_rock", () -> new Item(new Item.Properties().rarity(SALMON_ROSE)));
+    public static RegistryObject<Item> BRONZITE_INGOT = ITEMS.register("bronzite_ingot", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static RegistryObject<Item> BRONZITE_NUGGET = ITEMS.register("bronzite_nugget", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static RegistryObject<Item> BRONZITE_ROCK = ITEMS.register("bronzite_rock", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static RegistryObject<Item> BRONZITE_AXE = ITEMS.register("bronzite_axe", BronziteAxeItem::new);
     public static RegistryObject<Item> BRONZITE_BATTLEAXE = ITEMS.register("bronzite_battleaxe", BronziteBattleAxeItem::new);
     public static RegistryObject<Item> BRONZITE_PICKAXE = ITEMS.register("bronzite_pickaxe", BronzitePickaxeItem::new);
     public static RegistryObject<Item> BRONZITE_HOE = ITEMS.register("bronzite_hoe", BronziteHoeItem::new);
     public static RegistryObject<Item> BRONZITE_SHOVEL = ITEMS.register("bronzite_shovel", BronziteShovelItem::new);
     public static RegistryObject<Item> BRONZITE_SWORD = ITEMS.register("bronzite_sword", BronziteSwordItem::new);
-
     public static RegistryObject<Item> BRONZITE_SHIELD = ITEMS.register("bronzite_shield", BronziteShieldItem::new);
-    public static RegistryObject<Item> BRONZITE_HELMET = ITEMS.register("bronzite_helmet", () -> new BronziteArmorItem(GravitationArmorMaterials.BRONZITE, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).rarity(SALMON_ROSE)));
-    public static RegistryObject<Item> BRONZITE_CHESTPLATE = ITEMS.register("bronzite_chestplate", () -> new BronziteArmorItem(GravitationArmorMaterials.BRONZITE, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).rarity(SALMON_ROSE)));
-    public static RegistryObject<Item> BRONZITE_LEGGING = ITEMS.register("bronzite_leggings", () -> new BronziteArmorItem(GravitationArmorMaterials.BRONZITE, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).rarity(SALMON_ROSE)));
-    public static RegistryObject<Item> BRONZITE_BOOTS = ITEMS.register("bronzite_boots", () -> new BronziteArmorItem(GravitationArmorMaterials.BRONZITE, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).rarity(SALMON_ROSE)));
-    public static RegistryObject<Item> BRONZITE_GLOVES = ITEMS.register("bronzite_gloves", () -> new BronziteGlovesItem(0.80d, "bronzite_gloves", () -> SoundEvents.ARMOR_EQUIP_CHAIN, new Item.Properties().stacksTo(1).rarity(SALMON_ROSE)));
+    public static RegistryObject<Item> BRONZITE_HELMET = ITEMS.register("bronzite_helmet", () -> new BronziteArmorItem(GravitationArmorMaterials.BRONZITE, ArmorItem.Type.HELMET, new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
+    public static RegistryObject<Item> BRONZITE_CHESTPLATE = ITEMS.register("bronzite_chestplate", () -> new BronziteArmorItem(GravitationArmorMaterials.BRONZITE, ArmorItem.Type.CHESTPLATE, new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
+    public static RegistryObject<Item> BRONZITE_LEGGING = ITEMS.register("bronzite_leggings", () -> new BronziteArmorItem(GravitationArmorMaterials.BRONZITE, ArmorItem.Type.LEGGINGS, new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
+    public static RegistryObject<Item> BRONZITE_BOOTS = ITEMS.register("bronzite_boots", () -> new BronziteArmorItem(GravitationArmorMaterials.BRONZITE, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
+    public static RegistryObject<Item> BRONZITE_GLOVES = ITEMS.register("bronzite_gloves", () -> new BronziteGlovesItem(0.80d, "bronzite_gloves", () -> SoundEvents.ARMOR_EQUIP_CHAIN, new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
     public static RegistryObject<Item> BRONZITE_RING = ITEMS.register("bronzite_ring", BronziteRingItem::new);
     public static RegistryObject<Item> BRONZITE_PENDANT = ITEMS.register("bronzite_pendant", BronzitePendantItem::new);
-    public static RegistryObject<Item> BRONZITE_CAPE = ITEMS.register("bronzite_cape", () -> new GravitationCapeItem("bronzite_cape", new Item.Properties().rarity(SALMON_ROSE)));
+    public static RegistryObject<Item> BRONZITE_CAPE = ITEMS.register("bronzite_cape", () -> new GravitationCapeItem("bronzite_cape", new Item.Properties().rarity(Rarity.UNCOMMON)));
 
     public static RegistryObject<Item> ADAMANTITE_GEM = ITEMS.register("adamantite_gem", () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
     public static RegistryObject<Item> ADAMANTITE_AXE = ITEMS.register("adamantite_axe", AdamantiteAxeItem::new);

@@ -3,15 +3,14 @@ package mrthomas20121.gravitation.item.tools;
 import mrthomas20121.gravitation.GraviTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ShieldItem;
 import org.jetbrains.annotations.NotNull;
-
-import static mrthomas20121.gravitation.item.GravitationItems.SALMON_ROSE;
 
 public class BronziteShieldItem extends ShieldItem {
 
     public BronziteShieldItem() {
-        super(new Item.Properties().rarity(SALMON_ROSE));
+        super(new Item.Properties().rarity(Rarity.UNCOMMON));
     }
 
     @Override

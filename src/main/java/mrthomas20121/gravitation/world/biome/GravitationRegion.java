@@ -24,44 +24,21 @@ public class GravitationRegion extends Region {
         Climate.Parameter fullRange = Climate.Parameter.span(-1.0F, 1.0F);
 
         Climate.Parameter[] temperatures = {
-                Climate.Parameter.span(-1.0F, -0.40F),
-                Climate.Parameter.span(-0.40F, -0.10F),
-                Climate.Parameter.span(-0.10F, 0.1F),
-                Climate.Parameter.span(0.1F, 0.45F),
-                Climate.Parameter.span(0.45F, 1.0F)
+                Climate.Parameter.span(0.3f, 1f),
+                Climate.Parameter.span(-0.30F, 0.3F)
         };
 
         Climate.Parameter[] humidities = new Climate.Parameter[] {
-                Climate.Parameter.span(-1.0F, -0.35F),
                 Climate.Parameter.span(-0.35F, -0.1F),
-                Climate.Parameter.span(-0.1F, 0.1F),
-                Climate.Parameter.span(0.1F, 0.3F),
-                Climate.Parameter.span(0.3F, 1.0F)
-        };
-
-        Climate.Parameter[] erosions = new Climate.Parameter[] {
-                Climate.Parameter.span(-1.0F, -0.1F),
-                Climate.Parameter.span(0.55F, 1.0F)
+                Climate.Parameter.span(-0.1F, 0.1F)
         };
 
         Climate.Parameter depth = Climate.Parameter.span(0F, 1F);
-        Climate.Parameter depth2 = Climate.Parameter.span(-1F, 0F);
 
-        //this.addBiome(mapper, temperatures[3], Climate.Parameter.span(-0.5F, 0.8F), Climate.Parameter.span(-1F, -0.45F), erosions[0], fullRange, depth2, 0,
-        //        GravitationBiomes.BELADON_PLAINS);
-        this.addBiome(mapper, temperatures[2], Climate.Parameter.span(0.0F, 1F), Climate.Parameter.span(0F, 1F), fullRange, fullRange, depth, 0,
+        this.addBiome(mapper, temperatures[0], humidities[0], fullRange, fullRange, fullRange, depth, 0,
                 GravitationBiomes.FROSTED_FOREST);
 
-        //this.addBiome(mapper, temperatures[1], Climate.Parameter.span(0.0F, 0.8F), Climate.Parameter.span(-1F, 0F), fullRange, fullRange, depth, 0,
-        //         GravitationBiomes.AERFIN_FOREST);
-
-        //this.addBiome(mapper, temperatures[0], Climate.Parameter.span(0.0F, 0.8F), Climate.Parameter.span(-1F, 0F), fullRange, fullRange, depth, 0,
-        //        GravitationBiomes.ENCHANTED_FOREST);
-
-        //this.addBiome(mapper, temperatures[2], Climate.Parameter.span(-0.5F, 0F), fullRange, fullRange, fullRange, fullRange, 0,
-        //        AetherBiomes.SKYROOT_WOODLAND);
-
-        //this.addBiome(mapper, temperatures[4], humidities[2], Climate.Parameter.span(-0.33F, 0.11F), erosions[1], fullRange, depth, 0,
-        //        GravitationBiomes.GOLDEN_MOUNTAIN);
+        this.addBiome(mapper, temperatures[1], humidities[1], fullRange, fullRange, fullRange, depth, 0,
+                GravitationBiomes.UNDERGROWTH);
     }
 }

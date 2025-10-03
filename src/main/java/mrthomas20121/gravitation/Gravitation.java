@@ -17,7 +17,6 @@ import mrthomas20121.gravitation.particle.GraviParticleTypes;
 import mrthomas20121.gravitation.world.biome.GravitationRegion;
 import mrthomas20121.gravitation.world.biome.GravitationSurfaceData;
 import mrthomas20121.gravitation.world.foliageplacer.GravitationFoliagePlacerType;
-import mrthomas20121.gravitation.world.treedecorator.GravitationDecoratorTypes;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -57,7 +56,6 @@ public class Gravitation {
 		GravitationEnchantments.ENCHANTING.register(bus);
 		GravitationCreativeTab.CREATIVE_TABS.register(bus);
 		GravitationFoliagePlacerType.FOLIAGE_PLACERS.register(bus);
-		GravitationDecoratorTypes.TREE_DECORATORS.register(bus);
 		GraviParticleTypes.PARTICLES.register(bus);
 
 		// init mod compat
@@ -100,6 +98,5 @@ public class Gravitation {
 		generator.addProvider(event.includeServer(), new GravitationRecipeData(packOutput));
 		generator.addProvider(event.includeServer(), new GravitationEntityTagsData(packOutput, lookupProvider, existingFileHelper));
 		generator.addProvider(event.includeServer(), new GravitationItemTags(packOutput, lookupProvider, blockTags.contentsGetter(), existingFileHelper));
-		//event.getGenerator().addProvider(event.includeServer(), new GravitationBiomeTagsData(packOutput, lookupProvider, existingFileHelper));
 	}
 }

@@ -49,6 +49,7 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         add("item.gravitation.smithing_template.bronzite_upgrade.ingredients", "Zanite Gemstone");
 
         addBiome(GravitationBiomes.FROSTED_FOREST, "Frosted Forest");
+        addBiome(GravitationBiomes.UNDERGROWTH, "Undergrowth");
 
         addItem(GravitationItems.NEPTUNE_RING, "Neptune Ring");
         addItem(GravitationItems.NEPTUNE_PENDANT, "Neptune Pendant");
@@ -197,7 +198,6 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         add("enchantment.gravitation.hercules_strength.desc", "Deal more damage to Aether Bosses(Sun Spirit not included).");
         addEnchantment(GravitationEnchantments.SUN_SPIRIT_BLESSING, "Sun Spirit's Blessing");
         add("enchantment.gravitation.sun_spirit_blessing.desc", "Increases protection against fire and incineration damage types.");
-        add("gravitation.tooltip.can_create_enchanting_table", "Right click on a Enchanted Gravitite Block to create an Enchanting Table.");
 
         addLore(GravitationItems.BRONZITE_ROCK, "This rock was created from the fire of the sun spirit.");
         addLore(GravitationItems.BRONZITE_UPGRADE, "A smithing upgrade used by the ancients to turn bronzite into a material.");

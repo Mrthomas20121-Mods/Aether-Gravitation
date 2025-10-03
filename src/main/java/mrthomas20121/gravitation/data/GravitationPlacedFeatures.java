@@ -1,7 +1,6 @@
 package mrthomas20121.gravitation.data;
 
 import com.aetherteam.aether.data.resources.builders.AetherPlacedFeatureBuilders;
-import com.aetherteam.aether.data.resources.registries.AetherConfiguredFeatures;
 import com.aetherteam.aether.world.placementmodifier.DungeonBlacklistFilter;
 import com.aetherteam.aether.world.placementmodifier.ImprovedLayerPlacementModifier;
 import com.aetherteam.nitrogen.data.resources.builders.NitrogenPlacedFeatureBuilders;
@@ -29,18 +28,13 @@ import java.util.List;
 public class GravitationPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> AERFIN_FOREST_PLACEMENT = createKey("aerfin_forest_placement");
-    public static final ResourceKey<PlacedFeature> ORANGE_AERFIN_FOREST_PLACEMENT = createKey("orange_aerfin_forest_placement");
-    public static final ResourceKey<PlacedFeature> BELADON_FOREST_PLACEMENT = createKey("beladon_forest_placement");
-    public static final ResourceKey<PlacedFeature> BELADON_PLAINS_PLACEMENT = createKey("beladon_plains");
-    public static final ResourceKey<PlacedFeature> ENCHANTED_TREES_PLACEMENT = createKey("enchanted_tree");
-    public static final ResourceKey<PlacedFeature> GOLDEN_ENCHANTED_TREES_PLACEMENT = createKey("golden_enchanted_tree");
-    public static final ResourceKey<PlacedFeature> SMALL_ENCHANTED_TREES_PLACEMENT = createKey("small_enchanted_tree");
+    public static final ResourceKey<PlacedFeature> UNDERGROWTH_PLACEMENT = createKey("beladon_undergrowth_placement");
+    public static final ResourceKey<PlacedFeature> TREE_AERFIN_AND_ORANGE_AERFIN_CONFIGURATION = createKey("tree_aerfin_and_orange_aerfin_configuration");
+    public static final ResourceKey<PlacedFeature> TREE_BELATON_AND_ENCHANTED_CONFIGURATION = createKey("tree_belaton_and_enchanted_configuration");
     public static final ResourceKey<PlacedFeature> BRONZITE_ORE_PLACEMENT = createKey("bronzite_ore");
     public static final ResourceKey<PlacedFeature> LARGE_BRONZITE_ORE_PLACEMENT = createKey("large_bronzite_ore");
-    public static final ResourceKey<PlacedFeature> LARGE_BLUE_AERCLOUD_PLACEMENT = createKey("large_blue_aercloud");
     public static final ResourceKey<PlacedFeature> FROZEN_AETHER_GRASS_BONEMEAL = createKey("frozen_aether_grass_bonemeal");
     public static final ResourceKey<PlacedFeature> ICY_AERCLOUD_PLACEMENT = createKey("icy_aercloud");
-
     public static final ResourceKey<PlacedFeature> CONGLOMERATE_PLACEMENT = createKey("conglomerate_placement");
 
     private static ResourceKey<PlacedFeature> createKey(String name) {
@@ -55,29 +49,6 @@ public class GravitationPlacedFeatures {
 
         register(context, FROZEN_AETHER_GRASS_BONEMEAL, configuredFeatures.getOrThrow(VegetationFeatures.SINGLE_PIECE_OF_GRASS),
                 PlacementUtils.isEmpty());
-        register(context, AERFIN_FOREST_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.AERFIN_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(8, 0.1F, 1)));
-
-        register(context, ORANGE_AERFIN_FOREST_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.ORANGE_AERFIN_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(2, 0.1F, 1)));
-
-        register(context, BELADON_FOREST_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.BELADON_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(2, 0.1F, 2)));
-
-        register(context, BELADON_PLAINS_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.BELADON_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(1, 0.01F, 0)));
-
-        register(context, ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.ENCHANTED_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(4, 0.1F, 3)));
-
-        register(context, GOLDEN_ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(AetherConfiguredFeatures.GOLDEN_OAK_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(2, 0.1F, 1)));
-
-        register(context, SMALL_ENCHANTED_TREES_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.ENCHANTED_TREE_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
-
-        register(context, LARGE_BLUE_AERCLOUD_PLACEMENT, configuredFeatures.getOrThrow(AetherConfiguredFeatures.BLUE_AERCLOUD_CONFIGURATION),
-                treePlacement(PlacementUtils.countExtra(1, 0.1F, 1)));
 
         register(context, CONGLOMERATE_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.CONGLOMERATE_ORE),
                 NitrogenPlacedFeatureBuilders.commonOrePlacement(8, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(90))));
@@ -87,6 +58,12 @@ public class GravitationPlacedFeatures {
 
         register(context, LARGE_BRONZITE_ORE_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.BRONZITE_ORE),
                 NitrogenPlacedFeatureBuilders.commonOrePlacement(20, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(128))));
+
+        register(context, AERFIN_FOREST_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.TREE_AERFIN_AND_ORANGE_AERFIN_CONFIGURATION),
+                AetherPlacedFeatureBuilders.treePlacement(PlacementUtils.countExtra(6, 0.1F, 1)));
+
+        register(context, UNDERGROWTH_PLACEMENT, configuredFeatures.getOrThrow(GravitationConfiguredFeatures.TREE_BELATON_AND_ENCHANTED_CONFIGURATION),
+                AetherPlacedFeatureBuilders.treePlacement(PlacementUtils.countExtra(6, 0.1F, 1)));
     }
 
     public static List<PlacementModifier> treePlacement(PlacementModifier count) {

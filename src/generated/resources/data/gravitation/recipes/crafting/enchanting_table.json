@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "aether:ambrosium_shard"
+    },
+    "B": {
+      "item": "minecraft:book"
+    },
+    "G": {
+      "item": "aether:golden_amber"
+    },
+    "O": {
+      "tag": "aether:angelic_blocks"
+    }
+  },
+  "pattern": [
+    "GBG",
+    "AOA",
+    "OOO"
+  ],
+  "result": {
+    "item": "minecraft:enchanting_table"
+  },
+  "show_notification": true
+}

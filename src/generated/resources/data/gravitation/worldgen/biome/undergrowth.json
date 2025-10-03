@@ -42,7 +42,7 @@
       "aether:water_spring"
     ],
     [
-      "gravitation:aerfin_forest_placement",
+      "gravitation:beladon_undergrowth_placement",
       "aether:holiday_tree",
       "aether:grass_patch",
       "aether:tall_grass_patch",
@@ -51,7 +51,6 @@
       "aether:berry_bush_patch"
     ],
     [
-      "gravitation:icy_aercloud",
       "aether:crystal_island",
       "aether:cold_aercloud",
       "aether:blue_aercloud",
