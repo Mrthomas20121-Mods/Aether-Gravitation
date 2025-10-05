@@ -1,12 +1,12 @@
 {
-  "parent": "aether:the_aether",
+  "parent": "gravitation:stamina_of_mars",
   "criteria": {
-    "neptune_wrath_enchant": {
+    "sun_spirit_blessing_enchant": {
       "conditions": {
         "item": {
           "enchantments": [
             {
-              "enchantment": "gravitation:neptune_wrath"
+              "enchantment": "gravitation:sun_spirit_blessing"
             }
           ]
         }
@@ -17,7 +17,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.gravitation.neptune_wrath.desc"
+      "translate": "advancement.gravitation.sun_spirit_blessing.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -26,12 +26,12 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.gravitation.neptune_wrath"
+      "translate": "advancement.gravitation.sun_spirit_blessing"
     }
   },
   "requirements": [
     [
-      "neptune_wrath_enchant"
+      "sun_spirit_blessing_enchant"
     ]
   ],
   "sends_telemetry_event": true

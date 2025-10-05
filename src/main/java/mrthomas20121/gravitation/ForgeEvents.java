@@ -1,15 +1,11 @@
 package mrthomas20121.gravitation;
 
 import com.aetherteam.aether.AetherTags;
-import com.aetherteam.aether.block.AetherBlocks;
 import dev.shadowsoffire.attributeslib.api.ALObjects;
 import mrthomas20121.gravitation.enchanting.GravitationEnchantments;
 import mrthomas20121.gravitation.item.tools.neptune.NeptuneTool;
-import net.minecraft.core.BlockPos;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -17,16 +13,12 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.event.ItemAttributeModifierEvent;
 import net.minecraftforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.CriticalHitEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -45,10 +37,11 @@ import static net.minecraft.world.item.enchantment.EnchantmentHelper.getEnchantm
 @Mod.EventBusSubscriber(modid = Gravitation.MOD_ID)
 public class ForgeEvents {
 
-    private static final UUID HELMET_UUID = UUID.fromString("1137ca50-652c-4227-9adb-81bffd379687");
-    private static final UUID CHESTPLATE_UUID = UUID.fromString("7077e71f-1ca2-4d27-8cad-d3d1539384ee");
-    private static final UUID LEGGINGS_UUID = UUID.fromString("9039b4ff-4127-4d8f-895a-c510e6fcd49f");
-    private static final UUID BOOTS_UUID = UUID.fromString("5f209dc2-f8ad-4499-a109-eaba300b2ba4");
+    private static final UUID SUN_HELMET_UUID = UUID.fromString("1137ca50-652c-4227-9adb-81bffd379687");
+    private static final UUID SUN_CHESTPLATE_UUID = UUID.fromString("7077e71f-1ca2-4d27-8cad-d3d1539384ee");
+    private static final UUID SUN_LEGGINGS_UUID = UUID.fromString("9039b4ff-4127-4d8f-895a-c510e6fcd49f");
+    private static final UUID SUN_BOOTS_UUID = UUID.fromString("5f209dc2-f8ad-4499-a109-eaba300b2ba4");
+    private static final UUID STAMINA_MARS = UUID.fromString("3899287f-ff09-485b-9152-6d995e80b5db");
 
     @SubscribeEvent
     public static void modifyItemEvent(ItemAttributeModifierEvent event) {
@@ -62,17 +55,23 @@ public class ForgeEvents {
 
         if(event.getSlotType().isArmor() && level > 0) {
             if(event.getSlotType().equals(EquipmentSlot.HEAD) && stack.is(Tags.Items.ARMORS_HELMETS)) {
-                event.addModifier(Attributes.MAX_HEALTH, new AttributeModifier(HELMET_UUID, "gravitation:sun_spirit_blessing_max_health", level, AttributeModifier.Operation.ADDITION));
+                event.addModifier(Attributes.MAX_HEALTH, new AttributeModifier(SUN_HELMET_UUID, "gravitation:sun_spirit_blessing_max_health", level, AttributeModifier.Operation.ADDITION));
             }
             else if(event.getSlotType().equals(EquipmentSlot.CHEST) && stack.is(Tags.Items.ARMORS_CHESTPLATES)) {
-                event.addModifier(Attributes.MAX_HEALTH, new AttributeModifier(CHESTPLATE_UUID, "gravitation:sun_spirit_blessing_max_health", level, AttributeModifier.Operation.ADDITION));
+                event.addModifier(Attributes.MAX_HEALTH, new AttributeModifier(SUN_CHESTPLATE_UUID, "gravitation:sun_spirit_blessing_max_health", level, AttributeModifier.Operation.ADDITION));
             }
             else if(event.getSlotType().equals(EquipmentSlot.LEGS) && stack.is(Tags.Items.ARMORS_LEGGINGS)) {
-                event.addModifier(Attributes.MAX_HEALTH, new AttributeModifier(LEGGINGS_UUID, "gravitation:sun_spirit_blessing_max_health", level, AttributeModifier.Operation.ADDITION));
+                event.addModifier(Attributes.MAX_HEALTH, new AttributeModifier(SUN_LEGGINGS_UUID, "gravitation:sun_spirit_blessing_max_health", level, AttributeModifier.Operation.ADDITION));
             }
             else if(event.getSlotType().equals(EquipmentSlot.FEET) && stack.is(Tags.Items.ARMORS_BOOTS)) {
-                event.addModifier(Attributes.MAX_HEALTH, new AttributeModifier(BOOTS_UUID, "gravitation:sun_spirit_blessing_max_health", level, AttributeModifier.Operation.ADDITION));
+                event.addModifier(Attributes.MAX_HEALTH, new AttributeModifier(SUN_BOOTS_UUID, "gravitation:sun_spirit_blessing_max_health", level, AttributeModifier.Operation.ADDITION));
             }
+        }
+
+        int marsLevel = stack.getEnchantmentLevel(GravitationEnchantments.STAMINA_OF_MARS.get());;
+
+        if(event.getSlotType().equals(EquipmentSlot.FEET) && marsLevel > 0) {
+            event.addModifier(Attributes.MOVEMENT_SPEED, new AttributeModifier(STAMINA_MARS, "gravitation:stamina_mars_boost", marsLevel, AttributeModifier.Operation.ADDITION));
         }
     }
 
@@ -86,16 +85,16 @@ public class ForgeEvents {
             if(level > 0 && toLevel == 0) {
                 LivingEntity entity = event.getEntity();
                 if(entity.getAttribute(Attributes.MAX_HEALTH) != null) {
-                    UUID uuid = HELMET_UUID;
+                    UUID uuid = SUN_HELMET_UUID;
 
                     if(from.is(Tags.Items.ARMORS_CHESTPLATES)) {
-                        uuid = CHESTPLATE_UUID;
+                        uuid = SUN_CHESTPLATE_UUID;
                     }
                     else if(from.is(Tags.Items.ARMORS_LEGGINGS)) {
-                        uuid = LEGGINGS_UUID;
+                        uuid = SUN_LEGGINGS_UUID;
                     }
                     else if(from.is(Tags.Items.ARMORS_BOOTS)) {
-                        uuid = LEGGINGS_UUID;
+                        uuid = SUN_LEGGINGS_UUID;
                     }
 
                     Objects.requireNonNull(entity.getAttribute(Attributes.MAX_HEALTH)).removePermanentModifier(uuid);
@@ -127,29 +126,6 @@ public class ForgeEvents {
                 }
             }
         }
-    }
-
-    @SubscribeEvent
-    public static void getEntityDamage(LivingHurtEvent event) {
-        if(event.getSource().getDirectEntity() instanceof Player player) {
-            if(ForgeRegistries.ENTITY_TYPES.tags().getTag(GraviTags.Entities.IS_AFFECTED_BY_NEPTUNE_WRATH).contains(event.getEntity().getType()) && hasNeptuneWrath(player)) {
-                int level = getEnchantmentLevel(GravitationEnchantments.NEPTUNE_WRATH.get(), player);
-                event.setAmount(event.getAmount()+1.5f*level);
-            }
-
-            if(ForgeRegistries.ENTITY_TYPES.tags().getTag(GraviTags.Entities.IS_AFFECTED_BY_HERCULE_STRENGTH).contains(event.getEntity().getType()) && hasHerculeStrength(player)) {
-                int level = getEnchantmentLevel(GravitationEnchantments.HERCULES_STRENGTH.get(), player);
-                event.setAmount(event.getAmount()+2f*level);
-            }
-        }
-    }
-
-    public static boolean hasHerculeStrength(LivingEntity p_44935_) {
-        return getEnchantmentLevel(GravitationEnchantments.HERCULES_STRENGTH.get(), p_44935_) > 0;
-    }
-
-    public static boolean hasNeptuneWrath(LivingEntity p_44935_) {
-        return getEnchantmentLevel(GravitationEnchantments.NEPTUNE_WRATH.get(), p_44935_) > 0;
     }
 
     @SubscribeEvent

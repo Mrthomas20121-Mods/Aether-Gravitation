@@ -1,0 +1,32 @@
+{
+  "parent": "aether:blue_aercloud",
+  "criteria": {
+    "icy_aercloud": {
+      "conditions": {
+        "block": "gravitation:icy_aercloud"
+      },
+      "trigger": "minecraft:enter_block"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.gravitation.icy_aercloud.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "gravitation:icy_aercloud"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.gravitation.icy_aercloud"
+    }
+  },
+  "requirements": [
+    [
+      "icy_aercloud"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

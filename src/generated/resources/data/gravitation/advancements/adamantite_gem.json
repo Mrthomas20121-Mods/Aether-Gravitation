@@ -1,13 +1,11 @@
 {
-  "parent": "gravitation:bronzite_rock",
+  "parent": "gravitation:bronzite_ingot",
   "criteria": {
-    "bronzite_rock": {
+    "gem_adamantite": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "gravitation:bronzite_upgrade_smithing_template"
-            ]
+            "tag": "forge:gems/adamantite"
           }
         ]
       },
@@ -17,21 +15,21 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.gravitation.bronzite_upgrade.desc"
+      "translate": "advancement.gravitation.adamantite_gem.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "gravitation:bronzite_upgrade_smithing_template"
+      "item": "gravitation:adamantite_gem"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.gravitation.bronzite_upgrade"
+      "translate": "advancement.gravitation.adamantite_gem"
     }
   },
   "requirements": [
     [
-      "bronzite_rock"
+      "gem_adamantite"
     ]
   ],
   "sends_telemetry_event": true

@@ -1,0 +1,99 @@
+{
+  "parent": "gravitation:bronzite_ingot",
+  "criteria": {
+    "bronzite_boots": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "gravitation:bronzite_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bronzite_chestplate": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "gravitation:bronzite_chestplate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bronzite_gloves": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "gravitation:bronzite_gloves"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bronzite_helmet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "gravitation:bronzite_helmet"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "bronzite_legging": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "gravitation:bronzite_leggings"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancement.gravitation.bronzite_full_set.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "gravitation:bronzite_boots",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancement.gravitation.bronzite_full_set"
+    }
+  },
+  "requirements": [
+    [
+      "bronzite_helmet"
+    ],
+    [
+      "bronzite_chestplate"
+    ],
+    [
+      "bronzite_legging"
+    ],
+    [
+      "bronzite_boots"
+    ],
+    [
+      "bronzite_gloves"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,13 +1,11 @@
 {
   "parent": "aether:the_aether",
   "criteria": {
-    "bronzite_rock": {
+    "ingot_bronzite": {
       "conditions": {
         "items": [
           {
-            "items": [
-              "gravitation:bronzite_rock"
-            ]
+            "tag": "forge:ingots/bronzite"
           }
         ]
       },
@@ -17,21 +15,21 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.gravitation.bronzite_rock.desc"
+      "translate": "advancement.gravitation.bronzite_ingot.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "gravitation:bronzite_rock"
+      "item": "gravitation:bronzite_ingot"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.gravitation.bronzite_rock"
+      "translate": "advancement.gravitation.bronzite_ingot"
     }
   },
   "requirements": [
     [
-      "bronzite_rock"
+      "ingot_bronzite"
     ]
   ],
   "sends_telemetry_event": true

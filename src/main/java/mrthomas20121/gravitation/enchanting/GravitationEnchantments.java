@@ -10,11 +10,7 @@ public class GravitationEnchantments {
 
     public static DeferredRegister<Enchantment> ENCHANTING = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, Gravitation.MOD_ID);
 
-    public static RegistryObject<Enchantment> NEPTUNE_WRATH = ENCHANTING.register("neptune_wrath", EnchantmentNeptuneWrath::new);
-
-    public static RegistryObject<Enchantment> HERCULES_STRENGTH = ENCHANTING.register("hercules_strength", EnchantmentHerculesStrength::new);
+    public static RegistryObject<Enchantment> STAMINA_OF_MARS = ENCHANTING.register("stamina_of_mars", EnchantmentStaminaMars::new);
 
     public static RegistryObject<Enchantment> SUN_SPIRIT_BLESSING = ENCHANTING.register("sun_spirit_blessing", EnchantmentSunSpiritBlessing::new);
-
-    public static RegistryObject<Enchantment> ETHEREAL_PROTECTION = ENCHANTING.register("ethereal_protection", EnchantmentEtherealProtection::new);
 }

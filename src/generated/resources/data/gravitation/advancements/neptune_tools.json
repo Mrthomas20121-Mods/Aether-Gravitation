@@ -15,7 +15,7 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.gravitation.neptune.desc"
+      "translate": "advancement.gravitation.neptune_tools.desc"
     },
     "frame": "task",
     "hidden": false,
@@ -25,7 +25,7 @@
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.gravitation.neptune"
+      "translate": "advancement.gravitation.neptune_tools"
     }
   },
   "requirements": [

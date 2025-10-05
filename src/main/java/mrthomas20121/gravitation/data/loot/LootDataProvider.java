@@ -29,9 +29,16 @@ public class LootDataProvider extends GlobalLootModifierProvider {
     @Override
     protected void start() {
 
-        add("gold_dungeon_enchantment", new EnchantmentDungeonLootModifiers(
+        add("sun_spirit_enchantment", new EnchantmentDungeonLootModifiers(
                 new LootItemCondition[] { LootTableIdCondition.builder(AetherLoot.GOLD_DUNGEON_REWARD).build() },
                 GravitationEnchantments.SUN_SPIRIT_BLESSING.get()
+        ));
+
+        add("stamina_of_mars_enchantment", new EnchantmentDungeonLootModifiers(
+                new LootItemCondition[] {
+                        LootTableIdCondition.builder(AetherLoot.GOLD_DUNGEON_REWARD).build(),
+                        LootTableIdCondition.builder(AetherLoot.SILVER_DUNGEON_REWARD).build() },
+                GravitationEnchantments.STAMINA_OF_MARS.get()
         ));
     }
 }

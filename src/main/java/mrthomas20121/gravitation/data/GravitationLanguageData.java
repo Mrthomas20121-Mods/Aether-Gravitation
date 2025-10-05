@@ -2,6 +2,8 @@ package mrthomas20121.gravitation.data;
 
 import com.aetherteam.aether.data.providers.AetherLanguageProvider;
 import mrthomas20121.gravitation.block.GravitationBlocks;
+import mrthomas20121.gravitation.data.advancement.AdvancementRL;
+import mrthomas20121.gravitation.data.advancement.GravitationAdvancements;
 import mrthomas20121.gravitation.enchanting.GravitationEnchantments;
 import mrthomas20121.gravitation.entity.GraviEntityTypes;
 import mrthomas20121.gravitation.item.GravitationItems;
@@ -23,26 +25,14 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         add("itemGroup.gravitation.equipments", "Gravitation Equipments & Utilities");
         add("itemGroup.gravitation.building_blocks", "Gravitation Building Blocks");
 
-        addAdvancement("bronzite_rock", "Lucky Rock");
-        addAdvancementDesc("bronzite_rock", "Obtain a Bronzite Rock");
-
-        addAdvancement("bronzite_upgrade", "Shiny Upgrade");
-        addAdvancementDesc("bronzite_upgrade", "Find a bronzite upgrade in dungeon chests");
-
-        addAdvancement("bronzite_armor", "Shiny Armor Set");
-        addAdvancementDesc("bronzite_armor", "Get a full bronzite armor set");
-
-        addAdvancement("neptune", "God of the Sea");
-        addAdvancementDesc("neptune", "Find a neptune tool/weapon");
-
-        addAdvancement("neptune_wrath", "Angering the Sea Gods");
-        addAdvancementDesc("neptune_wrath", "Enchant a tool with the Neptune Wrath enchantment");
-
-        addAdvancement("hercules_strength", "The Strength of Hercules");
-        addAdvancementDesc("hercules_strength", "Enchant a tool with the Hercules Strength enchantment");
-
-        addAdvancement("sun_spirit_blessing", "Blessing of the spirit");
-        addAdvancementDesc("sun_spirit_blessing", "Find a piece of armor enchanted with Sun Spirit Blessing in a gold chest");
+        addAdvancement(GravitationAdvancements.bronzite_ingot, "Enter the bronze age", "Get a Bronzite ingot");
+        addAdvancement(GravitationAdvancements.bronzite_full_set, "Full Bronze Upgrade", "Get a fullset of Bronzite armor");
+        addAdvancement(GravitationAdvancements.adamantite_gem, "Stronger Gemstone", "Get an Adamantite gem");
+        addAdvancement(GravitationAdvancements.adamantite_full_set, "Adamant Armor Upgrade", "Get a fullset of Adamantite armor");
+        addAdvancement(GravitationAdvancements.icy_aercloud, "Cold as Ice", "Step on an Icy Aercloud");
+        addAdvancement(GravitationAdvancements.neptune_tools, "Pirate of the Sea", "Find a neptune tool in a treasure chest.");
+        addAdvancement(GravitationAdvancements.stamina_of_mars, "Blessing Of Mars", "Find a boots with the stamina of mars enchantment");
+        addAdvancement(GravitationAdvancements.sun_spirit_blessing, "Blessed By The Sun Spirit", "Find an armor with the sun spirit blessing enchantment");
 
         add("upgrade.gravitation.bronzite_upgrade", "Bronzite Upgrade");
         add("item.gravitation.smithing_template.bronzite_upgrade.applies_to", "Bronzite Rock");
@@ -197,12 +187,10 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addEntityType(GraviEntityTypes.BELADON_BOAT, "Beladon Boat");
         addEntityType(GraviEntityTypes.BELADON_CHEST_BOAT, "Beladon Chest with Boat");
 
-        addEnchantment(GravitationEnchantments.NEPTUNE_WRATH, "Neptune's Wrath");
-        add("enchantment.gravitation.neptune_wrath.desc", "Deal more damage to water mobs.");
-        addEnchantment(GravitationEnchantments.HERCULES_STRENGTH, "Hercules's Strength");
-        add("enchantment.gravitation.hercules_strength.desc", "Deal more damage to Aether Bosses(Sun Spirit not included).");
+        addEnchantment(GravitationEnchantments.STAMINA_OF_MARS, "Stamina of Mars");
+        add("enchantment.gravitation.stamina_of_mars.desc", "Increases your movement speed.");
         addEnchantment(GravitationEnchantments.SUN_SPIRIT_BLESSING, "Sun Spirit's Blessing");
-        add("enchantment.gravitation.sun_spirit_blessing.desc", "Increases protection against fire and incineration damage types.");
+        add("enchantment.gravitation.sun_spirit_blessing.desc", "Increases your max health.");
 
         addLore(GravitationItems.BRONZITE_ROCK, "This rock was created from the fire of the sun spirit.");
         addLore(GravitationItems.BRONZITE_UPGRADE, "A smithing upgrade used by the ancients to turn bronzite into a material.");
@@ -228,5 +216,10 @@ public class GravitationLanguageData extends AetherLanguageProvider {
 
         // addLoreUnique("gravitation.neptune_wrath", "Neptune's Wrath deal more damage to Water Mobs.");
         // addLoreUnique("gravitation.hercules_strength", "Hercules's Strength deal more damage to Aether Bosses(Sun Spirit Excluded).");
+    }
+
+    public void addAdvancement(AdvancementRL advancementRL, String name, String desc) {
+        this.add(advancementRL.getNameKey(), name);
+        this.add(advancementRL.getDescKey(), desc);
     }
 }

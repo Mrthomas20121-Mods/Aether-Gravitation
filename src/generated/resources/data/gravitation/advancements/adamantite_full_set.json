@@ -1,60 +1,60 @@
 {
-  "parent": "gravitation:bronzite_upgrade",
+  "parent": "gravitation:adamantite_gem",
   "criteria": {
-    "bronzite_boots": {
+    "adamantite_boots": {
       "conditions": {
         "items": [
           {
             "items": [
-              "gravitation:bronzite_boots"
+              "gravitation:adamantite_boots"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "bronzite_chestplate": {
+    "adamantite_chestplate": {
       "conditions": {
         "items": [
           {
             "items": [
-              "gravitation:bronzite_chestplate"
+              "gravitation:adamantite_chestplate"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "bronzite_gloves": {
+    "adamantite_gloves": {
       "conditions": {
         "items": [
           {
             "items": [
-              "gravitation:bronzite_gloves"
+              "gravitation:adamantite_gloves"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "bronzite_helmet": {
+    "adamantite_helmet": {
       "conditions": {
         "items": [
           {
             "items": [
-              "gravitation:bronzite_helmet"
+              "gravitation:adamantite_helmet"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "bronzite_legging": {
+    "adamantite_legging": {
       "conditions": {
         "items": [
           {
             "items": [
-              "gravitation:bronzite_leggings"
+              "gravitation:adamantite_leggings"
             ]
           }
         ]
@@ -65,33 +65,34 @@
   "display": {
     "announce_to_chat": true,
     "description": {
-      "translate": "advancement.gravitation.bronzite_armor.desc"
+      "translate": "advancement.gravitation.adamantite_full_set.desc"
     },
     "frame": "task",
     "hidden": false,
     "icon": {
-      "item": "gravitation:bronzite_gloves"
+      "item": "gravitation:adamantite_boots",
+      "nbt": "{Damage:0}"
     },
     "show_toast": true,
     "title": {
-      "translate": "advancement.gravitation.bronzite_armor"
+      "translate": "advancement.gravitation.adamantite_full_set"
     }
   },
   "requirements": [
     [
-      "bronzite_helmet"
+      "adamantite_helmet"
     ],
     [
-      "bronzite_chestplate"
+      "adamantite_chestplate"
     ],
     [
-      "bronzite_legging"
+      "adamantite_legging"
     ],
     [
-      "bronzite_boots"
+      "adamantite_boots"
     ],
     [
-      "bronzite_gloves"
+      "adamantite_gloves"
     ]
   ],
   "sends_telemetry_event": true

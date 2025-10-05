@@ -1,6 +1,7 @@
 {
   "entries": [
-    "gravitation:gold_dungeon_enchantment"
+    "gravitation:stamina_of_mars_enchantment",
+    "gravitation:sun_spirit_enchantment"
   ],
   "replace": false
 }

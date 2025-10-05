@@ -5,6 +5,7 @@ import mrthomas20121.gravitation.block.wood.GraviWoodType;
 import mrthomas20121.gravitation.block_entity.GraviBlockEntityTypes;
 import mrthomas20121.gravitation.compat.ModCompat;
 import mrthomas20121.gravitation.data.*;
+import mrthomas20121.gravitation.data.advancement.GravitationAdvancementsData;
 import mrthomas20121.gravitation.data.loot.GlobalLootModifiers;
 import mrthomas20121.gravitation.data.loot.LootDataProvider;
 import mrthomas20121.gravitation.data.loot.LootTableInjectionProvider;
