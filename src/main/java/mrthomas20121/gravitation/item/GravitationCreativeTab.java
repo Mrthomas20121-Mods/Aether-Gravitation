@@ -51,6 +51,8 @@ public class GravitationCreativeTab {
                 output.accept(GravitationItems.ADAMANTITE_BOOTS.get());
                 output.accept(GravitationItems.ADAMANTITE_GLOVES.get());
                 output.accept(GravitationItems.ADAMANTITE_CAPE.get());
+                output.accept(GravitationItems.ADAMANTITE_RING.get());
+                output.accept(GravitationItems.ADAMANTITE_PENDANT.get());
 
                 output.accept(GravitationItems.NEPTUNE_AXE.get());
                 output.accept(GravitationItems.NEPTUNE_BATTLEAXE.get());

@@ -41,7 +41,7 @@ public class AdamantiteArmorItem extends ArmorItem {
         if (this.knockbackResistance > 0) {
             builder.put(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(uuid, "Armor knockback resistance", (double)this.knockbackResistance, AttributeModifier.Operation.ADDITION));
         }
-        builder.put(ALObjects.Attributes.EXPERIENCE_GAINED.get(), new AttributeModifier(uuid, "Experience Gained", 0.1d, AttributeModifier.Operation.ADDITION));
+        builder.put(ALObjects.Attributes.OVERHEAL.get(), new AttributeModifier(uuid, "Overheal", 0.1d, AttributeModifier.Operation.ADDITION));
 
         this.defaultModifiers = builder.build();
     }

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "item": "gravitation:bronzite_rock"
+    },
+    "Y": {
+      "tag": "aether:dungeon_blocks"
+    }
+  },
+  "pattern": [
+    "YYY",
+    "YXY",
+    "YYY"
+  ],
+  "result": {
+    "item": "gravitation:bronzite_upgrade_smithing_template"
+  },
+  "show_notification": true
+}

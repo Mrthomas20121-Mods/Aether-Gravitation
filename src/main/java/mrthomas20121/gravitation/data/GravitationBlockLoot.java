@@ -38,7 +38,7 @@ public class GravitationBlockLoot extends AetherBlockLootSubProvider {
         this.dropSelf(GravitationBlocks.FROZEN_AETHER_GRASS_BLOCK.get());
         this.dropSelfDouble(GravitationBlocks.ICY_AERCLOUD.get());
 
-        this.add(GravitationBlocks.BLACK_BERRY_BUSH.get(), (bush) -> droppingBerryBush(bush, GravitationBlocks.BLACK_BERRY_BUSH_STEM.get(), AetherItems.BLUE_BERRY.get()));
+        this.add(GravitationBlocks.BLACK_BERRY_BUSH.get(), (bush) -> droppingBerryBush(bush, GravitationBlocks.BLACK_BERRY_BUSH_STEM.get(), GravitationItems.BLACK_BERRY.get()));
         this.dropSelfDouble(GravitationBlocks.BLACK_BERRY_BUSH_STEM.get());
         this.dropPottedContents(GravitationBlocks.POTTED_BLACK_BERRY_BUSH.get());
         this.dropPottedContents(GravitationBlocks.POTTED_BLACK_BERRY_BUSH_STEM.get());

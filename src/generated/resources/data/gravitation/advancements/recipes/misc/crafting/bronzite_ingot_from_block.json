@@ -6,19 +6,7 @@
         "items": [
           {
             "items": [
-              "gravitation:bronzite_ingot"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "has_hellfire_stone": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "aether:hellfire_stone"
+              "gravitation:bronzite_block"
             ]
           }
         ]
@@ -27,21 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "gravitation:crafting/adamantite_gem"
+        "recipe": "gravitation:crafting/bronzite_ingot_from_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_hellfire_stone",
       "has_bronzite_ingot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "gravitation:crafting/adamantite_gem"
+      "gravitation:crafting/bronzite_ingot_from_block"
     ]
   },
   "sends_telemetry_event": false

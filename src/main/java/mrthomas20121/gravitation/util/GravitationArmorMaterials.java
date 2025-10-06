@@ -24,7 +24,7 @@ public enum GravitationArmorMaterials implements ArmorMaterial {
     ADAMANTITE("adamantite", 40, Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
         map.put(ArmorItem.Type.BOOTS, 3);
         map.put(ArmorItem.Type.LEGGINGS, 6);
-        map.put(ArmorItem.Type.CHESTPLATE, 7);
+        map.put(ArmorItem.Type.CHESTPLATE, 8);
         map.put(ArmorItem.Type.HELMET, 4);
     }), 17, () -> SoundEvents.ARMOR_EQUIP_NETHERITE, 2.0F, () -> Ingredient.of(GraviTags.Items.ADAMANTITE_REPAIRING));
 

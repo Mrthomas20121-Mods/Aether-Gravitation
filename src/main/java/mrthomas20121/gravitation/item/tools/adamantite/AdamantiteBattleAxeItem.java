@@ -1,16 +1,32 @@
 package mrthomas20121.gravitation.item.tools.adamantite;
 
-import com.aetherteam.aether.item.combat.AetherItemTiers;
-import com.aetherteam.aether.item.tools.abilities.GravititeTool;
+import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.Multimap;
+import dev.shadowsoffire.attributeslib.api.ALObjects;
 import mrthomas20121.gravitation.item.tools.BattleAxeItem;
 import mrthomas20121.gravitation.util.GravitationItemTiers;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.context.UseOnContext;
+import org.jetbrains.annotations.NotNull;
 
-public class AdamantiteBattleAxeItem extends BattleAxeItem {
+public class AdamantiteBattleAxeItem extends BattleAxeItem implements AdamantiteTool {
     public AdamantiteBattleAxeItem() {
         super(GravitationItemTiers.ADAMANTITE, 8.5F, -3.0F, new Properties().rarity(Rarity.RARE));
+    }
+
+    @Override
+    public @NotNull Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot equipmentSlot) {
+        ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
+
+        builder.putAll(super.getDefaultAttributeModifiers(equipmentSlot));
+
+        if(equipmentSlot.equals(EquipmentSlot.MAINHAND)) {
+            builder.put(ALObjects.Attributes.ARMOR_SHRED.get(),
+                    new AttributeModifier(ARMOR_SHRED_BASE, "gravitation:adamantite_armor_shred", 0.3f, AttributeModifier.Operation.ADDITION));
+        }
+
+        return builder.build();
     }
 }

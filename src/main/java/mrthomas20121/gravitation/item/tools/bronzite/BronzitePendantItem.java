@@ -17,7 +17,7 @@ import java.util.UUID;
 public class BronzitePendantItem extends PendantItem {
 
     public BronzitePendantItem() {
-        super("neptune_pendant", AetherSoundEvents.ITEM_ACCESSORY_EQUIP_ZANITE_RING, new Properties().rarity(Rarity.UNCOMMON).stacksTo(1));
+        super("neptune_pendant", AetherSoundEvents.ITEM_ACCESSORY_EQUIP_ZANITE_RING, new Properties().durability(100).rarity(Rarity.UNCOMMON));
         this.setRenderTexture(Gravitation.MOD_ID, "bronzite_pendant");
     }
 

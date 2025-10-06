@@ -83,6 +83,8 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addItem(GravitationItems.ADAMANTITE_BOOTS, "Adamantite Boots");
         addItem(GravitationItems.ADAMANTITE_GLOVES, "Adamantite Gloves");
         addItem(GravitationItems.ADAMANTITE_CAPE, "Adamantite Cape");
+        addItem(GravitationItems.ADAMANTITE_RING, "Adamantite Ring");
+        addItem(GravitationItems.ADAMANTITE_PENDANT, "Adamantite Pendant");
 
         addItem(GravitationItems.GRAVITITE_BATTLEAXE, "Gravitite Battleaxe");
         addItem(GravitationItems.ZANITE_BATTLEAXE, "Zanite Battleaxe");
@@ -192,15 +194,34 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addEnchantment(GravitationEnchantments.SUN_SPIRIT_BLESSING, "Sun Spirit's Blessing");
         add("enchantment.gravitation.sun_spirit_blessing.desc", "Increases your max health.");
 
-        addLore(GravitationItems.BRONZITE_ROCK, "This rock was created from the fire of the sun spirit.");
-        addLore(GravitationItems.BRONZITE_UPGRADE, "A smithing upgrade used by the ancients to turn bronzite into a material.");
-        addLore(GravitationItems.BRONZITE_SWORD, "This sword last longer most of the time.");
-        addLore(GravitationItems.BRONZITE_AXE, "This axe last longer most of the time.");
-        addLore(GravitationItems.BRONZITE_PICKAXE, "This pickaxe last longer most of the time.");
-        addLore(GravitationItems.BRONZITE_SHOVEL, "This shovel last longer most of the time.");
-        addLore(GravitationItems.BRONZITE_BATTLEAXE, "This axe has a good swing to it, you should try using it like a sword.");
-        addLore(GravitationItems.BRONZITE_PENDANT, "This pendant has defensive properties.");
-        addLore(GravitationItems.BRONZITE_RING, "This ring has defensive properties.");
+        addLore(GravitationItems.ADAMANTITE_GEM, "This gem is harder than diamond.");
+        addLore(GravitationItems.ADAMANTITE_HELMET, "Part of the Adamantite armor set, equivalent in protection to netherite.");
+        addLore(GravitationItems.ADAMANTITE_CHESTPLATE, "Part of the Adamantite armor set, equivalent in protection to netherite.");
+        addLore(GravitationItems.ADAMANTITE_LEGGING, "Part of the Adamantite armor set, equivalent in protection to netherite.");
+        addLore(GravitationItems.ADAMANTITE_BOOTS, "Part of the Adamantite armor set, equivalent in protection to netherite.");
+        addLore(GravitationItems.ADAMANTITE_PENDANT, "A pendant that give you Fortune 5. It doesn't last for long, so use it wisely!");
+        addLore(GravitationItems.ADAMANTITE_RING, "A ring that give you Looting 5. It doesn't last for long, so use it wisely!");
+        addLore(GravitationItems.ADAMANTITE_SWORD, "Part of the Adamantite tool tier, It mines what diamond can, except It apply armor reduction to the target.");
+        addLore(GravitationItems.ADAMANTITE_PICKAXE, "Part of the Adamantite tool tier, It mines what diamond can, except It apply armor reduction to the target.");
+        addLore(GravitationItems.ADAMANTITE_SHOVEL, "Part of the Adamantite tool tier, It mines what diamond can, except It apply armor reduction to the target.");
+        addLore(GravitationItems.ADAMANTITE_HOE, "Part of the Adamantite tool tier, It mines what diamond can, except It apply armor reduction to the target.");
+        addLore(GravitationItems.ADAMANTITE_AXE, "Part of the Adamantite tool tier, It mines what diamond can, except It apply armor reduction to the target.");
+        addLore(GravitationItems.ADAMANTITE_BATTLEAXE, "Part of the Adamantite tool tier, It mines what diamond can, except It apply armor reduction to the target.");
+
+        addLore(GravitationItems.BRONZITE_ROCK, "This rock was formed by tectonic activity.");
+        addLore(GravitationItems.BRONZITE_UPGRADE, "A smithing upgrade used to turn bronzite rock into bronzite ingot.");
+        addLore(GravitationItems.BRONZITE_HELMET, "Part of the Bronzite armor set, equivalent in protection to netherite");
+        addLore(GravitationItems.BRONZITE_CHESTPLATE, "Part of the Bronzite armor set, slightly better than iron in protection");
+        addLore(GravitationItems.BRONZITE_LEGGING, "Part of the Bronzite armor set, slightly better than iron in protection");
+        addLore(GravitationItems.BRONZITE_BOOTS, "Part of the Bronzite armor set, slightly better than iron in protection");
+
+        addLore(GravitationItems.BRONZITE_SWORD, "Part of the Bronzite tool tier. Last longer most of the time.");
+        addLore(GravitationItems.BRONZITE_AXE, "Part of the Bronzite tool tier. Last longer most of the time.");
+        addLore(GravitationItems.BRONZITE_PICKAXE, "Part of the Bronzite tool tier. Last longer most of the time.");
+        addLore(GravitationItems.BRONZITE_SHOVEL, "Part of the Bronzite tool tier. Last longer most of the time.");
+        addLore(GravitationItems.BRONZITE_BATTLEAXE, "Part of the Bronzite tool tier. Last longer most of the time.");
+        addLore(GravitationItems.BRONZITE_PENDANT, "A pendant that give you extra Armor Toughness. It doesn't last for long, so use it wisely!");
+        addLore(GravitationItems.BRONZITE_RING, "A ring that give you extra Armor. It doesn't last for long, so use it wisely!");
 
         addLore(GravitationItems.DIAMOND_BATTLEAXE, "This axe has a good swing to it, you should try using it like a sword.");
         addLore(GravitationItems.GOLD_BATTLEAXE, "This axe has a good swing to it, you should try using it like a sword.");

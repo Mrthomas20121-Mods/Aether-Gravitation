@@ -137,10 +137,11 @@ public class GravitationRecipeData extends AetherRecipeProvider {
                 GravitationBlocks.POLISHED_CONGLOMERATE_SLAB.get(), GravitationBlocks.POLISHED_CONGLOMERATE.get());
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, GravitationItems.ADAMANTITE_GEM.get(), 1)
-                .requires(AetherItems.ZANITE_GEMSTONE.get())
+                .requires(GravitationItems.BRONZITE_INGOT.get())
                 .requires(AetherBlocks.ENCHANTED_GRAVITITE.get())
                 .requires(AetherBlocks.HELLFIRE_STONE.get())
                 .unlockedBy(getHasName(AetherBlocks.HELLFIRE_STONE.get()), has(AetherBlocks.HELLFIRE_STONE.get()))
+                .unlockedBy(getHasName(GravitationItems.BRONZITE_INGOT.get()), has(GravitationItems.BRONZITE_INGOT.get()))
                 .save(consumer, new ResourceLocation("gravitation:crafting/adamantite_gem"));
 
         makeAxe(GravitationItems.ADAMANTITE_AXE, GravitationItems.ADAMANTITE_GEM).save(consumer, new ResourceLocation("gravitation:crafting/adamantite_axe"));
@@ -156,6 +157,18 @@ public class GravitationRecipeData extends AetherRecipeProvider {
         makeCape(GravitationItems.ADAMANTITE_CAPE, GravitationItems.ADAMANTITE_GEM.get()).save(consumer, new ResourceLocation("gravitation:crafting/adamantite_cape"));
         makeGloves(GravitationItems.ADAMANTITE_GLOVES, GravitationItems.ADAMANTITE_GEM).save(consumer, new ResourceLocation("gravitation:crafting/adamantite_gloves"));
 
+        makePendant(GravitationItems.ADAMANTITE_PENDANT, GravitationItems.ADAMANTITE_GEM.get()).save(consumer, new ResourceLocation("gravitation:crafting/adamantite_pendant"));
+        makeRing(GravitationItems.ADAMANTITE_RING, GravitationItems.ADAMANTITE_GEM.get()).save(consumer, new ResourceLocation("gravitation:crafting/adamantite_ring"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GravitationItems.BRONZITE_UPGRADE.get())
+                .define('X', GravitationItems.BRONZITE_ROCK.get())
+                .define('Y', AetherTags.Items.DUNGEON_BLOCKS)
+                .pattern("YYY")
+                .pattern("YXY")
+                .pattern("YYY")
+                .unlockedBy("has_bronzite_ingot", has(GravitationItems.BRONZITE_INGOT.get()))
+                .save(consumer, new ResourceLocation("gravitation:crafting/bronzite_upgrade"));
+
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, GravitationBlocks.BRONZITE_BLOCK.get())
                 .define('X', GravitationItems.BRONZITE_INGOT.get())
                 .pattern("XXX")
@@ -163,6 +176,11 @@ public class GravitationRecipeData extends AetherRecipeProvider {
                 .pattern("XXX")
                 .unlockedBy("has_bronzite_ingot", has(GravitationItems.BRONZITE_INGOT.get()))
                 .save(consumer, new ResourceLocation("gravitation:crafting/bronzite_block"));
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, GravitationItems.BRONZITE_INGOT.get(), 9)
+                .requires(GravitationBlocks.BRONZITE_BLOCK.get())
+                .unlockedBy("has_bronzite_ingot", has(GravitationBlocks.BRONZITE_BLOCK.get()))
+                .save(consumer, new ResourceLocation("gravitation:crafting/bronzite_ingot_from_block"));
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, GravitationItems.BRONZITE_INGOT.get())
                 .define('X', GravitationItems.BRONZITE_NUGGET.get())
@@ -245,12 +263,12 @@ public class GravitationRecipeData extends AetherRecipeProvider {
                 .save(consumer, new ResourceLocation("gravitation:crafting/enchanting_table"));
 
         makePendant(GravitationItems.BRONZITE_PENDANT, GravitationItems.BRONZITE_INGOT.get()).save(consumer, new ResourceLocation("gravitation:crafting/bronzite_pendant"));
+        makeRing(GravitationItems.BRONZITE_RING, GravitationItems.BRONZITE_INGOT.get()).save(consumer, new ResourceLocation("gravitation:crafting/bronzite_ring"));
 
         makePickaxe(GravitationItems.BRONZITE_PICKAXE, GravitationItems.BRONZITE_INGOT).save(consumer, new ResourceLocation("gravitation:crafting/bronzite_pickaxe"));
         makeHoe(GravitationItems.BRONZITE_HOE, GravitationItems.BRONZITE_INGOT).save(consumer, new ResourceLocation("gravitation:crafting/bronzite_hoe"));
         makeSword(GravitationItems.BRONZITE_SWORD, GravitationItems.BRONZITE_INGOT).save(consumer, new ResourceLocation("gravitation:crafting/bronzite_sword"));
         makeAxe(GravitationItems.BRONZITE_AXE, GravitationItems.BRONZITE_INGOT).save(consumer, new ResourceLocation("gravitation:crafting/bronzite_axe"));
-        makeRing(GravitationItems.BRONZITE_RING, GravitationItems.BRONZITE_INGOT.get()).save(consumer, new ResourceLocation("gravitation:crafting/bronzite_ring"));
         makeShovel(GravitationItems.BRONZITE_SHOVEL, GravitationItems.BRONZITE_INGOT).save(consumer, new ResourceLocation("gravitation:crafting/bronzite_shovel"));
 
         repairingRecipe(RecipeCategory.TOOLS, GravitationItems.GRAVITITE_BATTLEAXE.get(), 1500).save(consumer, new ResourceLocation("gravitation:repairing/gravitite_battleaxe"));

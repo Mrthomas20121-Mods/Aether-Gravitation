@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 public class BronziteBattleAxeItem extends BattleAxeItem {
 
     public BronziteBattleAxeItem() {
-        super(GravitationItemTiers.BRONZITE, 8.5f, -3.1f, new Properties().rarity(Rarity.UNCOMMON));
+        super(GravitationItemTiers.BRONZITE, 8.5f, -3f, new Properties().rarity(Rarity.UNCOMMON));
     }
 
     @Override

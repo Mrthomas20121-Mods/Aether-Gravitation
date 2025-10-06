@@ -67,9 +67,9 @@ public class GravitationConfiguredFeatures {
                         OreConfiguration.target(HOLYSTONE, GravitationBlocks.BRONZITE_ORE.get().defaultBlockState())), 8));
         register(context, CONGLOMERATE_ORE, Feature.ORE, new OreConfiguration(new TagMatchTest(AetherTags.Blocks.HOLYSTONE), GravitationBlocks.CONGLOMERATE.get().defaultBlockState(), 32));
         register(context, AERFIN_TREE_CONFIGURATION, Feature.TREE,
-                createAerfin(4, GravitationBlocks.AERFIN_LEAVES.get()).dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
+                createAerfin(6, GravitationBlocks.AERFIN_LEAVES.get()).dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
         register(context, ORANGE_AERFIN_TREE_CONFIGURATION, Feature.TREE,
-                createAerfin(5, GravitationBlocks.ORANGE_AERFIN_LEAVES.get()).dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
+                createAerfin(6, GravitationBlocks.ORANGE_AERFIN_LEAVES.get()).dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
         register(context, BELADON_TREE_CONFIGURATION, Feature.TREE, createBeladon(6)
                 .dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
         register(context, ENCHANTED_TREE_CONFIGURATION, Feature.TREE, createEnchanted().dirt(BlockStateProvider.simple(AetherBlocks.AETHER_DIRT.get())).build());
@@ -88,7 +88,7 @@ public class GravitationConfiguredFeatures {
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createAerfin(int height, Block leaves) {
-        return createTreeBase(GravitationBlocks.AERFIN_LOG.get(), leaves, height, 1, 2).ignoreVines();
+        return createTreeBase(GravitationBlocks.AERFIN_LOG.get(), leaves, height, 0, 1).ignoreVines();
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createTreeBase(Block p_195147_, Block p_195148_, int baseHeight, int heightRandA, int heightRandB) {

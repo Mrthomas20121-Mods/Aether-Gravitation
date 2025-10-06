@@ -1,6 +1,7 @@
 package mrthomas20121.gravitation.util;
 
 import com.aetherteam.aether.event.hooks.AbilityHooks;
+import mrthomas20121.gravitation.Gravitation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
@@ -13,7 +14,7 @@ import net.minecraftforge.fml.common.Mod;
 import java.util.HashMap;
 import java.util.Map;
 
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(modid = Gravitation.MOD_ID)
 public class ToolAction {
 
     private static final Map<Block, Block> stripping = new HashMap<>();

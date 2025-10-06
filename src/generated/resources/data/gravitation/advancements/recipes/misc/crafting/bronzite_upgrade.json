@@ -13,35 +13,22 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_hellfire_stone": {
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "aether:hellfire_stone"
-            ]
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "gravitation:crafting/adamantite_gem"
+        "recipe": "gravitation:crafting/bronzite_upgrade"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_hellfire_stone",
       "has_bronzite_ingot",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "gravitation:crafting/adamantite_gem"
+      "gravitation:crafting/bronzite_upgrade"
     ]
   },
   "sends_telemetry_event": false

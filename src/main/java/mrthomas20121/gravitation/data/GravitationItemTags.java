@@ -176,11 +176,13 @@ public class GravitationItemTags extends ItemTagsProvider {
         this.tag(GraviTags.Items.INGOT_BRONZITE).add(GravitationItems.BRONZITE_INGOT.get());
         this.tag(GraviTags.Items.NUGGET_BRONZITE).add(GravitationItems.BRONZITE_NUGGET.get());
 
-        this.tag(AetherTags.Items.AETHER_RING).add(GravitationItems.BRONZITE_RING.get(), GravitationItems.NEPTUNE_RING.get());
+        this.tag(AetherTags.Items.AETHER_RING).add(GravitationItems.ADAMANTITE_RING.get(), GravitationItems.BRONZITE_RING.get(), GravitationItems.NEPTUNE_RING.get());
 
-        this.tag(AetherTags.Items.AETHER_PENDANT).add(GravitationItems.BRONZITE_PENDANT.get(), GravitationItems.NEPTUNE_PENDANT.get());
+        this.tag(AetherTags.Items.AETHER_PENDANT).add(GravitationItems.ADAMANTITE_PENDANT.get(), GravitationItems.BRONZITE_PENDANT.get(), GravitationItems.NEPTUNE_PENDANT.get());
 
-        this.tag(AetherTags.Items.FREEZABLE_PENDANTS).add(GravitationItems.BRONZITE_PENDANT.get(), GravitationItems.NEPTUNE_PENDANT.get());
+        this.tag(AetherTags.Items.FREEZABLE_PENDANTS).add(GravitationItems.BRONZITE_PENDANT.get());
+
+        this.tag(AetherTags.Items.FREEZABLE_RINGS).add(GravitationItems.BRONZITE_RING.get());
 
         this.tag(AetherTags.Items.ACCESSORIES_GLOVES).add(GravitationItems.BRONZITE_GLOVES.get(), GravitationItems.ADAMANTITE_GLOVES.get());
 

@@ -10,7 +10,7 @@ import java.util.function.Consumer;
 
 public class BronziteAxeItem extends AxeItem {
     public BronziteAxeItem() {
-        super(GravitationItemTiers.BRONZITE, 5.5f, -3.0f, new Properties().rarity(Rarity.UNCOMMON));
+        super(GravitationItemTiers.BRONZITE, 5f, -3.0f, new Properties().rarity(Rarity.UNCOMMON));
     }
 
     @Override

@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 public class BronziteHoeItem extends HoeItem {
 
     public BronziteHoeItem() {
-        super(GravitationItemTiers.BRONZITE, 1, 0.0f, new Properties().rarity(Rarity.UNCOMMON));
+        super(GravitationItemTiers.BRONZITE, -3, 0, new Properties().rarity(Rarity.UNCOMMON));
     }
 
     @Override

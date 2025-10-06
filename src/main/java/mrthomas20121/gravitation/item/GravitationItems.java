@@ -61,6 +61,8 @@ public class GravitationItems {
     public static RegistryObject<Item> ADAMANTITE_BOOTS = ITEMS.register("adamantite_boots", () -> new AdamantiteArmorItem(GravitationArmorMaterials.ADAMANTITE, ArmorItem.Type.BOOTS, new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
     public static RegistryObject<Item> ADAMANTITE_GLOVES = ITEMS.register("adamantite_gloves", () -> new AdamantiteGlovesItem(0.80d, "adamantite_gloves", () -> SoundEvents.ARMOR_EQUIP_NETHERITE, new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
     public static RegistryObject<Item> ADAMANTITE_CAPE = ITEMS.register("adamantite_cape", () -> new AdamantiteCapeItem("adamantite_cape", new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
+    public static RegistryObject<Item> ADAMANTITE_PENDANT = ITEMS.register("adamantite_pendant", AdamantitePendantItem::new);
+    public static RegistryObject<Item> ADAMANTITE_RING = ITEMS.register("adamantite_ring", AdamantiteRingItem::new);
 
     public static RegistryObject<Item> NEPTUNE_AXE = ITEMS.register("neptune_axe", NeptuneAxeItem::new);
     public static RegistryObject<Item> NEPTUNE_BATTLEAXE = ITEMS.register("neptune_battleaxe", NeptuneBattleAxeItem::new);
@@ -79,8 +81,8 @@ public class GravitationItems {
     public static RegistryObject<Item> IRON_BATTLEAXE = ITEMS.register("iron_battleaxe", IronBattleAxeItem::new);
     public static RegistryObject<Item> GOLD_BATTLEAXE = ITEMS.register("gold_battleaxe", GoldBattleAxeItem::new);
 
-    public static final RegistryObject<Item> BLACK_BERRY = ITEMS.register("black_berry", () -> new Item(new Item.Properties().food(GravitationFood.BLACK_BERRY)));
-    public static final RegistryObject<Item> ICED_BLACK_BERRY = ITEMS.register("iced_black_berry", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON).food(GravitationFood.ICED_BLACK_BERRY)));
+    public static final RegistryObject<Item> BLACK_BERRY = ITEMS.register("black_berry", () -> new Item(new Item.Properties().food(GravitationFoods.BLACK_BERRY)));
+    public static final RegistryObject<Item> ICED_BLACK_BERRY = ITEMS.register("iced_black_berry", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON).food(GravitationFoods.ICED_BLACK_BERRY)));
 
     public static final RegistryObject<Item> AERFIN_BOAT = ITEMS.register("aerfin_boat", () -> new AerfinBoatItem(false, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> AERFIN_CHEST_BOAT = ITEMS.register("aerfin_chest_boat", () -> new AerfinBoatItem(true, new Item.Properties().stacksTo(1)));

@@ -141,6 +141,8 @@ public class GravitationItemData extends AetherItemModelProvider {
         this.bootsItem(GravitationItems.ADAMANTITE_BOOTS.get(), "");
         this.glovesItem(GravitationItems.ADAMANTITE_GLOVES.get(), "");
         this.item(GravitationItems.ADAMANTITE_CAPE.get(), "");
+        this.item(GravitationItems.ADAMANTITE_PENDANT.get(), "");
+        this.item(GravitationItems.ADAMANTITE_RING.get(), "");
 
         this.handheldItem(GravitationItems.GRAVITITE_BATTLEAXE.get(), "");
         this.handheldItem(GravitationItems.ZANITE_BATTLEAXE.get(), "");

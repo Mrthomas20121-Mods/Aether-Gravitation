@@ -31,11 +31,11 @@ public class AerfinFoliagePlacer extends FoliagePlacer {
     @Override
     protected void createFoliage(LevelSimulatedReader level, FoliageSetter foliageSetter, RandomSource random, TreeConfiguration config, int maxFreeTreeHeight, FoliagePlacer.FoliageAttachment attachment, int foliageHeight, int foliageRadius, int offset) {
         boolean flag = attachment.doubleTrunk();
-        BlockPos blockPos = attachment.pos().above();
+        BlockPos blockPos = attachment.pos().above(2);
 
+        this.placeLeavesRow(level, foliageSetter, random, config, blockPos, foliageRadius+1, - foliageHeight, flag);
         this.placeLeavesRow(level, foliageSetter, random, config, blockPos, foliageRadius, 1 - foliageHeight, flag);
         this.placeLeavesRow(level, foliageSetter, random, config, blockPos, foliageRadius - 1, 2 - foliageHeight, flag);
-        this.placeLeavesRow(level, foliageSetter, random, config, blockPos, foliageRadius - 2, 3 - foliageHeight, flag);
     }
 
     @Override

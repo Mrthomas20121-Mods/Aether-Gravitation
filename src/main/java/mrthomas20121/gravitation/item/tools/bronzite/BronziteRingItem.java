@@ -18,7 +18,7 @@ import java.util.UUID;
 public class BronziteRingItem extends RingItem {
 
     public BronziteRingItem() {
-        super(AetherSoundEvents.ITEM_ACCESSORY_EQUIP_ZANITE_RING, new Item.Properties().rarity(Rarity.UNCOMMON).stacksTo(1));
+        super(AetherSoundEvents.ITEM_ACCESSORY_EQUIP_ZANITE_RING, new Item.Properties().durability(100).rarity(Rarity.UNCOMMON));
     }
 
     @Override

@@ -47,10 +47,6 @@ public class ForgeEvents {
     public static void modifyItemEvent(ItemAttributeModifierEvent event) {
         ItemStack stack = event.getItemStack();
 
-        if(event.getSlotType().equals(EquipmentSlot.MAINHAND) && stack.is(GraviTags.Items.TOOLS_ADAMANTITE)) {
-            event.addModifier(ALObjects.Attributes.ARMOR_SHRED.get(), new AttributeModifier("gravitation:armor_shred_adamantite", 0.3f, AttributeModifier.Operation.ADDITION));
-        }
-
         int level = stack.getEnchantmentLevel(GravitationEnchantments.SUN_SPIRIT_BLESSING.get());
 
         if(event.getSlotType().isArmor() && level > 0) {
@@ -108,23 +104,7 @@ public class ForgeEvents {
     @SubscribeEvent
     public static void modifyCurioEvent(CurioAttributeModifierEvent event) {
         if(event.getSlotContext().identifier().equals("aether_gloves") && event.getItemStack().is(AetherTags.Items.AETHER_GLOVES)) {
-            event.addModifier(ALObjects.Attributes.CRIT_CHANCE.get(), new AttributeModifier(event.getUuid(), "gravitation:crit_chance_gloves", 0.3f, AttributeModifier.Operation.ADDITION));
-        }
-    }
-
-    @SubscribeEvent
-    public static void crit(CriticalHitEvent event) {
-        if(event.getEntity().getMainHandItem().is(GraviTags.Items.TOOLS_ADAMANTITE)) {
-
-            // check if the player is not null just in case
-            if(event.getEntity() != null) {
-                RandomSource source = event.getEntity().getRandom();
-
-                if(source.nextBoolean()) {
-                    event.setResult(Event.Result.ALLOW);
-                    event.setDamageModifier(2f);
-                }
-            }
+            event.addModifier(Attributes.ATTACK_KNOCKBACK, new AttributeModifier(event.getUuid(), "gravitation:crit_chance_gloves", 0.1f, AttributeModifier.Operation.ADDITION));
         }
     }
 
