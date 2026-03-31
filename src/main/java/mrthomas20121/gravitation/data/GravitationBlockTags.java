@@ -203,7 +203,11 @@ public class GravitationBlockTags extends BlockTagsProvider {
                 GravitationBlocks.POLISHED_CONGLOMERATE.get(),
                 GravitationBlocks.POLISHED_CONGLOMERATE_STAIRS.get(),
                 GravitationBlocks.POLISHED_CONGLOMERATE_SLAB.get(),
-                GravitationBlocks.POLISHED_CONGLOMERATE_WALLS.get()
+                GravitationBlocks.POLISHED_CONGLOMERATE_WALLS.get(),
+                GravitationBlocks.CHISELED_CONGLOMERATE.get(),
+                GravitationBlocks.CHISELED_CONGLOMERATE_STAIRS.get(),
+                GravitationBlocks.CHISELED_CONGLOMERATE_SLAB.get(),
+                GravitationBlocks.CHISELED_CONGLOMERATE_WALLS.get()
         );
 
         this.tag(Tags.Blocks.STORAGE_BLOCKS).add(GravitationBlocks.BRONZITE_BLOCK.get());

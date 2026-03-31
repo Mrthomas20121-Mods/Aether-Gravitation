@@ -311,67 +311,10 @@
         16,
         15
       ]
-    },
-    {
-      "faces": {
-        "down": {
-          "texture": "#bush"
-        },
-        "east": {
-          "texture": "#bush",
-          "uv": [
-            3.0,
-            3.0,
-            13.0,
-            13.0
-          ]
-        },
-        "north": {
-          "texture": "#bush",
-          "uv": [
-            3.0,
-            3.0,
-            13.0,
-            13.0
-          ]
-        },
-        "south": {
-          "texture": "#bush",
-          "uv": [
-            3.0,
-            3.0,
-            13.0,
-            13.0
-          ]
-        },
-        "up": {
-          "texture": "#bush"
-        },
-        "west": {
-          "texture": "#bush",
-          "uv": [
-            3.0,
-            3.0,
-            13.0,
-            13.0
-          ]
-        }
-      },
-      "from": [
-        3,
-        6,
-        3
-      ],
-      "to": [
-        13,
-        16,
-        13
-      ]
     }
   ],
   "render_type": "minecraft:cutout",
   "textures": {
-    "bush": "gravitation:block/natural/potted_black_berry_bush",
     "dirt": "minecraft:block/dirt",
     "flowerpot": "minecraft:block/flower_pot",
     "particle": "minecraft:block/flower_pot",

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "gravitation:block/chiseled_conglomerate_slab"
+    },
+    "type=double": {
+      "model": "gravitation:block/chiseled_conglomerate"
+    },
+    "type=top": {
+      "model": "gravitation:block/chiseled_conglomerate_slab_top"
+    }
+  }
+}

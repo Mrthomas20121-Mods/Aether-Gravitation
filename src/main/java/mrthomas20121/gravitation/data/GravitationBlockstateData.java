@@ -23,7 +23,7 @@ public class GravitationBlockstateData extends AetherBlockStateProvider {
 
         this.crossBlock(GravitationBlocks.BLACK_BERRY_BUSH_STEM.get(), "natural/");
         this.berryBush(GravitationBlocks.BLACK_BERRY_BUSH.get(), GravitationBlocks.BLACK_BERRY_BUSH_STEM.get());
-        this.pottedStem(GravitationBlocks.POTTED_BLACK_BERRY_BUSH.get(), "natural/");
+        this.pottedStem(GravitationBlocks.POTTED_BLACK_BERRY_BUSH_STEM.get(), "natural/");
         this.pottedBush(GravitationBlocks.POTTED_BLACK_BERRY_BUSH.get(), GravitationBlocks.POTTED_BLACK_BERRY_BUSH_STEM.get(), "natural/");
 
         // aerfin set
@@ -107,5 +107,10 @@ public class GravitationBlockstateData extends AetherBlockStateProvider {
         this.wallBlock(GravitationBlocks.POLISHED_CONGLOMERATE_WALLS.get(), new ResourceLocation("gravitation:block/natural/polished_conglomerate"));
         this.stairsBlock(GravitationBlocks.POLISHED_CONGLOMERATE_STAIRS.get(), new ResourceLocation("gravitation:block/natural/polished_conglomerate"));
         this.slab(GravitationBlocks.POLISHED_CONGLOMERATE_SLAB.get(), GravitationBlocks.POLISHED_CONGLOMERATE.get(), "natural/");
+
+        this.block(GravitationBlocks.CHISELED_CONGLOMERATE.get(), "natural/");
+        this.wallBlock(GravitationBlocks.CHISELED_CONGLOMERATE_WALLS.get(), new ResourceLocation("gravitation:block/natural/chiseled_conglomerate"));
+        this.stairsBlock(GravitationBlocks.CHISELED_CONGLOMERATE_STAIRS.get(), new ResourceLocation("gravitation:block/natural/chiseled_conglomerate"));
+        this.slab(GravitationBlocks.CHISELED_CONGLOMERATE_SLAB.get(), GravitationBlocks.CHISELED_CONGLOMERATE.get(), "natural/");
     }
 }

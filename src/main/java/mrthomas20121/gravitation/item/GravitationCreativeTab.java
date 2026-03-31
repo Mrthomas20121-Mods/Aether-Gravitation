@@ -122,6 +122,11 @@ public class GravitationCreativeTab {
                 output.accept(GravitationBlocks.POLISHED_CONGLOMERATE_STAIRS.get());
                 output.accept(GravitationBlocks.POLISHED_CONGLOMERATE_SLAB.get());
 
+                output.accept(GravitationBlocks.CHISELED_CONGLOMERATE.get());
+                output.accept(GravitationBlocks.CHISELED_CONGLOMERATE_WALLS.get());
+                output.accept(GravitationBlocks.CHISELED_CONGLOMERATE_STAIRS.get());
+                output.accept(GravitationBlocks.CHISELED_CONGLOMERATE_SLAB.get());
+
                 output.accept(GravitationBlocks.AERFIN_SIGN.get());
                 output.accept(GravitationBlocks.AERFIN_HANGING_SIGN.get());
                 output.accept(GravitationBlocks.AERFIN_BOOKSHELF.get());

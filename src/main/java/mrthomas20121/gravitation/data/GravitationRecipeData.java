@@ -123,11 +123,15 @@ public class GravitationRecipeData extends AetherRecipeProvider {
                 GravitationBlocks.CONGLOMERATE_BRICK_WALLS.get(), GravitationBlocks.CONGLOMERATE_BRICKS.get());
         wall(consumer, new ResourceLocation("gravitation:crafting/polished_conglomerate_wall"), RecipeCategory.BUILDING_BLOCKS,
                 GravitationBlocks.POLISHED_CONGLOMERATE_WALLS.get(), GravitationBlocks.POLISHED_CONGLOMERATE.get());
+        wall(consumer, new ResourceLocation("gravitation:crafting/chiseled_conglomerate_wall"), RecipeCategory.BUILDING_BLOCKS,
+                GravitationBlocks.CHISELED_CONGLOMERATE_WALLS.get(), GravitationBlocks.CHISELED_CONGLOMERATE.get());
         stairs(consumer, new ResourceLocation("gravitation:crafting/conglomerate_stairs"),
                 GravitationBlocks.CONGLOMERATE_STAIRS, GravitationBlocks.CONGLOMERATE);
         stairs(consumer, new ResourceLocation("gravitation:crafting/conglomerate_brick_stairs"),
                 GravitationBlocks.CONGLOMERATE_BRICK_STAIRS, GravitationBlocks.CONGLOMERATE_BRICKS);
         stairs(consumer, new ResourceLocation("gravitation:crafting/polished_conglomerate_stairs"),
+                GravitationBlocks.CHISELED_CONGLOMERATE_STAIRS, GravitationBlocks.CHISELED_CONGLOMERATE);
+        stairs(consumer, new ResourceLocation("gravitation:crafting/chiseled_conglomerate_stairs"),
                 GravitationBlocks.POLISHED_CONGLOMERATE_STAIRS, GravitationBlocks.POLISHED_CONGLOMERATE);
         slab(consumer, new ResourceLocation("gravitation:crafting/conglomerate_slab"),RecipeCategory.BUILDING_BLOCKS,
                 GravitationBlocks.CONGLOMERATE_SLAB.get(), GravitationBlocks.CONGLOMERATE.get());
@@ -135,6 +139,8 @@ public class GravitationRecipeData extends AetherRecipeProvider {
                 GravitationBlocks.CONGLOMERATE_BRICK_SLAB.get(), GravitationBlocks.CONGLOMERATE_BRICKS.get());
         slab(consumer, new ResourceLocation("gravitation:crafting/polished_conglomerate_slab"),RecipeCategory.BUILDING_BLOCKS,
                 GravitationBlocks.POLISHED_CONGLOMERATE_SLAB.get(), GravitationBlocks.POLISHED_CONGLOMERATE.get());
+        slab(consumer, new ResourceLocation("gravitation:crafting/chiseled_conglomerate_slab"),RecipeCategory.BUILDING_BLOCKS,
+                GravitationBlocks.CHISELED_CONGLOMERATE_SLAB.get(), GravitationBlocks.CHISELED_CONGLOMERATE.get());
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.TOOLS, GravitationItems.ADAMANTITE_GEM.get(), 1)
                 .requires(GravitationItems.BRONZITE_INGOT.get())

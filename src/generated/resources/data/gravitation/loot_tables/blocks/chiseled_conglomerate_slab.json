@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "gravitation:beladon_hanging_sign"
+          "name": "gravitation:chiseled_conglomerate_slab"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "gravitation:blocks/beladon_wall_hanging_sign"
+  "random_sequence": "gravitation:blocks/chiseled_conglomerate_slab"
 }

@@ -7,13 +7,11 @@
     }
   },
   "pattern": [
-    "#  ",
-    "## ",
     "###"
   ],
   "result": {
-    "count": 4,
-    "item": "gravitation:chiseled_conglomerate_stairs"
+    "count": 6,
+    "item": "gravitation:chiseled_conglomerate_slab"
   },
   "show_notification": true
 }

@@ -113,6 +113,11 @@ public class GravitationLanguageData extends AetherLanguageProvider {
         addBlock(GravitationBlocks.POLISHED_CONGLOMERATE_STAIRS, "Polished Conglomerate Stairs");
         addBlock(GravitationBlocks.POLISHED_CONGLOMERATE_SLAB, "Polished Conglomerate Slab");
 
+        addBlock(GravitationBlocks.CHISELED_CONGLOMERATE, "Chiseled Conglomerate");
+        addBlock(GravitationBlocks.CHISELED_CONGLOMERATE_WALLS, "Chiseled Conglomerate Wall");
+        addBlock(GravitationBlocks.CHISELED_CONGLOMERATE_STAIRS, "Chiseled Conglomerate Stairs");
+        addBlock(GravitationBlocks.CHISELED_CONGLOMERATE_SLAB, "Chiseled Conglomerate Slab");
+
         this.addBlock(GravitationBlocks.BLACK_BERRY_BUSH_STEM, "Black Bush Stem");
         this.addBlock(GravitationBlocks.BLACK_BERRY_BUSH, "Black Berry Bush");
 

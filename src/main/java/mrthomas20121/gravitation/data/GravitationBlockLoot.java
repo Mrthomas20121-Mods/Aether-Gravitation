@@ -58,6 +58,11 @@ public class GravitationBlockLoot extends AetherBlockLootSubProvider {
         this.dropSelf(GravitationBlocks.POLISHED_CONGLOMERATE_STAIRS.get());
         this.dropSelf(GravitationBlocks.POLISHED_CONGLOMERATE_SLAB.get());
 
+        this.dropSelf(GravitationBlocks.CHISELED_CONGLOMERATE.get());
+        this.dropSelf(GravitationBlocks.CHISELED_CONGLOMERATE_WALLS.get());
+        this.dropSelf(GravitationBlocks.CHISELED_CONGLOMERATE_STAIRS.get());
+        this.dropSelf(GravitationBlocks.CHISELED_CONGLOMERATE_SLAB.get());
+
         this.add(GravitationBlocks.AERFIN_LEAVES.get(), (leaves) -> this.droppingWithChancesAndSkyrootSticks(leaves, GravitationBlocks.AERFIN_SAPLING.get(), BlockLootAccessor.aether$getNormalLeavesSaplingChances()));
         this.add(GravitationBlocks.ORANGE_AERFIN_LEAVES.get(), (leaves) -> this.droppingGoldenAerfinLeaves(leaves, GravitationBlocks.ORANGE_AERFIN_SAPLING.get(), BlockLootAccessor.aether$getNormalLeavesSaplingChances()));
         this.dropSelf(GravitationBlocks.AERFIN_SAPLING.get());

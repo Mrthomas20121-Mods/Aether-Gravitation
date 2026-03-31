@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "gravitation:enchanted_wall_hanging_sign"
+          "name": "gravitation:enchanted_hanging_sign"
         }
       ],
       "rolls": 1.0

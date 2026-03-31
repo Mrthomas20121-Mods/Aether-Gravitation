@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "gravitation:crafting/polished_conglomerate_stairs"
+        "recipe": "gravitation:crafting/chiseled_conglomerate_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "gravitation:crafting/polished_conglomerate_stairs"
+      "gravitation:crafting/chiseled_conglomerate_slab"
     ]
   },
   "sends_telemetry_event": false

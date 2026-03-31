@@ -168,6 +168,11 @@ public class GravitationItemData extends AetherItemModelProvider {
         this.itemWallBlock(GravitationBlocks.POLISHED_CONGLOMERATE_WALLS.get(), GravitationBlocks.POLISHED_CONGLOMERATE.get(), "natural/");
         this.itemBlock(GravitationBlocks.POLISHED_CONGLOMERATE_STAIRS.get());
         this.itemBlock(GravitationBlocks.POLISHED_CONGLOMERATE_SLAB.get());
+
+        this.itemBlock(GravitationBlocks.CHISELED_CONGLOMERATE.get());
+        this.itemWallBlock(GravitationBlocks.CHISELED_CONGLOMERATE_WALLS.get(), GravitationBlocks.CHISELED_CONGLOMERATE.get(), "natural/");
+        this.itemBlock(GravitationBlocks.CHISELED_CONGLOMERATE_STAIRS.get());
+        this.itemBlock(GravitationBlocks.CHISELED_CONGLOMERATE_SLAB.get());
     }
 
     public void glovesItem(Item item, String location) {

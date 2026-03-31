@@ -13,6 +13,10 @@
     "gravitation:polished_conglomerate",
     "gravitation:polished_conglomerate_stairs",
     "gravitation:polished_conglomerate_slab",
-    "gravitation:polished_conglomerate_wall"
+    "gravitation:polished_conglomerate_wall",
+    "gravitation:chiseled_conglomerate",
+    "gravitation:chiseled_conglomerate_stairs",
+    "gravitation:chiseled_conglomerate_slab",
+    "gravitation:chiseled_conglomerate_wall"
   ]
 }

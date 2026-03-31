@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "gravitation:chiseled_conglomerate"
+      "item": "gravitation:polished_conglomerate"
     }
   },
   "pattern": [
@@ -13,7 +13,7 @@
   ],
   "result": {
     "count": 4,
-    "item": "gravitation:chiseled_conglomerate_stairs"
+    "item": "gravitation:polished_conglomerate_stairs"
   },
   "show_notification": true
 }

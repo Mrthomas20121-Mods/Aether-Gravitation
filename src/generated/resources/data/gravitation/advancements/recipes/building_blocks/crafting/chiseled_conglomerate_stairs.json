@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_chiseled_conglomerate": {
+    "has_polished_conglomerate": {
       "conditions": {
         "items": [
           {
             "items": [
-              "gravitation:chiseled_conglomerate"
+              "gravitation:polished_conglomerate"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "gravitation:crafting/polished_conglomerate_stairs"
+        "recipe": "gravitation:crafting/chiseled_conglomerate_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_chiseled_conglomerate",
+      "has_polished_conglomerate",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "gravitation:crafting/polished_conglomerate_stairs"
+      "gravitation:crafting/chiseled_conglomerate_stairs"
     ]
   },
   "sends_telemetry_event": false
